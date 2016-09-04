@@ -1,0 +1,31 @@
+############################################################
+#
+# Home Assistant Detailed View
+#
+############################################################
+
+detailed:
+   view: yes
+   entities:
+    - group.all_mobile_devices
+    - group.cctv
+    - group.safety
+    - group.netatmo
+
+All Mobile Devices:
+  - device_tracker.aileensiphone
+  - device_tracker.iphone
+
+CCTV:
+  - switch.cctv_intrusion_detection
+  - switch.cctv_line_crossing_detection
+  - switch.cctv_motion
+
+Safety:
+  - sensor.upstairs_battery_level
+  - sensor.upstairs_co_status
+  - sensor.upstairs_smoke_status
+
+Netatmo:
+  - sensor.netatmo_outside_radio
+  - sensor.netatmo_outside_battery

@@ -1,0 +1,42 @@
+############################################################
+#
+# Control Nest based on Front Door State
+#
+############################################################
+
+############################################################
+#
+# Set Nest to Home if Front Door is Closed
+#
+############################################################
+
+- alias: SET Nest to HOME if Front Door is CLOSED
+  trigger:
+    platform: state
+    entity_id: binary_sensor.frontdoorswitch_sensor_3
+    from: 'on'
+    to: 'off'
+  condition:
+    condition: state
+    entity_id: input_boolean.notify_nest
+    state: "on"
+  action:
+    service: homeassistant.turn_on
+    entity_id: script.front_door_closed
+
+############################################################
+#
+# Set Nest to Away if Front Door is Open for 3 Minutes
+#
+############################################################
+
+- alias: SET Nest to AWAY if Front Door is OPEN for 3 Minutes
+  trigger:
+    platform: state
+    entity_id: binary_sensor.frontdoorswitch_sensor_3
+    state: 'on'
+    for:
+      minutes: 3
+  action:
+    service: homeassistant.turn_on
+    entity_id: script.front_door_open

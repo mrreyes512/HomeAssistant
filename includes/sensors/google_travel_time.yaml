@@ -1,0 +1,53 @@
+############################################################
+#
+# Google Travel Time Sensors
+#
+############################################################
+
+- platform: google_travel_time
+  name: Graeme to Work
+  api_key: !secret google_travel_api
+  origin: zone.home
+  destination: !secret zone1_entity
+  options:
+    mode: driving
+
+- platform: google_travel_time
+  name: Aileen to Work
+  api_key: !secret google_travel_api
+  origin: zone.home
+  destination: !secret zone2_entity
+  options:
+    mode: driving
+
+- platform: google_travel_time
+  name: Graeme Work to Home 
+  api_key: !secret google_travel_api
+  origin: !secret zone1_entity
+  destination: zone.home
+  options:
+    mode: driving
+
+- platform: google_travel_time
+  name: Aileen Work to Home
+  api_key: !secret google_travel_api
+  origin: !secret zone2_entity
+  destination: zone.home
+  options:
+    mode: driving
+
+- platform: google_travel_time
+  name: Graeme to Home
+  api_key: !secret google_travel_api
+  origin: device_tracker.iphone
+  destination: zone.home
+  options:
+    mode: driving
+
+- platform: google_travel_time
+  name: Aileen to Home
+  api_key: !secret google_travel_api
+  origin: device_tracker.aileensiphone
+  destination: zone.home
+  options:
+    mode: driving

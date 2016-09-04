@@ -1,0 +1,20 @@
+entities:
+- name: Router
+  url: !secret weblink_router
+  icon: mdi:router-wireless
+- name: Wi-Fi Controller
+  url: !secret weblink_wifi_controller
+  icon: mdi:wifi
+- name: Dashboard
+  url: !secret weblink_dashboard
+  icon: mdi:view-dashboard
+- name: CCTV
+  url: !secret weblink_cctv1
+  icon: mdi:camera-iris
+- name: Server Glances
+  url: !secret weblink_server_glances
+  icon: mdi:format-list-bulleted
+- name: Media Server Plex
+  url: !secret weblink_plex_server
+  icon: mdi:harddisk
+

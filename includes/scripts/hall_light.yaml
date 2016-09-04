@@ -1,0 +1,27 @@
+############################################################
+#
+# Hall Lights Motion Timer and Helper
+#
+############################################################
+
+
+hall_motion_helper:
+  sequence:
+    - delay:
+        minutes: 2
+    - service: light.turn_off
+      data:
+        entity_id: light.hall
+
+hall_motion_timer:
+  sequence:
+    - service: script.turn_off
+      data:
+        entity_id: script.hall_motion_helper
+    - service: light.turn_on
+      entity_id: light.hall
+      data_template:
+        brightness: "{{ states('sensor.time_brightness')|int }}"
+    - service: script.turn_on
+      data:
+        entity_id: script.hall_motion_helper

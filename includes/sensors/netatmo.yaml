@@ -1,0 +1,25 @@
+############################################################
+#
+# Netatmo Sensor
+#
+############################################################
+
+- platform: netatmo
+  station: !secret netatmo_station 
+  modules:
+    Inside:
+      - temperature
+      - humidity
+      - co2
+      - wifi_status
+      - noise
+      - pressure
+
+    Outside:
+      - temperature
+      - humidity
+      - min_temp
+      - max_temp
+      - battery_vp
+      - rf_status
+

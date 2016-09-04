@@ -1,0 +1,18 @@
+############################################################
+#
+# Notify Aileen when Washing Machine is Finished
+#
+############################################################
+
+- alias: NOTIFY Aileen when Washine Machine is FINISHED
+  trigger:
+    platform: state
+    entity_id: sensor.washing_machine
+    from: 'on'
+    to: 'off'
+    for:
+      minutes: 3
+  action:
+    - service: notify.as_sms
+      data:
+        message: 'Washing Machine Finished'

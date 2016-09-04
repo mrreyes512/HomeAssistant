@@ -1,0 +1,26 @@
+############################################################
+#
+# Summer House Lights Motion Timer and Helper
+#
+############################################################
+
+
+summerhouse_lights_motion_helper:
+  sequence:
+    - delay:
+        minutes: 1
+    - service: light.turn_off
+      data:
+        entity_id: switch.summerhouselights_switch_16, switch.frontfloodlights_switch_10, switch.frontfloodlights_switch_10_2
+
+summerhouse_lights_motion_timer:
+  sequence:
+    - service: script.turn_off
+      data:
+        entity_id: script.summerhouse_lights_motion_helper
+    - service: light.turn_on
+      entity_id: switch.summerhouselights_switch_16, switch.frontfloodlights_switch_10, switch.frontfloodlights_switch_10_2
+    - service: script.turn_on
+      data:
+        entity_id: script.summerhouse_lights_motion_helper
+

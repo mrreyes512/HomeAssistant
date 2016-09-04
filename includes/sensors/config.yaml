@@ -1,0 +1,10 @@
+############################################################
+#
+# Number of lines of Home Assistant configuration
+#
+############################################################
+
+- platform: command_line
+  command: "/config/bin/linesOfConfiguration"
+  name: "Lines of Configuration" 
+  unit_of_measurement: "lines"

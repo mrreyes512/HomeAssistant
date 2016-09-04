@@ -1,0 +1,69 @@
+############################################################
+#
+# ZWave Device Battery states
+#
+############################################################
+
+- platform: template
+  sensors:
+    kitchenmotionsensor_battery:
+      value_template: '{{ states.sensor.kitchenmotionsensor_general_2.attributes.battery_level }}'
+      unit_of_measurement: '%'
+      entity_id: sensor.kitchenmotionsensor_general_2
+      friendly_name: "Kitchen"
+
+- platform: template
+  sensors:
+    hallmotionsensor_battery:
+      value_template: '{{ states.sensor.hallmotionsensor_general_9.attributes.battery_level }}'
+      unit_of_measurement: '%'
+      entity_id: sensor.hallmotionsensor_general_9
+      friendly_name: "Hall"
+
+- platform: template
+  sensors:
+    porchmotionsensor_battery:
+      value_template: '{{ states.sensor.porchmotionsensor_general_5.attributes.battery_level }}'
+      unit_of_measurement: '%'
+      entity_id: sensor.porchmotionsensor_general_5
+      friendly_name: "Porch"
+
+- platform: template
+  sensors:
+    lowerstairsmotionsensor_battery:
+      value_template: '{{ states.sensor.mainstairslower_general_12.attributes.battery_level }}'
+      unit_of_measurement: '%'
+      entity_id: sensor.mainstairslower_general_12
+      friendly_name: "Lower Stairs"
+
+- platform: template
+  sensors:
+    upperstairsmotionsensor_battery:
+      value_template: '{{ states.sensor.mainstairsupper_general_11.attributes.battery_level }}'
+      unit_of_measurement: '%'
+      entity_id: sensor.mainstairsupper_general_11
+      friendly_name: "Upper Stairs"
+
+- platform: template
+  sensors:
+    summerhousedoorsensor_battery:
+      value_template: '{{ states.sensor.summerhousedoor_sourcenodeid_13.attributes.battery_level }}'
+      unit_of_measurement: '%'
+      entity_id: sensor.summerhousedoor_sourcenodeid_13
+      friendly_name: "Summer House Door"
+
+- platform: template
+  sensors:
+    frontdoorsensor_battery:
+      value_template: '{{ states.sensor.frontdoorswitch_general_3.attributes.battery_level }}'
+      unit_of_measurement: '%'
+      entity_id: sensor.frontdoorswitch_general_3
+      friendly_name: "Front Door"
+
+- platform: template
+  sensors:
+    lightsensor_battery:
+      value_template: '{{ states.sensor.lightsensor_sourcenodeid_14.attributes.battery_level }}'
+      unit_of_measurement: '%'
+      entity_id: sensor.lightsensor_sourcenodeid_14
+      friendly_name: "Light Sensor"

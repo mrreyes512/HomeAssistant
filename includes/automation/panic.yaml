@@ -1,0 +1,31 @@
+############################################################
+#
+# Turn on lights when Panic Button is On
+#
+############################################################
+
+- alias: Turn ON lights when Panic Button is ON
+  trigger:
+    platform: state
+    entity_id: input_boolean.panic 
+    state: 'on'
+  action:
+    service: homeassistant.turn_on
+    entity_id: 
+      - group.panic_lights
+
+############################################################
+#
+# Turn on lights when Panic Button is Off
+#
+############################################################
+
+- alias: Turn OFF lights when Panic Button is OFF
+  trigger:
+    platform: state
+    entity_id: input_boolean.panic 
+    state: 'off'
+  action:
+    service: homeassistant.turn_off
+    entity_id: 
+      - group.panic_lights

@@ -1,0 +1,64 @@
+############################################################
+#
+# Home Assistant System View
+#
+############################################################
+
+system:
+  name: System
+  view: yes
+  entities:
+    - group.server
+    - group.links
+    - group.devices
+    - group.battery_levels
+    - sensor.lines_of_configuration
+
+Battery Levels:
+  - sensor.frontdoorsensor_battery
+  - sensor.hallmotionsensor_battery
+  - sensor.kitchenmotionsensor_battery
+  - sensor.lightsensor_battery
+  - sensor.lowerstairsmotionsensor_battery
+  - sensor.upperstairsmotionsensor_battery
+  - sensor.porchmotionsensor_battery
+  - sensor.summerhousedoorsensor_battery
+
+Devices:
+  - sensor.cctv1
+  - sensor.energy_monitor_wifi
+  - sensor.firetv
+  - sensor.hall_wifi
+  - sensor.light_controller
+  - sensor.living_room_htpc
+  - sensor.living_room_wifi
+  - sensor.mediaserver
+  - sensor.nest_wifi
+  - sensor.outside_wifi
+  - sensor.philips_hue_bridge
+  - sensor.router
+
+Server:
+  - sensor.glances_sensor_cpu_load
+#  - sensor.glances_sensor_disk_free
+  - sensor.glances_sensor_disk_use
+#  - sensor.glances_sensor_disk_use_2
+#  - sensor.glances_sensor_ram_free
+  - sensor.glances_sensor_ram_use
+#  - sensor.glances_sensor_ram_use_2
+  - sensor.glances_sensor_running
+  - sensor.glances_sensor_sleeping
+#  - sensor.glances_sensor_swap_free
+  - sensor.glances_sensor_swap_use
+#  - sensor.glances_sensor_swap_use_2
+#  - sensor.glances_sensor_thread
+#  - sensor.glances_sensor_total
+
+Links:
+  - weblink.cctv
+  - weblink.dashboard
+  - weblink.media_server_plex
+  - weblink.router
+  - weblink.server_glances
+  - weblink.wifi_controller
+

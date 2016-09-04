@@ -1,0 +1,19 @@
+############################################################
+#
+# Forecast.io Sensor
+#
+############################################################
+
+- platform: forecast
+  api_key: !secret forecast_api_key 
+  monitored_conditions:
+    - precip_type
+    - precip_probability
+    - temperature
+    - apparent_temperature
+    - wind_speed
+    - wind_bearing
+    - pressure
+    - visibility
+    - daily_summary
+  units: uk2

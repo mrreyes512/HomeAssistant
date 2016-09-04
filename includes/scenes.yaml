@@ -1,0 +1,20 @@
+- name: Energize
+  entities:
+    group.living_room_lights:
+      state: on
+      profile: energize
+- name: Reading
+  entities:
+    group.living_room_lights:
+      state: on
+      profile: reading
+- name: Concentrate
+  entities:
+    group.living_room_lights:
+      state: on
+      profile: concentrate
+- name: Relax
+  entities:
+    group.living_room_lights:
+      state: on
+      profile: relax

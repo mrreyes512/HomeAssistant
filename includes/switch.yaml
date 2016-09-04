@@ -1,0 +1,21 @@
+- platform: mqtt
+  name: "CCTV Motion"
+  state_topic: "house/cctv/1/motion"
+  command_topic: "house/cctv/1/motion/set"
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "CCTV Intrusion Detection"
+  state_topic: "house/cctv/1/intrusion"
+  command_topic: "house/cctv/1/intrusion/set"
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+- platform: mqtt
+  name: "CCTV Line Crossing Detection"
+  state_topic: "house/cctv/1/line"
+  command_topic: "house/cctv/1/line/set"
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true

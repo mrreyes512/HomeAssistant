@@ -1,0 +1,32 @@
+############################################################
+#
+# Send Notification when Steriliser Power is High
+#
+############################################################
+
+- alias: NOTIFY All when Steriliser Power is HIGH
+  trigger: 
+    platform: numeric_state
+    entity_id: sensor.steriliserpower_power_4
+    above: 30
+  action:
+    - service: notify.notify_all
+      data:
+        message: 'WARNING: STERLISER POWER HIGH'
+
+
+############################################################
+#
+# Send Notification when Steriliser Power is Low
+#
+############################################################
+
+- alias: NOTIFY All when Steriliser Power is LOW
+  trigger: 
+    platform: numeric_state
+    entity_id: sensor.steriliserpower_power_4
+    below: 19
+  action:
+    - service: notify.notify_all
+      data:
+        message: 'WARNING: STERLISER POWER LOW'

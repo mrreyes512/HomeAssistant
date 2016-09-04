@@ -1,0 +1,105 @@
+############################################################
+#
+# Home Assistant Main Configuration File
+#
+############################################################
+
+homeassistant:
+  name: Home
+  latitude: !secret latitude 
+  longitude: !secret longitude 
+  elevation: !secret elevation
+  unit_system: metric
+  time_zone: Europe/London
+  customize: !include includes/customise.yaml
+
+http:
+  api_password: !secret http_password 
+  server_host: !secret server_host 
+
+history:
+
+updater:
+
+frontend:
+
+discovery:
+
+influxdb:
+  host: !secret influxdb_host
+  database: !secret influxdb_database 
+  username: !secret influxdb_username 
+  password: !secret influxdb_password
+
+recorder:
+  db_url: !secret mysql_path
+sun:
+  elevation: 214
+
+############################################################
+#
+# Components
+#
+############################################################
+
+light:
+  platform: hue
+  host: !secret hue_ip 
+  allow_unreachable: true
+
+nest:
+  username: !secret nest_username 
+  password: !secret nest_password 
+
+mqtt:
+  broker: !secret mqtt_ip
+  port: !secret mqtt_port
+  client_id: !secret mqtt_client_id
+  keepalive: 60
+  username: !secret mqtt_username 
+  password: !secret mqtt_password 
+
+zwave:
+  usb_path: /zwaveusbstick
+
+netatmo:
+  api_key: !secret netatmo_api_key
+  secret_key: !secret netatmo_secret_key 
+  username: !secret netatmo_username
+  password: !secret netatmo_password
+
+apcupsd:
+  host: !secret apcupsd_host
+  port: !secret apcupsd_port
+
+############################################################
+#
+# Includes
+#
+############################################################
+
+# Single Files
+
+binary_sensor: !include includes/binary_sensors.yaml
+camera: !include includes/cameras.yaml
+device_tracker: !include includes/device_trackers.yaml
+input_boolean: !include includes/input_boolean.yaml
+input_select: !include includes/input_select.yaml
+logger: !include includes/logger.yaml
+media_player: !include includes/media_players.yaml
+notify: !include includes/notify.yaml
+scene: !include includes/scenes.yaml
+switch: !include includes/switch.yaml
+climate: !include includes/climate.yaml
+weblink: !include includes/weblink.yaml
+
+# Merge List
+
+automation: !include_dir_merge_list includes/automation 
+sensor: !include_dir_merge_list includes/sensors
+zone: !include_dir_merge_list includes/zone
+
+# Merge Named
+
+group: !include_dir_merge_named includes/group
+script: !include_dir_merge_named includes/scripts

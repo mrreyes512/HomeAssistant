@@ -1,0 +1,54 @@
+############################################################
+#
+# Home Assistant Default View
+#
+############################################################
+
+default_view:
+  view: yes
+  entities:
+    - updater.updater
+    - camera.cctv_front
+    - group.security
+    - group.cctv_motion
+    - climate.kitchen
+    - sensor.steriliserpower_power_4
+    - sensor.energy_monitor
+    - group.travel
+    - sensor.ups_load
+    - sensor.ups_input_voltage
+    - sensor.washing_machine 
+    - sensor.summerhousepower_power_15
+    - group.radio
+    - binary_sensor.driveway
+    - binary_sensor.courtyard
+    - binary_sensor.front_pir
+    - binary_sensor.summer_house
+    - binary_sensor.doorbell_door
+    - binary_sensor.doorbell_gate
+
+Security:
+  - input_boolean.panic
+
+CCTV Motion:
+  - input_boolean.cctv_disabled
+
+Travel:
+  - sensor.graeme_to_work
+  - sensor.graeme_work_to_home
+  - sensor.graeme_to_home
+  - sensor.aileen_to_work
+  - sensor.aileen_work_to_home
+  - sensor.aileen_to_home
+
+Radio:
+  - input_select.radio_player
+  - input_select.radio_station 
+
+Panic Lights:
+  - switch.backfloodlight_switch_8
+  - switch.backfloodlight_switch_8_2
+  - switch.frontfloodlights_switch_10
+  - switch.frontfloodlights_switch_10_2
+  - switch.summerhouselights_switch_16
+  - switch.summerhouselights_switch_16_2

@@ -1,0 +1,223 @@
+############################################################
+#
+# Template Sensors
+#
+############################################################
+
+############################################################
+#
+# Set brightness depending on Time of Day
+#
+############################################################
+
+- platform: template
+  sensors:
+    time_brightness:
+      value_template: >-
+        {%- if now.strftime('%H%M')|int < 600 -%}
+          64
+        {%- elif now.strftime('%H%M')|int < 700 -%}
+          128
+        {%- elif now.strftime('%H%M')|int < 800 -%}
+          192
+        {%- elif now.strftime('%H%M')|int < 2000 -%}
+          255
+        {%- elif now.strftime('%H%M')|int < 2100 -%}
+          192
+        {%- elif now.strftime('%H%M')|int < 2200 -%}
+          128
+        {%- else -%}
+          64
+        {%- endif -%}
+    
+############################################################
+#
+# Door Helpers
+#
+############################################################
+
+    template_summer_house_door:
+      friendly_name: 'Summer House Door'
+      value_template: >-
+        {%- if is_state("sensor.summerhousedoor_access_control_13", "23") -%}
+          closed
+        {%- elif is_state("sensor.summerhousedoor_access_control_13", "22") -%}
+          open
+        {%- else -%}
+          unknown
+        {%- endif -%}
+
+    template_front_door:
+      friendly_name: 'Front Door'
+      value_template: >-
+        {%- if is_state("binary_sensor.frontdoorswitch_sensor_3", "off") -%}
+          closed
+        {%- elif is_state("binary_sensor.frontdoorswitch_sensor_3", "on") -%}
+          open
+        {%- else -%}
+          unknown
+        {%- endif -%}
+
+############################################################
+#
+# Show Washing Machine as On or Off depending on Power Usage
+#
+############################################################
+
+    washing_machine:
+      friendly_name: 'Washing Machine'
+      value_template: >-
+        {%- if states("sensor.washingmachinepower_power_17") | float < 3.5 -%}
+          off
+        {%- elif states("sensor.washingmachinepower_power_17") | float >= 3.5 -%}
+          on
+        {%- else -%}
+          unknown
+        {%- endif -%}
+
+############################################################
+#
+# Motion Sensor Helpers
+#
+############################################################
+
+    hall_motion_sensor:
+      friendly_name: Hall Motion Sensor
+      value_template: >-
+        {%- if is_state('sensor.hallmotionsensor_burglar_9', '3') -%}
+          Tamper
+        {%- elif is_state('sensor.hallmotionsensor_burglar_9', '8') -%}
+          Motion
+        {%- elif is_state('sensor.hallmotionsensor_burglar_9', '0') -%}
+          OK
+        {%- elif is_state('sensor.hallmotionsensor_burglar_9', '254') -%}
+          OK
+        {%- else -%}
+          Unknown
+        {%- endif -%}
+
+    kitchen_motion_sensor:
+      friendly_name: Kitchen Motion Sensor
+      value_template: >-
+        {%- if is_state('sensor.kitchenmotionsensor_burglar_2', '3') -%}
+          Tamper
+        {%- elif is_state('sensor.kitchenmotionsensor_burglar_2', '8') -%}
+          Motion
+        {%- elif is_state('sensor.kitchenmotionsensor_burglar_2', '0') -%}
+          OK
+        {%- elif is_state('sensor.kitchenmotionsensor_burglar_2', '254') -%}
+          OK
+        {%- else -%}
+          Unknown
+        {%- endif -%}
+      
+    porch_motion_sensor:
+      friendly_name: Porch Motion Sensor
+      value_template: >-
+        {%- if is_state('sensor.porchmotionsensor_burglar_5', '3') -%}
+          Tamper
+        {%- elif is_state('sensor.porchmotionsensor_burglar_5', '8') -%}
+          Motion
+        {%- elif is_state('sensor.porchmotionsensor_burglar_5', '0') -%}
+          OK
+        {%- elif is_state('sensor.porchmotionsensor_burglar_5', '254') -%}
+          OK
+        {%- else -%}
+          Unknown
+        {%- endif -%}
+
+    lower_stairs_motion_sensor:
+      friendly_name: Lower Stairs Motion Sensor
+      value_template: >-
+        {%- if is_state('sensor.mainstairslower_burglar_12', '3') -%}
+          Tamper
+        {%- elif is_state('sensor.mainstairslower_burglar_12', '8') -%}
+          Motion
+        {%- elif is_state('sensor.mainstairslower_burglar_12', '0') -%}
+          OK
+        {%- elif is_state('sensor.mainstairslower_burglar_12', '254') -%}
+          OK
+        {%- else -%}
+          Unknown
+        {%- endif -%}
+      
+    upper_stairs_motion_sensor:
+      friendly_name: Upper Stairs Motion Sensor
+      value_template: >-
+        {%- if is_state('sensor.mainstairsupper_burglar_11', '3') -%}
+          Tamper
+        {%- elif is_state('sensor.mainstairsupper_burglar_11', '8') -%}
+          Motion
+        {%- elif is_state('sensor.mainstairsupper_burglar_11', '0') -%}
+          OK
+        {%- elif is_state('sensor.mainstairsupper_burglar_11', '254') -%}
+          OK
+        {%- else -%}
+          Unknown
+        {%- endif -%}
+
+############################################################
+#
+# Set Light Sensor to Day or Night for Automations
+#
+############################################################
+
+    light_sensor:
+      friendly_name: Outside Light Sensor
+      value_template: >-
+        {%- if states("sensor.lightsensor_luminance_14") | float > 15 -%}
+          Day
+        {%- else -%}
+          Night
+        {%- endif -%}
+
+############################################################
+#
+# Show Devices as Online or Offline 
+#
+############################################################
+
+    mediaserver:
+      friendly_name: Media Server
+      value_template: "{{ 'online' if is_state('device_tracker.mediaserver', 'home') else 'offline' }}"
+
+    light_controller:
+      friendly_name: Lights Controller
+      value_template: "{{ 'online' if is_state('device_tracker.esp_f9061a', 'home') else 'offline' }}"
+
+    energy_monitor_wifi:
+      friendly_name: Energy Monitor 
+      value_template: "{{ 'online' if is_state('device_tracker.esp_f907db', 'home') else 'offline' }}"
+
+    hall_wifi:
+      friendly_name: Hall Access Point 
+      value_template: "{{ 'online' if is_state('device_tracker.hallwifi', 'home') else 'offline' }}"
+      
+    living_room_wifi:
+      friendly_name: Living Room Access Point 
+      value_template: "{{ 'online' if is_state('device_tracker.livingroomwifiinternal', 'home') else 'offline' }}"
+      
+    outside_wifi:
+      friendly_name: Outside Access Point 
+      value_template: "{{ 'online' if is_state('device_tracker.outdoorwifi', 'home') else 'offline' }}"
+      
+    router:
+      friendly_name: Router 
+      value_template: "{{ 'online' if is_state('device_tracker.router', 'home') else 'offline' }}"
+      
+    cctv1:
+      friendly_name: Front CCTV
+      value_template: "{{ 'online' if is_state('device_tracker.cctv1', 'home') else 'offline' }}"
+      
+    firetv:
+      friendly_name: FireTV
+      value_template: "{{ 'online' if is_state('device_tracker.kindle085e7f173', 'home') else 'offline' }}"
+
+    living_room_htpc:
+      friendly_name: Living Room HTPC
+      value_template: "{{ 'online' if is_state('device_tracker.livingroomhtpc', 'home') else 'offline' }}"
+
+    philips_hue_bridge:
+      friendly_name: Philips Hue Bridge
+      value_template: "{{ 'online' if is_state('device_tracker.philipshuebridgeinternal', 'home') else 'offline' }}"
+
