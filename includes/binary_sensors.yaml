@@ -65,3 +65,30 @@
   payload_off: "5 off"
   sensor_class: none 
 
+- platform: trend
+  sensors:
+    solar_angle:
+      friendly_name: 'Sun rising'
+      entity_id: sun.sun
+      sensor_class: light
+      attribute: elevation
+
+    solar_angle_invert:
+      friendly_name: 'Sun setting'
+      entity_id: sun.sun
+      attribute: elevation
+      sensor_class: light
+      invert: Yes
+     
+    power_trend:
+      entity_id: sensor.energy_monitor 
+      friendly_name: 'Power Rising'
+      sensor_class: power
+
+    power_trend_invert:
+      entity_id: sensor.energy_monitor 
+      friendly_name: 'Power Falling'
+      sensor_class: power
+      invert: Yes
+
+
