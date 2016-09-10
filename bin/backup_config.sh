@@ -14,7 +14,6 @@ if [ -d "$HADIRECTORY" ]; then
 else
   echo "Home Assistant Directory does not exist"
   exit 1
-  touch /backup/notexist.test
 fi
 
 if [ ! -d "$BACKUPDIRECTORY" ]; then
