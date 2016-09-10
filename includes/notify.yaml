@@ -1,3 +1,8 @@
+- platform: kodi
+  name: rasplex
+  host: !secret rasplex_host
+  port: !secret rasplex_port
+
 - platform: twilio_sms
   name: twilio_sms
   account_sid: !secret twilio_account_sid

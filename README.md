@@ -7,6 +7,7 @@ My [Home Assistant](https://home-assistant.io/) Configuration Files
 - [Dale3h](https://github.com/dale3h/homeassistant-config) 
 - [Teagan42](https://github.com/Teagan42/HomeAssistantConfig)
 - [CBulock](https://github.com/cbulock/home-assistant-configs)
+- [chrom3](https://github.com/chrom3)
 
 Thanks to all the people in the [gitter](https://gitter.im/home-assistant/home-assistant) community for listening and help
 
