@@ -16,6 +16,7 @@
     - server_uid_status
     - server_health
     - network_settings
+
 - platform: hp_ilo
   name: Media Server
   host: !secret hp_ilo_mediaserver
@@ -34,3 +35,11 @@
     - server_uid_status
     - server_health
     - network_settings
+
+- platform: template
+  sensors:
+    server_fan:
+      value_template: '{{states.sensor.media_server_server_health.attributes.fans["Fan 1"]["speed"][0] }}'
+      unit_of_measurement: '%'
+      entity_id: sensor.media_server_server_health
+      friendly_name: "Server Fan"
