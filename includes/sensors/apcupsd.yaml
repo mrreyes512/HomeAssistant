@@ -25,7 +25,6 @@
     - battv
     - lastxfer
     - numxfers
-    - xonbatt
     - tonbatt
     - cumonbatt
     - xoffbatt

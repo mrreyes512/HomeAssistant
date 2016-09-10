@@ -1,4 +1,4 @@
-############################################################
+###########################################################
 #
 # Home Assistant Customisations
 #
@@ -87,12 +87,162 @@ sensor.mainstairsupper_temperature_11:
   friendly_name: Upstairs
   icon: mdi:thermometer
 
+sensor.mediaserver_cpu_load:
+  friendly_name: CPU Load
+  icon: mdi:chip
+
+sensor.mediaserver_disk_free:
+  friendly_name: Disk Free
+  icon: mdi:harddisk
+
+sensor.mediaserver_disk_use:
+  friendly_name: Disk Use
+  icon: mdi:harddisk
+
+sensor.mediaserver_disk_use_2:
+  friendly_name: Disk Free
+  icon: mdi:harddisk
+
+sensor.mediaserver_ram_free:
+  friendly_name: Free Memory
+  icon: mdi:memory
+
+sensor.mediaserver_ram_use:
+  friendly_name: Memory Used
+  icon: mdi:memory
+
+sensor.mediaserver_ram_use_2:
+  friendly_name: Memory Used
+  icon: mdi:memory
+
+sensor.mediaserver_running:
+  friendly_name: Running Processes
+  icon: mdi:application
+
+sensor.mediaserver_sleeping:
+  friendly_name: Sleeping Processes
+  icon: mdi:application
+
+sensor.mediaserver_swap_free:
+  friendly_name: Free Swap Memory
+  icon: mdi:memory
+
+sensor.mediaserver_swap_use:
+  friendly_name: Swap Memory Used
+  icon: mdi:memory
+
+sensor.mediaserver_swap_use_2:
+  friendly_name: Swap Memory Used
+  icon: mdi:memory
+
+sensor.mediaserver_glance_bios:
+  icon: mdi:chip
+
+sensor.mediaserver_glance_fans:
+  icon: mdi:fan
+
+sensor.mediaserver_fan:
+  icon: mdi:fan
+
+sensor.mediaserver_glance_memory:
+  icon: mdi:memory
+
+sensor.mediaserver_glance_network:
+  icon: mdi:ethernet
+
+sensor.mediaserver_glance_power:
+  icon: mdi:power-plug
+
+sensor.mediaserver_glance_processor:
+  icon: mdi:chip
+
+sensor.mediaserver_glance_storage:
+  icon: mdi:harddisk
+
+sensor.mediaserver_glance_temperature:
+  icon: mdi:thermometer
+
 sensor.porchmotionsensor_luminance_5:
   friendly_name: Porch
   icon: mdi:lightbulb
 
 sensor.porchmotionsensor_temperature_5:
   friendly_name: Porch
+  icon: mdi:thermometer
+
+sensor.server_cpu_load:
+  friendly_name: CPU Load
+  icon: mdi:chip
+
+sensor.server_disk_free:
+  friendly_name: Disk Free
+  icon: mdi:harddisk
+
+sensor.server_disk_use:
+  friendly_name: Disk Use
+  icon: mdi:harddisk
+
+sensor.server_disk_use_2:
+  friendly_name: Disk Free
+  icon: mdi:harddisk
+
+sensor.server_ram_free:
+  friendly_name: Free Memory
+  icon: mdi:memory
+
+sensor.server_ram_use:
+  friendly_name: Memory Used
+  icon: mdi:memory
+
+sensor.server_ram_use_2:
+  friendly_name: Memory Used
+  icon: mdi:memory
+
+sensor.server_running:
+  friendly_name: Running Processes
+  icon: mdi:application
+
+sensor.server_sleeping:
+  friendly_name: Sleeping Processes
+  icon: mdi:application
+
+sensor.server_swap_free:
+  friendly_name: Free Swap Memory
+  icon: mdi:memory
+
+sensor.server_swap_use:
+  friendly_name: Swap Memory Used
+  icon: mdi:memory
+
+sensor.server_swap_use_2:
+  friendly_name: Swap Memory Used
+  icon: mdi:memory
+
+sensor.server_glance_bios:
+  icon: mdi:chip
+
+sensor.server_glance_fans:
+  icon: mdi:fan
+
+sensor.server_fan:
+  icon: mdi:fan
+
+sensor.server_glance_memory:
+  icon: mdi:memory
+
+sensor.server_glance_network:
+  icon: mdi:ethernet
+
+sensor.server_glance_power:
+  icon: mdi:power-plug
+
+sensor.server_glance_processor:
+  icon: mdi:chip
+
+sensor.server_glance_storage:
+  icon: mdi:harddisk
+
+sensor.server_glance_temperature:
   icon: mdi:thermometer
 
 sensor.steriliserpower_power_4:
