@@ -10,7 +10,9 @@
     topic: "house/controller/1" 
     payload: '4'
   action:
-    - service: notify.rasplex
+    service: notify.rasplex
+    data:
+      title: 'Alert'
+      message: 'Motion detected out Front'
       data:
-        title: 'Alert'
-        message: 'Motion detected out Front'
+        displaytime: 30000

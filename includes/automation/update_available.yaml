@@ -13,5 +13,5 @@
       value_template: "{{ states('updater.updater') != 'unknown' }}"
   action:
     - service: notify.notify_graeme
-      data:
+      data_template:
         message: "Home Assistant {{ states('updater.updater') }} is now available."

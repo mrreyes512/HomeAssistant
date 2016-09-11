@@ -533,3 +533,27 @@ sensor.summerhousedoorsensor_battery:
 
 updater.updater:
   friendly_name: Update Available
+
+############################################################
+#
+# Weblinks
+#
+############################################################
+
+weblink.cctv:
+  icon: mdi:camera-iris
+
+weblink.dashboard:
+  icon: mdi:view-dashboard
+
+weblink.media_server_plex:
+  icon: mdi:filmstrip
+
+weblink.router:
+  icon: mdi:router-wireless
+
+weblink.server_glances:
+  icon: mdi:format-list-bulleted
+
+weblink.wifi_controller:
+  icon: mdi:wifi

@@ -11,6 +11,6 @@
     payload: '1'
   action:
     - service: notify.rasplex
-      data:
+      data_template:
         title: 'Alert'
         message: 'Motion detected in Courtyard'

@@ -14,5 +14,5 @@
       minutes: 3
   action:
     - service: notify.as_sms
-      data:
+      data_template:
         message: 'Washing Machine Finished'

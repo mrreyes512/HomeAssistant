@@ -11,7 +11,7 @@
     above: 30
   action:
     - service: notify.notify_all
-      data:
+      data_template:
         message: 'WARNING: STERLISER POWER HIGH'
 
 
@@ -28,5 +28,5 @@
     below: 19
   action:
     - service: notify.notify_all
-      data:
+      data_template:
         message: 'WARNING: STERLISER POWER LOW'
