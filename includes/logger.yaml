@@ -7,12 +7,13 @@
 # Log Severities: notset, debug, info, warn, warning, error, fatal, critical
 
 #default: debug
-default: error
+default: warn
 
 logs:
   homeassistant.components.automation: debug
   homeassistant.components.sensor: debug
   homeassistant.components.shell_command: debug
+  homeassistant.components.notify: debug
 #  homeassistant.components.discovery: warn
 #  homeassistant.components.http: warn
 #  requests.packages.urllib3.connectionpool: warn

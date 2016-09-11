@@ -20,8 +20,7 @@ door_doorbell_alert_timer:
     - service: light.turn_on
       entity_id: light.living_room_go
       data:
-        color_name: blue
-        flash: short
+        color_name: blue 
         brightness: 255
     - service: script.turn_on
       data:
@@ -50,7 +49,6 @@ gate_doorbell_alert_timer:
       entity_id: light.living_room_go
       data:
         color_name: red
-        flash: short
         brightness: 255
     - service: script.turn_on
       data:

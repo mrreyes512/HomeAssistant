@@ -1,9 +1,10 @@
 ############################################################
 #
-# Home Assistant Media Players
+# Plex Sensor
 #
 ############################################################
 
 - platform: plex
-- platform: cast
-
+  name: Plex
+  host: !secret plex_server_host
+  port: 32400

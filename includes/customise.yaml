@@ -531,8 +531,8 @@ sensor.summerhousedoorsensor_battery:
 #
 ############################################################
 
-updater.updater:
-  friendly_name: Update Available
+#updater.updater:
+#  friendly_name: Update Available
 
 ############################################################
 #

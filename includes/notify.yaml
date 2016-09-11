@@ -60,4 +60,4 @@
     - service: notify_aileen
     - service: notify_graeme
     - service: html5
-    - service: notify_rasplex
+    - service: rasplex
