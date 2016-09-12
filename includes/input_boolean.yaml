@@ -28,3 +28,8 @@ panic:
   name: Panic Button
   initial: off
 
+visitor:
+  name: Evening Visitor Mode 
+  initial: off
+
+

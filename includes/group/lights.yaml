@@ -1,0 +1,20 @@
+############################################################
+#
+# Home Assistant Light Groups
+#
+############################################################
+
+Panic Lights:
+  - switch.backfloodlight_switch_8
+  - switch.backfloodlight_switch_8_2
+  - switch.frontfloodlights_switch_10
+  - switch.frontfloodlights_switch_10_2
+  - switch.summerhouselights_switch_16
+  - switch.summerhouselights_switch_16_2
+
+Visitor Lights:
+  - light.workshoplight_level_6
+  - light.utilityroomlight_level_7
+  - switch.summerhouselights_switch_16_2
+  - switch.backfloodlight_switch_8
+  - switch.backfloodlight_switch_8_2

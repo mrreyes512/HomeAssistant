@@ -33,6 +33,7 @@ default_view:
 
 Security:
   - input_boolean.panic
+  - input_boolean.visitor
 
 CCTV Motion:
   - input_boolean.cctv_disabled
@@ -49,10 +50,3 @@ Radio:
   - input_select.radio_player
   - input_select.radio_station 
 
-Panic Lights:
-  - switch.backfloodlight_switch_8
-  - switch.backfloodlight_switch_8_2
-  - switch.frontfloodlights_switch_10
-  - switch.frontfloodlights_switch_10_2
-  - switch.summerhouselights_switch_16
-  - switch.summerhouselights_switch_16_2
