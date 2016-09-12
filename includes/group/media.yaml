@@ -15,3 +15,4 @@ media:
     - media_player.bedroom
     - media_player.kitchen
     - media_player.kitchen_2
+  icon: mdi:play-pause

@@ -12,7 +12,8 @@ system:
     - group.devices
     - group.battery_levels
     - sensor.lines_of_configuration
-
+  icon: mdi:battery-80
+  
 Battery Levels:
   - sensor.frontdoorsensor_battery
   - sensor.hallmotionsensor_battery

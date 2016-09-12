@@ -10,6 +10,7 @@ servers:
   entities:
     - group.server
     - group.media_server
+  icon: mdi:server
 
 Server:
   - sensor.server_cpu_load
