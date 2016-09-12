@@ -20,6 +20,7 @@ And thanks to *all* the devs that create the Home Assistant magic
 - APC 1400 UPS
 - Google Chromecast Audio
 - Google Chromecast
+- HPE ProLiant MicroServer Gen8 Server
 - Hikvision Ds-2CD2342WD-I CCTV Camera
 - Philips Hue Bridge
 - Philips Hue Go
