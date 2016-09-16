@@ -47,7 +47,7 @@ fi
 
 header "Removing docker container..." 6
 
-if $DOCKER rm $NAME; then
+if $DOCKER rm --force $NAME; then
   header "Removed docker container" 2 
 else
   header "Failed to remove docker container or container already removed. Continuing..." 1
