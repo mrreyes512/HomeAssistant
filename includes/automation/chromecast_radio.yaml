@@ -28,7 +28,7 @@
           {%-elif is_state("input_select.radio_player", "Downstairs Media Players") %}
             media_player.kitchen_2
           {% else %}
-            none
+            "None"
           {% endif %}
 
 ############################################################
@@ -52,7 +52,7 @@
           {%-elif is_state("input_select.radio_player", "Bedroom") %}
             media_player.bedroom
           {% else %}
-            none
+            "None"
           {% endif %}
         media_content_id: >
           {% if is_state("input_select.radio_station", "1940s UK Radio") %}
@@ -74,6 +74,6 @@
           {%-elif is_state("input_select.radio_station", "KCR") %}
             http://icecast.commedia.org.uk:8000/keithcommunityradio.mp3
           {% else %}
-            none
+            "None"
           {% endif %}
         media_content_type: 'audio/mp4'

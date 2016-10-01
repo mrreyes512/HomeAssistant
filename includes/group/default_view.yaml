@@ -26,10 +26,6 @@ default_view:
     - binary_sensor.summer_house
     - binary_sensor.doorbell_door
     - binary_sensor.doorbell_gate
-    - binary_sensor.power_trend
-    - binary_sensor.power_trend_invert
-    - binary_sensor.solar_angle
-    - binary_sensor.solar_angle_invert
 
 Security:
   - input_boolean.panic

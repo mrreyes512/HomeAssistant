@@ -6,7 +6,6 @@
 
 - platform: nest
   monitored_conditions:
-    - 'mode'
     - 'battery_level'
     - 'weather_condition'
     - 'weather_temperature'

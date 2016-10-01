@@ -55,7 +55,7 @@
   qos: 0
   payload_on: "3"
   payload_off: "3 off"
-  sensor_class: none 
+  sensor_class: "None" 
 
 - platform: mqtt
   state_topic: "house/controller/1"
@@ -63,7 +63,7 @@
   qos: 0
   payload_on: "5"
   payload_off: "5 off"
-  sensor_class: none 
+  sensor_class: "None" 
 
 - platform: trend
   sensors:

@@ -12,6 +12,7 @@ system:
     - group.devices
     - group.battery_levels
     - sensor.lines_of_configuration
+    - group.netatmo
   icon: mdi:battery-80
   
 Battery Levels:
@@ -45,4 +46,13 @@ Links:
   - weblink.router
   - weblink.server_glances
   - weblink.wifi_controller
+
+Netatmo:
+  - sensor.netatmo_outside_radio
+  - sensor.netatmo_outside_battery
+  - sensor.netatmo_rain_gauge_radio
+  - sensor.netatmo_rain_gauge_battery
+  - sensor.netatmo_anemometer_radio
+  - sensor.netatmo_anemometer_battery
+
 

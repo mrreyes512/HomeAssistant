@@ -22,8 +22,8 @@ radio_station:
     - Northsound 2
     - NECR
     - KCR
-    - None
-  initial: None
+    - "None"
+  initial: "None"
   icon: mdi:radio
 radio_player:
   name: Radio Player
@@ -31,6 +31,6 @@ radio_player:
     - Living Room 
     - Kitchen 
     - Bedroom
-    - None
-  initial: None
+    - "None"
+  initial: "None"
   icon: mdi:airplay

@@ -29,6 +29,30 @@ device_tracker.aileensiphone:
 #
 ###########################################
 
+group.default_view:
+  order: 1
+
+group.rooms:
+  order: 2
+
+group.outside:
+  order: 3
+
+group.detailed:
+  order: 4
+
+group.media:
+  order: 5
+
+group.system:
+  order: 6
+
+group.servers:
+  order: 7
+
+group.automations:
+  order: 8
+
 group.all_mobile_devices:
   friendly_name: People 
   icon: mdi:human-male-female

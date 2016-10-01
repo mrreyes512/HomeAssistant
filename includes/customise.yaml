@@ -271,15 +271,15 @@ sensor.template_front_door:
 sensor.template_summer_house_door:
   icon: mdi:glassdoor
 
-sensor.upstairs_battery_level:
+sensor.living_room_battery_level:
   friendly_name: Upstairs Battery Level
   icon: mdi:battery
 
-sensor.upstairs_co_status:
+sensor.living_room_co_status:
   friendly_name: Upstairs CO Status
   icon: mdi:weather-fog
 
-sensor.upstairs_smoke_status:
+sensor.living_room_smoke_status:
   friendly_name: Upstairs Smoke Status
   icon: mdi:weather-fog
 
@@ -371,6 +371,24 @@ light.workshoplight_level_6:
 #
 ############################################################
 
+sensor.netatmo_anemometer_angle:
+  friendly_name: Wind direction
+
+sensor.netatmo_anemometer_battery:
+  friendly_name: Anemometer Battery
+
+sensor.netatmo_anemometer_gust_angle:
+  friendly_name: Gusting from
+
+sensor.netatmo_anemometer_gust_strength:
+  friendly_name: Gust strength
+
+sensor.netatmo_anemometer_radio:
+  friendly_name: Anemometer Radio
+
+sensor.netatmo_anemometer_strength:
+  friendly_name: Wind strength
+
 sensor.netatmo_inside_co2:
   friendly_name: Living Room CO2
 
@@ -390,7 +408,7 @@ sensor.netatmo_inside_wifi:
   friendly_name: Netatmo WIFI Signal
 
 sensor.netatmo_outside_battery:
-  friendly_name: Battery Level
+  friendly_name: Sensor Battery
 
 sensor.netatmo_outside_humidity:
   friendly_name: Humidity
@@ -402,10 +420,25 @@ sensor.netatmo_outside_min_temp:
   friendly_name: Minimum Temperature
 
 sensor.netatmo_outside_radio:
-  friendly_name: Radio Strength
+  friendly_name: Sensor Radio 
 
 sensor.netatmo_outside_temperature:
   friendly_name: Temperature
+
+sensor.netatmo_rain_gauge_battery:
+  friendly_name: Rain Gauge Battery
+  
+sensor.netatmo_rain_gauge_radio:
+  friendly_name: Rain Gauge Radio
+
+sensor.netatmo_rain_gauge_rain:
+  friendly_name: Predicted Rainfall
+
+sensor.netatmo_rain_gauge_sum_rain_1:
+  friendly_name: Rain in last hour
+
+sensor.netatmo_rain_gauge_sum_rain_24:
+  friendly_name: Rain since midnight
 
 
 ############################################################

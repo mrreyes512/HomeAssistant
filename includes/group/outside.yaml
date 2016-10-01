@@ -11,7 +11,6 @@ outside:
     - group.summer_house
     - group.outside_lights
     - group.utility_room
-    - group.netatmo
 
 Weather:
   - sun.sun
@@ -20,11 +19,14 @@ Weather:
   - sensor.netatmo_outside_min_temp
   - sensor.netatmo_inside_pressure
   - sensor.netatmo_outside_humidity
-  - sensor.forecastio_wind_speed
-  - sensor.forecastio_wind_bearing
   - sensor.forecastio_visibility
-  - sensor.forecastio_precip_probability
-  - sensor.forecastio_precip
+  - sensor.netatmo_rain_gauge_rain
+  - sensor.netatmo_rain_gauge_sum_rain_1
+  - sensor.netatmo_rain_gauge_sum_rain_24
+  - sensor.netatmo_anemometer_angle
+  - sensor.netatmo_anemometer_strength
+  - sensor.netatmo_anemometer_gust_angle
+  - sensor.netatmo_anemometer_gust_strength
   - sensor.lightsensor_luminance_14
 
 Summer House:
@@ -53,6 +55,3 @@ Utility Room:
   - sensor.utility_room
   - sensor.washingmachinepower_power_17
 
-Netatmo:
-  - sensor.netatmo_outside_radio
-  - sensor.netatmo_outside_battery
