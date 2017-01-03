@@ -6,64 +6,96 @@
 
 - platform: template
   sensors:
-    kitchenmotionsensor_battery:
-      value_template: '{{ states.sensor.kitchenmotionsensor_general_2.attributes.battery_level }}'
+    bathroommotionsensor_battery:
+      value_template: '{{ states.sensor.bathroommotionsensor_general_22_0.attributes.battery_level }}'
       unit_of_measurement: '%'
-      entity_id: sensor.kitchenmotionsensor_general_2
+      entity_id: sensor.bathroommotionsensor_general_22_0
+      friendly_name: "Bathroom"
+
+- platform: template
+  sensors:
+    kitchenmotionsensor_battery:
+      value_template: '{{ states.sensor.kitchenmotionsensor_general_2_0.attributes.battery_level }}'
+      unit_of_measurement: '%'
+      entity_id: sensor.kitchenmotionsensor_general_2_0
       friendly_name: "Kitchen"
 
 - platform: template
   sensors:
     hallmotionsensor_battery:
-      value_template: '{{ states.sensor.hallmotionsensor_general_9.attributes.battery_level }}'
+      value_template: '{{ states.sensor.hallmotionsensor_general_9_0.attributes.battery_level }}'
       unit_of_measurement: '%'
-      entity_id: sensor.hallmotionsensor_general_9
+      entity_id: sensor.hallmotionsensor_general_9_0
       friendly_name: "Hall"
 
 - platform: template
   sensors:
     porchmotionsensor_battery:
-      value_template: '{{ states.sensor.porchmotionsensor_general_5.attributes.battery_level }}'
+      value_template: '{{ states.sensor.porchmotionsensor_general_5_0.attributes.battery_level }}'
       unit_of_measurement: '%'
-      entity_id: sensor.porchmotionsensor_general_5
+      entity_id: sensor.porchmotionsensor_general_5_0
       friendly_name: "Porch"
 
 - platform: template
   sensors:
     lowerstairsmotionsensor_battery:
-      value_template: '{{ states.sensor.mainstairslower_general_12.attributes.battery_level }}'
+      value_template: '{{ states.sensor.mainstairslower_general_12_0.attributes.battery_level }}'
       unit_of_measurement: '%'
-      entity_id: sensor.mainstairslower_general_12
+      entity_id: sensor.mainstairslower_general_12_0
       friendly_name: "Lower Stairs"
 
 - platform: template
   sensors:
     upperstairsmotionsensor_battery:
-      value_template: '{{ states.sensor.mainstairsupper_general_11.attributes.battery_level }}'
+      value_template: '{{ states.sensor.mainstairsupper_general_11_0.attributes.battery_level }}'
       unit_of_measurement: '%'
-      entity_id: sensor.mainstairsupper_general_11
+      entity_id: sensor.mainstairsupper_general_11_0
       friendly_name: "Upper Stairs"
 
 - platform: template
   sensors:
     summerhousedoorsensor_battery:
-      value_template: '{{ states.sensor.summerhousedoor_sourcenodeid_13.attributes.battery_level }}'
+      value_template: '{{ states.sensor.summerhousedoor_sourcenodeid_13_2.attributes.battery_level }}'
       unit_of_measurement: '%'
-      entity_id: sensor.summerhousedoor_sourcenodeid_13
+      entity_id: sensor.summerhousedoor_sourcenodeid_13_2
       friendly_name: "Summer House Door"
 
 - platform: template
   sensors:
-    frontdoorsensor_battery:
-      value_template: '{{ states.sensor.frontdoorswitch_general_3.attributes.battery_level }}'
+    backdoorsensor_battery:
+      value_template: '{{ states.sensor.backdoorswitch_general_19_0.attributes.battery_level }}'
       unit_of_measurement: '%'
-      entity_id: sensor.frontdoorswitch_general_3
+      entity_id: sensor.backdoorswitch_general_19_0
+      friendly_name: "Back Door"
+
+- platform: template
+  sensors:
+    frontdoorsensor_battery:
+      value_template: '{{ states.sensor.frontdoorswitch_general_3_0.attributes.battery_level }}'
+      unit_of_measurement: '%'
+      entity_id: sensor.frontdoorswitch_general_3_0
       friendly_name: "Front Door"
 
 - platform: template
   sensors:
-    lightsensor_battery:
-      value_template: '{{ states.sensor.lightsensor_sourcenodeid_14.attributes.battery_level }}'
+    utilityroomdoorsensor_battery:
+      value_template: '{{ states.sensor.utilityroomswitch_general_20_0.attributes.battery_level }}'
       unit_of_measurement: '%'
-      entity_id: sensor.lightsensor_sourcenodeid_14
+      entity_id: sensor.utilityroomswitch_general_20_0
+      friendly_name: "Utility Room Door"
+
+- platform: template
+  sensors:
+    workshopsensor_battery:
+      value_template: '{{ states.sensor.workshopswitch_general_21_0.attributes.battery_level }}'
+      unit_of_measurement: '%'
+      entity_id: sensor.workshopswitch_general_21_0
+      friendly_name: "Workshop Door"
+
+- platform: template
+  sensors:
+    lightsensor_battery:
+      value_template: '{{ states.sensor.lightsensor_sourcenodeid_14_2.attributes.battery_level }}'
+      unit_of_measurement: '%'
+      entity_id: sensor.lightsensor_sourcenodeid_14_2
       friendly_name: "Light Sensor"

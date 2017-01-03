@@ -10,7 +10,7 @@
 #
 ############################################################
 
-binary_sensor.frontdoorswitch_sensor_3:
+binary_sensor.frontdoorswitch_sensor_3_0:
   friendly_name: Front Door
   type: opening
 
@@ -51,15 +51,51 @@ input_boolean.cctv_disabled:
 #
 ############################################################
 
-sensor.hallmotionsensor_luminance_9:
+sensor.bathroommotionsensor_temperature_22_1:
+  friendly_name: Temperature
+  
+sensor.dining_room_thermostat_humidity:
+  friendly_name: Humidity
+
+sensor.dining_room_thermostat_operation_mode:
+  friendly_name: Thermostat Mode
+    
+sensor.dining_room_thermostat_target:
+  friendly_name: Target Temperature
+
+sensor.dining_room_thermostat_temperature:
+  friendly_name: Temperature
+
+sensor.energy_monitor_min:
+  icon: mdi:flash
+
+sensor.energy_monitor_mean:
+  icon: mdi:flash
+
+sensor.energy_monitor_max:
+  icon: mdi:flash
+
+sensor.hallmotionsensor_luminance_9_3:
   friendly_name: Hall
   icon: mdi:lightbulb
 
-sensor.hallmotionsensor_temperature_9:
+sensor.hallmotionsensor_temperature_9_1:
   friendly_name: Hall
   icon: mdi:thermometer
 
-sensor.kitchenmotionsensor_luminance_2:
+sensor.house_temperature_min:
+  friendly_name: Minimum Temperature
+  icon: mdi:thermometer
+
+sensor.house_temperature_mean:
+  friendly_name: Mean Temperature
+  icon: mdi:thermometer
+
+sensor.house_temperature_max:
+  friendly_name: Max Temperature
+  icon: mdi:thermometer
+
+sensor.kitchenmotionsensor_luminance_2_3:
   friendly_name: Kitchen 
   icon: mdi:lightbulb
 
@@ -67,23 +103,23 @@ sensor.kitchenmotionsensor_temperature_2:
   friendly_name: Kitchen 
   icon: mdi:thermometer
 
-sensor.lightsensor_luminance_14:
+sensor.lightsensor_luminance_14_3:
   friendly_name: Light Level
   icon: mdi:white-balance-sunny
 
-sensor.mainstairslower_luminance_12:
+sensor.mainstairslower_luminance_12_3:
   friendly_name: Living Room 
   icon: mdi:lightbulb
 
-sensor.mainstairslower_temperature_12:
+sensor.mainstairslower_temperature_12_1:
   friendly_name: Living Room
   icon: mdi:thermometer
 
-sensor.mainstairsupper_luminance_11:
+sensor.mainstairsupper_luminance_11_3:
   friendly_name: Upstairs
   icon: mdi:lightbulb
   
-sensor.mainstairsupper_temperature_11:
+sensor.mainstairsupper_temperature_11_1:
   friendly_name: Upstairs
   icon: mdi:thermometer
 
@@ -162,12 +198,12 @@ sensor.mediaserver_glance_storage:
 sensor.mediaserver_glance_temperature:
   icon: mdi:thermometer
 
-sensor.porchmotionsensor_luminance_5:
+sensor.porchmotionsensor_luminance_5_3:
   friendly_name: Porch
   icon: mdi:lightbulb
 
-sensor.porchmotionsensor_temperature_5:
-  friendly_name: Porch
+sensor.porchmotionsensor_temperature_5_1:
+  friendly_name: Temperature
   icon: mdi:thermometer
 
 sensor.server_cpu_load:
@@ -245,30 +281,42 @@ sensor.server_glance_storage:
 sensor.server_glance_temperature:
   icon: mdi:thermometer
 
-sensor.steriliserpower_power_4:
+sensor.steriliserpower_power_4_8:
   friendly_name: Steriliser Power
 
-sensor.steriliserpower_voltage_4:
+sensor.steriliserpower_voltage_4_16:
   friendly_name: Mains Voltage
 
-sensor.summerhousedoor_access_control_13:
-  friendly_name: Summer House Door
+sensor.summerhousedoor_access_control_13_9:
+  friendly_name: Door
 
-sensor.summerhousedoor_luminance_13:
+sensor.summerhousedoor_luminance_13_3:
   friendly_name: Summer House
   icon: mdi:white-balance-sunny
 
-sensor.summerhousedoor_temperature_13:
-  friendly_name: Summer House
+sensor.summerhousedoor_temperature_13_1:
+  friendly_name: Temperature
   icon: mdi:thermometer
 
-sensor.summerhousepower_power_15:
+sensor.summerhousepower_power_15_8:
   friendly_name: Summer House Heater
+
+sensor.template_back_door:
+  friendly_name: Door
+  icon: mdi:glassdoor
 
 sensor.template_front_door:
   icon: mdi:glassdoor
 
 sensor.template_summer_house_door:
+  icon: mdi:glassdoor
+
+sensor.template_utility_room_door:
+  friendly_name: Door
+  icon: mdi:glassdoor
+
+sensor.template_workshop_door:
+  friendly_name: Door
   icon: mdi:glassdoor
 
 sensor.living_room_battery_level:
@@ -283,7 +331,7 @@ sensor.living_room_smoke_status:
   friendly_name: Upstairs Smoke Status
   icon: mdi:weather-fog
 
-sensor.washingmachinepower_power_17:
+sensor.washingmachinepower_power_17_8:
   icon: mdi:power-socket
   friendly_name: Washing Machine
 
@@ -294,31 +342,35 @@ sensor.washingmachinepower_power_17:
 #
 ############################################################
 
-switch.backfloodlight_switch_8:
+switch.backfloodlight_switch_8_0:
   friendly_name: Back Flood Light
   icon: mdi:lightbulb
 
-switch.backfloodlight_switch_8_2:
+switch.backfloodlight_switch_8_0_2:
   friendly_name: Back Door Light
   icon: mdi:lightbulb
 
-switch.frontfloodlights_switch_10:
+switch.frontfloodlights_switch_10_0:
   friendly_name: Front Right Flood Light
   icon: mdi:lightbulb
 
-switch.frontfloodlights_switch_10_2:
+switch.frontfloodlights_switch_10_0_2:
   friendly_name: Front Left Flood Light
   icon: mdi:lightbulb
 
-switch.summerhouselights_switch_16:
+switch.livingroomrepeater_switch_18_0:
+  friendly_name: Christmas Tree
+  icon: mdi:lightbulb
+
+switch.summerhouselights_switch_16_0:
   friendly_name: Front Lights
   icon: mdi:lightbulb
 
-switch.summerhouselights_switch_16_2:
+switch.summerhouselights_switch_16_0_2:
   friendly_name: Summerhouse Side Light 
   icon: mdi:lightbulb
 
-switch.summerhousepower_switch_15:
+switch.summerhousepower_switch_15_0:
   icon: mdi:oil-temperature
   friendly_name: Summer House Heater
 
@@ -355,13 +407,40 @@ device_tracker.aileensiphone:
 #
 ############################################################
 
+light.bathroom_1:
+  friendly_name: Light
+
+light.bedroom_1:
+  friendly_name: Light 
+
+light.dining_room_1:
+  friendly_name: Light
+
+light.hall_1:
+  friendly_name: Light
+
 light.halllight_level_10:
   friendly_name: Hall
 
-light.utilityroomlight_level_7:
+light.kitchen_lightstrip_1:
+  friendly_name: Light Strip
+
+light.living_room_go_1:
+  friendly_name: Mood
+
+light.living_room_lamp_1:
+  friendly_name: Lamp
+
+light.porch_1:
+  friendly_name: Light 
+
+light.upstairs_hall_1:
+  friendly_name: Light
+
+light.utilityroomlight_level_7_0:
   friendly_name: Utility Room 
 
-light.workshoplight_level_6:
+light.workshoplight_level_6_0:
   friendly_name: Workshop 
 
 
@@ -390,19 +469,19 @@ sensor.netatmo_anemometer_strength:
   friendly_name: Wind strength
 
 sensor.netatmo_inside_co2:
-  friendly_name: Living Room CO2
+  friendly_name: CO2
 
 sensor.netatmo_inside_humidity:
-  friendly_name: Living Room Humidity
+  friendly_name: Humidity
 
 sensor.netatmo_inside_noise:
-  friendly_name: Living Room Noise
+  friendly_name: Noise
 
 sensor.netatmo_inside_pressure:
   friendly_name: Air Pressure
 
 sensor.netatmo_inside_temperature:
-  friendly_name: Living Room Temperature
+  friendly_name: Temperature
 
 sensor.netatmo_inside_wifi:
   friendly_name: Netatmo WIFI Signal
@@ -443,36 +522,36 @@ sensor.netatmo_rain_gauge_sum_rain_24:
 
 ############################################################
 #
-# Forecastio
+# dark_sky
 #
 ############################################################
 
-sensor.forecastio_apparent_temperature:
+sensor.dark_sky_apparent_temperature:
   friendly_name: Apparent
 
-sensor.forecastio_precip:
+sensor.dark_sky_precip:
   friendly_name: Precipitation
   icon: mdi:weather-rainy
 
-sensor.forecastio_precip_probability:
+sensor.dark_sky_precip_probability:
   friendly_name: Probability of Rain
   icon: mdi:weather-rainy
 
-sensor.forecastio_pressure:
+sensor.dark_sky_pressure:
   friendly_name: Air Pressure
   icon: mdi:chart-line
 
-sensor.forecastio_temperature:
+sensor.dark_sky_temperature:
   friendly_name: Temperature
 
-sensor.forecastio_visibility:
+sensor.dark_sky_visibility:
   friendly_name: Visibility
 
-sensor.forecastio_wind_bearing:
+sensor.dark_sky_wind_bearing:
   friendly_name: Wind Direction
   icon: mdi:weather-windy
 
-sensor.forecastio_wind_speed:
+sensor.dark_sky_wind_speed:
   friendly_name: Wind Speed
   icon: mdi:weather-windy
 

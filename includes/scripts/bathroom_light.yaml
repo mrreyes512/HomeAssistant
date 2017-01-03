@@ -1,27 +1,27 @@
 ############################################################
 #
-# Hall Lights Motion Timer and Helper
+# Bathroom Lights Motion Timer and Helper
 #
 ############################################################
 
 
-hall_motion_helper:
+bathroom_motion_helper:
   sequence:
     - delay:
-        minutes: 2
+        minutes: 3
     - service: light.turn_off
       data:
-        entity_id: light.hall_1
+        entity_id: light.bathroom_1
 
-hall_motion_timer:
+bathroom_motion_timer:
   sequence:
     - service: script.turn_off
       data:
-        entity_id: script.hall_motion_helper
+        entity_id: script.bathroom_motion_helper
     - service: light.turn_on
-      entity_id: light.hall_1
+      entity_id: light.bathroom_1
       data_template:
         brightness: "{{ states('sensor.time_brightness')|int }}"
     - service: script.turn_on
       data:
-        entity_id: script.hall_motion_helper
+        entity_id: script.bathroom_motion_helper

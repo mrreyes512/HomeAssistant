@@ -39,9 +39,20 @@
     template_summer_house_door:
       friendly_name: 'Summer House Door'
       value_template: >-
-        {%- if is_state("sensor.summerhousedoor_access_control_13", "23") -%}
+        {%- if is_state("sensor.summerhousedoor_access_control_13_9", "23") -%}
           closed 
-        {%- elif is_state("sensor.summerhousedoor_access_control_13", "22") -%}
+        {%- elif is_state("sensor.summerhousedoor_access_control_13_9", "22") -%}
+          open
+        {%- else -%}
+          unknown
+        {%- endif -%}
+
+    template_back_door:
+      friendly_name: 'Back Door'
+      value_template: >-
+        {%- if is_state("binary_sensor.backdoorswitch_sensor_19_0", "off") -%}
+          closed
+        {%- elif is_state("binary_sensor.backdoorswitch_sensor_19_0", "on") -%}
           open
         {%- else -%}
           unknown
@@ -50,9 +61,31 @@
     template_front_door:
       friendly_name: 'Front Door'
       value_template: >-
-        {%- if is_state("binary_sensor.frontdoorswitch_sensor_3", "off") -%}
+        {%- if is_state("binary_sensor.frontdoorswitch_sensor_3_0", "off") -%}
           closed
-        {%- elif is_state("binary_sensor.frontdoorswitch_sensor_3", "on") -%}
+        {%- elif is_state("binary_sensor.frontdoorswitch_sensor_3_0", "on") -%}
+          open
+        {%- else -%}
+          unknown
+        {%- endif -%}
+
+    template_utility_room_door:
+      friendly_name: 'Utility Room Door'
+      value_template: >-
+        {%- if is_state("binary_sensor.utilityroomswitch_sensor_20_0", "off") -%}
+          closed
+        {%- elif is_state("binary_sensor.utilityroomswitch_sensor_20_0", "on") -%}
+          open
+        {%- else -%}
+          unknown
+        {%- endif -%}
+
+    template_workshop_door:
+      friendly_name: 'Workshop Door'
+      value_template: >-
+        {%- if is_state("binary_sensor.workshopswitch_sensor_21_0", "off") -%}
+          closed
+        {%- elif is_state("binary_sensor.workshopswitch_sensor_21_0", "on") -%}
           open
         {%- else -%}
           unknown
@@ -67,9 +100,9 @@
     washing_machine:
       friendly_name: 'Washing Machine'
       value_template: >-
-        {%- if states("sensor.washingmachinepower_power_17") | float < 3.5 -%}
+        {%- if states("sensor.washingmachinepower_power_17_8") | float < 3.5 -%}
           off
-        {%- elif states("sensor.washingmachinepower_power_17") | float >= 3.5 -%}
+        {%- elif states("sensor.washingmachinepower_power_17_8") | float >= 3.5 -%}
           on
         {%- else -%}
           unknown
@@ -81,16 +114,31 @@
 #
 ############################################################
 
+    bathroom_motion_sensor:
+      friendly_name: Bathroom Motion Sensor
+      value_template: >-
+        {%- if is_state('sensor.bathroommotionsensor_burglar_22_10', '3') -%}
+          Tamper
+        {%- elif is_state('sensor.bathroommotionsensor_burglar_22_10', '8') -%}
+          Motion
+        {%- elif is_state('sensor.bathroommotionsensor_burglar_22_10', '0') -%}
+          OK
+        {%- elif is_state('sensor.bathroommotionsensor_burglar_22_10', '254') -%}
+          OK
+        {%- else -%}
+          Unknown
+        {%- endif -%}
+
     hall_motion_sensor:
       friendly_name: Hall Motion Sensor
       value_template: >-
-        {%- if is_state('sensor.hallmotionsensor_burglar_9', '3') -%}
+        {%- if is_state('sensor.hallmotionsensor_burglar_9_10', '3') -%}
           Tamper
-        {%- elif is_state('sensor.hallmotionsensor_burglar_9', '8') -%}
+        {%- elif is_state('sensor.hallmotionsensor_burglar_9_10', '8') -%}
           Motion
-        {%- elif is_state('sensor.hallmotionsensor_burglar_9', '0') -%}
+        {%- elif is_state('sensor.hallmotionsensor_burglar_9_10', '0') -%}
           OK
-        {%- elif is_state('sensor.hallmotionsensor_burglar_9', '254') -%}
+        {%- elif is_state('sensor.hallmotionsensor_burglar_9_10', '254') -%}
           OK
         {%- else -%}
           Unknown
@@ -99,13 +147,13 @@
     kitchen_motion_sensor:
       friendly_name: Kitchen Motion Sensor
       value_template: >-
-        {%- if is_state('sensor.kitchenmotionsensor_burglar_2', '3') -%}
+        {%- if is_state('sensor.kitchenmotionsensor_burglar_2_10', '3') -%}
           Tamper
-        {%- elif is_state('sensor.kitchenmotionsensor_burglar_2', '8') -%}
+        {%- elif is_state('sensor.kitchenmotionsensor_burglar_2_10', '8') -%}
           Motion
-        {%- elif is_state('sensor.kitchenmotionsensor_burglar_2', '0') -%}
+        {%- elif is_state('sensor.kitchenmotionsensor_burglar_2_10', '0') -%}
           OK
-        {%- elif is_state('sensor.kitchenmotionsensor_burglar_2', '254') -%}
+        {%- elif is_state('sensor.kitchenmotionsensor_burglar_2_10', '254') -%}
           OK
         {%- else -%}
           Unknown
@@ -114,13 +162,13 @@
     porch_motion_sensor:
       friendly_name: Porch Motion Sensor
       value_template: >-
-        {%- if is_state('sensor.porchmotionsensor_burglar_5', '3') -%}
+        {%- if is_state('sensor.porchmotionsensor_burglar_5_10', '3') -%}
           Tamper
-        {%- elif is_state('sensor.porchmotionsensor_burglar_5', '8') -%}
+        {%- elif is_state('sensor.porchmotionsensor_burglar_5_10', '8') -%}
           Motion
-        {%- elif is_state('sensor.porchmotionsensor_burglar_5', '0') -%}
+        {%- elif is_state('sensor.porchmotionsensor_burglar_5_10', '0') -%}
           OK
-        {%- elif is_state('sensor.porchmotionsensor_burglar_5', '254') -%}
+        {%- elif is_state('sensor.porchmotionsensor_burglar_5_10', '254') -%}
           OK
         {%- else -%}
           Unknown
@@ -129,13 +177,13 @@
     lower_stairs_motion_sensor:
       friendly_name: Lower Stairs Motion Sensor
       value_template: >-
-        {%- if is_state('sensor.mainstairslower_burglar_12', '3') -%}
+        {%- if is_state('sensor.mainstairslower_burglar_12_10', '3') -%}
           Tamper
-        {%- elif is_state('sensor.mainstairslower_burglar_12', '8') -%}
+        {%- elif is_state('sensor.mainstairslower_burglar_12_10', '8') -%}
           Motion
-        {%- elif is_state('sensor.mainstairslower_burglar_12', '0') -%}
+        {%- elif is_state('sensor.mainstairslower_burglar_12_10', '0') -%}
           OK
-        {%- elif is_state('sensor.mainstairslower_burglar_12', '254') -%}
+        {%- elif is_state('sensor.mainstairslower_burglar_12_10', '254') -%}
           OK
         {%- else -%}
           Unknown
@@ -144,13 +192,13 @@
     upper_stairs_motion_sensor:
       friendly_name: Upper Stairs Motion Sensor
       value_template: >-
-        {%- if is_state('sensor.mainstairsupper_burglar_11', '3') -%}
+        {%- if is_state('sensor.mainstairsupper_burglar_11_10', '3') -%}
           Tamper
-        {%- elif is_state('sensor.mainstairsupper_burglar_11', '8') -%}
+        {%- elif is_state('sensor.mainstairsupper_burglar_11_10', '8') -%}
           Motion
-        {%- elif is_state('sensor.mainstairsupper_burglar_11', '0') -%}
+        {%- elif is_state('sensor.mainstairsupper_burglar_11_10', '0') -%}
           OK
-        {%- elif is_state('sensor.mainstairsupper_burglar_11', '254') -%}
+        {%- elif is_state('sensor.mainstairsupper_burglar_11_10', '254') -%}
           OK
         {%- else -%}
           Unknown
@@ -165,11 +213,27 @@
     light_sensor:
       friendly_name: Outside Light Sensor
       value_template: >-
-        {%- if states("sensor.lightsensor_luminance_14") | float > 15 -%}
+        {%- if states("sensor.lightsensor_luminance_14_3") | float > 15 -%}
           Day
         {%- else -%}
           Night
         {%- endif -%}
+
+############################################################
+#
+# Set Home or Away Status
+#
+############################################################
+
+    occupied_sensor:
+      friendly_name: Home Occupied
+      value_template: >-
+        {%- if is_state('group.all_mobile_devices', 'Home') -%}
+          Occupied
+        {%- else -%}
+          Not Occupied
+        {%- endif -%}
+
 
 ############################################################
 #

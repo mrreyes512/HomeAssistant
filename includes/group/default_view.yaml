@@ -11,15 +11,14 @@ default_view:
     - camera.cctv_front
     - group.security
     - group.cctv_motion
-    - climate.kitchen
-    - sensor.steriliserpower_power_4
+    - climate.dining_room
+    - sensor.steriliserpower_power_4_8
     - sensor.energy_monitor
-    - group.travel
+    - group.christmas
     - sensor.ups_load
     - sensor.ups_input_voltage
     - sensor.washing_machine 
-    - sensor.summerhousepower_power_15
-    - group.radio
+    - sensor.summerhousepower_power_15_8
     - binary_sensor.driveway
     - binary_sensor.courtyard
     - binary_sensor.front_pir
@@ -34,15 +33,9 @@ Security:
 CCTV Motion:
   - input_boolean.cctv_disabled
 
-Travel:
-  - sensor.graeme_to_work
-  - sensor.graeme_work_to_home
-  - sensor.graeme_to_home
-  - sensor.aileen_to_work
-  - sensor.aileen_work_to_home
-  - sensor.aileen_to_home
-
 Radio:
   - input_select.radio_player
   - input_select.radio_station 
 
+Christmas:
+  - switch.livingroomrepeater_switch_18_0

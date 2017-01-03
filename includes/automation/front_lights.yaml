@@ -26,7 +26,7 @@
 - alias: "Turn ON Front Lights when Front Door is OPENED" 
   trigger:
     platform: state
-    entity_id: binary_sensor.frontdoorswitch_sensor_3
+    entity_id: binary_sensor.frontdoorswitch_sensor_3_0
     state: 'on'
   condition:
     condition: state

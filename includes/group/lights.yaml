@@ -5,16 +5,16 @@
 ############################################################
 
 Panic Lights:
-  - switch.backfloodlight_switch_8
-  - switch.backfloodlight_switch_8_2
-  - switch.frontfloodlights_switch_10
-  - switch.frontfloodlights_switch_10_2
-  - switch.summerhouselights_switch_16
-  - switch.summerhouselights_switch_16_2
+  - switch.backfloodlight_switch_8_0
+  - switch.backfloodlight_switch_8_0_2
+  - switch.frontfloodlights_switch_10_0
+  - switch.frontfloodlights_switch_10_0_2
+  - switch.summerhouselights_switch_16_0
+  - switch.summerhouselights_switch_16_0_2
 
 Visitor Lights:
-  - light.workshoplight_level_6
-  - light.utilityroomlight_level_7
-  - switch.summerhouselights_switch_16_2
-  - switch.backfloodlight_switch_8
-  - switch.backfloodlight_switch_8_2
+  - light.workshoplight_level_6_0
+  - light.utilityroomlight_level_7_0
+  - switch.summerhouselights_switch_16_0_2
+  - switch.backfloodlight_switch_8_0
+  - switch.backfloodlight_switch_8_0_2

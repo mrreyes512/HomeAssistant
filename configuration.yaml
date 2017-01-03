@@ -14,12 +14,14 @@ homeassistant:
   customize: !include includes/customise.yaml
 
 http:
+  #base_url: !secret base_url
   api_password: !secret http_password 
   server_host: !secret server_host 
 
 history:
 
 updater:
+  reporting: no
 
 frontend:
 
@@ -33,6 +35,8 @@ influxdb:
 
 recorder:
   db_url: !secret mysql_path
+  purge_days: 3
+
 sun:
   elevation: 214
 
@@ -48,8 +52,8 @@ light:
   allow_unreachable: true
 
 nest:
-  username: !secret nest_username 
-  password: !secret nest_password 
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
 
 mqtt:
   broker: !secret mqtt_ip

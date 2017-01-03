@@ -1,0 +1,75 @@
+############################################################
+#
+# Home Assistant Door Alarm Automation 
+#
+############################################################
+
+- alias: "NOTIFY All when Back Door is OPENED and NOT HOME" 
+  trigger:
+    - platform: state
+      entity_id: sensor.template_back_door
+      state: 'open'
+  condition:
+    condition: state
+    entity_id: 'group.all_mobile_devices'
+    state: 'not home'
+  action:
+    - service: notify.notify_all
+      data_template:
+        message: 'ALARM: Back Door Opened'
+
+- alias: "NOTIFY All when Front Door is OPENED and NOT HOME" 
+  trigger:
+    - platform: state
+      entity_id: sensor.template_front_door
+      state: 'open'
+  condition:
+    condition: state
+    entity_id: 'group.all_mobile_devices'
+    state: 'not home'
+  action:
+    - service: notify.notify_all
+      data_template:
+        message: 'ALARM: Front Door Opened'
+
+- alias: "NOTIFY All when Summer House Door is OPENED and NOT HOME" 
+  trigger:
+    - platform: state
+      entity_id: sensor.template_summer_house_door 
+      state: 'open'
+  condition:
+    condition: state
+    entity_id: 'group.all_mobile_devices'
+    state: 'not home'
+  action:
+    - service: notify.notify_all
+      data_template:
+        message: 'ALARM: Summer House Door Opened'
+
+- alias: "NOTIFY All when Utility Room Door is OPENED and NOT HOME" 
+  trigger:
+    - platform: state 
+      entity_id: sensor.template_utility_room_door
+      state: 'open'
+  condition:
+    condition: state
+    entity_id: 'group.all_mobile_devices'
+    state: 'not home'
+  action:
+    - service: notify.notify_all
+      data_template:
+        message: 'ALARM: Utility Room Door Opened'
+
+- alias: "NOTIFY All when Workshop is OPENED and NOT HOME" 
+  trigger:
+    - platform: state
+      entity_id: sensor.template_workshop_door
+      state: 'open'
+  condition:
+    condition: state
+    entity_id: 'group.all_mobile_devices'
+    state: 'not home'
+  action:
+    - service: notify.notify_all
+      data_template:
+        message: 'ALARM: Workshop Door Opened'

@@ -1,11 +1,11 @@
 ############################################################
 #
-# Forecast.io Sensor
+# Darksky Sensor
 #
 ############################################################
 
-- platform: forecast
-  api_key: !secret forecast_api_key 
+- platform: darksky
+  api_key: !secret darksky_api_key 
   monitored_conditions:
     - precip_type
     - precip_probability

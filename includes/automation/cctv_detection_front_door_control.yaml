@@ -9,7 +9,7 @@
 - alias: Set CCTV Detection to OFF when Front Door OPEN
   trigger:
     platform: state
-    entity_id: binary_sensor.frontdoorswitch_sensor_3
+    entity_id: binary_sensor.frontdoorswitch_sensor_3_0
     state: 'on'
   action:
     service: input_boolean.turn_on
@@ -26,7 +26,7 @@
 - alias: Set CCTV Detection to ON when Front Door CLOSED
   trigger:
     platform: state
-    entity_id: binary_sensor.frontdoorswitch_sensor_3
+    entity_id: binary_sensor.frontdoorswitch_sensor_3_0
     state: 'off'
   action:
     service: input_boolean.turn_off

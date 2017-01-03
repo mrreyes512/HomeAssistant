@@ -4,14 +4,11 @@
 #
 ############################################################
 
-- alias: NOTIFY Graeme when UPDATE is available
+- alias: 'NOTIFY Graeme when UPDATE is available'
   trigger:
-    - platform: state
-      entity_id: updater.updater
-  condition:
-    - condition: template
-      value_template: "{{ states('updater.updater') != 'unknown' }}"
+    platform: state
+    entity_id: updater.updater
   action:
-    - service: notify.notify_graeme
-      data_template:
+    service: notify.notify_graeme
+    data_template:
         message: "Home Assistant {{ states('updater.updater') }} is now available."

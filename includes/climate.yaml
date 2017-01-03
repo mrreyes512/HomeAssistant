@@ -8,8 +8,8 @@
 
 - platform: generic_thermostat
   name: Summer House
-  heater: switch.summerhousepower_switch_15
-  target_sensor: sensor.summerhousedoor_temperature_13
+  heater: switch.summerhousepower_switch_15_0
+  target_sensor: sensor.summerhousedoor_temperature_13_1
   min_temp: 3
   max_temp: 26
-  target_temp: 6
+  target_temp: 4

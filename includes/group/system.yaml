@@ -16,6 +16,8 @@ system:
   icon: mdi:battery-80
   
 Battery Levels:
+  - sensor.backdoorsensor_battery
+  - sensor.bathroommotionsensor_battery
   - sensor.frontdoorsensor_battery
   - sensor.hallmotionsensor_battery
   - sensor.kitchenmotionsensor_battery
@@ -24,6 +26,8 @@ Battery Levels:
   - sensor.upperstairsmotionsensor_battery
   - sensor.porchmotionsensor_battery
   - sensor.summerhousedoorsensor_battery
+  - sensor.utilityroomdoorsensor_battery
+  - sensor.workshopsensor_battery
 
 Devices:
   - sensor.cctv1

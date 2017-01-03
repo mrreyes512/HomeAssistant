@@ -13,7 +13,7 @@
 - alias: SET Nest to HOME if Front Door is CLOSED
   trigger:
     platform: state
-    entity_id: binary_sensor.frontdoorswitch_sensor_3
+    entity_id: binary_sensor.frontdoorswitch_sensor_3_0
     from: 'on'
     to: 'off'
   condition:
@@ -33,7 +33,7 @@
 - alias: SET Nest to AWAY if Front Door is OPEN for 3 Minutes
   trigger:
     platform: state
-    entity_id: binary_sensor.frontdoorswitch_sensor_3
+    entity_id: binary_sensor.frontdoorswitch_sensor_3_0
     state: 'on'
     for:
       minutes: 3

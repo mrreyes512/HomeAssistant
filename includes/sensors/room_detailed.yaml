@@ -1,0 +1,75 @@
+############################################################
+#
+# Detailed Room Statistics
+#
+############################################################
+
+- platform: template
+  sensors:
+    energy_monitor_min:
+      value_template: '{{ states.sensor.energy_monitor_statistics_mean.attributes.min_value}}'
+      unit_of_measurement: 'W'
+      entity_id: sensor.energy_monitor_statistics_mean 
+      friendly_name: "Minimum Power Consumption"
+- platform: template
+  sensors:
+    energy_monitor_mean:
+      value_template: '{{ states.sensor.energy_monitor_statistics_mean.attributes.mean}}'
+      unit_of_measurement: 'W'
+      entity_id: sensor.energy_monitor_statistics_mean 
+      friendly_name: "Mean Power Consumption"
+- platform: template
+  sensors:
+    energy_monitor_max:
+      value_template: '{{ states.sensor.energy_monitor_statistics_mean.attributes.max_value}}'
+      unit_of_measurement: 'W'
+      entity_id: sensor.energy_monitor_statistics_mean 
+      friendly_name: "Maximum Power Consumption"
+
+- platform: template
+  sensors:
+    kitchen_min_temp:
+      value_template: '{{ states.sensor.kitchen_temp_statistics_mean.attributes.min_value}}'
+      unit_of_measurement: '°C'
+      entity_id: sensor.kitchen_temp_statistics_mean 
+      friendly_name: "Minimum Temperature"
+- platform: template
+  sensors:
+    kitchen_mean_temp:
+      value_template: '{{ states.sensor.kitchen_temp_statistics_mean.attributes.mean_value}}'
+      unit_of_measurement: '°C'
+      entity_id: sensor.kitchen_temp_statistics_mean 
+      friendly_name: "Mean Temperature"
+
+- platform: template
+  sensors:
+    kitchen_max_temp:
+      value_template: '{{ states.sensor.kitchen_temp_statistics_mean.attributes.max_value}}'
+      unit_of_measurement: '°C'
+      entity_id: sensor.kitchen_temp_statistics_mean 
+      friendly_name: "Maximum Temperature"
+
+- platform: template
+  sensors:
+    livingroom_min_temp:
+      value_template: '{{ states.sensor.living_room_temp_statistics_mean.attributes.min_value}}'
+      unit_of_measurement: '°C'
+      entity_id: sensor.living_room_temp_statistics_mean 
+      friendly_name: "Minimum Temperature"
+
+- platform: template
+  sensors:
+    livingroom_mean_temp:
+      value_template: '{{ states.sensor.living_room_temp_statistics_mean.attributes.mean_value}}'
+      unit_of_measurement: '°C'
+      entity_id: sensor.living_room_temp_statistics_mean 
+      friendly_name: "Mean Temperature"
+
+- platform: template
+  sensors:
+    livingroom_max_temp:
+      value_template: '{{ states.sensor.living_room_temp_statistics_mean.attributes.max_value}}'
+      unit_of_measurement: '°C'
+      entity_id: sensor.living_room_temp_statistics_mean 
+      friendly_name: "Maximum Temperature"
+

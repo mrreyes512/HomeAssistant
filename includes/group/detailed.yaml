@@ -7,21 +7,12 @@
 detailed:
    view: yes
    entities:
-    - group.all_mobile_devices
-    - group.cctv
-    - group.safety
+    - group.travel
 
-All Mobile Devices:
-  - device_tracker.aileensiphone
-  - device_tracker.iphone
-
-CCTV:
-  - switch.cctv_intrusion_detection
-  - switch.cctv_line_crossing_detection
-  - switch.cctv_motion
-
-Safety:
-  - sensor.living_room_battery_level
-  - sensor.living_room_co_status
-  - sensor.living_room_smoke_status
-
+Travel:
+  - sensor.graeme_to_work
+  - sensor.graeme_work_to_home
+  - sensor.graeme_to_home
+  - sensor.aileen_to_work
+  - sensor.aileen_work_to_home
+  - sensor.aileen_to_home

@@ -7,7 +7,7 @@
 - alias: NOTIFY All when Steriliser Power is HIGH
   trigger: 
     platform: numeric_state
-    entity_id: sensor.steriliserpower_power_4
+    entity_id: sensor.steriliserpower_power_4_8
     above: 30
   action:
     - service: notify.notify_all
@@ -24,7 +24,7 @@
 - alias: NOTIFY All when Steriliser Power is LOW
   trigger: 
     platform: numeric_state
-    entity_id: sensor.steriliserpower_power_4
+    entity_id: sensor.steriliserpower_power_4_8
     below: 19
   action:
     - service: notify.notify_all

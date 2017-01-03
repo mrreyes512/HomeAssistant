@@ -11,7 +11,7 @@ summerhouse_lights_motion_helper:
         minutes: 1
     - service: light.turn_off
       data:
-        entity_id: switch.summerhouselights_switch_16, switch.frontfloodlights_switch_10, switch.frontfloodlights_switch_10_2
+        entity_id: switch.summerhouselights_switch_16_0, switch.frontfloodlights_switch_10_0, switch.frontfloodlights_switch_10_0_2
 
 summerhouse_lights_motion_timer:
   sequence:
@@ -19,7 +19,7 @@ summerhouse_lights_motion_timer:
       data:
         entity_id: script.summerhouse_lights_motion_helper
     - service: light.turn_on
-      entity_id: switch.summerhouselights_switch_16, switch.frontfloodlights_switch_10, switch.frontfloodlights_switch_10_2
+      entity_id: switch.summerhouselights_switch_16_0, switch.frontfloodlights_switch_10_0, switch.frontfloodlights_switch_10_0_2
     - service: script.turn_on
       data:
         entity_id: script.summerhouse_lights_motion_helper

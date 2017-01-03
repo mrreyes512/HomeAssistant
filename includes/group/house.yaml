@@ -1,0 +1,38 @@
+############################################################
+#
+# Home Assistant House View
+#
+############################################################
+
+house:
+  view: yes
+  entities:
+    - group.temperatures
+    - group.energy
+    - group.all_mobile_devices
+    - group.cctv
+    - group.safety
+
+CCTV:
+  - switch.cctv_intrusion_detection
+  - switch.cctv_line_crossing_detection
+  - switch.cctv_motion
+
+safety:
+  - sensor.living_room_battery_level
+  - sensor.living_room_co_status
+  - sensor.living_room_smoke_statust
+
+temperatures:
+  - sensor.house_temperature_min
+  - sensor.house_temperature_mean
+  - sensor.house_temperature_max
+
+energy:
+  - sensor.energy_monitor_min
+  - sensor.energy_monitor_mean
+  - sensor.energy_monitor_max
+
+all_mobile_devices:
+  - device_tracker.aileensiphone
+  - device_tracker.iphone

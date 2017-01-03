@@ -14,6 +14,9 @@ rooms:
     - group.downstairs_hall
     - group.upstairs_hall
     - group.porch
+    - group.dining_room
+    - group.bathroom
+    - group.house
 
 Living Room Scenes:
   - scene.concentrate
@@ -23,14 +26,11 @@ Living Room Scenes:
   - scene.amsterdam
 
 Living Room:
-  - sensor.netatmo_inside_temperature
-  - sensor.netatmo_inside_co2
-  - sensor.netatmo_inside_humidity
-  - sensor.netatmo_inside_noise
-  - sensor.netatmo_inside_wifi
+  - light.living_room_go_1
+  - light.living_room_lamp_1
   - group.living_room_lights 
-  - light.living_room_go
-  - light.living_room_lamp
+  - sensor.mainstairslower_temperature_12_1
+  - sensor.living_room_statistics_mean
 
 Living Room Lights:
   - light.living_room_front_1
@@ -43,25 +43,39 @@ Living Room Lights:
 Kitchen:
   - sensor.template_front_door
   - sensor.kitchenmotionsensor_temperature_2
-  - sensor.kitchenmotionsensor_luminance_2
-  - light.kitchen_lightstrip
+  - light.kitchen_lightstrip_1
+  - sensor.kitchen_statistics_mean
+
+Bathroom:
+  - sensor.bathroommotionsensor_temperature_22_1
+  - light.bathroom_1
 
 Bedroom:
   - sensor.bedroom
   - sensor.bedroom_humidity
-  - light.bedroom
+  - light.bedroom_1
+
+Dining Room:
+  - sensor.dining_room_thermostat_humidity
+  - sensor.dining_room_thermostat_operation_mode
+  - sensor.dining_room_thermostat_target
+  - sensor.dining_room_thermostat_temperature
+  - light.dining_room_1
 
 Downstairs Hall:
-  - sensor.hallmotionsensor_temperature_9
-  - sensor.hallmotionsensor_luminance_9
-  - light.hall
+  - sensor.hallmotionsensor_temperature_9_1
+  - light.hall_1
 
 Upstairs Hall:
-  - sensor.mainstairsupper_temperature_11
-  - sensor.mainstairsupper_luminance_11
-  - light.upstairs_hall
+  - sensor.mainstairsupper_temperature_11_1
+  - light.upstairs_hall_1
 
 Porch:
-  - sensor.porchmotionsensor_temperature_5
-  - sensor.porchmotionsensor_luminance_5
-  - light.porch
+  - sensor.porchmotionsensor_temperature_5_1
+  - light.porch_1
+  - sensor.template_back_door
+
+House:
+  - sensor.house_temperature_min
+  - sensor.house_temperature_mean
+  - sensor.house_temperature_max

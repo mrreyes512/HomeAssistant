@@ -7,10 +7,10 @@
 front_floodlights_motion_helper:
   sequence:
     - delay:
-        minutes: 1
+        minutes: 2
     - service: switch.turn_off
       data:
-        entity_id: switch.frontfloodlights_switch_10, switch.frontfloodlights_switch_10_2
+        entity_id: switch.frontfloodlights_switch_10_0, switch.frontfloodlights_switch_10_0_2
 
 front_floodlights_motion_timer:
   sequence:
@@ -18,7 +18,7 @@ front_floodlights_motion_timer:
       data:
         entity_id: script.front_floodlights_motion_helper
     - service: switch.turn_on
-      entity_id: switch.frontfloodlights_switch_10, switch.frontfloodlights_switch_10_2
+      entity_id: switch.frontfloodlights_switch_10_0, switch.frontfloodlights_switch_10_0_2
     - service: script.turn_on
       data:
         entity_id: script.front_floodlights_motion_helper
