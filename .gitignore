@@ -7,3 +7,5 @@
 .HA_VERSION
 known_devices.yaml
 secrets.yaml
+icloud/
+deps/
