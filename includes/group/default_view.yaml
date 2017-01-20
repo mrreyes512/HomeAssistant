@@ -11,10 +11,9 @@ default_view:
     - camera.cctv_front
     - group.security
     - group.cctv_motion
-    - climate.dining_room
+    - group.central_heating
     - sensor.steriliserpower_power_4_8
     - sensor.energy_monitor
-    - group.christmas
     - sensor.ups_load
     - sensor.ups_input_voltage
     - sensor.washing_machine 
@@ -25,6 +24,11 @@ default_view:
     - binary_sensor.summer_house
     - binary_sensor.doorbell_door
     - binary_sensor.doorbell_gate
+    - group.calendar
+
+Calendar:
+  - sensor.next_calendar_event
+  - sensor.next_calendar_event_date
 
 Security:
   - input_boolean.panic
@@ -39,3 +43,7 @@ Radio:
 
 Christmas:
   - switch.livingroomrepeater_switch_18_0
+
+Central Heating:
+  - climate.dining_room
+

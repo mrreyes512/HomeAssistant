@@ -6,8 +6,8 @@
 
 outside:
   view: yes
+  icon: mdi:pine-tree
   entities:
-    - group.weather
     - group.summer_house
     - group.outside_lights
     - group.utility_room
@@ -52,14 +52,15 @@ Front Lights:
 
 Court Yard:
   - light.workshoplight_level_6_0
-  - light.utilityroomlight_level_7_0
   - switch.summerhouselights_switch_16_0_2
   - switch.backfloodlight_switch_8_0_2
+  - switch.utilityroomlights_switch_24_0_2
 
 Utility Room:
   - sensor.utility_room
   - sensor.washingmachinepower_power_17_8
   - sensor.template_utility_room_door
+  - switch.utilityroomlights_switch_24_0
 
 Workshop:
   - sensor.template_workshop_door

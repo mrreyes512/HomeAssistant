@@ -17,6 +17,15 @@ binary_sensor.frontdoorswitch_sensor_3_0:
 
 ############################################################
 #
+# Climate
+#
+############################################################
+
+climate.dining_room:
+  friendly_name: Thermostat
+
+############################################################
+#
 # Groups
 #
 ############################################################
@@ -44,6 +53,11 @@ input_boolean.cctv_disabled:
   icon: mdi:camera
   friendly_name: Disable Motion Detection
 
+input_boolean.panic:
+  icon: mdi:alert
+
+input_boolean.visitor:
+  icon: mdi:weather-night
 
 ############################################################
 #
@@ -51,9 +65,21 @@ input_boolean.cctv_disabled:
 #
 ############################################################
 
+sensor.backdoorsensor_battery:
+  icon: mdi:battery
+
+sensor.bathroommotionsensor_battery:
+  icon: mdi:battery
+
 sensor.bathroommotionsensor_temperature_22_1:
   friendly_name: Temperature
-  
+
+sensor.next_calendar_event:
+  icon: mdi:calendar
+
+sensor.next_calendar_event_date:
+  icon: mdi:calendar
+
 sensor.dining_room_thermostat_humidity:
   friendly_name: Humidity
 
@@ -99,7 +125,7 @@ sensor.kitchenmotionsensor_luminance_2_3:
   friendly_name: Kitchen 
   icon: mdi:lightbulb
 
-sensor.kitchenmotionsensor_temperature_2:
+sensor.kitchenmotionsensor_temperature_2_1:
   friendly_name: Kitchen 
   icon: mdi:thermometer
 
@@ -194,6 +220,12 @@ sensor.mediaserver_glance_processor:
 
 sensor.mediaserver_glance_storage:
   icon: mdi:harddisk
+
+sensor.netatmo_anemometer_strength_knots:
+  icon: mdi:weather-windy
+
+sensor.netatmo_anemometer_gust_strength_knots:
+  icon: mdi:weather-windy
 
 sensor.mediaserver_glance_temperature:
   icon: mdi:thermometer
@@ -331,10 +363,15 @@ sensor.living_room_smoke_status:
   friendly_name: Upstairs Smoke Status
   icon: mdi:weather-fog
 
+sensor.utilityroomdoorsensor_battery:
+  icon: mdi:battery
+
 sensor.washingmachinepower_power_17_8:
   icon: mdi:power-socket
   friendly_name: Washing Machine
 
+sensor.workshopsensor_battery:
+  icon: mdi:battery
 
 ############################################################
 #
@@ -373,6 +410,14 @@ switch.summerhouselights_switch_16_0_2:
 switch.summerhousepower_switch_15_0:
   icon: mdi:oil-temperature
   friendly_name: Summer House Heater
+
+switch.utilityroomlights_switch_24_0:
+  friendly_name: Lights
+  icon: mdi:lightbulb
+
+switch.utilityroomlights_switch_24_0_2:
+  friendly_name: Utility Room
+  icon: mdi:lightbulb
 
 
 ############################################################
@@ -529,6 +574,18 @@ sensor.netatmo_rain_gauge_sum_rain_24:
 sensor.dark_sky_apparent_temperature:
   friendly_name: Apparent
 
+sensor.dark_sky_cloud_coverage:
+  friendly_name: Cloud Coverage
+
+sensor.dark_sky_daily_summary:
+  friendly_name: Week
+
+sensor.dark_sky_hourly_summary:
+  friendly_name: 24 Hour
+
+sensor.dark_sky_ozone:
+  friendly_name: Ozone
+    
 sensor.dark_sky_precip:
   friendly_name: Precipitation
   icon: mdi:weather-rainy

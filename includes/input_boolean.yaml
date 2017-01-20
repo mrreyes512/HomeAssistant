@@ -8,22 +8,6 @@ notify_nest:
   name: State variable of front door event
   initial: off
 
-cctv_line:
-  name: CCTV Line
-  initial: off
-
-cctv_intruder:
-  name: CCTV Intruder
-  initial: off
-
-cctv_motion:
-  name: CCTV Motion
-  initial: off
-
-cctv_disabled:
-  name: CCTV Disabled
-  initial: off
-
 panic:
   name: Panic Button
   initial: off

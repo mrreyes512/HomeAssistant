@@ -13,6 +13,7 @@ system:
     - group.battery_levels
     - sensor.lines_of_configuration
     - group.netatmo
+    - sensor.connected_clients
   icon: mdi:battery-80
   
 Battery Levels:

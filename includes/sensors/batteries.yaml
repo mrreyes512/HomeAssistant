@@ -63,9 +63,9 @@
 - platform: template
   sensors:
     backdoorsensor_battery:
-      value_template: '{{ states.sensor.backdoorswitch_general_19_0.attributes.battery_level }}'
+      value_template: '{{ states.sensor.backdoorswitch_general_23_0.attributes.battery_level }}'
       unit_of_measurement: '%'
-      entity_id: sensor.backdoorswitch_general_19_0
+      entity_id: sensor.backdoorswitch_general_23_0
       friendly_name: "Back Door"
 
 - platform: template

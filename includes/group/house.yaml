@@ -6,6 +6,7 @@
 
 house:
   view: yes
+  icon: mdi:home
   entities:
     - group.temperatures
     - group.energy

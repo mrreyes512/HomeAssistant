@@ -6,6 +6,7 @@
 *.xml
 .HA_VERSION
 known_devices.yaml
+google_calendars.yaml
 secrets.yaml
 icloud/
 deps/

@@ -6,6 +6,7 @@
 
 rooms:
   view: yes
+  icon: mdi:sofa
   entities:
     - group.living_room_scenes
     - group.living_room
@@ -42,7 +43,7 @@ Living Room Lights:
 
 Kitchen:
   - sensor.template_front_door
-  - sensor.kitchenmotionsensor_temperature_2
+  - sensor.kitchenmotionsensor_temperature_2_1
   - light.kitchen_lightstrip_1
   - sensor.kitchen_statistics_mean
 

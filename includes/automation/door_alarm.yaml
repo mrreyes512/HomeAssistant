@@ -12,7 +12,7 @@
   condition:
     condition: state
     entity_id: 'group.all_mobile_devices'
-    state: 'not home'
+    state: 'not_home'
   action:
     - service: notify.notify_all
       data_template:
@@ -26,7 +26,7 @@
   condition:
     condition: state
     entity_id: 'group.all_mobile_devices'
-    state: 'not home'
+    state: 'not_home'
   action:
     - service: notify.notify_all
       data_template:
@@ -40,7 +40,7 @@
   condition:
     condition: state
     entity_id: 'group.all_mobile_devices'
-    state: 'not home'
+    state: 'not_home'
   action:
     - service: notify.notify_all
       data_template:
@@ -54,7 +54,7 @@
   condition:
     condition: state
     entity_id: 'group.all_mobile_devices'
-    state: 'not home'
+    state: 'not_home'
   action:
     - service: notify.notify_all
       data_template:
@@ -68,7 +68,7 @@
   condition:
     condition: state
     entity_id: 'group.all_mobile_devices'
-    state: 'not home'
+    state: 'not_home'
   action:
     - service: notify.notify_all
       data_template:

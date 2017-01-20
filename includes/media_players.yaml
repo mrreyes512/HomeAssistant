@@ -5,5 +5,5 @@
 ############################################################
 
 - platform: plex
-- platform: cast
-
+- platform: samsungtv
+  host: 192.168.2.212 

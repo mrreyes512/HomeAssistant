@@ -15,4 +15,4 @@
 - platform: statistics
   entity_id: sensor.energy_monitor
   name: 'Energy_Monitor_Statistics'
-
+  sampling_size: 43200

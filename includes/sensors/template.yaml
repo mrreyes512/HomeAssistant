@@ -4,14 +4,41 @@
 #
 ############################################################
 
+- platform: template
+  sensors:
+
+############################################################
+#
+# Harmony Sensor Templates
+#
+############################################################
+
+    living_room_entertainment:
+      value_template: '{{ states.remote.harmony.attributes.current_activity }}'
+      friendly_name: 'Living Room Entertainment'
+
+############################################################
+#
+# Convert Wind Speeds to Knots
+#
+############################################################
+
+    netatmo_anemometer_gust_strength_knots:
+      value_template: '{{ states("sensor.netatmo_anemometer_gust_strength")  | float * 0.5399568 | round(1) }}'
+      friendly_name: 'Gust Strength'
+      unit_of_measurement: 'kn'
+
+    netatmo_anemometer_strength_knots:
+      value_template: '{{ states("sensor.netatmo_anemometer_strength")  | float * 0.5399568 | round(1) }}'
+      friendly_name: 'Wind Strength'
+      unit_of_measurement: 'kn'
+
 ############################################################
 #
 # Set brightness depending on Time of Day
 #
 ############################################################
 
-- platform: template
-  sensors:
     time_brightness:
       value_template: >-
         {%- if now().strftime('%H%M')|int < 600 -%}
@@ -50,9 +77,9 @@
     template_back_door:
       friendly_name: 'Back Door'
       value_template: >-
-        {%- if is_state("binary_sensor.backdoorswitch_sensor_19_0", "off") -%}
+        {%- if is_state("binary_sensor.backdoorswitch_sensor_23_0", "off") -%}
           closed
-        {%- elif is_state("binary_sensor.backdoorswitch_sensor_19_0", "on") -%}
+        {%- elif is_state("binary_sensor.backdoorswitch_sensor_23_0", "on") -%}
           open
         {%- else -%}
           unknown
