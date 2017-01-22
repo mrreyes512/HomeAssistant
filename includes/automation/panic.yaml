@@ -12,8 +12,8 @@
   action:
     service: homeassistant.turn_on
     entity_id: 
-      - group.panic_lights
       - group.all_lights
+      - group.panic_lights
 
 ############################################################
 #
@@ -29,5 +29,5 @@
   action:
     service: homeassistant.turn_off
     entity_id: 
-      - group.panic_lights
       - group.all_lights
+      - group.panic_lights

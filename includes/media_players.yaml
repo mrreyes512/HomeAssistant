@@ -5,5 +5,6 @@
 ############################################################
 
 - platform: plex
+  scan_interval: 3
 - platform: samsungtv
   host: 192.168.2.212 

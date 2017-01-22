@@ -16,7 +16,7 @@ homeassistant:
     cctv: !include includes/packages/CCTV.yaml
 
 http:
-  #base_url: !secret base_url
+  #  base_url: !secret base_url
   api_password: !secret http_password 
   server_host: !secret server_host 
 
@@ -87,6 +87,11 @@ remote:
     name: !secret harmony_name
     host: !secret harmony_host
 
+tts:
+  - platform: google
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 3600
 ############################################################
 #
 # Includes

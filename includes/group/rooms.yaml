@@ -18,6 +18,8 @@ rooms:
     - group.dining_room
     - group.bathroom
     - group.house
+    - group.stairs
+    - group.guest_bedroom
 
 Living Room Scenes:
   - scene.concentrate
@@ -32,14 +34,11 @@ Living Room:
   - group.living_room_lights 
   - sensor.mainstairslower_temperature_12_1
   - sensor.living_room_statistics_mean
+  - input_boolean.cinema_mode
 
 Living Room Lights:
   - light.living_room_front_1
   - light.living_room_front_2
-  - light.living_room_front_3
-  - light.living_room_rear_1
-  - light.living_room_rear_2
-  - light.living_room_rear_3
 
 Kitchen:
   - sensor.template_front_door
@@ -80,3 +79,10 @@ House:
   - sensor.house_temperature_min
   - sensor.house_temperature_mean
   - sensor.house_temperature_max
+
+Guest Bedroom:
+  - light.guest_bedroom_1
+  - input_boolean.guest_mode
+
+Stairs:
+  - light.stairs_1

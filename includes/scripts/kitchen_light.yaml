@@ -24,3 +24,7 @@ kitchen_motion_timer:
     - service: script.turn_on
       data:
         entity_id: script.kitchen_motion_helper
+#    - service: tts.google_say
+#      entity_id: media_player.bedroom
+#      data:
+#        message: 'May the Force be with you.'

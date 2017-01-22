@@ -10,9 +10,14 @@
       entity_id: sensor.template_back_door
       state: 'open'
   condition:
-    condition: state
-    entity_id: 'group.all_mobile_devices'
-    state: 'not_home'
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: 'group.all_mobile_devices'
+        state: 'not_home'
+      - condition: state
+        entity_id: 'input_boolean.night_mode'
+        state: 'on'
   action:
     - service: notify.notify_all
       data_template:
@@ -24,9 +29,14 @@
       entity_id: sensor.template_front_door
       state: 'open'
   condition:
-    condition: state
-    entity_id: 'group.all_mobile_devices'
-    state: 'not_home'
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: 'group.all_mobile_devices'
+        state: 'not_home'
+      - condition: state
+        entity_id: 'input_boolean.night_mode'
+        state: 'on'
   action:
     - service: notify.notify_all
       data_template:
@@ -38,9 +48,14 @@
       entity_id: sensor.template_summer_house_door 
       state: 'open'
   condition:
-    condition: state
-    entity_id: 'group.all_mobile_devices'
-    state: 'not_home'
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: 'group.all_mobile_devices'
+        state: 'not_home'
+      - condition: state
+        entity_id: 'input_boolean.night_mode'
+        state: 'on'
   action:
     - service: notify.notify_all
       data_template:
@@ -52,9 +67,14 @@
       entity_id: sensor.template_utility_room_door
       state: 'open'
   condition:
-    condition: state
-    entity_id: 'group.all_mobile_devices'
-    state: 'not_home'
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: 'group.all_mobile_devices'
+        state: 'not_home'
+      - condition: state
+        entity_id: 'input_boolean.night_mode'
+        state: 'on'
   action:
     - service: notify.notify_all
       data_template:
@@ -66,9 +86,14 @@
       entity_id: sensor.template_workshop_door
       state: 'open'
   condition:
-    condition: state
-    entity_id: 'group.all_mobile_devices'
-    state: 'not_home'
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: 'group.all_mobile_devices'
+        state: 'not_home'
+      - condition: state
+        entity_id: 'input_boolean.night_mode'
+        state: 'on'
   action:
     - service: notify.notify_all
       data_template:

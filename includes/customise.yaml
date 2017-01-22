@@ -49,9 +49,18 @@ group.living_room_lights:
 #
 ############################################################
 
+input_boolean.cinema_mode:
+  icon: filmstrip
+
 input_boolean.cctv_disabled:
   icon: mdi:camera
   friendly_name: Disable Motion Detection
+
+input_boolean.guest_mode:
+  icon: mdi:hotel
+
+input_boolean.night_mode:
+  icon: mdi:weather-night
 
 input_boolean.panic:
   icon: mdi:alert
@@ -461,6 +470,9 @@ light.bedroom_1:
 light.dining_room_1:
   friendly_name: Light
 
+light.guest_bedroom_1:
+  friendly_name: Light
+
 light.hall_1:
   friendly_name: Light
 
@@ -478,6 +490,9 @@ light.living_room_lamp_1:
 
 light.porch_1:
   friendly_name: Light 
+
+light.stairs_1:
+  friendly_name: Light
 
 light.upstairs_hall_1:
   friendly_name: Light

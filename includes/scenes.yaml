@@ -18,3 +18,57 @@
     group.living_room_lights:
       state: on
       profile: relax
+
+- name: Living Room Normal
+  entities:
+    light.living_room_front_2:
+      state: on
+      rgb_color: [ 255, 199, 116 ]
+      transition: 10
+      color_temp: 370
+      brightness: 192
+      xy_color: [ 0.4597, 0.4103 ]
+    light.living_room_front_1:
+      state: on
+      rgb_color: [ 255, 199, 116 ]
+      transition: 10
+      color_temp: 370
+      brightness: 254
+      xy_color: [ 0.4597, 0.4103 ]
+    light.living_room_lamp_1:
+      state: off
+      transistion: 30
+- name: Living Room Low
+  entities:
+    light.living_room_front_2:
+      state: on
+      rgb_color: [ 224,223,225 ]
+      color_temp: 154
+      brightness: 128
+      xy_color: [ 0.3124, 0.3272 ]
+      transition: 2
+    light.living_room_front_1:
+      state: on
+      rgb_color: [ 224,223,225 ]
+      color_temp: 154
+      brightness: 190
+      xy_color: [ 0.3124, 0.3272 ]
+      transition: 2
+
+- name: Living Room Very Low
+  entities:
+    light.living_room_front_2:
+      state: off
+      transition: 10
+    light.living_room_front_1:
+      state: off
+      transition: 10
+    light.living_room_lamp_1:
+      state: on
+      transition: 30
+      brightness: 145
+      xy_color: [ 0.5529, 0.4107 ]
+    light.kitchen_lightstrip_1:
+      state: off
+    light.upstairs_hall:
+      state: off

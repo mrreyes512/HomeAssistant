@@ -25,7 +25,10 @@ door_doorbell_alert_timer:
     - service: script.turn_on
       data:
         entity_id: script.door_doorbell_alert_helper
-
+    - service: tts.google_say
+      data:
+        entity_id: media_player.bedroom
+        message: 'There is somebody at the door'
 ############################################################
 #
 # Gate Doorbell Alert Timer and Helper
@@ -53,4 +56,8 @@ gate_doorbell_alert_timer:
     - service: script.turn_on
       data:
         entity_id: script.gate_doorbell_alert_helper
+    - service: tts.google_say
+      data:
+        entity_id: media_player.bedroom
+        message: 'There is somebody at the gate'
 

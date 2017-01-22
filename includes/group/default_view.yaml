@@ -32,6 +32,7 @@ Calendar:
 
 Security:
   - input_boolean.panic
+  - input_boolean.night_mode
   - input_boolean.visitor
 
 CCTV Motion:
