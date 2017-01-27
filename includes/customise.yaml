@@ -40,6 +40,7 @@ group.front_lights:
   icon: mdi:lightbulb
 
 group.living_room_lights:
+  friendly_name: Lights 
   icon: mdi:lightbulb
 
 
@@ -50,7 +51,7 @@ group.living_room_lights:
 ############################################################
 
 input_boolean.cinema_mode:
-  icon: filmstrip
+  icon: mdi:filmstrip
 
 input_boolean.cctv_disabled:
   icon: mdi:camera
@@ -67,6 +68,9 @@ input_boolean.panic:
 
 input_boolean.visitor:
   icon: mdi:weather-night
+
+input_boolean.voice_alerts:
+  icon: mdi:text-to-speech
 
 ############################################################
 #
@@ -115,7 +119,7 @@ sensor.hallmotionsensor_luminance_9_3:
   icon: mdi:lightbulb
 
 sensor.hallmotionsensor_temperature_9_1:
-  friendly_name: Hall
+  friendly_name: Temperature
   icon: mdi:thermometer
 
 sensor.house_temperature_min:
@@ -135,7 +139,7 @@ sensor.kitchenmotionsensor_luminance_2_3:
   icon: mdi:lightbulb
 
 sensor.kitchenmotionsensor_temperature_2_1:
-  friendly_name: Kitchen 
+  friendly_name: Temperature
   icon: mdi:thermometer
 
 sensor.lightsensor_luminance_14_3:
@@ -147,7 +151,7 @@ sensor.mainstairslower_luminance_12_3:
   icon: mdi:lightbulb
 
 sensor.mainstairslower_temperature_12_1:
-  friendly_name: Living Room
+  friendly_name: Temperature
   icon: mdi:thermometer
 
 sensor.mainstairsupper_luminance_11_3:
@@ -321,6 +325,10 @@ sensor.server_glance_storage:
 
 sensor.server_glance_temperature:
   icon: mdi:thermometer
+
+sensor.server_uptime:
+  friendly_name: Uptime
+  icon: mdi:clock-start
 
 sensor.steriliserpower_power_4_8:
   friendly_name: Steriliser Power
@@ -644,6 +652,7 @@ sensor.aileen_work_to_home:
   icon: mdi:car
 
 sensor.bedroom_humidity:
+  friendly_name: Humidity
   icon: mdi:water-percent
 
 sensor.graeme_to_home:

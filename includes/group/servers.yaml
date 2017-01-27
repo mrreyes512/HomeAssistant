@@ -8,11 +8,19 @@ servers:
   name: Servers
   view: yes
   entities:
+    - group.network
     - group.server
     - group.media_server
   icon: mdi:server
 
+Network:
+  - sensor.draytek_ds_attainable_rate
+  - sensor.draytek_us_attainable_rate
+  - sensor.draytek_ds_actual_rate
+  - sensor.draytek_us_actual_rate
+
 Server:
+  - sensor.server_uptime
   - sensor.server_cpu_load
 #  - sensor.server_disk_free
   - sensor.server_disk_use

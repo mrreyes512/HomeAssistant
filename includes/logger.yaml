@@ -7,7 +7,6 @@
 # Log Severities: notset, debug, info, warn, warning, error, fatal, critical
 
 #default: debug
-#default: error
 default: error
 
 logs:

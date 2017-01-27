@@ -22,4 +22,11 @@ front_floodlights_motion_timer:
     - service: script.turn_on
       data:
         entity_id: script.front_floodlights_motion_helper
+    - condition: state
+      entity_id: 'input_boolean.voice_alerts'
+      state: 'on'
+    - service: tts.google_say
+      data:
+        entity_id: media_player.bedroom
+        message: 'Motion detected at front of house'
 

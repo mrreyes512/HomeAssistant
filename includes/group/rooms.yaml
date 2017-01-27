@@ -4,7 +4,7 @@
 #
 ############################################################
 
-rooms:
+Rooms:
   view: yes
   icon: mdi:sofa
   entities:
@@ -29,12 +29,14 @@ Living Room Scenes:
   - scene.amsterdam
 
 Living Room:
-  - light.living_room_go_1
-  - light.living_room_lamp_1
-  - group.living_room_lights 
-  - sensor.mainstairslower_temperature_12_1
-  - sensor.living_room_statistics_mean
-  - input_boolean.cinema_mode
+  control: hidden
+  entities:
+    - light.living_room_go_1
+    - light.living_room_lamp_1
+    - group.living_room_lights 
+    - sensor.mainstairslower_temperature_12_1
+    - sensor.living_room_statistics_mean
+    - input_boolean.cinema_mode
 
 Living Room Lights:
   - light.living_room_front_1

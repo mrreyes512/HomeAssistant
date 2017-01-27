@@ -31,9 +31,12 @@ Calendar:
   - sensor.next_calendar_event_date
 
 Security:
-  - input_boolean.panic
-  - input_boolean.night_mode
-  - input_boolean.visitor
+  control: hidden
+  entities:
+    - input_boolean.panic
+    - input_boolean.night_mode
+    - input_boolean.voice_alerts
+    - input_boolean.visitor
 
 CCTV Motion:
   - input_boolean.cctv_disabled
