@@ -95,11 +95,13 @@ remote:
     host: !secret harmony_host
 
 tts:
-  - platform: google
-    cache: true
-    cache_dir: /tmp/tts
-    time_memory: 3600
-############################################################
+  - platform: amazon_polly
+    aws_access_key_id: !secret aws_access_key_id
+    aws_secret_access_key: !secret aws_secret_access_key
+    region_name: 'eu-west-1'
+    voice: 'Amy'
+
+###########################################################
 #
 # Includes
 #

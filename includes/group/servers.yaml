@@ -8,17 +8,24 @@ servers:
   name: Servers
   view: yes
   entities:
-    - group.network
+    - group.internet
     - group.server
     - group.media_server
   icon: mdi:server
 
-Network:
-  - sensor.draytek_ds_attainable_rate
+Internet:
+  - sensor.draytek_state
+  - sensor.draytek_running_mode
   - sensor.draytek_us_attainable_rate
-  - sensor.draytek_ds_actual_rate
+  - sensor.draytek_ds_attainable_rate
   - sensor.draytek_us_actual_rate
-
+  - sensor.draytek_ds_actual_rate
+  - sensor.draytek_cur_snr_margin
+  - sensor.draytek_ne_current_attenuation
+  - sensor.draytek_fe_crc_count
+  - sensor.draytek_fe_es_count
+  - sensor.draytek_ne_crc_count
+  - sensor.draytek_ne_es_count
 Server:
   - sensor.server_uptime
   - sensor.server_cpu_load

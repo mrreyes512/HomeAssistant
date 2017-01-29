@@ -30,7 +30,7 @@ courtyard_lights_motion_timer:
     - condition: state
       entity_id: 'input_boolean.voice_alerts'
       state: 'on'
-    - service: tts.google_say
+    - service: tts.amazon_polly_say
       data:
         entity_id: media_player.bedroom
         message: 'Motion detected in Court Yard'

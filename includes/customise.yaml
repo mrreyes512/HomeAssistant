@@ -105,6 +105,24 @@ sensor.dining_room_thermostat_target:
 sensor.dining_room_thermostat_temperature:
   friendly_name: Temperature
 
+sensor.draytek_cur_snr_margin:
+  friendly_name: Current SNR Margin
+
+sensor.draytek_ds_actual_psd:
+  friendly_name: 
+
+sensor.draytek_ds_actual_rate:
+  friendly_name: Downstream Actual
+
+sensor.draytek_us_actual_rate:
+  friendly_name: Upstream Actual
+
+sensor.draytek_ds_attainable_rate:
+  friendly_name: Downstream Attainable 
+
+sensor.draytek_us_attainable_rate:
+  friendly_name: Upstream Attainable 
+
 sensor.energy_monitor_min:
   icon: mdi:flash
 
