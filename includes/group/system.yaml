@@ -15,7 +15,7 @@ system:
     - group.netatmo
     - sensor.connected_clients
   icon: mdi:battery-80
-  
+
 Battery Levels:
   - sensor.backdoorsensor_battery
   - sensor.bathroommotionsensor_battery
@@ -31,18 +31,18 @@ Battery Levels:
   - sensor.workshopsensor_battery
 
 Devices:
-  - sensor.cctv1
-  - sensor.energy_monitor_wifi
-  - sensor.firetv
-  - sensor.hall_wifi
-  - sensor.light_controller
-  - sensor.living_room_htpc
-  - sensor.living_room_wifi
-  - sensor.mediaserver
-  - sensor.nest_wifi
-  - sensor.outside_wifi
-  - sensor.philips_hue_bridge
-  - sensor.router
+  - sensor.device_cctv1
+  - sensor.device_energy_monitor_wifi
+  - sensor.device_firetv
+  - sensor.device_hall_wifi
+  - sensor.device_light_controller
+  - sensor.device_living_room_htpc
+  - sensor.device_living_room_wifi
+  - sensor.device_mediaserver
+  - sensor.device_nest_wifi
+  - sensor.device_outside_wifi
+  - sensor.device_philips_hue_bridge
+  - sensor.device_router
 
 Links:
   - weblink.cctv
@@ -59,5 +59,3 @@ Netatmo:
   - sensor.netatmo_rain_gauge_battery
   - sensor.netatmo_anemometer_radio
   - sensor.netatmo_anemometer_battery
-
-

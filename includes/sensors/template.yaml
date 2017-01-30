@@ -56,7 +56,7 @@
         {%- else -%}
           64
         {%- endif -%}
-    
+
 ############################################################
 #
 # Door Helpers
@@ -67,7 +67,7 @@
       friendly_name: 'Summer House Door'
       value_template: >-
         {%- if is_state("sensor.summerhousedoor_access_control_13_9", "23") -%}
-          closed 
+          closed
         {%- elif is_state("sensor.summerhousedoor_access_control_13_9", "22") -%}
           open
         {%- else -%}
@@ -185,7 +185,7 @@
         {%- else -%}
           Unknown
         {%- endif -%}
-      
+
     porch_motion_sensor:
       friendly_name: Porch Motion Sensor
       value_template: >-
@@ -215,7 +215,7 @@
         {%- else -%}
           Unknown
         {%- endif -%}
-      
+
     upper_stairs_motion_sensor:
       friendly_name: Upper Stairs Motion Sensor
       value_template: >-
@@ -264,51 +264,51 @@
 
 ############################################################
 #
-# Show Devices as Online or Offline 
+# Show Devices as Online or Offline
 #
 ############################################################
 
-    mediaserver:
+    device_mediaserver:
       friendly_name: Media Server
       value_template: "{{ 'online' if is_state('device_tracker.mediaserver', 'home') else 'offline' }}"
 
-    light_controller:
+    device_light_controller:
       friendly_name: Lights Controller
       value_template: "{{ 'online' if is_state('device_tracker.esp_f9061a', 'home') else 'offline' }}"
 
-    energy_monitor_wifi:
-      friendly_name: Energy Monitor 
+    device_energy_monitor_wifi:
+      friendly_name: Energy Monitor
       value_template: "{{ 'online' if is_state('device_tracker.esp_f907db', 'home') else 'offline' }}"
 
-    hall_wifi:
-      friendly_name: Hall Access Point 
+    device_hall_wifi:
+      friendly_name: Hall Access Point
       value_template: "{{ 'online' if is_state('device_tracker.hallwifi', 'home') else 'offline' }}"
-      
-    living_room_wifi:
-      friendly_name: Living Room Access Point 
+
+    device_living_room_wifi:
+      friendly_name: Living Room Access Point
       value_template: "{{ 'online' if is_state('device_tracker.livingroomwifiinternal', 'home') else 'offline' }}"
-      
-    outside_wifi:
-      friendly_name: Outside Access Point 
+
+    device_outside_wifi:
+      friendly_name: Outside Access Point
       value_template: "{{ 'online' if is_state('device_tracker.outdoorwifi', 'home') else 'offline' }}"
-      
-    router:
-      friendly_name: Router 
+
+    device_router:
+      friendly_name: Router
       value_template: "{{ 'online' if is_state('device_tracker.router', 'home') else 'offline' }}"
-      
-    cctv1:
+
+    device_cctv1:
       friendly_name: Front CCTV
       value_template: "{{ 'online' if is_state('device_tracker.cctv1', 'home') else 'offline' }}"
-      
-    firetv:
+
+    device_firetv:
       friendly_name: FireTV
       value_template: "{{ 'online' if is_state('device_tracker.kindle085e7f173', 'home') else 'offline' }}"
 
-    living_room_htpc:
+    device_living_room_htpc:
       friendly_name: Living Room HTPC
       value_template: "{{ 'online' if is_state('device_tracker.livingroomhtpc', 'home') else 'offline' }}"
 
-    philips_hue_bridge:
+    device_philips_hue_bridge:
       friendly_name: Philips Hue Bridge
       value_template: "{{ 'online' if is_state('device_tracker.philipshuebridgeinternal', 'home') else 'offline' }}"
 
@@ -359,4 +359,3 @@
             {{ seconds }} seconds
           {%- endif -%}
         {%- endif -%}
-
