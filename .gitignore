@@ -21,4 +21,4 @@ www
 # Python Caches
 __pycache__
 *.pyc
-
+.idea

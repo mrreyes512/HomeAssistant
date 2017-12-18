@@ -21,8 +21,8 @@ header() {
 
 DOCKER=`which docker`
 
-header "Test Home Assistant Configuration" 6
-header "---------------------------------" 6
+header "Home Assistant Logs" 6
+header "-------------------" 6
 printf "\n"
 if which docker >/dev/null; then
   header "Found Docker" 6
@@ -32,11 +32,13 @@ else
   exit 1
 fi
 
+header "Starting docker logger..." 6
 
-if ! $DOCKER exec -i -t $NAME python -m homeassistant --config /config --script check_config; then
-  header "Failed to enter docker container." 1
+if $DOCKER logs --tail="200" -f $NAME; then
+  header "Finished logger." 2 
+else
+  header "Failed to start logger." 1
   exit 1
 fi
 
 exit 0
-

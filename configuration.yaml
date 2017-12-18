@@ -9,23 +9,24 @@ homeassistant:
   latitude: !secret latitude 
   longitude: !secret longitude 
   elevation: !secret elevation
-  unit_system: metric
-  time_zone: Europe/London
+  unit_system: imperial
+  time_zone: America/Chicago
   customize: !include includes/customise.yaml
-  packages: 
-    cctv: !include includes/packages/CCTV.yaml
+#  packages:
+#    cctv: !include includes/packages/CCTV.yaml
 
 http:
   base_url: !secret base_url
-  api_password: !secret http_password 
-  server_host: !secret server_host 
+#  api_password: !secret http_password
+#  server_host: !secret server_host
   trusted_networks:
     - 127.0.0.1
     - ::1
-    - 192.168.2.0/24
+    - 192.168.100.0/24
+    - 192.168.200.0/24
     - 2001:DB8:ABCD::/48
   ip_ban_enabled: True
-  login_attempts_threshold: 3
+  login_attempts_threshold: 5
     
 history:
 
@@ -36,18 +37,18 @@ frontend:
 
 discovery:
 
-influxdb:
-  host: !secret influxdb_host
-  database: !secret influxdb_database 
-  username: !secret influxdb_username 
-  password: !secret influxdb_password
-
-recorder:
-  db_url: !secret mysql_path
-  purge_days: 3
-
-sun:
-  elevation: 214
+#influxdb:
+#  host: !secret influxdb_host
+#  database: !secret influxdb_database
+#  username: !secret influxdb_username
+#  password: !secret influxdb_password
+#
+#recorder:
+#  db_url: !secret mysql_path
+#  purge_days: 3
+#
+#sun:
+#  elevation: 214
 
 ############################################################
 #

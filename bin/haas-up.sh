@@ -19,27 +19,26 @@ header() {
 
 ##########
 
-DOCKER=`which docker`
+DOCKER=`which docker-compose`
 
-header "Home Assistant Logs" 6
-header "-------------------" 6
+header "Bringing Up Home Assistant Container" 6
+header "--------------------------------" 6
 printf "\n"
 if which docker >/dev/null; then
   header "Found Docker" 6
-  DOCKER=`which docker`
+  DOCKER=`which docker-compose`
 else
   header "Docker not found. Exiting..." 1
   exit 1
 fi
 
-header "Starting docker logger..." 6
+header "Starting docker container..." 6
 
-if $DOCKER logs --tail="200" -f $NAME; then
-  header "Finished logger." 2 
+if $DOCKER up -d; then
+  header "started docker container." 2
 else
-  header "Failed to start logger." 1
+  header "Failed to start docker container." 1
   exit 1
 fi
 
 exit 0
-
