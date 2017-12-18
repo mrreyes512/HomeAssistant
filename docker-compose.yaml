@@ -12,7 +12,7 @@ services:
     container_name: home-assistant
     image: homeassistant/home-assistant
     volumes:
-      - ~/.homeassistant:/config
+      - .:/config
     ports:
       - "8123:8123"
     restart: always
