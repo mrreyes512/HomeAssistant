@@ -4,7 +4,7 @@
 #
 ############################################################
 
-- platform:     rachio
-  name:         rachio
-  icon:         mdi:water-pump
+- platform: rachio
+  name: rachio
+  hidden: true
   access_token: !secret rachio_api_key
