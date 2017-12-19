@@ -124,7 +124,8 @@ tts:
 # Single Files
 
 #binary_sensor: !include includes/binary_sensors.yaml
-#camera: !include includes/cameras.yaml
+camera: !include includes/cameras.yaml
+vera:   !include includes/vera.yaml
 #climate: !include includes/climate.yaml
 #device_tracker: !include includes/device_trackers.yaml
 #input_boolean: !include includes/input_boolean.yaml
@@ -133,7 +134,7 @@ tts:
 #media_player: !include includes/media_players.yaml
 #notify: !include includes/notify.yaml
 #scene: !include includes/scenes.yaml
-##switch: !include includes/switch.yaml
+switch: !include includes/switch.yaml #includes Rachio config
 #weblink: !include includes/weblink.yaml
 
 # Merge List
