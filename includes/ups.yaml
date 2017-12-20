@@ -1,8 +1,0 @@
-- name: UPS Load
-  platform: apcupsd
-  type: loadpct
-  unit_of_measurement: "%"
-
-- name: UPS Voltage
-  platform: apcupsd
-  type: linev

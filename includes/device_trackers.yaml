@@ -1,36 +1,16 @@
 ############################################################
 #
-# Home Assistant iCloud trackers
-#
-############################################################
-
-- platform: icloud
-  username: !secret icloud_graeme_username
-  password: !secret icloud_graeme_password
-  track_new_devices: yes
-  interval_seconds: 12
-  consider_home: 300
-
-- platform: icloud
-  username: !secret icloud_aileen_username
-  password: !secret icloud_aileen_password
-  track_new_devices: yes
-  interval_seconds: 12
-  consider_home: 300
-
-############################################################
-#
 # Home Assistant Other Trackers
 #
 ############################################################
 
-- platform: unifi
-  host: !secret unifi_host
-  port: !secret unifi_port 
-  username: !secret unifi_username
-  password: !secret unifi_password
-  site_id: !secret unifi_site_id 
+#- platform: unifi
+#  host: !secret unifi_host
+#  port: !secret unifi_port
+#  username: !secret unifi_username
+#  password: !secret unifi_password
+#  site_id: !secret unifi_site_id
 
 - platform: nmap_tracker
-  hosts: 192.168.2.0/24
+  hosts: 192.168.100.0/24
   home_interval: 10

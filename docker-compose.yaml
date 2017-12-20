@@ -13,6 +13,7 @@ services:
     image: homeassistant/home-assistant
     volumes:
       - .:/config
+      - ./ssl:/ssl
     ports:
       - "8123:8123"
     restart: always
