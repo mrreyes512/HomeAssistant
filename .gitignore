@@ -17,8 +17,11 @@ secrets.yaml
 icloud
 deps
 www
+ssl
+mysql
+.archive
 
 # Python Caches
 __pycache__
 *.pyc
-
+.idea

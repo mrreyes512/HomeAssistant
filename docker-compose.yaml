@@ -1,0 +1,21 @@
+# ----------------------------------------------------------------------------
+# Docker-compose file to spin up home-assistant
+# Forked examples from
+# * https://github.com/cyberkov/home-assistant-config
+# * https://github.com/btotharye/ha-mysql-docker-compose
+# ----------------------------------------------------------------------------
+
+version: '3'
+
+services:
+   homeassistant:
+    container_name: home-assistant
+    image: homeassistant/home-assistant
+    volumes:
+      - .:/config
+      - ./ssl:/ssl
+    ports:
+      - "8123:8123"
+    restart: always
+    environment:
+      - 'TZ=America/Chicago'

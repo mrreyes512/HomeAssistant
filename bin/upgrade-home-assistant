@@ -24,6 +24,7 @@ header() {
 ##########
 
 DOCKER=`which docker`
+DOCKER_COMPOSE=`which docker-compose`
 
 header "Home Assistant Upgrade for Docker" 6
 header "---------------------------------" 6
@@ -74,4 +75,3 @@ else
 fi
 
 exit 0
-

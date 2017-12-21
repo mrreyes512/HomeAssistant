@@ -1,0 +1,10 @@
+############################################################
+#
+# Home Assistant Rachio Configuration
+#
+############################################################
+
+- platform: rachio
+  name: rachio
+  hidden: true
+  access_token: !secret rachio_api_key

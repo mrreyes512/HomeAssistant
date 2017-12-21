@@ -9,45 +9,52 @@ homeassistant:
   latitude: !secret latitude 
   longitude: !secret longitude 
   elevation: !secret elevation
-  unit_system: metric
-  time_zone: Europe/London
-  customize: !include includes/customise.yaml
-  packages: 
-    cctv: !include includes/packages/CCTV.yaml
+  unit_system: imperial
+  time_zone: America/Chicago
+#  customize: !include includes/customise.yaml
 
 http:
   base_url: !secret base_url
-  api_password: !secret http_password 
-  server_host: !secret server_host 
+  api_password: !secret http_password
+#  server_host: !secret server_host
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+  ip_ban_enabled: True
+  login_attempts_threshold: 5
   trusted_networks:
     - 127.0.0.1
     - ::1
-    - 192.168.2.0/24
+    - 172.20.0.0/24
+    - 192.168.100.0/24
+    - 192.168.200.0/24
     - 2001:DB8:ABCD::/48
-  ip_ban_enabled: True
-  login_attempts_threshold: 3
-    
+
 history:
 
+# Optional, allows Home Assistant developers to focus on popular components.
 updater:
   reporting: no
+  # include_used_components: true
 
 frontend:
 
 discovery:
 
-influxdb:
-  host: !secret influxdb_host
-  database: !secret influxdb_database 
-  username: !secret influxdb_username 
-  password: !secret influxdb_password
-
-recorder:
-  db_url: !secret mysql_path
-  purge_days: 3
+#recorder:
+#  db_url: !secret mysql_path
+#  purge_days: 3
 
 sun:
-  elevation: 214
+  elevation: 210
+
+# View all events in a logbook
+logbook:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables a map showing the location of tracked devices
+map:
 
 ############################################################
 #
@@ -55,51 +62,39 @@ sun:
 #
 ############################################################
 
-light:
-  platform: hue
-  host: !secret hue_ip 
-  allow_unreachable: true
+#light:
+#  platform: hue
+#  host: !secret hue_ip
+#  allow_unreachable: true
 
-nest:
-  client_id: !secret nest_client_id
-  client_secret: !secret nest_client_secret
+#google:
+#  client_id: !secret google_calendar_client_id
+#  client_secret: !secret google_calendar_client_secret
 
-mqtt:
-  broker: !secret mqtt_ip
-  port: !secret mqtt_port
-  client_id: !secret mqtt_client_id
-  keepalive: 60
-  username: !secret mqtt_username 
-  password: !secret mqtt_password 
-
-google:
-  client_id: !secret google_calendar_client_id
-  client_secret: !secret google_calendar_client_secret
-
-zwave:
-  usb_path: /zwaveusbstick
+sensor:
+  - platform: netatmo
+    station: rNET_Weather
+    modules:
+      module_name1:
+        - temperature
+      module_name2:
+        - temperature
+        - battery_vp
 
 netatmo:
   api_key: !secret netatmo_api_key
-  secret_key: !secret netatmo_secret_key 
+  secret_key: !secret netatmo_secret_key
   username: !secret netatmo_username
   password: !secret netatmo_password
+#  discovery: false
 
-apcupsd:
-  host: !secret apcupsd_host
-  port: !secret apcupsd_port
-
-remote:
-  - platform: harmony
-    name: !secret harmony_name
-    host: !secret harmony_host
+#remote:
+#  - platform: harmony
+#    name: !secret harmony_name
+#    host: !secret harmony_host
 
 tts:
-  - platform: amazon_polly
-    aws_access_key_id: !secret aws_access_key_id
-    aws_secret_access_key: !secret aws_secret_access_key
-    region_name: 'eu-west-1'
-    voice: 'Amy'
+  - platform: google
 
 ###########################################################
 #
@@ -109,28 +104,28 @@ tts:
 
 # Single Files
 
-binary_sensor: !include includes/binary_sensors.yaml
 camera: !include includes/cameras.yaml
-climate: !include includes/climate.yaml
-device_tracker: !include includes/device_trackers.yaml
-input_boolean: !include includes/input_boolean.yaml
-input_select: !include includes/input_select.yaml
-logger: !include includes/logger.yaml
-media_player: !include includes/media_players.yaml
-notify: !include includes/notify.yaml
-scene: !include includes/scenes.yaml
-#switch: !include includes/switch.yaml
-weblink: !include includes/weblink.yaml
+vera:   !include includes/vera.yaml
+#device_tracker: !include includes/device_trackers.yaml
+#input_select: !include includes/input_select.yaml
+#logger: !include includes/logger.yaml
+#media_player: !include includes/media_players.yaml
+#notify: !include includes/notify.yaml
+#scene: !include includes/scenes.yaml
+switch: !include includes/switch.yaml #includes Rachio config
+#weblink: !include includes/weblink.yaml
 
 # Merge List
 
-automation: !include_dir_merge_list includes/automation 
-sensor: !include_dir_merge_list includes/sensors
-shell_command: !include_dir_merge_named includes/shell_command
-zone: !include_dir_merge_list includes/zone
+#automation: !include_dir_merge_list includes/automation
+#sensor: !include_dir_merge_list includes/sensors
+#shell_command: !include_dir_merge_named includes/shell_command
+#zone: !include_dir_merge_list includes/zone
 
 # Merge Named
+group: !include includes/group/irrigation.yaml
+#group: !include includes/group/lights.yaml
 
-group: !include_dir_merge_named includes/group
-script: !include_dir_merge_named includes/scripts
+#group: !include_dir_merge_named includes/group
+#script: !include_dir_merge_named includes/scripts
 
