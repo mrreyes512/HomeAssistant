@@ -1,18 +1,7 @@
 entities:
-- name: Router
-  url: !secret weblink_router
 
-- name: Wi-Fi Controller
-  url: !secret weblink_wifi_controller
-
-- name: Dashboard
-  url: !secret weblink_dashboard
-
-- name: CCTV
-  url: !secret weblink_cctv1
-
-- name: Server Glances
-  url: !secret weblink_server_glances
+- name: Unifi Controller
+  url: !secret unifi_url
 
 - name: Media Server Plex
   url: !secret weblink_plex_server

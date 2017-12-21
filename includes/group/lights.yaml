@@ -4,62 +4,34 @@
 #
 ############################################################
 
-Panic Lights:
-  - switch.backfloodlight_switch_8_0
-  - switch.backfloodlight_switch_8_0_2
-  - switch.frontfloodlights_switch_10_0
-  - switch.frontfloodlights_switch_10_0_2
-  - switch.summerhouselights_switch_16_0
-  - switch.summerhouselights_switch_16_0_2
-  - switch.utilityroomlights_switch_24_0_2
+Inside Lights:
+  - light.us_living_room__3
+  - light.holiday_mail_table_4
+  - light.master_bedroom_5
+  - light.kitchen_light_6
+  - light.ds_living_room___7
+  - light.patio_10
+  - light.office_lamp_11
+  - light.holiday_side_14
+  - light.holiday_main_33
+  - light.living_room_chandelier_12
 
-Visitor Lights:
-  - light.workshoplight_level_6_0
-  - switch.summerhouselights_switch_16_0_2
-  - switch.backfloodlight_switch_8_0
-  - switch.backfloodlight_switch_8_0_2
-  - switch.utilityroomlights_switch_24_0_2
+Outside Lights:
+  - light.front_lightside_8
+  - light.front_lightmain_9
+
+Holiday Lights:
+  - light.holiday_mail_table_4
+  - light.holiday_side_14
+  - light.holiday_main_33
 
 All Lights Except Bedroom:
-  - light.living_room_lamp
-  - light.kitchen
-  - light.guest_bedroom
-  - light.living_room
-  - light.living_room_go
-  - light.stairs
-  - light.bathroom_1
-  - light.stairs_1
-  - light.upstairs_hall
-  - light.porch
-  - light.hall
-  - light.dining_room
-  - switch.backfloodlight_switch_8_0
-  - switch.backfloodlight_switch_8_0_2
-  - switch.frontfloodlights_switch_10_0
-  - switch.frontfloodlights_switch_10_0_2
-  - switch.summerhouselights_switch_16_0
-  - switch.summerhouselights_switch_16_0_2
-  - switch.utilityroomlights_switch_24_0
-  - switch.utilityroomlights_switch_24_0_2
-   
-All Lights Except Bedroom and Guest:
-  - light.living_room_lamp
-  - light.kitchen
-  - light.living_room
-  - light.living_room_go
-  - light.stairs
-  - light.bathroom_1
-  - light.stairs_1
-  - light.upstairs_hall
-  - light.porch
-  - light.hall
-  - light.dining_room
-  - switch.backfloodlight_switch_8_0
-  - switch.backfloodlight_switch_8_0_2
-  - switch.frontfloodlights_switch_10_0
-  - switch.frontfloodlights_switch_10_0_2
-  - switch.summerhouselights_switch_16_0
-  - switch.summerhouselights_switch_16_0_2
-  - switch.utilityroomlights_switch_24_0
-  - switch.utilityroomlights_switch_24_0_2
-
+  - light.us_living_room__3
+  - light.holiday_mail_table_4
+  - light.kitchen_light_6
+  - light.ds_living_room___7
+  - light.patio_10
+  - light.office_lamp_11
+  - light.holiday_side_14
+  - light.holiday_main_33
+  - light.living_room_chandelier_12
