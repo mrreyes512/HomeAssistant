@@ -3,7 +3,6 @@
 > Master Branch:    [![Master Build Status](https://travis-ci.org/mrreyes512/HomeAssistant.svg?branch=master)](https://travis-ci.org/mrreyes512/HomeAssistant)\
 > Develop Branch:   [![Dev Build Status](https://travis-ci.org/mrreyes512/HomeAssistant.svg?branch=develop)](https://travis-ci.org/mrreyes512/HomeAssistant)
 
-
 My [Home Assistant](https://home-assistant.io/) Configuration Files
 
 ## Devices
