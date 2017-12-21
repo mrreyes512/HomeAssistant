@@ -18,6 +18,7 @@ icloud
 deps
 www
 ssl
+mysql
 .archive
 
 # Python Caches
