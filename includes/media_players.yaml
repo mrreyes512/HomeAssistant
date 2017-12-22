@@ -6,5 +6,9 @@
 
 - platform: plex
   scan_interval: 3
+
 - platform: samsungtv
-  host: 192.168.2.212 
+  host: !secret samsung_tv_ip
+
+- platform: cast
+  host: !secret cast_ip
