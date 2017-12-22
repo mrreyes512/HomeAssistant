@@ -7,6 +7,11 @@
 
 version: '3'
 
+#networks:
+#  default:
+#    external:
+#      name: my_network
+
 services:
    homeassistant:
     container_name: home-assistant
@@ -17,5 +22,6 @@ services:
     ports:
       - "8123:8123"
     restart: always
+    #network_mode: host
     environment:
       - 'TZ=America/Chicago'

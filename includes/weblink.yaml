@@ -1,8 +1,0 @@
-entities:
-
-- name: Unifi Controller
-  url: !secret unifi_url
-
-- name: Media Server Plex
-  url: !secret weblink_plex_server
-
