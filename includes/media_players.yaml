@@ -11,4 +11,7 @@
   host: !secret samsung_tv_ip
 
 - platform: cast
-  host: !secret cast_ip
+  host: !secret cast_ip_1
+
+- platform: cast
+  host: !secret cast_ip_2
