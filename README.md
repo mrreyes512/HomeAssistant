@@ -1,15 +1,9 @@
 # Home Assistant Configuration 
 
-<<<<<<< Updated upstream
-> Master Branch:    [![Master Build Status](https://travis-ci.org/mrreyes512/HomeAssistant.svg?branch=master)](https://travis-ci.org/mrreyes512/HomeAssistant)\
-> Develop Branch:   [![Dev Build Status](https://travis-ci.org/mrreyes512/HomeAssistant.svg?branch=develop)](https://travis-ci.org/mrreyes512/HomeAssistant)
-=======
 |  |  |
 | --- | --- |
 | **Build** | [![Master Build Status](https://travis-ci.org/mrreyes512/HomeAssistant.svg?branch=master)](https://travis-ci.org/mrreyes512/HomeAssistant) |
 | **Last Commit** | [![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg)]() | 
-
->>>>>>> Stashed changes
 
 My [Home Assistant](https://home-assistant.io/) Configuration Files
 
