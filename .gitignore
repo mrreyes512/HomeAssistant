@@ -19,7 +19,7 @@ deps
 www
 ssl
 mysql
-.archive
+.archive*
 
 # Python Caches
 __pycache__
