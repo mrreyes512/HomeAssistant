@@ -10,6 +10,7 @@
 .HA_VERSION
 known_devices.yaml
 google_calendars.yaml
+harmony*.yaml
 secrets.yaml
 .google.token
 

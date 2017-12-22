@@ -62,24 +62,13 @@ map:
 #
 ############################################################
 
-#light:
-#  platform: hue
-#  host: !secret hue_ip
-#  allow_unreachable: true
+light:
+  - platform: lifx
+    broadcast: 192.168.200.255
 
 #google:
 #  client_id: !secret google_calendar_client_id
 #  client_secret: !secret google_calendar_client_secret
-
-sensor:
-  - platform: netatmo
-    station: rNET_Weather
-    modules:
-      module_name1:
-        - temperature
-      module_name2:
-        - temperature
-        - battery_vp
 
 netatmo:
   api_key: !secret netatmo_api_key
@@ -88,10 +77,10 @@ netatmo:
   password: !secret netatmo_password
 #  discovery: false
 
-#remote:
-#  - platform: harmony
-#    name: !secret harmony_name
-#    host: !secret harmony_host
+remote:
+  - platform: harmony
+    name: !secret harmony_name
+    host: !secret harmony_host
 
 tts:
   - platform: google
@@ -106,13 +95,13 @@ tts:
 
 camera: !include includes/cameras.yaml
 vera:   !include includes/vera.yaml
+switch: !include includes/switch.yaml #includes Rachio config
 #device_tracker: !include includes/device_trackers.yaml
 #input_select: !include includes/input_select.yaml
 #logger: !include includes/logger.yaml
-#media_player: !include includes/media_players.yaml
+media_player: !include includes/media_players.yaml
 #notify: !include includes/notify.yaml
 #scene: !include includes/scenes.yaml
-switch: !include includes/switch.yaml #includes Rachio config
 #weblink: !include includes/weblink.yaml
 
 # Merge List
