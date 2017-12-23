@@ -11,7 +11,7 @@ homeassistant:
   elevation: !secret elevation
   unit_system: imperial
   time_zone: America/Chicago
-#  customize: !include includes/customise.yaml
+  customize: !include includes/customize.yaml
 
 http:
   base_url: !secret base_url

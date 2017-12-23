@@ -5,9 +5,17 @@
 ############################################################
 
 irrigation:
-  name: Rachio
-#  icon: mdi:water-pump
+  name: Sprinklers
   view: true
+  entities:
+  - camera.front_yard
+  - group.all_irrigation_zones
+
+
+all_irrigation_zones:
+  name: Rachio Watering Zones
+  icon: mdi:water-pump
+  control: hidden
   entities:
   - switch.zone_1
   - switch.zone_2
