@@ -39,6 +39,8 @@ updater:
 frontend:
 
 discovery:
+  ignore:
+    - harmony
 
 sun:
   elevation: 210
@@ -60,7 +62,7 @@ map:
 
 light:
   - platform: lifx
-    broadcast: 192.168.200.255
+    broadcast: !include lifx_broadcast
 
 #google:
 #  client_id: !secret google_calendar_client_id
