@@ -62,7 +62,7 @@ map:
 
 light:
   - platform: lifx
-    broadcast: !include lifx_broadcast
+#    broadcast: !include lifx_broadcast
 
 #google:
 #  client_id: !secret google_calendar_client_id
