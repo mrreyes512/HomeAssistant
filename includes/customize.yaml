@@ -1,0 +1,54 @@
+############################################################
+#
+# Home Assistant Customize Entities
+#
+############################################################
+
+light.play_room_3:
+  friendly_name: Play Room
+
+light.mail_table_4:
+  friendly_name: Mail Table
+
+light.master_5:
+  friendly_name: Master
+
+light.kitchen_6:
+  friendly_name: Kitchen
+
+light.living_room_7:
+  friendly_name: Living Room
+
+light.outside_side_8:
+  friendly_name: Front Side
+
+light.outside_main_9:
+  friendly_name: Front Main
+
+light.outside_back_10:
+  friendly_name: Backyard Patio
+
+light.office_11:
+  friendly_name: Office
+
+light.chandelier_12:
+  friendly_name: Living Room Chandelier
+
+light.mobile_2_14:
+  friendly_name: Holiday Lights 2
+
+light.mobile_1_33:
+  friendly_name: Holiday Lights 1
+
+
+
+
+
+############################################################
+#
+# Groups
+#
+############################################################
+
+#"switch.zone_*":  #not working
+#  icon: mdi:water-pump

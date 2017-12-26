@@ -4,34 +4,53 @@
 #
 ############################################################
 
-Inside Lights:
-  - light.us_living_room__3
-  - light.holiday_mail_table_4
-  - light.master_bedroom_5
-  - light.kitchen_light_6
-  - light.ds_living_room___7
-  - light.patio_10
-  - light.office_lamp_11
-  - light.holiday_side_14
-  - light.holiday_main_33
-  - light.living_room_chandelier_12
+lights:
+  name: Lights
+  view: yes
+  entities:
+    - camera.living_room
+    - group.lights_inside
+    - group.lights_outside
+    - group.lights_inside_except_master
+    - group.lights_holiday
+    - group.lights_other
 
-Outside Lights:
-  - light.front_lightside_8
-  - light.front_lightmain_9
+lights_inside:
+  name: Inside Lights
+  entities:
+    - light.play_room_3
+    - light.mail_table_4
+    - light.master_5
+    - light.kitchen_6
+    - light.living_room_7
+    - light.office_11
+#    - light.mobile_2_14
+#    - light.mobile_1_33
 
-Holiday Lights:
-  - light.holiday_mail_table_4
-  - light.holiday_side_14
-  - light.holiday_main_33
+lights_outside:
+  name: Front Yard Lights
+  entities:
+    - light.outside_side_8
+    - light.outside_main_9
 
-All Lights Except Bedroom:
-  - light.us_living_room__3
-  - light.holiday_mail_table_4
-  - light.kitchen_light_6
-  - light.ds_living_room___7
-  - light.patio_10
-  - light.office_lamp_11
-  - light.holiday_side_14
-  - light.holiday_main_33
-  - light.living_room_chandelier_12
+lights_inside_except_master:
+  name: Inside Except Master
+  entities:
+    - light.play_room_3
+    - light.mail_table_4
+    - light.kitchen_6
+    - light.living_room_7
+    - light.office_11
+
+lights_holiday:
+  name: Holiday Lights
+  entities:
+    - light.mobile_2_14
+    - light.mobile_1_33
+
+lights_other:
+  name: Extra Lights
+  control: hidden
+  entities:
+    - light.chandelier_12
+    - light.outside_back_10
