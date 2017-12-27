@@ -9,7 +9,7 @@ client_id: !secret ga_client_id
 access_token: !secret ga_token
 agent_user_id: !secret ga_user
 api_key: !secret ga_api
-#exposed_domains:
-#  - switch
-#  - light
+exposed_domains:
+  - light
+  - scene
 #  - group

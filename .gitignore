@@ -16,6 +16,7 @@ secrets.yaml
 .google.token
 creds.data
 ip_bans.yaml
+gactions
 
 # Directories
 icloud
