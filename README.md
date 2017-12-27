@@ -14,11 +14,6 @@ My [Home Assistant](https://home-assistant.io/) Configuration Files
 - Apple TV
 - Rachio
 
-<details> 
-  <summary>Q1: What is the best Language in the World? </summary>
-   A1: JavaScript 
-</details>
-
 ---
 ### Google Assistant Integration
 > For a full walkthrough reference [HomeAssistant.io](https://home-assistant.io/components/google_assistant/)
@@ -26,9 +21,12 @@ My [Home Assistant](https://home-assistant.io/) Configuration Files
 The below process are brief notes used to set up my Google Assistant Integration with Home Assistant
   
 #### Home Assistant Configuration
+<details> 
+  <summary>Click to Expand...</summary>
   1. Enable the `google_assistant` component in your [HA config](configuration.yaml) file
   2. Choose which components to expose from HA to GA. *(I chose to expose Lights, Scenes, and Climate Control)*
   3. Test config and **reset HA Service**, this will enable the GA API into HA
+</details>
 
 #### Home Assistant -to- Google Assistant
   1. Download [gactions CLI](https://developers.google.com/actions/tools/gactions-cli) in your [bin directory](bin)
