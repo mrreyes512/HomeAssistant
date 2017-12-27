@@ -4,12 +4,12 @@
 #
 ############################################################
 
-project_id: !secret ga_project_id
-client_id: !secret ga_client_id
-access_token: !secret ga_token
-agent_user_id: !secret ga_user
-api_key: !secret ga_api
-# Exposed Domains are components to expose to GA
+project_id:     !secret ga_project_id
+client_id:      !secret ga_client_id
+access_token:   !secret ga_token
+agent_user_id:  !secret ga_user
+api_key:        !secret ga_api
+# Exposed Domains are HA components to expose to GA
 exposed_domains:
   - light
   - scene

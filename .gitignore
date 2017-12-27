@@ -8,15 +8,19 @@
 *.txt
 *.xml
 .HA_VERSION
-project.json
+secrets.yaml
+ip_bans.yaml
+
+# Componet Files
+harmony*.yaml
 known_devices.yaml
 google_calendars.yaml
-harmony*.yaml
-secrets.yaml
 .google.token
-creds.data
-ip_bans.yaml
+
+# Google Assistant files
 gactions
+project.json
+creds.data
 
 # Directories
 icloud
@@ -24,7 +28,6 @@ deps
 ssl
 mysql
 .archive*
-
 
 # Python Caches
 __pycache__
