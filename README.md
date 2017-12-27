@@ -23,9 +23,11 @@ The below process are brief notes used to set up my Google Assistant Integration
 #### Home Assistant Configuration
 <details> 
   <summary>Click to Expand...</summary>
-  1. Enable the `google_assistant` component in your [HA config](configuration.yaml) file
-  2. Choose which components to expose from HA to GA. *(I chose to expose Lights, Scenes, and Climate Control)*
-  3. Test config and **reset HA Service**, this will enable the GA API into HA
+  <ol>
+    <li>Enable the `google_assistant` component in your [HA config](configuration.yaml) file
+    <li>Choose which components to expose from HA to GA. *(I chose to expose Lights, Scenes, and Climate Control)*
+    <li>Test config and **reset HA Service**, this will enable the GA API into HA
+  </ol>
 </details>
 
 #### Home Assistant -to- Google Assistant
