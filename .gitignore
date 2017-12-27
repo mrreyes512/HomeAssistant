@@ -8,11 +8,14 @@
 *.txt
 *.xml
 .HA_VERSION
+project.json
 known_devices.yaml
 google_calendars.yaml
 harmony*.yaml
 secrets.yaml
 .google.token
+creds.data
+ip_bans.yaml
 
 # Directories
 icloud
