@@ -15,9 +15,10 @@ My [Home Assistant](https://home-assistant.io/) Configuration Files
 - Rachio
 
 
+---
 ### Google Assistant Integration
 > For a full walkthrough reference [HomeAssistant.io](https://home-assistant.io/components/google_assistant/)
----
+
 The below process are brief notes used to set up my Google Assistant Integration with Home Assistant
   
 #### Home Assistant Configuration
@@ -26,7 +27,7 @@ The below process are brief notes used to set up my Google Assistant Integration
     - I chose to expose Lights, Scenes, and Climate Control.
   3. Test config and **reset HA Service**, this will enable the GA API into HA
 
-### Home Assistant -to- Google Assistant
+#### Home Assistant -to- Google Assistant
   1. Download [gactions CLI](https://developers.google.com/actions/tools/gactions-cli) in your [bin directory](bin)
   2. Create a new `project.json` file following the [HA Guide](https://home-assistant.io/components/google_assistant/).
      This will be used to generate a secret for the Google project in the preceding step. 
@@ -50,13 +51,13 @@ The below process are brief notes used to set up my Google Assistant Integration
     ga_user:        user (used for request_sync services)
     ga_api:         api-key (used for request_sync services)
 
-### New Environment Setup
+#### New Environment Setup
   1. Download [gactions CLI](https://developers.google.com/actions/tools/gactions-cli)
   2. Create a new `project.json`
   3. Link new env: `./gactions update --action_package project.json --project YourProjectName-2d0b8`
   4. Unlink - Relink within Google Assistant phone app (step 6 above).
 
-### Google Assistant devices refresh after HA change
+#### Google Assistant devices refresh after HA change
   1. Test HA config / Restart HA service
   2. Select your app in [Google Console](https://console.actions.google.com/u/0/).
   3. Press **TEST DRAFT** to resync GA -to- HA
