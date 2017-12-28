@@ -31,22 +31,33 @@ The below process are brief notes used to set up my Google Assistant Integration
 </details>
 
 #### Home Assistant -to- Google Assistant
-  1. Download [gactions CLI](https://developers.google.com/actions/tools/gactions-cli) in your [bin directory](bin)
-  2. Create a new `project.json` file following the [HA Guide](https://home-assistant.io/components/google_assistant/).
+<details> 
+  <summary>Click to Expand...</summary>
+  <ol>
+    <li>Download [gactions CLI](https://developers.google.com/actions/tools/gactions-cli) in your [bin directory](bin)
+    <li>Create a new `project.json` file following the [HA Guide](https://home-assistant.io/components/google_assistant/).
      This will be used to generate a secret for the Google project in the preceding step. 
-  3. Create a new Google Developer Project through the [Developer Console](https://console.actions.google.com/u/0/).
-  4. Link your Environment via the gactions: (my evn is a Pi, your env could be a docker or virtPython) 
-    - `cd bin; chmod +x gactions`
-    - `./gactions update --action_package project.json --project YourProjectName-2d0b8`
-    - The `gactions` script will pause and issue a url to authenticate against your Google ID. Once you open the link in a browser, it will give you a key to continue with the `gactions` script.
-    - You should now notice a `creds.data` file is now created in the [bin directory](bin). This is specific key between your environment and the Google Project.
-  5. Finish out the required Account Linking within your Google Project following the [HA Guide](https://home-assistant.io/components/google_assistant/).
-    - This step is rather lengthy. 
-    - Ensure your **Authorization URL** has the proper URL: `https://[site.com]:8123/api/google_assistant/auth`
-  6. Look for the **TEST DRAFT** button, once you're project is in the *testing* phase, you should be able to add your project on your phone's Google Assistant by:
-    - Google Assistant > Settings > Home Control > Add Devices(+)
-    - look for: `[test] ProjectName`
-    - Once selected, you should start to see the devices that you allowed GA to know about from the Home Assistant configuration section above.
+    <li>Create a new Google Developer Project through the [Developer Console](https://console.actions.google.com/u/0/).
+    <li>Link your Environment via the gactions: (my evn is a Pi, your env could be a docker or virtPython) 
+    <ul>
+        <li><code>cd bin; chmod +x gactions</code>
+        <li><code>./gactions update --action_package project.json --project YourProjectName-2d0b8</code>
+        <li>The <code>gactions</code> script will pause and issue a url to authenticate against your Google ID. Once you open the link in a browser, it will give you a key to continue with the <code>gactions</code> script.
+        <li>You should now notice a <code>creds.data</code> file is now created in the <a href="bin">bin directory</a>. This is specific key between your environment and the Google Project.
+    </ul>
+    <li>Finish out the required Account Linking within your Google Project following the <a href="https://home-assistant.io/components/google_assistant/">HA Guide</a>.
+    <ul>
+        <li>This step is rather lengthy. 
+        <li>Ensure your **Authorization URL** has the proper URL: `https://[site.com]:8123/api/google_assistant/auth`
+    </ul>
+    <li>Look for the **TEST DRAFT** button, once you're project is in the *testing* phase, you should be able to add your project on your phone's Google Assistant by:
+    <ul>
+        <li>Google Assistant > Settings > Home Control > Add Devices(+)
+        <li>look for: <code>[test] ProjectName</code>
+        <li>Once selected, you should start to see the devices that you allowed GA to know about from the Home Assistant configuration section above.
+    </ul>
+  </ol>
+</details>
 
 #### Configuration Setup
 
