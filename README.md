@@ -1,9 +1,9 @@
 # Home Assistant Configuration 
 
-|  |  |
+| **Master Build** | **Develop Build** |
 | --- | --- |
-| **Build** | [![Master Build Status](https://travis-ci.org/mrreyes512/HomeAssistant.svg?branch=master)](https://travis-ci.org/mrreyes512/HomeAssistant) |
-| **Last Commit** | [![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg)]() | 
+| [![Master Build Status](https://travis-ci.org/mrreyes512/HomeAssistant.svg?branch=master)](https://travis-ci.org/mrreyes512/HomeAssistant) | [![Master Build Status](https://travis-ci.org/mrreyes512/HomeAssistant.svg?branch=develop)](https://travis-ci.org/mrreyes512/HomeAssistant) |
+| [![GitHub last commit (master)](https://img.shields.io/github/last-commit/google/skia/infra/config.svg)](https://github.com/mrreyes512/HomeAssistant/) | [![GitHub last commit (develop)](https://img.shields.io/github/last-commit/google/skia/infra/config.svg)](https://github.com/mrreyes512/HomeAssistant/tree/develop) |
 
 My [Home Assistant](https://home-assistant.io/) Configuration Files
 
@@ -18,7 +18,7 @@ My [Home Assistant](https://home-assistant.io/) Configuration Files
 ### Google Assistant Integration
 > For a full walkthrough reference [HomeAssistant.io](https://home-assistant.io/components/google_assistant/)
 
-The below process are brief notes used to set up my Google Assistant Integration with Home Assistant
+The below processes are brief notes used to set up my Google Assistant Integration with Home Assistant
   
 #### Home Assistant Configuration
 <details> 
@@ -34,10 +34,10 @@ The below process are brief notes used to set up my Google Assistant Integration
 <details> 
   <summary>Click to Expand...</summary>
   <ol>
-    <li>Download [gactions CLI](https://developers.google.com/actions/tools/gactions-cli) in your [bin directory](bin)
-    <li>Create a new `project.json` file following the [HA Guide](https://home-assistant.io/components/google_assistant/).
+    <li>Download <a href="https://developers.google.com/actions/tools/gactions-cli">gactions CLI</a> in your <a href="bin">bin directory</a>
+    <li>Create a new <code>project.json</code> file following the <a href="https://home-assistant.io/components/google_assistant/">HA Guide</a>.
      This will be used to generate a secret for the Google project in the preceding step. 
-    <li>Create a new Google Developer Project through the [Developer Console](https://console.actions.google.com/u/0/).
+    <li>Create a new Google Developer Project through the <a href="https://console.actions.google.com/u/0/">Developer Console</a>.
     <li>Link your Environment via the gactions: (my evn is a Pi, your env could be a docker or virtPython) 
     <ul>
         <li><code>cd bin; chmod +x gactions</code>
@@ -48,9 +48,9 @@ The below process are brief notes used to set up my Google Assistant Integration
     <li>Finish out the required Account Linking within your Google Project following the <a href="https://home-assistant.io/components/google_assistant/">HA Guide</a>.
     <ul>
         <li>This step is rather lengthy. 
-        <li>Ensure your **Authorization URL** has the proper URL: `https://[site.com]:8123/api/google_assistant/auth`
+        <li>Ensure your <b>Authorization URL</b> has the proper URL: <code>https://[site.com]:8123/api/google_assistant/auth</code>
     </ul>
-    <li>Look for the **TEST DRAFT** button, once you're project is in the *testing* phase, you should be able to add your project on your phone's Google Assistant by:
+    <li>Look for the <b>TEST DRAFT</b> button, once you're project is in the <i>testing</i> phase, you should be able to add your project on your phone's Google Assistant by:
     <ul>
         <li>Google Assistant > Settings > Home Control > Add Devices(+)
         <li>look for: <code>[test] ProjectName</code>
