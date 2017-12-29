@@ -11,7 +11,7 @@ homeassistant:
   elevation: !secret elevation
   unit_system: imperial
   time_zone: America/Chicago
-#  customize: !include includes/customise.yaml
+  customize: !include includes/customize.yaml
 
 http:
   base_url: !secret base_url
@@ -39,10 +39,8 @@ updater:
 frontend:
 
 discovery:
-
-#recorder:
-#  db_url: !secret mysql_path
-#  purge_days: 3
+  ignore:
+    - harmony
 
 sun:
   elevation: 210
@@ -64,7 +62,7 @@ map:
 
 light:
   - platform: lifx
-    broadcast: 192.168.200.255
+#    broadcast: !include lifx_broadcast
 
 #google:
 #  client_id: !secret google_calendar_client_id
@@ -96,25 +94,23 @@ tts:
 camera: !include includes/cameras.yaml
 vera:   !include includes/vera.yaml
 switch: !include includes/switch.yaml #includes Rachio config
-#device_tracker: !include includes/device_trackers.yaml
-#input_select: !include includes/input_select.yaml
-#logger: !include includes/logger.yaml
 media_player: !include includes/media_players.yaml
+google_assistant: !include includes/google_assistant.yaml
+#input_select: !include includes/input_select.yaml
 #notify: !include includes/notify.yaml
 #scene: !include includes/scenes.yaml
 #weblink: !include includes/weblink.yaml
 
 # Merge List
-
 #automation: !include_dir_merge_list includes/automation
 #sensor: !include_dir_merge_list includes/sensors
 #shell_command: !include_dir_merge_named includes/shell_command
 #zone: !include_dir_merge_list includes/zone
 
 # Merge Named
-group: !include includes/group/irrigation.yaml
-#group: !include includes/group/lights.yaml
+#group: !include group/irrigation.yaml
+#group: !include group/lights.yaml
 
-#group: !include_dir_merge_named includes/group
+group: !include_dir_merge_named group/
 #script: !include_dir_merge_named includes/scripts
 

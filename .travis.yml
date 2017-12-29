@@ -6,6 +6,6 @@ install:
 script:
   - hass -c . --script check_config
 before_install:
-  - sed 's/ssl_certificate:/# ssl_certificate:/g;s/ssl_key:/# ssl_key:/g' configuration.yaml > travis_configuration.yaml
-  - mv travis_configuration.yaml configuration.yaml
-  - mv travis_secrets.yaml secrets.yaml
+  - sed 's/ssl_certificate:/# ssl_certificate:/g;s/ssl_key:/# ssl_key:/g' configuration.yaml > .travis_configuration.yaml
+  - mv .travis_configuration.yaml configuration.yaml
+  - mv .travis_secrets.yaml secrets.yaml

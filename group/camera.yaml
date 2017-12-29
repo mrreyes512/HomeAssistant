@@ -1,0 +1,14 @@
+############################################################
+#
+# Home Assistant Camera Groups
+#
+############################################################
+
+all_cameras:
+  name: Cameras
+  view: true
+  entities:
+    - camera.front_door
+    - camera.front_yard
+    - camera.living_room
+    - camera.back_door
