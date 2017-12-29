@@ -23,7 +23,9 @@ The below processes are brief notes used to set up my Google Assistant Integrati
 ![Home Assistant to Google Assistant workflow](www/workflow-GAtoHA.png "Mark is awesome" )
 
 **Google Assistant Interaction**
-<img src="www/screenshot-FrontLights.jpeg" height="300" width="300">
+<table><tr><td>
+    <img src="www/screenshot-FrontLights.jpeg" height="300" width="280">
+</td></tr></table>
 
 #### Home Assistant Configuration
 <details> 
