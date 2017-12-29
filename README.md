@@ -18,8 +18,13 @@ My [Home Assistant](https://home-assistant.io/) Configuration Files
 ### Google Assistant Integration
 > For a full walkthrough reference [HomeAssistant.io](https://home-assistant.io/components/google_assistant/)
 
-The below processes are brief notes used to set up my Google Assistant Integration with Home Assistant
-  
+The below processes are brief notes used to set up my Google Assistant Integration with Home Assistant\
+**Home Assistant to Google Assistant workflow:**
+![Home Assistant to Google Assistant workflow](www/workflow-GAtoHA.png "Mark is awesome" )
+
+**Google Assistant Interaction**
+![Google Assistant Interaction](www/screenshot-FrontLights.jpeg "Google Assistant" )
+
 #### Home Assistant Configuration
 <details> 
   <summary>Click to Expand...</summary>
@@ -95,7 +100,7 @@ secrets.yaml
   1. Test HA config / Restart HA service
   2. Select your app in [Google Console](https://console.actions.google.com/u/0/).
   3. Press **TEST DRAFT** to resync GA -to- HA
-  4. Unlink / Relink your [test] App on Google Assistant in your phone. 
+  4. Unlink / Relink your [test] App on Google Assistant in your phone.
 
 ## Inspiration and Support
 
@@ -108,3 +113,7 @@ secrets.yaml
 Thanks to all the people in the [gitter](https://gitter.im/home-assistant/home-assistant) community for listening and help
 
 And thanks to *all* the devs that create the Home Assistant magic
+
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+[workflow-HA2GA]: www/workflow-GAtoHA.png
