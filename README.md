@@ -7,6 +7,8 @@
 
 My [Home Assistant](https://home-assistant.io/) Configuration Files
 
+![My Home Assistant Layout](www/layout-Smarthome.png)
+
 ## Devices
 
 - Vera
