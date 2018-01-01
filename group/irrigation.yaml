@@ -4,12 +4,14 @@
 #
 ############################################################
 
+# Sprinklers View
 irrigation:
   name: Sprinklers
   view: true
   entities:
   - camera.front_yard
   - group.all_irrigation_zones
+  #- image.irrigation_zones #Doesn't work like i envisioned it
 
 
 all_irrigation_zones:
@@ -29,16 +31,3 @@ all_irrigation_zones:
   - switch.zone_10
   - switch.zone_11
   - switch.zone_12
-
-#zones_front:
-#  name: Front Yard
-#  view: false
-#  entities:
-#  - switch.driveway
-#
-#zones_back:
-#  name: Back Yard
-#  view: false
-#  entities:
-#  - switch.back_bushes
-#  - switch.back_garden

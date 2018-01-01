@@ -104,9 +104,60 @@ light.living_room_lamp:
 
 ############################################################
 #
-# Groups
+# Irrigation Zones
+#
+############################################################
+# Work on a floor plan to illustrate sprinkler zones running
+# May want to check out https://github.com/pkozul/ha-floorplan for ideas
+
+#image.irrigation_zones:
+#  friendly_name: Irrigation Zones
+#  entity_picture: www/diagram-Irrigation.png
+
+############################################################
+#
+# Netatmo Sensors
 #
 ############################################################
 
-#"switch.zone_*":  #not working
-#  icon: mdi:water-pump
+sensor.netatmo_indoor_co2:
+  friendly_name: CO2
+
+sensor.netatmo_indoor_humidity:
+  friendly_name: Humidity
+
+sensor.netatmo_indoor_noise:
+  friendly_name: Noise
+
+sensor.netatmo_indoor_pressure:
+  friendly_name: Pressure
+
+sensor.netatmo_indoor_temperature:
+  friendly_name: Temperature
+
+sensor.netatmo_indoor_wifi:
+  friendly_name: Wifi Strength
+
+sensor.netatmo_outdoor_module_battery:
+  friendly_name: Battery
+
+sensor.netatmo_outdoor_module_humidity:
+  friendly_name: Humidity
+
+sensor.netatmo_outdoor_module_radio:
+  friendly_name: Radio Strength
+
+sensor.netatmo_outdoor_module_temperature:
+  friendly_name: Temperature
+
+############################################################
+#
+# Climate Sensors
+#
+############################################################
+
+climate.downstairs_16:
+  friendly_name: Downstairs
+
+climate.upastairs_13:
+  friendly_name: Upstairs
