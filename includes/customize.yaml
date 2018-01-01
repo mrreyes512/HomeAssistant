@@ -16,8 +16,8 @@ light.master_5:
 light.kitchen_6:
   friendly_name: Kitchen
 
-light.living_room_7:
-  friendly_name: Living Room
+light.living_room_tree_7:
+  friendly_name: Living Room Tree
 
 light.outside_side_8:
   friendly_name: Front Side
@@ -40,9 +40,8 @@ light.mobile_2_14:
 light.mobile_1_33:
   friendly_name: Holiday Lights 1
 
-
-
-
+light.living_room_lamp:
+  friendly_name: Living Room Lamp
 
 ############################################################
 #

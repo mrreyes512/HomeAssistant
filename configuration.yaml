@@ -96,6 +96,14 @@ vera:   !include includes/vera.yaml
 switch: !include includes/switch.yaml #includes Rachio config
 media_player: !include includes/media_players.yaml
 google_assistant: !include includes/google_assistant.yaml
+hue: !include includes/philips_hue.yaml
+
+# Group Merge Directory
+
+group: !include_dir_merge_named group/
+
+
+# -----
 #input_select: !include includes/input_select.yaml
 #notify: !include includes/notify.yaml
 #scene: !include includes/scenes.yaml
@@ -111,6 +119,4 @@ google_assistant: !include includes/google_assistant.yaml
 #group: !include group/irrigation.yaml
 #group: !include group/lights.yaml
 
-group: !include_dir_merge_named group/
 #script: !include_dir_merge_named includes/scripts
-
