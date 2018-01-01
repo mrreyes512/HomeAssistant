@@ -4,44 +4,103 @@
 #
 ############################################################
 
+############################################################
+#
+# Vera Lights
+#
+############################################################
+
 light.play_room_3:
+  icon: mdi:ticket
   friendly_name: Play Room
+  google_assistant: true
+  #google_assistant_name: play room
+  google_assistant_type: light
+  aliases:
+    - game room
 
 light.mail_table_4:
+  icon: mdi:email
   friendly_name: Mail Table
+  google_assistant: true
+  google_assistant_type: light
 
 light.master_5:
+  icon: mdi:hotel
   friendly_name: Master
+  google_assistant: true
+  google_assistant_type: light
 
 light.kitchen_6:
+  icon: mdi:fridge
   friendly_name: Kitchen
+  google_assistant: true
+  google_assistant_type: light
 
 light.living_room_tree_7:
+  icon: mdi:tree
   friendly_name: Living Room Tree
+  google_assistant: true
+  google_assistant_type: light
+  aliases:
+    - tree
 
 light.outside_side_8:
   friendly_name: Front Side
+  google_assistant: true
+  google_assistant_type: light
 
 light.outside_main_9:
   friendly_name: Front Main
+  google_assistant: true
+  google_assistant_type: light
 
 light.outside_back_10:
   friendly_name: Backyard Patio
+  google_assistant: true
+  google_assistant_type: light
 
 light.office_11:
+  icon: mdi:briefcase
   friendly_name: Office
+  google_assistant: true
+  google_assistant_type: light
 
 light.chandelier_12:
+  icon: mdi:ceiling-light
   friendly_name: Living Room Chandelier
+  google_assistant: true
+  google_assistant_type: light
+#  google_assistant_name: chandelier
+  aliases:
+    - chandelier
 
 light.mobile_2_14:
+  icon: mdi:pine-tree
   friendly_name: Holiday Lights 2
+  google_assistant: true
+  google_assistant_type: light
 
 light.mobile_1_33:
+  icon: mdi:pine-tree
   friendly_name: Holiday Lights 1
+  google_assistant: true
+  google_assistant_type: light
+
+
+############################################################
+#
+# Philips Hue Lights
+#
+############################################################
 
 light.living_room_lamp:
   friendly_name: Living Room Lamp
+  icon: mdi:lamp
+  google_assistant: true
+  google_assistant_type: light
+  aliases:
+    - lamp
 
 ############################################################
 #

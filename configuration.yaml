@@ -12,6 +12,10 @@ homeassistant:
   unit_system: imperial
   time_zone: America/Chicago
   customize: !include includes/customize.yaml
+  # Customize entities matching a pattern
+  customize_glob:
+    "switch.zone_*":
+      icon: mdi:water-pump
 
 http:
   base_url: !secret base_url
