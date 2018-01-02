@@ -1,0 +1,37 @@
+############################################################
+#
+# Home Assistant Netatmo Groups
+#
+############################################################
+
+Climate:
+  name: Climate
+  view: yes
+  entities:
+    - group.netatmo_indoor_sensors
+    - group.netatmo_outdoor_sensors
+    - group.all_thermostats
+
+all_thermostats:
+  name: Thermostats
+  entities:
+  - climate.downstairs_16
+  - climate.upastairs_13
+
+netatmo_indoor_sensors:
+  name: Indoor Sensors
+  entities:
+  - sensor.netatmo_indoor_temperature
+  - sensor.netatmo_indoor_humidity
+  - sensor.netatmo_indoor_co2
+  - sensor.netatmo_indoor_pressure
+  - sensor.netatmo_indoor_noise
+  - sensor.netatmo_indoor_wifi
+
+netatmo_outdoor_sensors:
+  name: Outdoor Sensors
+  entities:
+  - sensor.netatmo_outdoor_module_temperature
+  - sensor.netatmo_outdoor_module_humidity
+  - sensor.netatmo_outdoor_module_battery
+  - sensor.netatmo_outdoor_module_radio

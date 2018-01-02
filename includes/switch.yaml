@@ -5,6 +5,6 @@
 ############################################################
 
 - platform: rachio
-  name: rachio
+  name: Rachio
   hidden: true
   access_token: !secret rachio_api_key
