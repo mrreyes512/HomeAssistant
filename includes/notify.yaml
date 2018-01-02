@@ -1,0 +1,11 @@
+############################################################
+#
+# Notification Methods
+#
+############################################################
+
+
+# Pushbullet notifications
+- name: PUSHBULLET_NOTIFY
+  platform: pushbullet
+  api_key: !secret pushbullet_api
