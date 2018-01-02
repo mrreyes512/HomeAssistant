@@ -11,7 +11,7 @@ lights:
     - camera.living_room
     - group.lights_inside
     - group.lights_outside
-    - group.lights_inside_except_master
+    #- group.lights_inside_except_master
     - group.lights_holiday
     - group.lights_other
 

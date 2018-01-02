@@ -4,11 +4,23 @@
 #
 ############################################################
 
-all_cameras:
+cameras:
   name: Cameras
   view: true
   entities:
-    - camera.front_door
+    - group.front_cams
+    - group.back_cams
+    - group.inside_cams
+
+front_cams:
+  entities:
     - camera.front_yard
-    - camera.living_room
+    - camera.front_door
+
+back_cams:
+  entities:
     - camera.back_door
+
+inside_cams:
+  entities:
+    - camera.living_room

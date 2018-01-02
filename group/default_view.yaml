@@ -7,9 +7,9 @@
 default_view:
   view: yes
   entities:
+    - group.all_thermostats
     - camera.living_room
     - group.lights_inside
     - group.lights_outside
-    - group.lights_inside_except_master
-    - group.lights_holiday
-    - group.lights_other
+    - sensor.netatmo_indoor_temperature
+    - sensor.netatmo_outdoor_module_temperature
