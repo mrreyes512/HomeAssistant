@@ -1,0 +1,36 @@
+############################################################
+#
+# Home Assistant Media Stuff
+#
+############################################################
+
+media:
+  name: Media
+  view: yes
+  entities:
+    - group.chromecasts
+    - group.speakers
+    - media_player.fresca_apple_tv
+    - group.remotes
+
+# ----
+
+chromecasts:
+  name: Chromecasts
+  entities:
+    - media_player.office_tv
+    - media_player.playroom_tv
+    - media_player.living_room_tv
+
+speakers:
+  name: Speakers
+  entities:
+    - media_player.living_room_speaker
+    - media_player.master_bedroom_speaker
+
+remotes:
+  name: Remotes
+  entities:
+    - media_player.samsung_tv_remote
+    - remote.lroomharmony
+    - remote.fresca_apple_tv

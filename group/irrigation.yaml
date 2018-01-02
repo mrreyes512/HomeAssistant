@@ -10,13 +10,12 @@ irrigation:
   view: true
   entities:
   - camera.front_yard
-  - group.all_irrigation_zones
+  - group.irrigation_zones
   #- image.irrigation_zones #Doesn't work like i envisioned it
 
 
-all_irrigation_zones:
+irrigation_zones:
   name: Rachio Watering Zones
-  icon: mdi:water-pump
   control: hidden
   entities:
   - switch.zone_1

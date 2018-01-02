@@ -133,7 +133,7 @@ sensor.netatmo_indoor_pressure:
   friendly_name: Pressure
 
 sensor.netatmo_indoor_temperature:
-  friendly_name: Temperature
+  friendly_name: Inside
 
 sensor.netatmo_indoor_wifi:
   friendly_name: Wifi Strength
@@ -148,7 +148,7 @@ sensor.netatmo_outdoor_module_radio:
   friendly_name: Radio Strength
 
 sensor.netatmo_outdoor_module_temperature:
-  friendly_name: Temperature
+  friendly_name: Outside
 
 ############################################################
 #
@@ -158,6 +158,8 @@ sensor.netatmo_outdoor_module_temperature:
 
 climate.downstairs_16:
   friendly_name: Downstairs
+  icon: mdi:thermometer-lines
 
 climate.upastairs_13:
   friendly_name: Upstairs
+  icon: mdi:thermometer-lines
