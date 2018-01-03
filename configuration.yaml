@@ -64,10 +64,6 @@ map:
 #
 ############################################################
 
-light:
-  - platform: lifx
-#    broadcast: !include lifx_broadcast
-
 #google:
 #  client_id: !secret google_calendar_client_id
 #  client_secret: !secret google_calendar_client_secret
@@ -86,6 +82,12 @@ remote:
 
 tts:
   - platform: google
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 300
+#    service: tts.google_say
+#    data:
+#      message: 'May the Force be with you.'
 
 ###########################################################
 #
@@ -107,6 +109,7 @@ notify: !include includes/notify.yaml
 
 group: !include_dir_merge_named group/
 automation: !include_dir_merge_list automation/
+scene: !include_dir_merge_list scenes/
 
 
 # -----

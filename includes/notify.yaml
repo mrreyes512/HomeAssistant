@@ -9,3 +9,8 @@
 - name: PUSHBULLET_NOTIFY
   platform: pushbullet
   api_key: !secret pushbullet_api
+
+#- service: tts.google_say
+#entity_id: media_player.floor
+#data:
+#  message: 'May the Force be with you.'

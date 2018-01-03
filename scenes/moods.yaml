@@ -1,0 +1,20 @@
+###########################################################
+#
+# Home Assistant Scene
+#
+############################################################
+
+- name: Bedtime
+  entities:
+    group.lights_outside: on
+    light.living_room_tree_7: off
+    light.mail_table_4:   off
+    light.master_5:       on
+    light.kitchen_6:      off
+    light.play_room_3:    off
+    light.office_11:      off
+    light.living_room_lamp:
+      state: on
+      brightness_pct: 30
+      transition: 2
+    remote.lroomharmony:  off
