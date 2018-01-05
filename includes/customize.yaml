@@ -116,12 +116,52 @@ scene.outsidelights_off:
 scene.outsidelights_on:
   google_assistant: false
 
+############################################################
+#
+# Media Devices
+#
+############################################################
+
+media_player.home_group:
+  google_assistant: false
+
+media_player.living_room_speaker:
+  google_assistant: false
+
+media_player.master_bedroom_speaker:
+  google_assistant: false
+
+# Google Assistant did not recognize type: media used below
+
+media_player.samsung_tv_remote:
+  friendly_name: Living Room Remote
+  google_assistant_type: switch
+
+media_player.fresca_apple_tv:
+  google_assistant_type: media
+
+media_player.living_room_tv:
+  google_assistant_type: media
+
+media_player.office_tv:
+  google_assistant_type: media
+
+media_player.playroom_tv:
+  google_assistant_type: media
 
 ############################################################
 #
 # Philips Hue Lights
 #
 ############################################################
+
+light.living_room:
+# This is the living room group in Hue
+# In dev-state: **is_hue_group: true**
+  friendly_name: Hue Living Room Group
+  google_assistant: false
+  hidden: true
+
 
 light.living_room_lamp:
   friendly_name: Living Room Lamp
