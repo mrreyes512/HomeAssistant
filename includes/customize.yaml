@@ -16,8 +16,8 @@ light.play_room_3:
   google_assistant: true
   #google_assistant_name: play room
   google_assistant_type: light
-  aliases:
-    - game room
+#  aliases:
+#    - game room
 
 light.mail_table_4:
   icon: mdi:email
@@ -42,8 +42,8 @@ light.living_room_tree_7:
   friendly_name: Living Room Tree
   google_assistant: true
   google_assistant_type: light
-  aliases:
-    - tree
+#  aliases:
+#    - tree
 
 light.outside_side_8:
   friendly_name: Front Side
@@ -72,8 +72,8 @@ light.chandelier_12:
   google_assistant: true
   google_assistant_type: light
 #  google_assistant_name: chandelier
-  aliases:
-    - chandelier
+#  aliases:
+#    - chandelier
 
 light.mobile_2_14:
   icon: mdi:pine-tree
@@ -87,6 +87,35 @@ light.mobile_1_33:
   google_assistant: true
   google_assistant_type: light
 
+############################################################
+#
+# Vera Scenes
+#
+############################################################
+#DO NOT WANT TO EXPOSE VERA'S SCENES TO GOOGLE ASSISTANT TO
+#AVOID CONFUSION WITH HA'S SCENES
+
+scene.going_to_bed:
+  google_assistant: false
+
+scene.holidaylights_off:
+  google_assistant: false
+
+scene.holidaylights_on:
+  google_assistant: false
+
+scene.insidelights_off:
+  google_assistant: false
+
+scene.insidelights_on:
+  google_assistant: false
+
+scene.outsidelights_off:
+  google_assistant: false
+
+scene.outsidelights_on:
+  google_assistant: false
+
 
 ############################################################
 #
@@ -99,8 +128,8 @@ light.living_room_lamp:
   icon: mdi:lamp
   google_assistant: true
   google_assistant_type: light
-  aliases:
-    - lamp
+#  aliases:
+#    - lamp
 
 ############################################################
 #
