@@ -33,6 +33,13 @@ http:
     - 192.168.200.0/24
     - 2001:DB8:ABCD::/48
 
+# Browser Based Configuration
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: !secret configurator_ip
+
 history:
 
 # Optional, allows Home Assistant developers to focus on popular components.
