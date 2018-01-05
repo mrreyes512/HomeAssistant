@@ -33,6 +33,13 @@ http:
     - 192.168.200.0/24
     - 2001:DB8:ABCD::/48
 
+# Browser Based Configuration
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: !secret configurator_ip
+
 history:
 
 # Optional, allows Home Assistant developers to focus on popular components.
@@ -64,10 +71,6 @@ map:
 #
 ############################################################
 
-light:
-  - platform: lifx
-#    broadcast: !include lifx_broadcast
-
 #google:
 #  client_id: !secret google_calendar_client_id
 #  client_secret: !secret google_calendar_client_secret
@@ -86,6 +89,12 @@ remote:
 
 tts:
   - platform: google
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 300
+#    service: tts.google_say
+#    data:
+#      message: 'May the Force be with you.'
 
 ###########################################################
 #
@@ -101,16 +110,17 @@ switch: !include includes/switch.yaml #includes Rachio config
 media_player: !include includes/media_players.yaml
 google_assistant: !include includes/google_assistant.yaml
 hue: !include includes/philips_hue.yaml
+notify: !include includes/notify.yaml
 
 # Group Merge Directory
 
 group: !include_dir_merge_named group/
-scene: !include_dir_merge_named scenes/
+automation: !include_dir_merge_list automation/
+scene: !include_dir_merge_list scenes/
 
 
 # -----
 #input_select: !include includes/input_select.yaml
-#notify: !include includes/notify.yaml
 #scene: !include includes/scenes.yaml
 #weblink: !include includes/weblink.yaml
 

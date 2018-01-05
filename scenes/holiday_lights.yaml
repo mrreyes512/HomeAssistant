@@ -1,0 +1,13 @@
+###########################################################
+#
+# Home Assistant Scene
+#
+############################################################
+
+- name: Holiday Lights On
+  entities:
+    group.lights_holiday: on
+
+- name: Holiday Lights Off
+  entities:
+    group.lights_holiday: off

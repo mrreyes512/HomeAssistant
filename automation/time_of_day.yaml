@@ -1,0 +1,15 @@
+###########################################################
+#
+# Time of day test
+#
+############################################################
+
+- alias: 'Send timed notification'
+  trigger:
+    platform: time
+    at: "16:05:00"
+  action:
+    service: notify.PUSHBULLET_NOTIFY
+    data:
+      title: 'This is my title'
+      message: 'the time is now 1:40.'
