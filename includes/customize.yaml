@@ -136,9 +136,10 @@ media_player.master_bedroom_speaker:
 media_player.samsung_tv_remote:
   friendly_name: Living Room Remote
   google_assistant_type: switch
+  hidden: true
 
 media_player.fresca_apple_tv:
-  google_assistant_type: media
+  google_assistant_type: switch
 
 media_player.living_room_tv:
   google_assistant_type: media
@@ -148,6 +149,12 @@ media_player.office_tv:
 
 media_player.playroom_tv:
   google_assistant_type: media
+
+remote.lroomharmony:
+  friendly_name: Living Room Remote
+
+remote.fresca_apple_tv:
+  friendly_name: Fresca Apple TV
 
 ############################################################
 #

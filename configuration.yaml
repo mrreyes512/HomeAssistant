@@ -115,6 +115,7 @@ notify: !include includes/notify.yaml
 # Group Merge Directory
 
 group: !include_dir_merge_named group/
+sensor: !include_dir_merge_named sensors/
 automation: !include_dir_merge_list automation/
 scene: !include_dir_merge_list scenes/
 

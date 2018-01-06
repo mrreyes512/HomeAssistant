@@ -14,3 +14,4 @@ default_view:
     - sensor.netatmo_indoor_temperature
     - sensor.netatmo_outdoor_module_temperature
     - sun.sun
+    - sensor.travisci

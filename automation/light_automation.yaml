@@ -1,0 +1,38 @@
+###########################################################
+#
+# Home Assistant Automation: Light Groups
+#
+############################################################
+
+
+- alias: 'Turn ON the INSIDE Lights'
+  trigger:
+    platform:   sun
+    event:      sunset
+    offset:     "-00:45:00"
+  action:
+  - service:    light.turn_on
+    entity_id:  group.lights_inside
+  - service:    notify.PUSHBULLET_NOTIFY
+    data:
+      title:    'Sun triggered automation'
+      target:   "email/mrreyes512@gmail.com"
+      message:  |
+        The sun is {{ states.sensor.sun.state }}
+        Turning ON the INSIDE lights.
+
+- alias: 'Turn ON the OUTSIDE Lights'
+  trigger:
+    platform:   sun
+    event:      sunset
+    offset:     "+00:00:00"
+  action:
+  - service:    light.turn_on
+    entity_id:  group.lights_outside
+  - service:    notify.PUSHBULLET_NOTIFY
+    data:
+      title:    'Sun triggered automation'
+      target:   "email/mrreyes512@gmail.com"
+      message:  |
+        The sun is {{ states.sensor.sun.state }}
+        Turning ON the OUTSIDE lights.
