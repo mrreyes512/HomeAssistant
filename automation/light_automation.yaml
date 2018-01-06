@@ -36,3 +36,19 @@
       message:  |
         The sun is {{ states.sensor.sun.state }}
         Turning ON the OUTSIDE lights.
+
+- alias: 'Turn OFF the OUTSIDE Lights'
+  trigger:
+    platform:   sun
+    event:      sunrise
+    offset:     "-00:15:00"
+  action:
+  - service:    light.turn_off
+    entity_id:  group.lights_outside
+  - service:    notify.PUSHBULLET_NOTIFY
+    data:
+      title:    'Sun triggered automation'
+      target:   "email/mrreyes512@gmail.com"
+      message:  |
+        The sun is {{ states.sensor.sun.state }}
+        Turning OFF the OUTSIDE lights.
