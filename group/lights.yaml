@@ -14,6 +14,9 @@ lights:
     #- group.lights_inside_except_master
     - group.lights_holiday
     - group.lights_other
+    - group.scenes_lights
+
+# ---
 
 lights_inside:
   name: Inside Lights
@@ -37,7 +40,6 @@ lights_outside:
 lights_inside_except_master:
   name: Inside Except Master
   entities:
-    - light.living_room_lamp
     - light.living_room_tree_7
     - light.mail_table_4
     - light.kitchen_6
@@ -56,3 +58,14 @@ lights_other:
   entities:
     - light.chandelier_12
     - light.outside_back_10
+
+scenes_lights:
+  name: Scenes
+  control: hidden
+  entities:
+    - scene.nighttime_lights_on
+    - scene.evening_lights
+    - scene.holiday_lights_on
+    - scene.bedtime
+    - scene.holiday_lights_off
+    - scene.all_lights_off

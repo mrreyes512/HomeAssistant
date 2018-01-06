@@ -1,0 +1,20 @@
+###########################################################
+#
+# Home Assistant Scene: All lights off
+#
+############################################################
+# All lights off
+
+- name: All Lights Off
+  entities:
+    group.lights_inside:  off
+    group.lights_outside: off
+    group.lights_other:   off
+    group.lights_holiday: off
+
+- name: All Lights On
+  entities:
+    group.lights_inside:  on
+    group.lights_outside: on
+    group.lights_other:   on
+    group.lights_holiday: on
