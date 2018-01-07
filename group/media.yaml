@@ -7,6 +7,7 @@
 media:
   name: Media
   view: yes
+  icon: mdi:youtube-tv
   entities:
     - group.chromecasts
     - group.speakers

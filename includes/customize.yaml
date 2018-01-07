@@ -76,8 +76,10 @@ light.chandelier_12:
 #    - chandelier
 
 light.mobile_2_14:
-  icon: mdi:pine-tree
-  friendly_name: Holiday Lights 2
+#  icon: mdi:pine-tree
+#  friendly_name: Holiday Lights 2
+  icon: mdi:camera-iris
+  friendly_name: Fresca Office
   google_assistant: true
   google_assistant_type: light
 

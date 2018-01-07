@@ -8,6 +8,7 @@
 irrigation:
   name: Sprinklers
   view: true
+  icon: mdi:water-pump
   entities:
   - camera.front_yard
   - group.irrigation_zones
