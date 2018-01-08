@@ -76,8 +76,10 @@ light.chandelier_12:
 #    - chandelier
 
 light.mobile_2_14:
-  icon: mdi:pine-tree
-  friendly_name: Holiday Lights 2
+#  icon: mdi:pine-tree
+#  friendly_name: Holiday Lights 2
+  icon: mdi:camera-iris
+  friendly_name: Fresca Lamp
   google_assistant: true
   google_assistant_type: light
 
@@ -86,6 +88,16 @@ light.mobile_1_33:
   friendly_name: Holiday Lights 1
   google_assistant: true
   google_assistant_type: light
+
+binary_sensor.infiniti_door_18:
+  icon: mdi:garage
+  friendly_name: Infiniti Door
+  google_assistant: false
+
+binary_sensor.toyota_door_17:
+  icon: mdi:garage
+  friendly_name: Toyota Door
+  google_assistant: false
 
 ############################################################
 #

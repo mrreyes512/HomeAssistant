@@ -7,12 +7,12 @@
 lights:
   name: Lights
   view: yes
+  icon: mdi:lightbulb
   entities:
     - camera.living_room
     - group.lights_inside
     - group.lights_outside
-    #- group.lights_inside_except_master
-    - group.lights_holiday
+#    - group.lights_holiday
     - group.lights_other
     - group.scenes_lights
 
@@ -28,7 +28,7 @@ lights_inside:
     - light.kitchen_6
     - light.play_room_3
     - light.office_11
-#    - light.mobile_2_14
+    - light.mobile_2_14
 #    - light.mobile_1_33
 
 lights_outside:
@@ -45,12 +45,13 @@ lights_inside_except_master:
     - light.kitchen_6
     - light.play_room_3
     - light.office_11
-
-lights_holiday:
-  name: Holiday Lights
-  entities:
     - light.mobile_2_14
-    - light.mobile_1_33
+
+#lights_holiday:
+#  name: Holiday Lights
+#  entities:
+#    - light.mobile_2_14
+#    - light.mobile_1_33
 
 lights_other:
   name: Extra Lights
