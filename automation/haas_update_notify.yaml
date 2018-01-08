@@ -1,0 +1,16 @@
+###########################################################
+#
+# Home Assistant Automation: Update Available Notification
+#
+############################################################
+
+- alias: Update notifications
+  trigger:
+    - platform: state
+      entity_id: updater.updater
+  action:
+    - service:    notify.PUSHBULLET_NOTIFY
+      data:
+        title:    "Update notifications"
+        target:   "email/mrreyes512@gmail.com"
+        message:  "There is a new Home Assistant release available."

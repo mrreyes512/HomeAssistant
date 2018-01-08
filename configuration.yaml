@@ -34,11 +34,11 @@ http:
     - 2001:DB8:ABCD::/48
 
 # Browser Based Configuration
-panel_iframe:
-  configurator:
-    title: Configurator
-    icon: mdi:wrench
-    url: !secret configurator_ip
+#panel_iframe:
+#  configurator:
+#    title: Configurator
+#    icon: mdi:wrench
+#    url: !secret configurator_ip
 
 history:
 
@@ -48,9 +48,26 @@ updater:
   # include_used_components: true
 
 frontend:
+  themes: !include_dir_merge_named themes/
+
+input_select:
+  theme:
+    name: HASS Themes
+    initial: Midnight
+    icon: mdi:clipboard-text
+    options:
+      - default
+      - Dark Red
+      - Dark Orange
+      - Dark Blue
+      - Dark Green
+      - Midnight
+      - Moon Light
+      - Solarized
 
 discovery:
   ignore:
+    - plex_mediaserver
     - harmony
 
 sun:
