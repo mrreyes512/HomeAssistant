@@ -4,13 +4,64 @@
 #
 ############################################################
 
-- id: hass_theme
-  alias: hass_theme
-  initial_state: 'on'
+- alias: 'Set Initial Theme'
+  initial_state: on
   trigger:
-    - platform: state
-      entity_id: input_select.hass_theme
+    - platform: homeassistant
+      event: start
   action:
     - service: frontend.set_theme
       data_template:
-        name: "{{ states.input_select.hass_theme.state }}"
+        name: midnight
+
+- alias: 'Switch Theme'
+  initial_state: on
+  trigger:
+    - platform: state
+      entity_id: input_select.theme
+    - platform: homeassistant
+      event: start
+  action:
+    - service: frontend.set_theme
+      data_template:
+        name: >-
+          {% if is_state('input_select.theme', 'Dark Blue')%}dark_blue
+          {% elif is_state('input_select.theme', 'Dark Green')%}dark_green
+          {% elif is_state('input_select.theme', 'Dark Red')%}dark_red
+          {% elif is_state('input_select.theme', 'Dark Orange')%}dark_orange
+          {% elif is_state('input_select.theme', 'Midnight')%}midnight
+          {% elif is_state('input_select.theme', 'Moon Light')%}pmx_moonlight
+          {% elif is_state('input_select.theme', 'Solarized')%}solarized
+          {% endif %}
+
+#  - alias: 'Theme Dark Mode'
+#    initial_state: on
+#    trigger:
+#      platform: state
+#      entity_id: sun.sun
+#      to: 'below_horizon'
+#    condition:
+#      condition: state
+#      entity_id: input_boolean.switch_theme
+#      state: 'on'
+#    action:
+#      service: input_select.select_option
+#      data_template:
+#        entity_id: input_select.theme
+#        option: '{{states.input_select.dark_theme.state}}'
+#
+#  - alias: 'Theme Light Mode'
+#    initial_state: on
+#    trigger:
+#      platform: state
+#      entity_id: sun.sun
+#      to: 'above_horizon'
+#    condition:
+#      condition: state
+#      entity_id: input_boolean.switch_theme
+#      state: 'on'
+#    action:
+#      service: input_select.select_option
+#      data_template:
+#        entity_id: input_select.theme
+#        option: '{{states.input_select.light_theme.state}}'
