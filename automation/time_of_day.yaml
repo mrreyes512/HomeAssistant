@@ -4,30 +4,30 @@
 #
 ############################################################
 
-- alias: 'Send timed notification'
-  trigger:
-    platform: time
-    at: "12:12:00"
-  action:
-    service: notify.PUSHBULLET_NOTIFY
-    data:
-      title: "Light Status"
-      target: "email/mrreyes512@gmail.com"
-#      message: "The sun is {% if is_state('sun.sun', 'above_horizon') %}up{% else %}down{% endif %}!"
-      message: |
-        {% for n in range(0,13) %}
-        set interfaces ae{{ n }} apply-groups DISABLEIF
-        {% endfor %}
+#- alias: 'Send timed notification'
+#  trigger:
+#    platform: time
+#    at: "12:12:00"
+#  action:
+#    service: notify.PUSHBULLET_NOTIFY
+#    data:
+#      title: "Light Status"
+#      target: "email/mrreyes512@gmail.com"
+##      message: "The sun is {% if is_state('sun.sun', 'above_horizon') %}up{% else %}down{% endif %}!"
+#      message: |
+#        {% for n in range(0,13) %}
+#        set interfaces ae{{ n }} apply-groups DISABLEIF
+#        {% endfor %}
 
-- alias:        'Turn Lights off at time'
-  trigger:
-    platform:   time
-    at:         '11:24:00'
-  action:
-  - service:    light.turn_off
-    entity_id:  group.lights_inside
-  - service:    notify.PUSHBULLET_NOTIFY
-    data:
-      title:    'Time based automation'
-      message:  'Turning off the inside lights.'
-      target:   "email/mrreyes512@gmail.com"
+#- alias:        'Turn Lights off at time'
+#  trigger:
+#    platform:   time
+#    at:         '11:24:00'
+#  action:
+#  - service:    light.turn_off
+#    entity_id:  group.lights_inside
+#  - service:    notify.PUSHBULLET_NOTIFY
+#    data:
+#      title:    'Time based automation'
+#      message:  'Turning off the inside lights.'
+#      target:   "email/mrreyes512@gmail.com"
