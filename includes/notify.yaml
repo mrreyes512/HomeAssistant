@@ -6,11 +6,17 @@
 
 
 # Pushbullet notifications
-- name: PUSHBULLET_NOTIFY
+- name:     pushbullet
   platform: pushbullet
-  api_key: !secret pushbullet_api
+  api_key:  !secret pushbullet_api
 
 #- service: tts.google_say
 #entity_id: media_player.floor
 #data:
 #  message: 'May the Force be with you.'
+
+# Slack Notifications in HomeAssistant Workspace
+- name:     slack
+  platform: slack
+  api_key:  !secret slack_api_key
+  default_channel: '#homeautomations'

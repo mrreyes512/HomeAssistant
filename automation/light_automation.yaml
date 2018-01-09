@@ -1,0 +1,50 @@
+###########################################################
+#
+# Home Assistant Automation: Light Groups
+#
+############################################################
+
+
+- alias: 'Turn ON the INSIDE Lights'
+  trigger:
+    platform:   sun
+    event:      sunset
+    offset:     "-00:30:00"
+  action:
+  - service:    light.turn_on
+    entity_id:  group.lights_inside
+  - service:  notify.slack
+    data_template:
+      message: |
+        -30 min's till SUNSET.
+        Turning *ON* the *INSIDE* lights.
+
+- alias: 'Turn ON the OUTSIDE Lights'
+  trigger:
+    platform:   sun
+    event:      sunset
+    offset:     "+00:10:00"
+  action:
+  - service:    light.turn_on
+    entity_id:  group.lights_outside
+  - service:  notify.slack
+    data_template:
+      message: |
+        +10 min's past SUNSET.
+        Turning *ON* the *OUTSIDE* lights.
+
+
+
+- alias: 'Turn OFF the OUTSIDE Lights'
+  trigger:
+    platform:   sun
+    event:      sunrise
+    offset:     "-00:15:00"
+  action:
+  - service:    light.turn_off
+    entity_id:  group.lights_outside
+  - service:  notify.slack
+    data_template:
+      message: |
+        -15 min's till SUNRISE.
+        Turning *OFF* the *OUTSIDE* lights.

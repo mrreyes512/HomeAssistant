@@ -76,8 +76,10 @@ light.chandelier_12:
 #    - chandelier
 
 light.mobile_2_14:
-  icon: mdi:pine-tree
-  friendly_name: Holiday Lights 2
+#  icon: mdi:pine-tree
+#  friendly_name: Holiday Lights 2
+  icon: mdi:camera-iris
+  friendly_name: Fresca Lamp
   google_assistant: true
   google_assistant_type: light
 
@@ -86,6 +88,16 @@ light.mobile_1_33:
   friendly_name: Holiday Lights 1
   google_assistant: true
   google_assistant_type: light
+
+binary_sensor.infiniti_door_18:
+  icon: mdi:garage
+  friendly_name: Infiniti Door
+  google_assistant: false
+
+binary_sensor.toyota_door_17:
+  icon: mdi:garage
+  friendly_name: Toyota Door
+  google_assistant: false
 
 ############################################################
 #
@@ -116,12 +128,59 @@ scene.outsidelights_off:
 scene.outsidelights_on:
   google_assistant: false
 
+############################################################
+#
+# Media Devices
+#
+############################################################
+
+media_player.home_group:
+  google_assistant: false
+
+media_player.living_room_speaker:
+  google_assistant: false
+
+media_player.master_bedroom_speaker:
+  google_assistant: false
+
+# Google Assistant did not recognize type: media used below
+
+media_player.samsung_tv_remote:
+  friendly_name: Living Room Remote
+  google_assistant_type: switch
+  hidden: true
+
+media_player.fresca_apple_tv:
+  google_assistant_type: switch
+
+media_player.living_room_tv:
+  google_assistant_type: media
+
+media_player.office_tv:
+  google_assistant_type: media
+
+media_player.playroom_tv:
+  google_assistant_type: media
+
+remote.lroomharmony:
+  friendly_name: Living Room Remote
+
+remote.fresca_apple_tv:
+  friendly_name: Fresca Apple TV
 
 ############################################################
 #
 # Philips Hue Lights
 #
 ############################################################
+
+light.living_room:
+# This is the living room group in Hue
+# In dev-state: **is_hue_group: true**
+  friendly_name: Hue Living Room Group
+  google_assistant: false
+  hidden: true
+
 
 light.living_room_lamp:
   friendly_name: Living Room Lamp

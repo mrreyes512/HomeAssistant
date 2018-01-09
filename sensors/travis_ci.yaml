@@ -1,0 +1,11 @@
+############################################################
+#
+# Home Assistant Sensors
+#
+############################################################
+
+- name:     TravisCI
+  platform: travisci
+  api_key:  !secret travisci_api
+  branch:   master
+#  repository: HomeAssistant

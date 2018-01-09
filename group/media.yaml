@@ -7,6 +7,7 @@
 media:
   name: Media
   view: yes
+  icon: mdi:youtube-tv
   entities:
     - group.chromecasts
     - group.speakers
@@ -30,6 +31,7 @@ speakers:
 
 remotes:
   name: Remotes
+  control: hidden
   entities:
     - media_player.samsung_tv_remote
     - remote.lroomharmony
