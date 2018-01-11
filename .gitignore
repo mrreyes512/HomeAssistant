@@ -33,3 +33,6 @@ mysql
 __pycache__
 *.pyc
 .idea
+
+# new pi script
+new_pi.sh

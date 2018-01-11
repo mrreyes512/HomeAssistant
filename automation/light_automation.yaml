@@ -16,6 +16,7 @@
   - service:  notify.slack
     data_template:
       message: |
+        *SUN BASED AUTOMATION*
         -30 min's till SUNSET.
         Turning *ON* the *INSIDE* lights.
 
@@ -30,6 +31,7 @@
   - service:  notify.slack
     data_template:
       message: |
+        *SUN BASED AUTOMATION*
         +10 min's past SUNSET.
         Turning *ON* the *OUTSIDE* lights.
 
@@ -46,5 +48,6 @@
   - service:  notify.slack
     data_template:
       message: |
+        *SUN BASED AUTOMATION*
         -15 min's till SUNRISE.
         Turning *OFF* the *OUTSIDE* lights.

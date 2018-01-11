@@ -16,4 +16,6 @@
         message:  "There is a new Home Assistant release available."
     - service:  notify.slack
       data_template:
-        message: "Home Assistant {{ states.updater.updater.state }}  is now available."
+        message: |
+          *UPDATE BASED AUTOMATION*
+          Home Assistant {{ states.updater.updater.state }} is now available.

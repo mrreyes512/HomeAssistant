@@ -10,11 +10,20 @@
     group.lights_outside: off
     group.lights_other:   off
 
-- name: Nighttime Lights On
+- name: Bedtime
   entities:
-    group.lights_inside:  on
-    group.lights_outside: on
-    group.lights_other:   off
+    light.master_5:           on
+    group.lights_outside:     on
+    group.lights_other:       off
+    light.living_room_tree_7: off
+    light.mail_table_4:       off
+    light.kitchen_6:          off
+    light.play_room_3:        off
+    light.office_11:          on
+    light.mobile_2_14:        off
+    remote.lroomharmony:      off
+
+#    Living Room Lamp will be taken care of in automation/going_to_bed.yaml
 #    light.living_room_lamp:
 #      state: on
 #      color_temp: 153
