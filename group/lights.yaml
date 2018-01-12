@@ -64,8 +64,8 @@ scenes_lights:
   control: hidden
   entities:
     - scene.bedtime
-    - scene.all_lights_off
     - scene.all_lights_on
+    - scene.all_lights_off
 #    - scene.holiday_lights_on
 #    - scene.holiday_lights_off
 

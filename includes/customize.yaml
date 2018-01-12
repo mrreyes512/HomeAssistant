@@ -107,9 +107,6 @@ binary_sensor.toyota_door_17:
 #DO NOT WANT TO EXPOSE VERA'S SCENES TO GOOGLE ASSISTANT TO
 #AVOID CONFUSION WITH HA'S SCENES
 
-scene.going_to_bed:
-  google_assistant: false
-
 scene.holidaylights_off:
   google_assistant: false
 
@@ -253,10 +250,24 @@ climate.upastairs_13:
   icon: mdi:thermometer-lines
 
 ############################################################
-#
+# Groups
+############################################################
+
+group.inside_lights_sum:
+  icon: mdi:lightbulb
+
+group.outside_lights_sum:
+  icon: mdi:lightbulb
+
+############################################################
 # Scenes
-#
 ############################################################
 
 scene.bedtime:
   icon: mdi:hotel
+
+scene.all_lights_on:
+  icon: mdi:lightbulb-on
+
+scene.all_lights_off:
+  icon: mdi:lightbulb

@@ -12,6 +12,13 @@
     light.null: on
 
 ############################################################
+# Scene to trigger 'Going to bed' automation
+############################################################
+- name: Bedtime
+  entities:
+    light.null: on
+
+############################################################
 # All Lights Scenes
 ############################################################
 - name: All Lights Off
@@ -31,10 +38,10 @@
 ############################################################
 # Holiday Lights Scenes
 ############################################################
-- name: Holiday Lights On
-  entities:
-    group.lights_holiday: on
-
-- name: Holiday Lights Off
-  entities:
-    group.lights_holiday: off
+#- name: Holiday Lights On
+#  entities:
+#    group.lights_holiday: on
+#
+#- name: Holiday Lights Off
+#  entities:
+#    group.lights_holiday: off
