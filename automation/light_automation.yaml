@@ -4,50 +4,77 @@
 #
 ############################################################
 
-
+############################################################
+# Trigger: Prior to sunset
+# Action: Turn *on* INSIDE Lights
+############################################################
 - alias: 'Turn ON the INSIDE Lights'
   trigger:
-    platform:   sun
-    event:      sunset
-    offset:     "-00:30:00"
+    platform:     sun
+    event:        sunset
+    offset:      "-00:30:00"
+
   action:
-  - service:    light.turn_on
-    entity_id:  group.lights_inside
-  - service:  notify.slack
+  # Setting Hue Lamp
+  - service:      hue.hue_activate_scene
+    data:
+      group_name: "Living Room"
+      scene_name: "Normal"
+
+  # Lights to turn on
+  - service:      light.turn_on
+    entity_id:    group.lights_inside
+
+  # Notify Slack about action taken
+  - service:      notify.slack
     data_template:
       message: |
-        *SUN BASED AUTOMATION*
+        :Sunny: *SUN BASED AUTOMATION*
         -30 min's till SUNSET.
         Turning *ON* the *INSIDE* lights.
 
+############################################################
+# Trigger: Prior to SUNSET
+# Action: Turn *on* OUTSIDE Lights
+############################################################
 - alias: 'Turn ON the OUTSIDE Lights'
   trigger:
     platform:   sun
     event:      sunset
     offset:     "+00:10:00"
+
   action:
+  # Lights to turn on
   - service:    light.turn_on
     entity_id:  group.lights_outside
+
+  # Notify Slack about action taken
   - service:  notify.slack
     data_template:
       message: |
-        *SUN BASED AUTOMATION*
+        :Sunny: *SUN BASED AUTOMATION*
         +10 min's past SUNSET.
         Turning *ON* the *OUTSIDE* lights.
 
-
-
+############################################################
+# Trigger: Prior to SUNRISE
+# Action: Turn *off* OUTSIDE Lights
+############################################################
 - alias: 'Turn OFF the OUTSIDE Lights'
   trigger:
     platform:   sun
     event:      sunrise
     offset:     "-00:15:00"
+
   action:
+  # Lights to turn off
   - service:    light.turn_off
     entity_id:  group.lights_outside
+
+  # Notify Slack about action taken
   - service:  notify.slack
     data_template:
       message: |
-        *SUN BASED AUTOMATION*
+        :Sunny: *SUN BASED AUTOMATION*
         -15 min's till SUNRISE.
         Turning *OFF* the *OUTSIDE* lights.

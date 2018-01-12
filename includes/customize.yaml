@@ -251,3 +251,12 @@ climate.downstairs_16:
 climate.upastairs_13:
   friendly_name: Upstairs
   icon: mdi:thermometer-lines
+
+############################################################
+#
+# Scenes
+#
+############################################################
+
+scene.bedtime:
+  icon: mdi:hotel

@@ -128,14 +128,13 @@ media_player: !include includes/media_players.yaml
 google_assistant: !include includes/google_assistant.yaml
 hue: !include includes/philips_hue.yaml
 notify: !include includes/notify.yaml
+scene: !include includes/scenes.yaml
 
 # Group Merge Directory
 
 group: !include_dir_merge_named group/
 sensor: !include_dir_merge_named sensors/
 automation: !include_dir_merge_list automation/
-scene: !include_dir_merge_list scenes/
-
 
 # -----
 #input_select: !include includes/input_select.yaml

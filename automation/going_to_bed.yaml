@@ -4,7 +4,9 @@
 #
 ############################################################
 
-
+############################################################
+# Trigger: When the scene.bedtime is activated
+############################################################
 - alias: 'Going to bed'
   trigger:
     platform:       event
@@ -14,11 +16,31 @@
       service:      turn_on
       service_data:
         entity_id:  scene.bedtime
+
   action:
+  # Setting Hue Lamp
   - service:        hue.hue_activate_scene
     data:
       group_name:   "Living Room"
       scene_name:   "Bedtime"
+
+  # Lights to turn on
+  - service:        light.turn_on
+    entity_id:
+    - light.master_5
+    - group.lights_outside
+
+  # Lights to turn off
+  - service:        light.turn_off
+    entity_id:
+    - light.living_room_tree_7
+    - light.mail_table_4
+    - light.kitchen_6
+    - light.play_room_3
+    - light.office_11
+    - light.mobile_2_14
+
+  # Notify Slack about action taken
   - service:        notify.slack
     data_template:
       message: |
