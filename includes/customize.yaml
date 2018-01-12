@@ -265,9 +265,12 @@ group.outside_lights_sum:
 
 scene.bedtime:
   icon: mdi:hotel
+  google_assistant: true
 
 scene.all_lights_on:
   icon: mdi:lightbulb-on
+  google_assistant: false
 
 scene.all_lights_off:
   icon: mdi:lightbulb
+  google_assistant: false
