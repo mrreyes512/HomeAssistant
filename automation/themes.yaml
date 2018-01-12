@@ -14,25 +14,25 @@
       data_template:
         name: midnight
 
-- alias: 'Switch Theme'
-  initial_state: on
-  trigger:
-    - platform: state
-      entity_id: input_select.theme
-    - platform: homeassistant
-      event: start
-  action:
-    - service: frontend.set_theme
-      data_template:
-        name: >-
-          {% if is_state('input_select.theme', 'Dark Blue')%}dark_blue
-          {% elif is_state('input_select.theme', 'Dark Green')%}dark_green
-          {% elif is_state('input_select.theme', 'Dark Red')%}dark_red
-          {% elif is_state('input_select.theme', 'Dark Orange')%}dark_orange
-          {% elif is_state('input_select.theme', 'Midnight')%}midnight
-          {% elif is_state('input_select.theme', 'Moon Light')%}pmx_moonlight
-          {% elif is_state('input_select.theme', 'Solarized')%}solarized
-          {% endif %}
+#- alias: 'Switch Theme'
+#  initial_state: on
+#  trigger:
+#    - platform: state
+#      entity_id: input_select.theme
+#    - platform: homeassistant
+#      event: start
+#  action:
+#    - service: frontend.set_theme
+#      data_template:
+#        name: >-
+#          {% if is_state('input_select.theme', 'Dark Blue')%}dark_blue
+#          {% elif is_state('input_select.theme', 'Dark Green')%}dark_green
+#          {% elif is_state('input_select.theme', 'Dark Red')%}dark_red
+#          {% elif is_state('input_select.theme', 'Dark Orange')%}dark_orange
+#          {% elif is_state('input_select.theme', 'Midnight')%}midnight
+#          {% elif is_state('input_select.theme', 'Moon Light')%}pmx_moonlight
+#          {% elif is_state('input_select.theme', 'Solarized')%}solarized
+#          {% endif %}
 
 #  - alias: 'Theme Dark Mode'
 #    initial_state: on

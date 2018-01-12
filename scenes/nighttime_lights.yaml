@@ -4,19 +4,7 @@
 #
 ############################################################
 
-- name: Evening Lights
+# Scene to trigger 'Going to bed' automation
+- name: Bedtime
   entities:
-    group.lights_inside:  on
-    group.lights_outside: off
-    group.lights_other:   off
-
-- name: Nighttime Lights On
-  entities:
-    group.lights_inside:  on
-    group.lights_outside: on
-    group.lights_other:   off
-#    light.living_room_lamp:
-#      state: on
-#      color_temp: 153
-#      xy_color: 0.6603,0.3219
-#      brightness: 79
+    light.null: on
