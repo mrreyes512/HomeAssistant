@@ -130,10 +130,12 @@ google_assistant: !include includes/google_assistant.yaml
 hue: !include includes/philips_hue.yaml
 notify: !include includes/notify.yaml
 scene: !include includes/scenes.yaml
+device_tracker: !include includes/device_tracker.yaml
 
 # Group Merge Directory
 
 group: !include_dir_merge_named group/
+<<<<<<< Updated upstream
 sensor: !include_dir_merge_list sensors/
 #sensor:
 #  - platform: template
@@ -141,6 +143,13 @@ sensor: !include_dir_merge_list sensors/
 #      living_room_remote:
 #        value_template: '{{ states.remote.remote.lroomharmony.attributes.current_activity }}'
 
+=======
+<<<<<<< Updated upstream
+sensor: !include_dir_merge_named sensors/
+=======
+sensor: !include_dir_merge_list sensors/
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 automation: !include_dir_merge_list automation/
 
 # -----
