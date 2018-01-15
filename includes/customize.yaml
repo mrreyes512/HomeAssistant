@@ -90,14 +90,16 @@ light.mobile_1_33:
   google_assistant_type: light
 
 binary_sensor.infiniti_door_18:
+  device_class: garage_door # device_class does not appear to be working properly with UI
   icon: mdi:garage
-  friendly_name: Infiniti Door
-  google_assistant: false
+  friendly_name: Infiniti Garage Door
+  google_assistant: true
 
 binary_sensor.toyota_door_17:
+  device_class: garage_door
   icon: mdi:garage
-  friendly_name: Toyota Door
-  google_assistant: false
+  friendly_name: Toyota Garage Door
+  google_assistant: true
 
 ############################################################
 #
