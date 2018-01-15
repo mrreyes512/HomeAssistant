@@ -135,21 +135,7 @@ device_tracker: !include includes/device_tracker.yaml
 # Group Merge Directory
 
 group: !include_dir_merge_named group/
-<<<<<<< Updated upstream
 sensor: !include_dir_merge_list sensors/
-#sensor:
-#  - platform: template
-#    sensors:
-#      living_room_remote:
-#        value_template: '{{ states.remote.remote.lroomharmony.attributes.current_activity }}'
-
-=======
-<<<<<<< Updated upstream
-sensor: !include_dir_merge_named sensors/
-=======
-sensor: !include_dir_merge_list sensors/
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 automation: !include_dir_merge_list automation/
 
 # -----
