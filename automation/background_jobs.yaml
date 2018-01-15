@@ -1,7 +1,48 @@
 ###########################################################
 #
-# Home Assistant Automation: Themes reload
+# Home Assistant Automation: Background jobs
 #
+############################################################
+
+###########################################################
+# Speedtest icon based on results
+############################################################
+
+- alias: 'Internet Speed Glow Connect Great'
+  trigger:
+    platform: template
+    value_template: '{{ states.sensor.speedtest_download.state|float > 10}}'
+  action:
+    service: shell_command.green
+- alias: 'Internet Speed Glow Connect Poor'
+  trigger:
+    platform: template
+    value_template: '{{ states.sensor.speedtest_download.state| float < 10 }}'
+  action:
+    service: shell_command.red
+
+###########################################################
+# Home Assistant Notify on Upgrades
+############################################################
+
+- alias: Update notifications
+  trigger:
+    - platform: state
+      entity_id: updater.updater
+  action:
+    - service:    notify.pushbullet
+      data:
+        title:    "Update notifications"
+        target:   "email/mrreyes512@gmail.com"
+        message:  "There is a new Home Assistant release available."
+    - service:  notify.slack
+      data_template:
+        message: |
+          *UPDATE BASED AUTOMATION*
+          Home Assistant {{ states.updater.updater.state }} is now available.
+
+###########################################################
+# Home Assistant Theme
 ############################################################
 
 - alias: 'Set Initial Theme'

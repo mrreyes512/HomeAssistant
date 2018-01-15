@@ -12,7 +12,7 @@ secrets.yaml
 ip_bans.yaml
 
 # Componet Files
-harmony*.yaml
+harmony_*harmony.yaml
 known_devices.yaml
 google_calendars.yaml
 .google.token

@@ -1,0 +1,10 @@
+############################################################
+#
+# Home Assistant Sensors: Harmony Activity
+#
+############################################################
+
+- platform: template
+  sensors:
+    living_room_remote:
+      value_template: '{{ states.remote.lroomharmony.attributes.current_activity }}'

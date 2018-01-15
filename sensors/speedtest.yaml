@@ -1,0 +1,16 @@
+############################################################
+#
+# Home Assistant Sensors: Speedtest
+#
+############################################################
+
+- platform: speedtest
+  server_id: 6000     #TWC Speedtest Austin: speedtest.texas.rr.com:8080
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+  # run every 30 min's
+  minute:
+    - 0
+    - 30

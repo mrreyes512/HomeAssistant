@@ -12,6 +12,7 @@ default_view:
   icon: mdi:home
   entities:
     - group.home_status
+    - group.network_info
     - group.all_thermostats
 #    - group.lights_inside
     - group.scenes_lights
@@ -28,7 +29,7 @@ light_groups:
 # Groups
 ############################################################
 home_status:
-  name: Status
+  name: Home Status
   entities:
     - sensor.netatmo_indoor_temperature
     - sensor.netatmo_outdoor_module_temperature
@@ -38,6 +39,13 @@ home_status:
     - binary_sensor.infiniti_door_18
     - binary_sensor.toyota_door_17
 #    - input_select.theme
+
+network_info:
+  name: Network Status
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
 
 scenes_lights:
   name: Scenes

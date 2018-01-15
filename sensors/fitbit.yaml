@@ -1,0 +1,9 @@
+############################################################
+#
+# Home Assistant Sensors: Fitbit
+#
+############################################################
+
+- platform: fitbit
+  monitored_resources:
+    - "activities/tracker/steps"
