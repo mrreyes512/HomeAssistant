@@ -15,3 +15,10 @@
 
 - platform: cast
   host: !secret cast_ip_2
+
+- platform: spotify
+  client_id: !secret spotify_id
+  client_secret: !secret spotify_secret
+#  aliases:
+#      abc123def456: 'Living Room'
+#      9183abas000: 'Bed Room'
