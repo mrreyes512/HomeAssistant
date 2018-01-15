@@ -43,6 +43,7 @@ home_status:
 network_info:
   name: Network Status
   entities:
+    - sensor.reyeshaasduckdnsorg
     - sensor.speedtest_download
     - sensor.speedtest_upload
     - sensor.speedtest_ping

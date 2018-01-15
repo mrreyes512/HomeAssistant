@@ -285,3 +285,7 @@ scene.all_lights_off:
 sensor.living_room_remote:
   icon: mdi:youtube-tv
   friendly_name: Living Room TV
+
+sensor.reyeshaasduckdnsorg:
+  icon: mdi:web
+  friendly_name: Reyes DuckDNS
