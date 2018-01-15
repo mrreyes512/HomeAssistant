@@ -34,6 +34,7 @@ home_status:
     - sensor.netatmo_outdoor_module_temperature
     - sun.sun
     - sensor.travisci
+    - sensor.living_room_remote
     - binary_sensor.infiniti_door_18
     - binary_sensor.toyota_door_17
 #    - input_select.theme

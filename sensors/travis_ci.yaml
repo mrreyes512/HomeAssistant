@@ -4,8 +4,8 @@
 #
 ############################################################
 
-- platform: travisci
-  name:     TravisCI
-  api_key:  !secret travisci_api
-  branch:   master
-#  repository: HomeAssistant
+#- platform: travisci
+#  name:     TravisCI
+#  api_key:  !secret travisci_api
+#  branch:   master
+##  repository: HomeAssistant

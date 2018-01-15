@@ -239,9 +239,7 @@ sensor.netatmo_outdoor_module_temperature:
   friendly_name: Outside
 
 ############################################################
-#
 # Climate Sensors
-#
 ############################################################
 
 climate.downstairs_16:
@@ -277,3 +275,11 @@ scene.all_lights_on:
 scene.all_lights_off:
   icon: mdi:lightbulb
   google_assistant: false
+
+############################################################
+# Sensors
+############################################################
+
+sensor.living_room_remote:
+  icon: mdi:youtube-tv
+  friendly_name: Living Room TV
