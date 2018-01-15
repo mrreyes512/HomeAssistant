@@ -44,9 +44,12 @@ network_info:
   name: Network Status
   entities:
     - sensor.reyeshaasduckdnsorg
+    - sensor.hassuptime
+    - sensor.mrreyes512homeassistant_last_build_state
+    - sensor.mrreyes512homeassistant_last_build_finished_at
     - sensor.speedtest_download
-    - sensor.speedtest_upload
-    - sensor.speedtest_ping
+#    - sensor.speedtest_upload
+#    - sensor.speedtest_ping
 
 scenes_lights:
   name: Scenes

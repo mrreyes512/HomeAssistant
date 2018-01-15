@@ -289,3 +289,13 @@ sensor.living_room_remote:
 sensor.reyeshaasduckdnsorg:
   icon: mdi:web
   friendly_name: Reyes DuckDNS
+
+sensor.hassuptime:
+  icon: mdi:desktop-classic
+  friendly_name: HASS Uptime
+
+sensor.mrreyes512homeassistant_last_build_state:
+  friendly_name: Latest Build Test
+
+sensor.mrreyes512homeassistant_last_build_finished_at:
+  friendly_name: TravisCI Completed
