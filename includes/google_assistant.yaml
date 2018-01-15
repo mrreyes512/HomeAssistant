@@ -14,5 +14,5 @@ exposed_domains:
   - light
   - scene
   - climate
-  - media_player
+#  - media_player
 #  - group

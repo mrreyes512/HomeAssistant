@@ -90,14 +90,16 @@ light.mobile_1_33:
   google_assistant_type: light
 
 binary_sensor.infiniti_door_18:
+  device_class: garage_door # device_class does not appear to be working properly with UI
   icon: mdi:garage
-  friendly_name: Infiniti Door
-  google_assistant: false
+  friendly_name: Infiniti Garage Door
+  google_assistant: true
 
 binary_sensor.toyota_door_17:
+  device_class: garage_door
   icon: mdi:garage
-  friendly_name: Toyota Door
-  google_assistant: false
+  friendly_name: Toyota Garage Door
+  google_assistant: true
 
 ############################################################
 #
@@ -239,9 +241,7 @@ sensor.netatmo_outdoor_module_temperature:
   friendly_name: Outside
 
 ############################################################
-#
 # Climate Sensors
-#
 ############################################################
 
 climate.downstairs_16:
@@ -251,3 +251,51 @@ climate.downstairs_16:
 climate.upastairs_13:
   friendly_name: Upstairs
   icon: mdi:thermometer-lines
+
+############################################################
+# Groups
+############################################################
+
+group.inside_lights_sum:
+  icon: mdi:lightbulb
+
+group.outside_lights_sum:
+  icon: mdi:lightbulb
+
+############################################################
+# Scenes
+############################################################
+
+scene.bedtime:
+  icon: mdi:hotel
+  google_assistant: true
+
+scene.all_lights_on:
+  icon: mdi:lightbulb-on
+  google_assistant: false
+
+scene.all_lights_off:
+  icon: mdi:lightbulb
+  google_assistant: false
+
+############################################################
+# Sensors
+############################################################
+
+sensor.living_room_remote:
+  icon: mdi:youtube-tv
+  friendly_name: Living Room TV
+
+sensor.reyeshaasduckdnsorg:
+  icon: mdi:web
+  friendly_name: Reyes DuckDNS
+
+sensor.hassuptime:
+  icon: mdi:desktop-classic
+  friendly_name: HASS Uptime
+
+sensor.mrreyes512homeassistant_last_build_state:
+  friendly_name: Latest Build Test
+
+sensor.mrreyes512homeassistant_last_build_finished_at:
+  friendly_name: TravisCI Completed

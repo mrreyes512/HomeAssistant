@@ -1,0 +1,108 @@
+###########################################################
+#
+# Home Assistant Automation: Background jobs
+#
+############################################################
+
+###########################################################
+# Speedtest icon based on results
+############################################################
+
+- alias: 'Internet Speed Glow Connect Great'
+  trigger:
+    platform: template
+    value_template: '{{ states.sensor.speedtest_download.state|float > 10}}'
+  action:
+    service: shell_command.green
+- alias: 'Internet Speed Glow Connect Poor'
+  trigger:
+    platform: template
+    value_template: '{{ states.sensor.speedtest_download.state| float < 10 }}'
+  action:
+    service: shell_command.red
+
+###########################################################
+# Home Assistant Notify on Upgrades
+############################################################
+
+- alias: Update notifications
+  trigger:
+    - platform: state
+      entity_id: updater.updater
+  action:
+    - service:    notify.pushbullet
+      data:
+        title:    "Update notifications"
+        target:   "email/mrreyes512@gmail.com"
+        message:  "There is a new Home Assistant release available."
+    - service:  notify.slack
+      data_template:
+        message: |
+          *UPDATE BASED AUTOMATION*
+          Home Assistant {{ states.updater.updater.state }} is now available.
+
+###########################################################
+# Home Assistant Theme
+############################################################
+
+- alias: 'Set Initial Theme'
+  initial_state: on
+  trigger:
+    - platform: homeassistant
+      event: start
+  action:
+    - service: frontend.set_theme
+      data_template:
+        name: midnight
+
+#- alias: 'Switch Theme'
+#  initial_state: on
+#  trigger:
+#    - platform: state
+#      entity_id: input_select.theme
+#    - platform: homeassistant
+#      event: start
+#  action:
+#    - service: frontend.set_theme
+#      data_template:
+#        name: >-
+#          {% if is_state('input_select.theme', 'Dark Blue')%}dark_blue
+#          {% elif is_state('input_select.theme', 'Dark Green')%}dark_green
+#          {% elif is_state('input_select.theme', 'Dark Red')%}dark_red
+#          {% elif is_state('input_select.theme', 'Dark Orange')%}dark_orange
+#          {% elif is_state('input_select.theme', 'Midnight')%}midnight
+#          {% elif is_state('input_select.theme', 'Moon Light')%}pmx_moonlight
+#          {% elif is_state('input_select.theme', 'Solarized')%}solarized
+#          {% endif %}
+
+#  - alias: 'Theme Dark Mode'
+#    initial_state: on
+#    trigger:
+#      platform: state
+#      entity_id: sun.sun
+#      to: 'below_horizon'
+#    condition:
+#      condition: state
+#      entity_id: input_boolean.switch_theme
+#      state: 'on'
+#    action:
+#      service: input_select.select_option
+#      data_template:
+#        entity_id: input_select.theme
+#        option: '{{states.input_select.dark_theme.state}}'
+#
+#  - alias: 'Theme Light Mode'
+#    initial_state: on
+#    trigger:
+#      platform: state
+#      entity_id: sun.sun
+#      to: 'above_horizon'
+#    condition:
+#      condition: state
+#      entity_id: input_boolean.switch_theme
+#      state: 'on'
+#    action:
+#      service: input_select.select_option
+#      data_template:
+#        entity_id: input_select.theme
+#        option: '{{states.input_select.light_theme.state}}'

@@ -4,23 +4,70 @@
 #
 ############################################################
 
+############################################################
+# Default View
+############################################################
 default_view:
   view: yes
   icon: mdi:home
   entities:
     - group.home_status
+    - group.network_info
     - group.all_thermostats
-    - group.lights_inside
+#    - group.lights_inside
+    - group.scenes_lights
+    - group.light_groups
 
-# ---
+light_groups:
+  name: Light Groups
+  control: hidden
+  entities:
+    - group.inside_lights_sum
+    - group.outside_lights_sum
 
+############################################################
+# Groups
+############################################################
 home_status:
-  name: Status
+  name: Home Status
   entities:
     - sensor.netatmo_indoor_temperature
     - sensor.netatmo_outdoor_module_temperature
     - sun.sun
     - sensor.travisci
+    - sensor.living_room_remote
     - binary_sensor.infiniti_door_18
     - binary_sensor.toyota_door_17
-    - input_select.theme
+#    - input_select.theme
+
+network_info:
+  name: Network Status
+  entities:
+    - sensor.reyeshaasduckdnsorg
+    - sensor.hassuptime
+    - sensor.mrreyes512homeassistant_last_build_state
+    - sensor.mrreyes512homeassistant_last_build_finished_at
+    - sensor.speedtest_download
+#    - sensor.speedtest_upload
+#    - sensor.speedtest_ping
+
+scenes_lights:
+  name: Scenes
+  control: hidden
+  entities:
+    - scene.bedtime
+    - scene.all_lights_on
+    - scene.all_lights_off
+    - group.inside_lights_sum
+#    - scene.holiday_lights_on
+#    - scene.holiday_lights_off
+
+inside_lights_sum:
+  name: Inside Lights
+  entities:
+    - group.lights_inside
+
+outside_lights_sum:
+  name: Outside Lights
+  entities:
+    - group.lights_outside

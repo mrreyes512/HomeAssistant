@@ -4,8 +4,11 @@
 #
 ############################################################
 
-- name:     TravisCI
-  platform: travisci
+- platform: travisci
   api_key:  !secret travisci_api
+  repository: HomeAssistant
   branch:   master
-#  repository: HomeAssistant
+  monitored_conditions:
+    - state
+    - last_build_state
+    - last_build_finished_at

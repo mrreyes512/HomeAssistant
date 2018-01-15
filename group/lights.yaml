@@ -4,20 +4,24 @@
 #
 ############################################################
 
+############################################################
+# Lights View
+############################################################
 lights:
   name: Lights
   view: yes
   icon: mdi:lightbulb
   entities:
-    - camera.living_room
     - group.lights_inside
     - group.lights_outside
-#    - group.lights_holiday
     - group.lights_other
     - group.scenes_lights
+#    - camera.living_room
+#    - group.lights_holiday
 
-# ---
-
+############################################################
+# Light Groups
+############################################################
 lights_inside:
   name: Inside Lights
   entities:
@@ -37,7 +41,8 @@ lights_outside:
     - light.outside_side_8
     - light.outside_main_9
 
-lights_inside_except_master:
+# Automation group to clean up going_to_bed automation
+autgrp_bedtime:
   name: Inside Except Master
   entities:
     - light.living_room_tree_7
@@ -46,12 +51,6 @@ lights_inside_except_master:
     - light.play_room_3
     - light.office_11
     - light.mobile_2_14
-
-#lights_holiday:
-#  name: Holiday Lights
-#  entities:
-#    - light.mobile_2_14
-#    - light.mobile_1_33
 
 lights_other:
   name: Extra Lights
@@ -64,9 +63,14 @@ scenes_lights:
   name: Scenes
   control: hidden
   entities:
-    - scene.nighttime_lights_on
-    - scene.evening_lights
-    - scene.holiday_lights_on
     - scene.bedtime
-    - scene.holiday_lights_off
+    - scene.all_lights_on
     - scene.all_lights_off
+#    - scene.holiday_lights_on
+#    - scene.holiday_lights_off
+
+#lights_holiday:
+#  name: Holiday Lights
+#  entities:
+#    - light.mobile_2_14
+#    - light.mobile_1_33

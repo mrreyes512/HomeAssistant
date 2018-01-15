@@ -12,7 +12,7 @@ secrets.yaml
 ip_bans.yaml
 
 # Componet Files
-harmony*.yaml
+harmony_*harmony.yaml
 known_devices.yaml
 google_calendars.yaml
 .google.token
@@ -33,3 +33,6 @@ mysql
 __pycache__
 *.pyc
 .idea
+
+# new pi script
+new_pi.sh

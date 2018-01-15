@@ -1,0 +1,40 @@
+###########################################################
+#
+# Home Assistant Scenes
+#
+############################################################
+
+############################################################
+# Scene to trigger 'Going to bed' automation
+############################################################
+- name: Bedtime
+  entities:
+    light.null: on
+
+############################################################
+# All Lights Scenes
+############################################################
+- name: All Lights Off
+  entities:
+    group.lights_inside:  off
+    group.lights_outside: off
+    group.lights_other:   off
+    group.lights_holiday: off
+
+- name: All Lights On
+  entities:
+    group.lights_inside:  on
+    group.lights_outside: on
+    group.lights_other:   on
+    group.lights_holiday: on
+
+############################################################
+# Holiday Lights Scenes
+############################################################
+#- name: Holiday Lights On
+#  entities:
+#    group.lights_holiday: on
+#
+#- name: Holiday Lights Off
+#  entities:
+#    group.lights_holiday: off
