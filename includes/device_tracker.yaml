@@ -5,7 +5,7 @@
 ############################################################
 
 ############################################################
-# Unifi home
+# Unifi home: provides device tracking for network
 ############################################################
 
 - platform: unifi
@@ -13,3 +13,6 @@
   password: !secret unifi_password
   host:     !secret unifi_host
   verify_ssl: false
+  new_device_defaults:
+    track_new_devices: False
+#    hide_if_away: False

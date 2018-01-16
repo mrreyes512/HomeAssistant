@@ -1,0 +1,26 @@
+############################################################
+#
+# Home Assistant Device Tracking
+#
+############################################################
+
+device_view:
+  name: Devices
+  view: true
+  icon: mdi:radar
+  entities:
+  - camera.front_yard
+
+############################################################
+# Unifi Devices
+############################################################
+
+mark_trackers:
+  name: Mark
+  entities:
+    - device_tracker.sandrasiphone
+
+sandra_trackers:
+  name: Sandra
+  entities:
+    - device_tracker.sandrasiphone
