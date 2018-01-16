@@ -9,18 +9,23 @@ device_view:
   view: true
   icon: mdi:radar
   entities:
-  - camera.front_yard
+  - group.mark_trackers
+  - group.sandra_trackers
 
 ############################################################
 # Unifi Devices
 ############################################################
 
 mark_trackers:
-  name: Mark
+  name: Mark Presence
   entities:
-    - device_tracker.sandrasiphone
+    - device_tracker.laptop__workbookpro_mark
+    - device_tracker.phone__motox4_mark
+
 
 sandra_trackers:
-  name: Sandra
+  name: Sandra Presence
   entities:
-    - device_tracker.sandrasiphone
+    - device_tracker.phone__iphone6_sandra
+    - device_tracker.laptop__frescadesign_sandra
+

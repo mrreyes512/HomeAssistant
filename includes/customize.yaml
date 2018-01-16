@@ -302,3 +302,30 @@ sensor.mrreyes512homeassistant_last_build_state:
 
 sensor.mrreyes512homeassistant_last_build_finished_at:
   friendly_name: TravisCI Completed
+
+############################################################
+# Device Trackers
+############################################################
+
+# mark trackers
+device_tracker.phone__motox4_mark:
+  friendly_name: Phone - Mark
+  icon: mdi:cellphone-android
+
+device_tracker.laptop__workbookpro_mark:
+  friendly_name: Laptop - WorkSpectrum
+  icon: mdi:laptop-mac
+
+# sandra trackers
+device_tracker.phone__iphone6_sandra:
+  friendly_name: Phone - Sandra
+  icon: mdi:cellphone-iphone
+
+device_tracker.laptop__frescadesign_sandra:
+  friendly_name: Laptop - Fresca
+  icon: mdi:laptop-mac
+
+device_dracker.laptop__dell_sandra:
+  friendly_name: Laptop - WorkDell
+  icon: mdi:laptop-windows
+
