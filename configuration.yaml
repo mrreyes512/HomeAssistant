@@ -33,12 +33,16 @@ http:
     - 192.168.200.0/24
     - 2001:DB8:ABCD::/48
 
-# Browser Based Configuration
-#panel_iframe:
-#  configurator:
-#    title: Configurator
-#    icon: mdi:wrench
-#    url: !secret configurator_ip
+# Fing Pannel
+panel_iframe:
+  fing_app:
+    title: Fing Scan
+    icon: mdi:image-filter-tilt-shift
+    url: !secret fing_url
+#  unifi_app:
+#    title: UniFi Configuration
+#    icon: mdi:adjust
+#    url: !secret unifi_url
 
 history:
 
@@ -131,6 +135,7 @@ hue: !include includes/philips_hue.yaml
 notify: !include includes/notify.yaml
 scene: !include includes/scenes.yaml
 device_tracker: !include includes/device_tracker.yaml
+zone: !include includes/zones.yaml
 
 # Group Merge Directory
 
