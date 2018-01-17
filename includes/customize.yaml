@@ -303,6 +303,9 @@ sensor.mrreyes512homeassistant_last_build_state:
 sensor.mrreyes512homeassistant_last_build_finished_at:
   friendly_name: TravisCI Completed
 
+sensor.tracker_steps:
+  friendly_name: Fitbit Steps
+
 ############################################################
 # Device Trackers
 ############################################################

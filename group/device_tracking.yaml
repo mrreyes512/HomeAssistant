@@ -21,6 +21,7 @@ mark_trackers:
   entities:
     - device_tracker.laptop__workbookpro_mark
     - device_tracker.phone__motox4_mark
+    - sensor.tracker_steps
 
 
 sandra_trackers:
