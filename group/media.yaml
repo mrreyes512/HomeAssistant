@@ -4,7 +4,7 @@
 #
 ############################################################
 
-media:
+media_view:
   name: Media
   view: yes
   icon: mdi:youtube-tv
@@ -14,7 +14,9 @@ media:
     - media_player.fresca_apple_tv
     - group.remotes
 
-# ----
+############################################################
+# Media Groups
+############################################################
 
 chromecasts:
   name: Chromecasts

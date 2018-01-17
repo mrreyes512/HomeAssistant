@@ -4,10 +4,7 @@
 #
 ############################################################
 
-############################################################
-# Lights View
-############################################################
-lights:
+lights_view:
   name: Lights
   view: yes
   icon: mdi:lightbulb
@@ -22,11 +19,13 @@ lights:
 ############################################################
 # Light Groups
 ############################################################
+
 lights_inside:
   name: Inside Lights
   entities:
     - light.living_room_lamp
     - light.living_room_tree_7
+    - light.master
     - light.master_5
     - light.mail_table_4
     - light.kitchen_6

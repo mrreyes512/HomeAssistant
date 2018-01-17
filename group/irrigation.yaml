@@ -4,8 +4,7 @@
 #
 ############################################################
 
-# Sprinklers View
-irrigation:
+irrigation_view:
   name: Sprinklers
   view: true
   icon: mdi:water-pump
@@ -14,6 +13,9 @@ irrigation:
   - group.irrigation_zones
   #- image.irrigation_zones #Doesn't work like i envisioned it
 
+############################################################
+# Irrigation Zones
+############################################################
 
 irrigation_zones:
   name: Rachio Watering Zones

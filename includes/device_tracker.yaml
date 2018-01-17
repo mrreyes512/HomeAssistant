@@ -1,0 +1,18 @@
+############################################################
+#
+# Home Assistant Device Tracker
+#
+############################################################
+
+############################################################
+# Unifi home: provides device tracking for network
+############################################################
+
+- platform: unifi
+  username: !secret unifi_username
+  password: !secret unifi_password
+  host:     !secret unifi_host
+  verify_ssl: false
+  new_device_defaults:
+    track_new_devices: False
+#    hide_if_away: False

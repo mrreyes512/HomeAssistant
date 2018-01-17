@@ -1,0 +1,32 @@
+############################################################
+#
+# Home Assistant Device Tracking
+#
+############################################################
+
+device_view:
+  name: Devices
+  view: true
+  icon: mdi:radar
+  entities:
+  - group.mark_trackers
+  - group.sandra_trackers
+
+############################################################
+# Unifi Devices
+############################################################
+
+mark_trackers:
+  name: Mark Presence
+  entities:
+    - device_tracker.laptop__workbookpro_mark
+    - device_tracker.phone__motox4_mark
+    - sensor.tracker_steps
+
+
+sandra_trackers:
+  name: Sandra Presence
+  entities:
+    - device_tracker.phone__iphone6_sandra
+    - device_tracker.laptop__frescadesign_sandra
+
