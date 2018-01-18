@@ -7,7 +7,7 @@
 ############################################################
 # Trigger: When the scene.bedtime is activated
 ############################################################
-- alias: 'Going to bed'
+- alias: 'Bedtime'
   trigger:
     platform:       event
     event_type:     call_service
