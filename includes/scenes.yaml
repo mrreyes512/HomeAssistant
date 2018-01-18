@@ -20,6 +20,10 @@
   entities:
     light.null: on
 
+- name: Morning
+  entities:
+    light.null: on
+
 - name: Wifey going to bed
   entities:
     light.null: on
