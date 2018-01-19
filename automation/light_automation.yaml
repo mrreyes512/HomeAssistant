@@ -32,6 +32,12 @@
         :Sunny: *SUN BASED AUTOMATION*
         -30 min's till SUNSET.
         Turning *ON* the *INSIDE* lights.
+  # Notify SparkRoom about action taken
+  - service:  notify.spark
+    data_template:
+      message: |
+        ## -30 min's till **SUNSET**.
+        Turning `ON` the `INSIDE` lights.
 
 ############################################################
 # Trigger: Prior to SUNSET
@@ -55,6 +61,12 @@
         :Sunny: *SUN BASED AUTOMATION*
         +10 min's past SUNSET.
         Turning *ON* the *OUTSIDE* lights.
+  # Notify SparkRoom about action taken
+  - service:  notify.spark
+    data_template:
+      message: |
+        ## +10 min's past **SUNSET**.
+        Turning `ON` the `OUTSIDE` lights.
 
 ############################################################
 # Trigger: Prior to SUNRISE
@@ -78,3 +90,8 @@
         :Sunny: *SUN BASED AUTOMATION*
         -15 min's till SUNRISE.
         Turning *OFF* the *OUTSIDE* lights.
+  - service:  notify.spark
+    data_template:
+      message: |
+        ## -15 min's till **SUNRISE**.
+        Turning `OFF` the `OUTSIDE` lights.

@@ -21,6 +21,7 @@ google_calendars.yaml
 gactions
 project.json
 creds.data
+bin/new_pi.sh
 
 # Directories
 icloud
