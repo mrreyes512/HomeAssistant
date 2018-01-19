@@ -12,8 +12,8 @@ lights_view:
     - group.lights_inside
     - group.lights_outside
     - group.lights_other
+    - group.lights_hue
     - group.scenes_lights
-#    - camera.living_room
 #    - group.lights_holiday
 
 ############################################################
@@ -40,6 +40,12 @@ lights_outside:
     - light.outside_side_8
     - light.outside_main_9
 
+lights_hue:
+  name: Philips Hue Lights
+  entities:
+    - light.living_room_lamp
+    - light.master
+
 # Automation group to clean up going_to_bed automation
 autgrp_bedtime:
   name: Inside Except Master
@@ -58,6 +64,37 @@ lights_other:
     - light.chandelier_12
     - light.outside_back_10
 
+#lights_holiday:
+#  name: Holiday Lights
+#  entities:
+#    - light.mobile_2_14
+#    - light.mobile_1_33
+
+############################################################
+# Light Summaries
+############################################################
+
+light_groups:
+  name: Light Groups
+  control: hidden
+  entities:
+    - group.inside_lights_sum
+    - group.outside_lights_sum
+
+inside_lights_sum:
+  name: Inside Lights
+  entities:
+    - group.lights_inside
+
+outside_lights_sum:
+  name: Outside Lights
+  entities:
+    - group.lights_outside
+
+############################################################
+# Light Scenes
+############################################################
+
 scenes_lights:
   name: Scenes
   control: hidden
@@ -67,9 +104,3 @@ scenes_lights:
     - scene.all_lights_off
 #    - scene.holiday_lights_on
 #    - scene.holiday_lights_off
-
-#lights_holiday:
-#  name: Holiday Lights
-#  entities:
-#    - light.mobile_2_14
-#    - light.mobile_1_33

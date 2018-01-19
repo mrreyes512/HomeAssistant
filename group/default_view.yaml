@@ -15,21 +15,12 @@ default_view:
     - group.home_status
     - group.network_info
     - group.all_thermostats
-#    - group.lights_inside
-    - group.scenes_lights
+    - group.action_scenes
     - group.light_groups
-
 
 ############################################################
 # Groups
 ############################################################
-
-light_groups:
-  name: Light Groups
-  control: hidden
-  entities:
-    - group.inside_lights_sum
-    - group.outside_lights_sum
 
 home_status:
   name: Home Status
@@ -54,23 +45,14 @@ network_info:
 #    - sensor.speedtest_upload
 #    - sensor.speedtest_ping
 
-scenes_lights:
-  name: Scenes
+action_scenes:
+  name: Actions
   control: hidden
   entities:
+    - scene.watch_tv
+    - scene.netflix_and_chill
     - scene.bedtime
-    - scene.all_lights_on
-    - scene.all_lights_off
-    - group.inside_lights_sum
-#    - scene.holiday_lights_on
-#    - scene.holiday_lights_off
-
-inside_lights_sum:
-  name: Inside Lights
-  entities:
-    - group.lights_inside
-
-outside_lights_sum:
-  name: Outside Lights
-  entities:
-    - group.lights_outside
+    - scene.morning
+    - scene.wifey_going_to_bed
+    - scene.overcast
+    - scene.party_mode
