@@ -270,7 +270,11 @@ group.outside_lights_sum:
 ############################################################
 
 scene.bedtime:
-  icon: mdi:hotel
+  icon: mdi:sleep
+  google_assistant: true
+
+scene.wifey_going_to_bed:
+  icon: mdi:glass-tulip
   google_assistant: true
 
 scene.all_lights_on:

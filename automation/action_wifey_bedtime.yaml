@@ -18,6 +18,12 @@
         entity_id:  scene.wifey_going_to_bed
 
   action:
+
+  - service: tts.google_say
+    entity_id: media_player.living_room_speaker
+    data:
+      message: 'Good night Sandra.'
+
   # Setting Hue Lamp
   - service:        hue.hue_activate_scene
     data:
@@ -25,15 +31,12 @@
       scene_name:   "Bedtime"
 #      transition: 30
 
+  - delay: 0:10
   # Lights to turn off
   - service:        light.turn_off
     entity_id:
     - light.master_5
 
-  - service: tts.google_say
-    entity_id: media_player.living_room_speaker
-    data:
-      message: 'Good night Sandra.'
 
 #  # Notify Slack about action taken
 #  - service:        notify.slack
