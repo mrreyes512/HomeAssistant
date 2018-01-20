@@ -23,8 +23,9 @@
     data:
       group_name:   "Master"
       scene_name:   "Bedtime"
+#      transition: 30
 
-  # Lights to turn on
+  # Lights to turn off
   - service:        light.turn_off
     entity_id:
     - light.master_5
@@ -34,13 +35,13 @@
     data:
       message: 'Good night Sandra.'
 
-  # Notify Slack about action taken
-  - service:        notify.slack
-    data_template:
-      message: |
-        :robot_face: *SCENE BASED AUTOMATION*
-        Executing *Going to bed* Automation:
-        Turning `ON` the `OUTSIDE` lights.
-        Turning `OFF` the `INSIDE` lights.
-        Turning `OFF` the `LIVING ROOM TV`.
-        Calling `BEDTIME` scene from Philips Hue.
+#  # Notify Slack about action taken
+#  - service:        notify.slack
+#    data_template:
+#      message: |
+#        :robot_face: *SCENE BASED AUTOMATION*
+#        Executing *Going to bed* Automation:
+#        Turning `ON` the `OUTSIDE` lights.
+#        Turning `OFF` the `INSIDE` lights.
+#        Turning `OFF` the `LIVING ROOM TV`.
+#        Calling `BEDTIME` scene from Philips Hue.
