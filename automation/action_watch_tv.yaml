@@ -1,0 +1,29 @@
+###########################################################
+#
+# Home Assistant Automation - Action
+#
+############################################################
+
+############################################################
+# Trigger: When the scene.watch_tv is activated
+############################################################
+- alias: 'Watch TV'
+  trigger:
+    platform:       event
+    event_type:     call_service
+    event_data:
+      domain:       scene
+      service:      turn_on
+      service_data:
+        entity_id:  scene.watch_tv
+
+  action:
+  # Remote to turn on
+  - service:        remote.turn_on
+    entity_id:
+    - remote.lroomharmony
+
+  # Lights to turn off
+  - service:        light.turn_on
+    entity_id:
+    - light.mobile_1_33

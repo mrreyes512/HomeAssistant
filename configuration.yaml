@@ -6,7 +6,7 @@
 
 homeassistant:
   name: Home
-  latitude: !secret latitude 
+  latitude: !secret latitude
   longitude: !secret longitude 
   elevation: !secret elevation
   unit_system: imperial

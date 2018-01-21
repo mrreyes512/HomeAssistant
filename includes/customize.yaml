@@ -84,8 +84,10 @@ light.mobile_2_14:
   google_assistant_type: light
 
 light.mobile_1_33:
-  icon: mdi:pine-tree
-  friendly_name: Holiday Lights 1
+#  icon: mdi:pine-tree
+#  friendly_name: Holiday Lights 1
+  icon: mdi:theater
+  friendly_name: TV Light
   google_assistant: true
   google_assistant_type: light
 
@@ -190,6 +192,13 @@ light.living_room_lamp:
   google_assistant_type: light
 
 light.master:
+# This is the living room group in Hue
+# In dev-state: **is_hue_group: true**
+  friendly_name: Hue Master Group
+  google_assistant: false
+  hidden: true
+
+light.master_lamp:
   friendly_name: Master Lamp
   icon: mdi:lamp
   google_assistant: true
@@ -269,10 +278,34 @@ group.outside_lights_sum:
 # Scenes
 ############################################################
 
-scene.bedtime:
-  icon: mdi:hotel
+#Simple Scenes
+scene.overcast:
+  icon: mdi:weather-fog
   google_assistant: true
 
+#Actions
+scene.bedtime:
+  icon: mdi:sleep
+  google_assistant: true
+
+scene.morning:
+  icon: mdi:weather-sunset-up
+  google_assistant: true
+
+scene.wifey_going_to_bed:
+  icon: mdi:glass-tulip
+  google_assistant: true
+
+#Media Scenes
+scene.watch_tv:
+  icon: mdi:television-classic
+  google_assistant: true
+
+scene.netflix_and_chill:
+  icon: mdi:netflix
+  google_assistant: true
+
+#All Lights
 scene.all_lights_on:
   icon: mdi:lightbulb-on
   google_assistant: false

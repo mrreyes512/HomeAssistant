@@ -3,11 +3,36 @@
 # Home Assistant Scenes
 #
 ############################################################
+# Simple scenes here. More complex scenes will be handeled in automation
+- name: Overcast
+  entities:
+    group.lights_inside:  on
 
 ############################################################
-# Scene to trigger 'Going to bed' automation
+# Action Scenes to trigger automation
 ############################################################
+
+- name: Watch TV
+  entities:
+    light.null: on
+
+- name: Netflix and Chill
+  entities:
+    light.null: on
+
 - name: Bedtime
+  entities:
+    light.null: on
+
+- name: Morning
+  entities:
+    light.null: on
+
+- name: Wifey going to bed
+  entities:
+    light.null: on
+
+- name: Party Mode
   entities:
     light.null: on
 

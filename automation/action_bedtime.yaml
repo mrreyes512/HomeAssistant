@@ -1,13 +1,13 @@
 ###########################################################
 #
-# Home Assistant Automation: Going to Bed
+# Home Assistant Automation - Action
 #
 ############################################################
 
 ############################################################
 # Trigger: When the scene.bedtime is activated
 ############################################################
-- alias: 'Going to bed'
+- alias: 'Bedtime'
   trigger:
     platform:       event
     event_type:     call_service
@@ -23,16 +23,20 @@
     data:
       group_name:   "Living Room"
       scene_name:   "Bedtime"
+  - service:        hue.hue_activate_scene
+    data:
+      group_name:   "Master"
+      scene_name:   "Bedtime"
 
-  # Lights to turn on
-  - service:        light.turn_on
+  # Remote to turn off
+  - service:        remote.turn_off
     entity_id:
-    - light.master_5
-    - group.lights_outside
+    - remote.lroomharmony
 
   # Lights to turn off
   - service:        light.turn_off
     entity_id:
+    - light.master_5
     - light.living_room_tree_7
     - light.mail_table_4
     - light.kitchen_6
@@ -44,7 +48,7 @@
   - service:        notify.slack
     data_template:
       message: |
-        :robot_face: *SCENE BASED AUTOMATION*
+        :robot_face: *SCENE BASED AUTOMATION: Bedtime*
         Executing *Going to bed* Automation:
         Turning `ON` the `OUTSIDE` lights.
         Turning `OFF` the `INSIDE` lights.

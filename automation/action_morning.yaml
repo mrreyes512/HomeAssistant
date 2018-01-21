@@ -1,0 +1,37 @@
+###########################################################
+#
+# Home Assistant Automation - Action
+#
+############################################################
+
+############################################################
+# Trigger: When the scene.morning is activated
+############################################################
+- alias: 'Morning'
+  trigger:
+    platform:       event
+    event_type:     call_service
+    event_data:
+      domain:       scene
+      service:      turn_on
+      service_data:
+        entity_id:  scene.morning
+
+  action:
+  # Setting Hue Lamp
+  - service:        hue.hue_activate_scene
+    data:
+      group_name:   "Living Room"
+      scene_name:   "Morning"
+  - service:        hue.hue_activate_scene
+    data:
+      group_name:   "Master"
+      scene_name:   "Morning"
+
+  # Notify Slack about action taken
+  - service:        notify.slack
+    data_template:
+      message: |
+        :robot_face: *SCENE BASED AUTOMATION: Morning*
+        Executing *Morning* Automation:
+        Calling `MORNING` scene from Philips Hue.
