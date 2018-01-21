@@ -22,7 +22,7 @@
   - service:        remote.turn_on
     data:
       entity_id: remote.lroomharmony
-      activity:  Netflix
+      activity:  "Watch Smart TV"
 
   # Remote send command to turn to netflix
   - delay:
