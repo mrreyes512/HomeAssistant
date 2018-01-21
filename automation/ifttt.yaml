@@ -7,24 +7,24 @@
 ############################################################
 # Trigger: When the ifttt webhook is activated
 ############################################################
-- alias: 'IFTTT Plugged in'
-  trigger:
-    platform:       event
-    event_type:     call_service
-    event_data:
-      domain:       scene
-      service:      turn_on
-      service_data:
-        entity_id:  scene.ifttt_plugged_in
-
-# Idea: Trigger scene.ifttt_plugged_in via webhook from IFTTT with conditions of between 10p - 3a
-#  condition:
-#    condition: sun
-#    after: sunset
-
-  action:
-  # Turn off Lights
-  - service:      light.turn_off
-    entity_id:
-    - group.lights_inside
-    - group.lights_other
+#- alias: 'IFTTT Plugged in'
+#  trigger:
+#    platform:       event
+#    event_type:     call_service
+#    event_data:
+#      domain:       scene
+#      service:      turn_on
+#      service_data:
+#        entity_id:  scene.ifttt_plugged_in
+#
+## Idea: Trigger scene.ifttt_plugged_in via webhook from IFTTT with conditions of between 10p - 3a
+##  condition:
+##    condition: sun
+##    after: sunset
+#
+#  action:
+#  # Turn off Lights
+#  - service:      light.turn_off
+#    entity_id:
+#    - group.lights_inside
+#    - group.lights_other
