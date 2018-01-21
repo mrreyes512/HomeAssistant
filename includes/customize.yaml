@@ -86,8 +86,8 @@ light.mobile_2_14:
 light.mobile_1_33:
 #  icon: mdi:pine-tree
 #  friendly_name: Holiday Lights 1
-  icon: mdi:lightbulb
-  friendly_name: Mobile Switch 1
+  icon: mdi:theater
+  friendly_name: TV Light
   google_assistant: true
   google_assistant_type: light
 
