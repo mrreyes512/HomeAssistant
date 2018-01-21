@@ -1,0 +1,37 @@
+###########################################################
+#
+# Home Assistant Automation - Action
+#
+############################################################
+
+############################################################
+# Trigger: When the scene.netflix_and_chill is activated
+############################################################
+- alias: 'Netflix and Chill'
+  trigger:
+    platform:       event
+    event_type:     call_service
+    event_data:
+      domain:       scene
+      service:      turn_on
+      service_data:
+        entity_id:  scene.netflix_and_chill
+
+  action:
+  # Remote to turn on
+  - service:        remote.turn_on
+    data:
+      entity_id: remote.lroomharmony
+      activity:  Netflix
+
+  # Remote send command to turn to netflix
+  - delay:
+      seconds: 2
+  - service:    remote.send_command
+    data:
+      entity_id: remote.lroomharmony
+      command:
+        - SmartHub
+        - Select
+      delay_secs: 0.6
+      device: 23727325

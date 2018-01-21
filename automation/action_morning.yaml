@@ -1,11 +1,11 @@
 ###########################################################
 #
-# Home Assistant Automation: Going to Bed
+# Home Assistant Automation - Action
 #
 ############################################################
 
 ############################################################
-# Trigger: When the scene.bedtime is activated
+# Trigger: When the scene.morning is activated
 ############################################################
 - alias: 'Morning'
   trigger:

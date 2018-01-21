@@ -84,8 +84,10 @@ light.mobile_2_14:
   google_assistant_type: light
 
 light.mobile_1_33:
-  icon: mdi:pine-tree
-  friendly_name: Holiday Lights 1
+#  icon: mdi:pine-tree
+#  friendly_name: Holiday Lights 1
+  icon: mdi:lightbulb
+  friendly_name: Mobile Switch 1
   google_assistant: true
   google_assistant_type: light
 
@@ -276,6 +278,12 @@ group.outside_lights_sum:
 # Scenes
 ############################################################
 
+#Simple Scenes
+scene.overcast:
+  icon: mdi:weather-fog
+  google_assistant: true
+
+#Actions
 scene.bedtime:
   icon: mdi:sleep
   google_assistant: true
@@ -288,6 +296,16 @@ scene.wifey_going_to_bed:
   icon: mdi:glass-tulip
   google_assistant: true
 
+#Media Scenes
+scene.watch_tv:
+  icon: mdi:television-classic
+  google_assistant: true
+
+scene.netflix_and_chill:
+  icon: mdi:netflix
+  google_assistant: true
+
+#All Lights
 scene.all_lights_on:
   icon: mdi:lightbulb-on
   google_assistant: false

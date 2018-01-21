@@ -20,6 +20,10 @@
     data:
       group_name: "Living Room"
       scene_name: "Normal"
+  - service:      hue.hue_activate_scene
+    data:
+      group_name: "Master"
+      scene_name: "Normal"
 
   # Lights to turn on
   - service:      light.turn_on

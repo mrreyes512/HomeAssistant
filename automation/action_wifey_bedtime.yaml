@@ -1,11 +1,11 @@
 ###########################################################
 #
-# Home Assistant Automation: Going to Bed
+# Home Assistant Automation - Action
 #
 ############################################################
 
 ############################################################
-# Trigger: When the scene.bedtime is activated
+# Trigger: When the scene.wifey_going_to_bed is activated
 ############################################################
 - alias: 'Wifey Bedtime'
   trigger:

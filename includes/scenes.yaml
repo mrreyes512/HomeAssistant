@@ -3,6 +3,10 @@
 # Home Assistant Scenes
 #
 ############################################################
+# Simple scenes here. More complex scenes will be handeled in automation
+- name: Overcast
+  entities:
+    group.lights_inside:  on
 
 ############################################################
 # Action Scenes to trigger automation
@@ -25,10 +29,6 @@
     light.null: on
 
 - name: Wifey going to bed
-  entities:
-    light.null: on
-
-- name: Overcast
   entities:
     light.null: on
 
