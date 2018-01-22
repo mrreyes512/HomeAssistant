@@ -35,7 +35,7 @@ http:
 
 # Fing Pannel
 panel_iframe:
-  fing_app:
+  fing_app: #need to change url in secret.yaml to /login to allow device to log in, then add agent_id at url
     title: Fing Scan
     icon: mdi:image-filter-tilt-shift
     url: !secret fing_url
