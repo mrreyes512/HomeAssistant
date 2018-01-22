@@ -7,67 +7,56 @@
 ############################################################
 # Default View
 ############################################################
+
 default_view:
   view: yes
   icon: mdi:home
   entities:
     - group.home_status
-    - group.network_info
+    - group.house_presence
     - group.all_thermostats
-#    - group.lights_inside
-    - group.scenes_lights
+    - group.action_scenes
     - group.light_groups
-
-light_groups:
-  name: Light Groups
-  control: hidden
-  entities:
-    - group.inside_lights_sum
-    - group.outside_lights_sum
 
 ############################################################
 # Groups
 ############################################################
+
 home_status:
   name: Home Status
   entities:
     - sensor.netatmo_indoor_temperature
     - sensor.netatmo_outdoor_module_temperature
-    - sun.sun
-    - sensor.travisci
+    - sensor.sun_state
+    - sensor.netatmo_indoor_noise
     - sensor.living_room_remote
     - binary_sensor.infiniti_door_18
     - binary_sensor.toyota_door_17
+    - sensor.speedtest_download
 #    - input_select.theme
 
-network_info:
-  name: Network Status
+house_presence:
+  name: House Presence
   entities:
-    - sensor.reyeshaasduckdnsorg
-    - sensor.hassuptime
-    - sensor.mrreyes512homeassistant_last_build_state
-    - sensor.mrreyes512homeassistant_last_build_finished_at
-    - sensor.speedtest_download
-#    - sensor.speedtest_upload
-#    - sensor.speedtest_ping
+    - device_tracker.phone__motox4_mark
+    - device_tracker.phone__iphone6_sandra
 
-scenes_lights:
-  name: Scenes
+
+action_scenes:
+  name: Actions
   control: hidden
   entities:
+    - scene.watch_tv
+    - scene.netflix_and_chill
     - scene.bedtime
-    - scene.all_lights_on
-    - scene.all_lights_off
+    - scene.wifey_going_to_bed
+    - scene.party_mode
+
+light_groups:
+  name: Clickers
+  control: hidden
+  entities:
     - group.inside_lights_sum
-#    - scene.holiday_lights_on
-#    - scene.holiday_lights_off
-
-inside_lights_sum:
-  name: Inside Lights
-  entities:
-    - group.lights_inside
-
-outside_lights_sum:
-  name: Outside Lights
-  entities:
-    - group.lights_outside
+    - group.outside_lights_sum
+    - remote.lroomharmony
+    - remote.fresca_apple_tv

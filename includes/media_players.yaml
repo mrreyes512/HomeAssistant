@@ -25,3 +25,5 @@
 #  aliases:
 #      abc123def456: 'Living Room'
 #      9183abas000: 'Bed Room'
+
+#- platform: pandora

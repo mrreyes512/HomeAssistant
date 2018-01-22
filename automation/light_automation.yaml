@@ -5,6 +5,40 @@
 ############################################################
 
 ############################################################
+# Trigger: Monitor TV remote
+# Action: Turn *on* TV Light
+############################################################
+- alias: 'Turn ON the TV Light'
+  trigger:
+    platform:     state
+    entity_id:    remote.lroomharmony
+    from:        "off"
+    to:          "on"
+
+  condition:
+    condition: sun
+    after: sunset
+
+  action:
+  # Lights to turn on
+  - service:      light.turn_on
+    entity_id:    light.mobile_1_33
+
+- alias: 'Turn OFF the TV Light'
+  trigger:
+    platform:     state
+    entity_id:    remote.lroomharmony
+    from:        "on"
+    to:          "off"
+
+  action:
+  # Lights to turn of
+  - service:      light.turn_off
+    entity_id:    light.mobile_1_33
+
+
+
+############################################################
 # Trigger: Prior to sunset
 # Action: Turn *on* INSIDE Lights
 ############################################################
@@ -20,6 +54,10 @@
     data:
       group_name: "Living Room"
       scene_name: "Normal"
+  - service:      hue.hue_activate_scene
+    data:
+      group_name: "Master"
+      scene_name: "Normal"
 
   # Lights to turn on
   - service:      light.turn_on
@@ -32,6 +70,12 @@
         :Sunny: *SUN BASED AUTOMATION*
         -30 min's till SUNSET.
         Turning *ON* the *INSIDE* lights.
+  # Notify SparkRoom about action taken
+  - service:  notify.spark
+    data_template:
+      message: |
+        ## -30 min's till **SUNSET**.
+        Turning `ON` the `INSIDE` lights.
 
 ############################################################
 # Trigger: Prior to SUNSET
@@ -55,6 +99,12 @@
         :Sunny: *SUN BASED AUTOMATION*
         +10 min's past SUNSET.
         Turning *ON* the *OUTSIDE* lights.
+  # Notify SparkRoom about action taken
+  - service:  notify.spark
+    data_template:
+      message: |
+        ## +10 min's past **SUNSET**.
+        Turning `ON` the `OUTSIDE` lights.
 
 ############################################################
 # Trigger: Prior to SUNRISE
@@ -78,3 +128,8 @@
         :Sunny: *SUN BASED AUTOMATION*
         -15 min's till SUNRISE.
         Turning *OFF* the *OUTSIDE* lights.
+  - service:  notify.spark
+    data_template:
+      message: |
+        ## -15 min's till **SUNRISE**.
+        Turning `OFF` the `OUTSIDE` lights.

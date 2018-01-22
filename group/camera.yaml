@@ -4,7 +4,7 @@
 #
 ############################################################
 
-cameras:
+camera_view:
   name: Cameras
   view: true
   icon: mdi:camera
@@ -12,6 +12,10 @@ cameras:
     - group.front_cams
     - group.back_cams
     - group.inside_cams
+
+############################################################
+# Camera Groups
+############################################################
 
 front_cams:
   entities:

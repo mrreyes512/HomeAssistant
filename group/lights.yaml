@@ -4,10 +4,7 @@
 #
 ############################################################
 
-############################################################
-# Lights View
-############################################################
-lights:
+lights_view:
   name: Lights
   view: yes
   icon: mdi:lightbulb
@@ -15,17 +12,20 @@ lights:
     - group.lights_inside
     - group.lights_outside
     - group.lights_other
+    - group.lights_hue
     - group.scenes_lights
-#    - camera.living_room
 #    - group.lights_holiday
 
 ############################################################
 # Light Groups
 ############################################################
+
 lights_inside:
   name: Inside Lights
   entities:
+    - light.master
     - light.living_room_lamp
+    - light.master_lamp
     - light.living_room_tree_7
     - light.master_5
     - light.mail_table_4
@@ -40,6 +40,12 @@ lights_outside:
   entities:
     - light.outside_side_8
     - light.outside_main_9
+
+lights_hue:
+  name: Philips Hue Lights
+  entities:
+    - light.living_room_lamp
+    - light.master_lamp
 
 # Automation group to clean up going_to_bed automation
 autgrp_bedtime:
@@ -56,21 +62,42 @@ lights_other:
   name: Extra Lights
   control: hidden
   entities:
+    - light.mobile_1_33
     - light.chandelier_12
     - light.outside_back_10
-
-scenes_lights:
-  name: Scenes
-  control: hidden
-  entities:
-    - scene.bedtime
-    - scene.all_lights_on
-    - scene.all_lights_off
-#    - scene.holiday_lights_on
-#    - scene.holiday_lights_off
 
 #lights_holiday:
 #  name: Holiday Lights
 #  entities:
 #    - light.mobile_2_14
 #    - light.mobile_1_33
+
+############################################################
+# Light Summaries
+############################################################
+
+inside_lights_sum:
+  name: Inside Lights
+  entities:
+    - group.lights_inside
+
+outside_lights_sum:
+  name: Outside Lights
+  entities:
+    - group.lights_outside
+
+############################################################
+# Light Scenes
+############################################################
+
+scenes_lights:
+  name: Scenes
+  control: hidden
+  entities:
+    - scene.bedtime
+    - scene.morning
+    - scene.overcast
+    - scene.all_lights_on
+    - scene.all_lights_off
+#    - scene.holiday_lights_on
+#    - scene.holiday_lights_off

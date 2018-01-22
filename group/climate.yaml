@@ -4,7 +4,7 @@
 #
 ############################################################
 
-Climate:
+climate_group:
   name: Climate
   view: yes
   icon: mdi:weather-partlycloudy
@@ -12,6 +12,10 @@ Climate:
     - group.netatmo_indoor_sensors
     - group.netatmo_outdoor_sensors
     - group.all_thermostats
+
+############################################################
+# Climate Groups
+############################################################
 
 all_thermostats:
   name: Thermostats
