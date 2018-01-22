@@ -1,7 +1,7 @@
 ############################################################
 #
 # Home Assistant Sensors: Harmony Activity
-#
+# Active icon color: #F9C536
 ############################################################
 
   #Uptime to help out HASS uptime
@@ -30,3 +30,19 @@
           {{ ', ' }}
         {%- endif -%}
         {{ '%02d' % hours }}:{{ '%02d' % minutes }} hrs
+    # Sun State Template
+    sun_state:
+      friendly_name: "Sun State"
+      value_template: >-
+        {% if is_state('sun.sun', 'above_horizon') %}
+          Day
+        {% else %}
+          Night
+        {% endif %}
+      icon_template: >-
+        {% if is_state('sun.sun', 'above_horizon') %}
+          mdi:weather-sunny
+        {% else %}
+          mdi:weather-night
+        {% endif %}
+    # Garage Door Template
