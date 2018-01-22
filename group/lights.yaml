@@ -76,13 +76,6 @@ lights_other:
 # Light Summaries
 ############################################################
 
-light_groups:
-  name: Light Groups
-  control: hidden
-  entities:
-    - group.inside_lights_sum
-    - group.outside_lights_sum
-
 inside_lights_sum:
   name: Inside Lights
   entities:
@@ -102,6 +95,8 @@ scenes_lights:
   control: hidden
   entities:
     - scene.bedtime
+    - scene.morning
+    - scene.overcast
     - scene.all_lights_on
     - scene.all_lights_off
 #    - scene.holiday_lights_on

@@ -9,8 +9,10 @@ device_view:
   view: true
   icon: mdi:radar
   entities:
-  - group.mark_trackers
-  - group.sandra_trackers
+    - group.mark_trackers
+    - group.sandra_trackers
+    - group.network_info
+    - group.system_info
 
 ############################################################
 # Unifi Devices
@@ -19,8 +21,8 @@ device_view:
 mark_trackers:
   name: Mark Presence
   entities:
-    - device_tracker.laptop__workbookpro_mark
     - device_tracker.phone__motox4_mark
+    - device_tracker.laptop__workbookpro_mark
     - sensor.tracker_steps
 
 
@@ -28,5 +30,25 @@ sandra_trackers:
   name: Sandra Presence
   entities:
     - device_tracker.phone__iphone6_sandra
+    - device_tracker.laptop__dell_sandra
     - device_tracker.laptop__frescadesign_sandra
 
+network_info:
+  name: Network Status
+  entities:
+    - sensor.reyeshaasduckdnsorg
+    - sensor.hassuptime
+    - sensor.mrreyes512homeassistant_last_build_state
+    - sensor.mrreyes512homeassistant_last_build_finished_at
+    - sensor.speedtest_download
+#    - sensor.speedtest_upload
+#    - sensor.speedtest_ping
+
+system_info:
+  name: System Info
+  entities:
+    - sensor.cpu_used
+    - sensor.disk_used_
+    - sensor.disk_use_percent
+    - sensor.ram_available
+    - sensor.ram_used
