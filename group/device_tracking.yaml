@@ -21,6 +21,8 @@ device_view:
 mark_presence:
   name: Mark Presence
   entities:
+    - sensor.mark_status
+    - input_select.mark_status_dropdown
     - device_tracker.phone__motox4_mark
     - device_tracker.laptop__workbookpro_mark
     - sensor.tracker_steps
@@ -29,6 +31,8 @@ mark_presence:
 sandra_presence:
   name: Sandra Presence
   entities:
+    - sensor.sandra_status
+    - input_select.sandra_status_dropdown
     - device_tracker.phone__iphone6_sandra
     - device_tracker.laptop__dell_sandra
     - device_tracker.laptop__frescadesign_sandra

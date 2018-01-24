@@ -1,0 +1,38 @@
+###########################################################
+#
+# Home Assistant Automation: Advanced Presence
+#
+############################################################
+
+
+###########################################################
+# Detection States
+############################################################
+- alias: Mark presece detected
+  trigger:
+    - platform: state
+      entity_id: group.mark_trackers
+      from: 'not_home'
+      to: 'home'
+  action:
+  # Notify Slack about action taken
+  - service:        notify.slack_notify
+    data_template:
+      message: |
+        :squirrel: *PRESENCE DETECTED: Mark*
+        Welcome Home Mark!
+
+- alias: Sandra presece detected
+  trigger:
+    - platform: state
+      entity_id: group.sandra_trackers
+      from: 'not_home'
+      to: 'home'
+  action:
+  # Notify Slack about action taken
+  - service:        notify.slack_notify
+    data_template:
+      message: |
+        :dancer: *PRESENCE DETECTED: Sandra*
+        Welcome Home Sandra!
+
