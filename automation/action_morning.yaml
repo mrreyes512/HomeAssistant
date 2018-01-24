@@ -17,6 +17,11 @@
       service_data:
         entity_id:  scene.morning
 
+  condition:
+    condition: time
+    after: '07:00:00'
+    before: '11:00:00'
+
   action:
   # Setting Hue Lamp
   - service:        hue.hue_activate_scene
@@ -28,10 +33,15 @@
       group_name:   "Master"
       scene_name:   "Morning"
 
+  - service: tts.google_say
+    entity_id: media_player.master_bedroom_speaker
+    data:
+      message: "Good Morning Mark. You're the best."
+
   # Notify Slack about action taken
   - service:        notify.slack
     data_template:
       message: |
-        :robot_face: *SCENE BASED AUTOMATION: Morning*
+        :iphone: *IFTTT BASED AUTOMATION: Morning*
         Executing *Morning* Automation:
         Calling `MORNING` scene from Philips Hue.
