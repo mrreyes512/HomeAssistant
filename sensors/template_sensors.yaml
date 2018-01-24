@@ -45,4 +45,12 @@
         {% else %}
           mdi:weather-night
         {% endif %}
-    # Garage Door Template
+    # Adv Presence
+    mark_status:
+      value_template: '{{ states.input_select.mark_status_dropdown.state }}'
+      friendly_name: 'Mark'
+      entity_id: input_select.mark_status_dropdown
+    sandra_status:
+      value_template: '{{ states.input_select.sandra_status_dropdown.state }}'
+      friendly_name: 'Sandra'
+      entity_id: input_select.sandra_status_dropdown

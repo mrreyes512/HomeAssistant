@@ -38,8 +38,11 @@ home_status:
 house_presence:
   name: House Presence
   entities:
-    - device_tracker.phone__motox4_mark
-    - device_tracker.phone__iphone6_sandra
+#    - device_tracker.phone__motox4_mark
+#    - device_tracker.phone__iphone6_sandra
+  # status sensors defined in includes/template_sensors.yaml
+    - sensor.mark_status
+    - sensor.sandra_status
 
 
 action_scenes:

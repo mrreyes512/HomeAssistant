@@ -339,7 +339,11 @@ sensor.mrreyes512homeassistant_last_build_finished_at:
 sensor.tracker_steps:
   friendly_name: Fitbit Steps
 
+sensor.mark_status:
+  entity_picture: /local/pic-mark.png
 
+sensor.sandra_status:
+  entity_picture: /local/pic-sandra.png
 
 ############################################################
 # Device Trackers
