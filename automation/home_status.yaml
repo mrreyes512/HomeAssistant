@@ -70,7 +70,7 @@
 # Set Away state if device not present at reboot
 ############################################################
 
-- alias: Place Mark in away when home assistant starts
+- alias: Place Home Status in away when home assistant starts
   initial_state: 'on'
   trigger:
     - platform: homeassistant
