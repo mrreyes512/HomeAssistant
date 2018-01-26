@@ -5,7 +5,6 @@
 # https://philhawthorne.com/making-home-assistants-presence-detection-not-so-binary/
 ############################################################
 
-
 ###########################################################
 # Detection States
 ############################################################
@@ -130,3 +129,41 @@
             input_select.sandra_status_dropdown
           {% endif %}
         option: Extended Away
+
+###########################################################
+# Set Away state if device not present at reboot
+############################################################
+
+- alias: Place Mark in away when home assistant starts
+  initial_state: 'on'
+  trigger:
+    - platform: homeassistant
+      event: start
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.mark_trackers
+        state: 'not_home'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.mark_status_dropdown
+        option: Away
+
+- alias: Place Sandra in away when home assistant starts
+  initial_state: 'on'
+  trigger:
+    - platform: homeassistant
+      event: start
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.sandra_trackers
+        state: 'not_home'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.sandra_status_dropdown
+        option: Away
