@@ -25,7 +25,7 @@
     - service:        notify.slack_notify
       data_template:
         message: |
-          :house: *SETTING HOME STATUS: Home*
+          :lock: *SETTING HOME STATUS:* :home:`Home`
 
 - alias: Set Home Status to Away
   trigger:
@@ -43,7 +43,7 @@
     - service:        notify.slack_notify
       data_template:
         message: |
-          :lock: *SETTING HOME STATUS: Away*
+          :lock: *SETTING HOME STATUS:* :runner:`Away`
 
 ###########################################################
 # Set Extended Away state if device not present for 24 hours
@@ -64,7 +64,7 @@
     - service:        notify.slack_notify
       data_template:
         message: |
-          :alarm_clock: *SETTING HOME STATUS: Extended Away*
+          :lock: *SETTING HOME STATUS:* :alarm_clock:`Extended Away`
 
 ###########################################################
 # Set Away state if device not present at reboot
