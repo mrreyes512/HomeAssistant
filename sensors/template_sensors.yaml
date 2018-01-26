@@ -54,3 +54,19 @@
       value_template: '{{ states.input_select.sandra_status_dropdown.state }}'
       friendly_name: 'Sandra'
 #      entity_id: input_select.sandra_status_dropdown
+    # Home Status
+    home_status:
+      value_template: '{{ states.input_select.home_status_dropdown.state }}'
+      friendly_name: 'Home Status'
+      icon_template: >-
+        {% if is_state('input_select.home_status_dropdown', 'Home') %}
+          mdi:home-account
+        {% elif states('input_select.home_status_dropdown'), 'Away' %}
+          mdi:security-home
+        {% elif states('input_select.home_status_dropdown'), 'Extended Away' %}
+          mdi:home-automation
+        {% elif states('input_select.home_status_dropdown'), 'Vacation' %}
+          mdi:beach
+        {% else %}
+          mdi:home-alert
+        {% endif %}
