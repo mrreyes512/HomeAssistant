@@ -27,3 +27,12 @@ sandra_status_dropdown:
     - Away
     - Extended Away
   initial: Home
+
+home_status_dropdown:
+  name: Home Status
+  options:
+    - Home
+    - Away
+    - Extended Away
+    - Vacation
+  initial: Home

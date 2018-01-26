@@ -4,7 +4,6 @@
 #
 ############################################################
 
-
 ###########################################################
 # Detection States
 ############################################################
@@ -22,6 +21,20 @@
         :squirrel: *PRESENCE DETECTED: Mark*
         Welcome Home Mark!
 
+- alias: Mark presece gone
+  trigger:
+    - platform: state
+      entity_id: group.mark_trackers
+      from: 'home'
+      to: 'not_home'
+  action:
+  # Notify Slack about action taken
+  - service:        notify.slack_notify
+    data_template:
+      message: |
+        :squirrel: *PRESENCE GONE: Mark*
+        Good by Mark! I'll miss you.
+
 - alias: Sandra presece detected
   trigger:
     - platform: state
@@ -35,4 +48,18 @@
       message: |
         :dancer: *PRESENCE DETECTED: Sandra*
         Welcome Home Sandra!
+
+- alias: Sandra presece gone
+  trigger:
+    - platform: state
+      entity_id: group.sandra_trackers
+      from: 'not_home'
+      to: 'home'
+  action:
+  # Notify Slack about action taken
+  - service:        notify.slack_notify
+    data_template:
+      message: |
+        :dancer: *PRESENCE GONE: Sandra*
+        Goodbye Sandra! I'll be thinking about you...
 
