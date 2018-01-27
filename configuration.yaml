@@ -55,6 +55,12 @@ updater:
   reporting: no
   # include_used_components: true
 
+input_boolean:
+  vacation_mode:
+    name: Vacation Mode
+    initial: off
+    icon: mdi:beach
+
 frontend:
   themes: !include themes/midnight.yaml
 #  themes: !include_dir_merge_named themes/

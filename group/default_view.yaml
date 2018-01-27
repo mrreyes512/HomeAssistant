@@ -12,9 +12,10 @@ default_view:
   view: yes
   icon: mdi:home
   entities:
-    - group.home_status
+    - group.house_mode
     - group.house_presence
-    - group.all_thermostats
+    - group.home_status
+#    - group.all_thermostats
     - group.action_scenes
     - group.light_groups
 
@@ -22,19 +23,11 @@ default_view:
 # Groups
 ############################################################
 
-home_status:
-  name: Home Status
+house_mode:
+  name: House Mode
   entities:
     - sensor.home_status
-    - sensor.netatmo_indoor_noise
-    - sensor.netatmo_indoor_temperature
-    - sensor.netatmo_outdoor_module_temperature
-#    - sensor.sun_state
-    - sensor.living_room_remote
-    - binary_sensor.infiniti_door_18
-    - binary_sensor.toyota_door_17
-    - sensor.speedtest_download
-#    - input_select.theme
+    - input_boolean.vacation_mode
 
 house_presence:
   name: House Presence
@@ -45,6 +38,18 @@ house_presence:
     - sensor.mark_status
     - sensor.sandra_status
 
+home_status:
+  name: Home Status
+  entities:
+    - sensor.netatmo_indoor_noise
+    - sensor.netatmo_indoor_temperature
+    - sensor.netatmo_outdoor_module_temperature
+#    - sensor.sun_state
+    - sensor.living_room_remote
+    - binary_sensor.infiniti_door_18
+    - binary_sensor.toyota_door_17
+    - sensor.speedtest_download
+#    - input_select.theme
 
 action_scenes:
   name: Actions
