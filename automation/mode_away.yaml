@@ -1,0 +1,26 @@
+###########################################################
+#
+# Home Assistant Automation: Away Mode Automations
+#
+############################################################
+
+############################################################
+# Audible triggers
+############################################################
+- alias: Audible detected
+  trigger:
+    - platform: state
+      entity_id: sensor.netatmo_indoor_noise
+      from: 'not_home'
+      to: 'home'
+  condition:
+    condition: state
+    entity_id: sensor.home_status
+    state: 'Away'
+  action:
+  # Notify Slack about action taken
+  - service:        notify.slack_notify
+    data_template:
+      message: |
+        :loud_sound: *NOISE WHILE AWAY:*
+        I herd something!

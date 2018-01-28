@@ -106,7 +106,7 @@
 #        message: |
 #          :lock: *SETTING HOME STATUS:* `Vacation Mode`
 
-- alias: Set Vacation mode off
+- alias: Set Vacation mode off - home
   trigger:
     - platform: state
       entity_id: input_boolean.vacation_mode
@@ -115,8 +115,13 @@
     - service: input_select.select_option
       data_template:
         entity_id: input_select.home_status_dropdown
-        option: Home
+        option: >-
+          {% if is_state('group.house_trackers', 'home') %}
+            Home
+          {% else %}
+            Away
+          {% endif %}
 #    - service: notify.slack_notify
 #      data_template:
 #        message: |
-#          :lock: *SETTING HOME STATUS:* :home:`Home`
+#          :lock: *SETTING HOME STATUS:* `Vacation Mode`
