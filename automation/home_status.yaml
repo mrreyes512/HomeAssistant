@@ -22,7 +22,7 @@
       data:
         entity_id: input_select.home_status_dropdown
         option: Home
-    - service:        notify.slack_notify
+    - service: notify.slack_notify
       data_template:
         message: |
           :lock: *SETTING HOME STATUS:* :home:`Home`
@@ -86,3 +86,37 @@
       data:
         entity_id: input_select.home_status_dropdown
         option: Away
+
+###########################################################
+# Vacation Modes
+############################################################
+
+- alias: Set Vacation mode on
+  trigger:
+    - platform: state
+      entity_id: input_boolean.vacation_mode
+      to: 'on'
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.home_status_dropdown
+        option: Vacation
+#    - service: notify.slack_notify
+#      data_template:
+#        message: |
+#          :lock: *SETTING HOME STATUS:* `Vacation Mode`
+
+- alias: Set Vacation mode off
+  trigger:
+    - platform: state
+      entity_id: input_boolean.vacation_mode
+      to: 'off'
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.home_status_dropdown
+        option: Home
+#    - service: notify.slack_notify
+#      data_template:
+#        message: |
+#          :lock: *SETTING HOME STATUS:* :home:`Home`

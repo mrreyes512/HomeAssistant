@@ -59,7 +59,7 @@ input_boolean:
   vacation_mode:
     name: Vacation Mode
     initial: off
-    icon: mdi:beach
+    icon: mdi:home-circle
 
 frontend:
   themes: !include themes/midnight.yaml

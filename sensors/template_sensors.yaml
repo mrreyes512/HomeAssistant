@@ -58,14 +58,14 @@
     home_status:
       value_template: '{{ states.input_select.home_status_dropdown.state }}'
       friendly_name: 'Home Status'
-      icon_template: >-
+      icon_template: >
         {% if is_state('input_select.home_status_dropdown', 'Home') %}
           mdi:home-account
-        {% elif states('input_select.home_status_dropdown'), 'Away' %}
+        {%-elif is_state('input_select.home_status_dropdown', 'Away') %}
           mdi:security-home
-        {% elif states('input_select.home_status_dropdown'), 'Extended Away' %}
+        {%-elif is_state('input_select.home_status_dropdown', 'Extended Away') %}
           mdi:home-automation
-        {% elif states('input_select.home_status_dropdown'), 'Vacation' %}
+        {%-elif is_state('input_select.home_status_dropdown', 'Vacation') %}
           mdi:beach
         {% else %}
           mdi:home-alert
