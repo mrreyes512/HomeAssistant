@@ -41,7 +41,8 @@ house_presence:
 home_status:
   name: Home Status
   entities:
-    - sensor.netatmo_indoor_noise
+    - sensor.noise_level
+#    - sensor.netatmo_indoor_noise
     - sensor.netatmo_indoor_temperature
     - sensor.netatmo_outdoor_module_temperature
 #    - sensor.sun_state

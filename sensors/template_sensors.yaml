@@ -2,6 +2,7 @@
 #
 # Home Assistant Sensors: Harmony Activity
 # Active icon color: #F9C536
+# Alert  icon color: #E45E65
 ############################################################
 
   #Uptime to help out HASS uptime
@@ -58,15 +59,30 @@
     home_status:
       value_template: '{{ states.input_select.home_status_dropdown.state }}'
       friendly_name: 'Home Status'
-      icon_template: >
+      entity_picture_template: >
         {% if is_state('input_select.home_status_dropdown', 'Home') %}
-          mdi:home-account
+          /local/icon-homestatus-home.png
         {%-elif is_state('input_select.home_status_dropdown', 'Away') %}
-          mdi:security-home
+          /local/icon-security-home.png
         {%-elif is_state('input_select.home_status_dropdown', 'Extended Away') %}
-          mdi:home-automation
+          /local/icon-home-automation.png
         {%-elif is_state('input_select.home_status_dropdown', 'Vacation') %}
-          mdi:beach
+          /local/icon-beach.png
         {% else %}
-          mdi:home-alert
+          /local/icon-home-alert.png
+        {% endif %}
+    # Noise Templates
+    noise_level:
+      friendly_name: "Noise Level"
+      value_template: >-
+        {% if states('sensor.netatmo_indoor_noise') | float < 38 %}
+          Quiet
+        {%-elif states('sensor.netatmo_indoor_noise') | float > 39 %}
+          Lively
+        {% endif %}
+      entity_picture_template: >
+        {% if states('sensor.netatmo_indoor_noise') | float < 38 %}
+          /local/icon-volume-low.png
+        {%-elif states('sensor.netatmo_indoor_noise') | float > 39 %}
+          /local/icon-volume-high.png
         {% endif %}

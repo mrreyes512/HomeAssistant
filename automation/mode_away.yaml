@@ -10,9 +10,8 @@
 - alias: Audible detected
   trigger:
     - platform: state
-      entity_id: sensor.netatmo_indoor_noise
-      from: 'not_home'
-      to: 'home'
+      entity_id: sensor.noise_level
+      from: 'Quiet'
   condition:
     condition: state
     entity_id: sensor.home_status

@@ -31,6 +31,7 @@ sandra_presence:
   name: Sandra Presence
   entities:
     - sensor.sandra_status
+    - device_tracker.phone__iphone6_sandra
     - device_tracker.laptop__dell_sandra
     - device_tracker.laptop__frescadesign_sandra
 
