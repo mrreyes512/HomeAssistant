@@ -1,0 +1,127 @@
+###########################################################
+#
+# Home Assistant Automation: Home Status
+#
+############################################################
+
+###########################################################
+# Timed State Transitions
+############################################################
+
+- alias: Set Home Status to Home
+  trigger:
+    - platform: state
+      entity_id: group.house_trackers
+      from: 'not_home'
+      to: 'home'
+#      for:
+#        minutes: 3
+  condition:
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.home_status_dropdown
+        option: Home
+    - service: notify.slack_notify
+      data_template:
+        message: |
+          :lock: *SETTING HOME STATUS:* :home:`Home`
+
+- alias: Set Home Status to Away
+  trigger:
+    - platform: state
+      entity_id: group.house_trackers
+      from: 'home'
+      to: 'not_home'
+#      for:
+#        minutes: 3
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.home_status_dropdown
+        option: Away
+    - service:        notify.slack_notify
+      data_template:
+        message: |
+          :lock: *SETTING HOME STATUS:* :runner:`Away`
+
+###########################################################
+# Set Extended Away state if device not present for 24 hours
+############################################################
+
+- alias: Set House as extended away
+  trigger:
+    - platform: state
+      entity_id: input_select.home_status_dropdown
+      to: 'Away'
+      for:
+        hours: 24
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.home_status_dropdown
+        option: Extended Away
+    - service:        notify.slack_notify
+      data_template:
+        message: |
+          :lock: *SETTING HOME STATUS:* :alarm_clock:`Extended Away`
+
+###########################################################
+# Set Away state if device not present at reboot
+############################################################
+
+- alias: Place Home Status in away when home assistant starts
+  initial_state: 'on'
+  trigger:
+    - platform: homeassistant
+      event: start
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.house_trackers
+        state: 'not_home'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.home_status_dropdown
+        option: Away
+
+###########################################################
+# Vacation Modes
+############################################################
+
+- alias: Set Vacation mode on
+  trigger:
+    - platform: state
+      entity_id: input_boolean.vacation_mode
+      to: 'on'
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.home_status_dropdown
+        option: Vacation
+#    - service: notify.slack_notify
+#      data_template:
+#        message: |
+#          :lock: *SETTING HOME STATUS:* `Vacation Mode`
+
+- alias: Set Vacation mode off - home
+  trigger:
+    - platform: state
+      entity_id: input_boolean.vacation_mode
+      to: 'off'
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.home_status_dropdown
+        option: >-
+          {% if is_state('group.house_trackers', 'home') %}
+            Home
+          {% else %}
+            Away
+          {% endif %}
+#    - service: notify.slack_notify
+#      data_template:
+#        message: |
+#          :lock: *SETTING HOME STATUS:* `Vacation Mode`

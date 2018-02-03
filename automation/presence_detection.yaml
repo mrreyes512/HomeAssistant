@@ -4,8 +4,7 @@
 #
 ############################################################
 
-
-###########################################################
+############################################################
 # Detection States
 ############################################################
 - alias: Mark presece detected
@@ -19,8 +18,22 @@
   - service:        notify.slack_notify
     data_template:
       message: |
-        :squirrel: *PRESENCE DETECTED: Mark*
+        :satellite_antenna: *PRESENCE:* :squirrel:`DETECTED`
         Welcome Home Mark!
+
+- alias: Mark presece gone
+  trigger:
+    - platform: state
+      entity_id: group.mark_trackers
+      from: 'home'
+      to: 'not_home'
+  action:
+  # Notify Slack about action taken
+  - service:        notify.slack_notify
+    data_template:
+      message: |
+        :satellite_antenna: *PRESENCE:* :squirrel:`GONE`
+        Good by Mark! I'll miss you.
 
 - alias: Sandra presece detected
   trigger:
@@ -33,6 +46,20 @@
   - service:        notify.slack_notify
     data_template:
       message: |
-        :dancer: *PRESENCE DETECTED: Sandra*
+        :satellite_antenna: *PRESENCE:* :dancer:`DETECTED`
         Welcome Home Sandra!
+
+- alias: Sandra presece gone
+  trigger:
+    - platform: state
+      entity_id: group.sandra_trackers
+      from: 'home'
+      to: 'not_home'
+  action:
+  # Notify Slack about action taken
+  - service:        notify.slack_notify
+    data_template:
+      message: |
+        :satellite_antenna: *PRESENCE:* :dancer:`GONE`
+        Goodbye Sandra! I'll be thinking about you...
 
