@@ -22,14 +22,14 @@
       data:
         attachments:
           - title:  Presence Notification
-          - footer: >
-              {% if is_state('group.mark_trackers', 'home') %} :squirrel: Welcome Home Mark
-              {% elif is_state('group.mark_trackers', 'not_home') %} :squirrel: Goodbye Mark
-              {% endif %}
           - text: >
               Mark
               {% if is_state('group.mark_trackers', 'home') %} Detected
               {% elif is_state('group.mark_trackers', 'not_home') %} Disappeared
+              {% endif %}
+          - footer: >
+              {% if is_state('group.mark_trackers', 'home') %} :squirrel: Welcome Home Mark
+              {% elif is_state('group.mark_trackers', 'not_home') %} :squirrel: Goodbye Mark
               {% endif %}
 
 - alias: Mark presence gone
@@ -47,14 +47,14 @@
       data:
         attachments:
           - title:  Presence Notification
-          - footer: >
-              {% if is_state('group.mark_trackers', 'home') %} :squirrel: Welcome Home Mark
-              {% elif is_state('group.mark_trackers', 'not_home') %} :squirrel: Goodbye Mark
-              {% endif %}
           - text: >
               Mark
               {% if is_state('group.mark_trackers', 'home') %} Detected
               {% elif is_state('group.mark_trackers', 'not_home') %} Disappeared
+              {% endif %}
+          - footer: >
+              {% if is_state('group.mark_trackers', 'home') %} :squirrel: Welcome Home Mark
+              {% elif is_state('group.mark_trackers', 'not_home') %} :squirrel: Goodbye Mark
               {% endif %}
 
 - alias: Sandra presence detected
@@ -72,14 +72,14 @@
       data:
         attachments:
           - title:  Presence Notification
+          - text: >
+              Sandra
+              {% if is_state('group.sandra_trackers', 'home') %} Detected
+              {% elif is_state('group.sandra_trackers', 'not_home') %} Disappeared
+              {% endif %}
           - footer: >
               {% if is_state('group.sandra_trackers', 'home') %} :dancer: Welcome Home Sandra
               {% elif is_state('group.sandra_trackers', 'not_home') %} :dancer: Goodbye Sandra
-              {% endif %}
-          - text: >
-              Mark
-              {% if is_state('group.sandra_trackers', 'home') %} Detected
-              {% elif is_state('group.sandra_trackers', 'not_home') %} Disappeared
               {% endif %}
 
 - alias: Sandra presence gone
@@ -97,12 +97,12 @@
       data:
         attachments:
           - title:  Presence Notification
+          - text: >
+              Sandra
+              {% if is_state('group.sandra_trackers', 'home') %} Detected
+              {% elif is_state('group.sandra_trackers', 'not_home') %} Disappeared
+              {% endif %}
           - footer: >
               {% if is_state('group.sandra_trackers', 'home') %} :dancer: Welcome Home Sandra
               {% elif is_state('group.sandra_trackers', 'not_home') %} :dancer: Goodbye Sandra
-              {% endif %}
-          - text: >
-              Mark
-              {% if is_state('group.sandra_trackers', 'home') %} Detected
-              {% elif is_state('group.sandra_trackers', 'not_home') %} Disappeared
               {% endif %}
