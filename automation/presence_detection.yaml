@@ -15,22 +15,22 @@
       to: 'home'
   action:
   # Notify Slack about action taken
-  - service:  notify.slack_notify
+  - service:      notify.slack
     data_template:
       message: ""
       target: ["#notifications"]
       data:
         attachments:
-          - title:  Presence Notification
-          - text: >
-              Mark
-              {% if is_state('group.mark_trackers', 'home') %} Detected
-              {% elif is_state('group.mark_trackers', 'not_home') %} Disappeared
-              {% endif %}
-          - footer: >
-              {% if is_state('group.mark_trackers', 'home') %} :squirrel: Welcome Home Mark
-              {% elif is_state('group.mark_trackers', 'not_home') %} :squirrel: Goodbye Mark
-              {% endif %}
+          - color:  "#439FE0"
+            pretext: Presence Notification
+            fields:
+              - title: Entities
+                value: Mark Trackers
+                short: true
+              - title: Action
+                value: "`Detected`"
+                short: true
+            footer: ":squirrel: Welcome Home Mark"
 
 - alias: Mark presence gone
   trigger:
@@ -40,22 +40,22 @@
       to: 'not_home'
   action:
   # Notify Slack about action taken
-  - service:  notify.slack_notify
+  - service:      notify.slack
     data_template:
       message: ""
       target: ["#notifications"]
       data:
         attachments:
-          - title:  Presence Notification
-          - text: >
-              Mark
-              {% if is_state('group.mark_trackers', 'home') %} Detected
-              {% elif is_state('group.mark_trackers', 'not_home') %} Disappeared
-              {% endif %}
-          - footer: >
-              {% if is_state('group.mark_trackers', 'home') %} :squirrel: Welcome Home Mark
-              {% elif is_state('group.mark_trackers', 'not_home') %} :squirrel: Goodbye Mark
-              {% endif %}
+          - color:  "#439FE0"
+            pretext: Presence Notification
+            fields:
+              - title: Entities
+                value: Mark Trackers
+                short: true
+              - title: Action
+                value: "`Gone`"
+                short: true
+            footer: ":squirrel: Goodbye Mark"
 
 - alias: Sandra presence detected
   trigger:
@@ -65,22 +65,22 @@
       to: 'home'
   action:
   # Notify Slack about action taken
-  - service:  notify.slack_notify
+  - service:      notify.slack
     data_template:
       message: ""
       target: ["#notifications"]
       data:
         attachments:
-          - title:  Presence Notification
-          - text: >
-              Sandra
-              {% if is_state('group.sandra_trackers', 'home') %} Detected
-              {% elif is_state('group.sandra_trackers', 'not_home') %} Disappeared
-              {% endif %}
-          - footer: >
-              {% if is_state('group.sandra_trackers', 'home') %} :dancer: Welcome Home Sandra
-              {% elif is_state('group.sandra_trackers', 'not_home') %} :dancer: Goodbye Sandra
-              {% endif %}
+          - color:  "#439FE0"
+            pretext: Presence Notification
+            fields:
+              - title: Entities
+                value: Sandra Trackers
+                short: true
+              - title: Action
+                value: "`Detected`"
+                short: true
+            footer: ":dancer: Welcome Home Sandra"
 
 - alias: Sandra presence gone
   trigger:
@@ -90,19 +90,19 @@
       to: 'not_home'
   action:
   # Notify Slack about action taken
-  - service:  notify.slack_notify
+  - service:      notify.slack
     data_template:
       message: ""
       target: ["#notifications"]
       data:
         attachments:
-          - title:  Presence Notification
-          - text: >
-              Sandra
-              {% if is_state('group.sandra_trackers', 'home') %} Detected
-              {% elif is_state('group.sandra_trackers', 'not_home') %} Disappeared
-              {% endif %}
-          - footer: >
-              {% if is_state('group.sandra_trackers', 'home') %} :dancer: Welcome Home Sandra
-              {% elif is_state('group.sandra_trackers', 'not_home') %} :dancer: Goodbye Sandra
-              {% endif %}
+          - color:  "#439FE0"
+            pretext: Presence Notification
+            fields:
+              - title: Entities
+                value: Sandra Trackers
+                short: true
+              - title: Action
+                value: "`Gone`"
+                short: true
+            footer: ":dancer: Goodbye Sandra"
