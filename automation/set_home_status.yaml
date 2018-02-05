@@ -99,7 +99,7 @@
         message: ""
         data:
           attachments:
-            - color:  "#00C853"
+            - color:  "#FFAB00"
               pretext: House Automation
               fields:
                 - title: House Triggers
