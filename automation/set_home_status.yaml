@@ -29,7 +29,7 @@
             - color:  "#00C853"
               pretext: House Automation
               fields:
-                - title: House Triggers
+                - title: House Trackers
                   value: Present
                   short: true
                 - title: Status
@@ -63,7 +63,7 @@
             - color:  "#FFAB00"
               pretext: House Automation
               fields:
-                - title: House Triggers
+                - title: House Trackers
                   value: NOT Present
                   short: true
                 - title: Status
@@ -102,7 +102,7 @@
             - color:  "#FFAB00"
               pretext: House Automation
               fields:
-                - title: House Triggers
+                - title: House Trackers
                   value: NOT Present
                   short: true
                 - title: Status

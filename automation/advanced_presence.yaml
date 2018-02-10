@@ -129,6 +129,32 @@
             input_select.sandra_status_dropdown
           {% endif %}
         option: Extended Away
+    - service:      notify.slack
+      data_template:
+        message: ""
+        target: ["#notifications"]
+        data:
+          attachments:
+            - color:  "#304FFE"
+              pretext: Presence Notification
+              fields:
+                - title: Entities
+                  value: >
+                    {% if trigger.entity_id == 'input_select.mark_status_dropdown' %}
+                      Mark Trackers
+                    {% else %}
+                      Sandra Trackers
+                    {% endif %}
+                  short: true
+                - title: Action
+                  value: "`Gone`"
+                  short: true
+              footer: >
+                    {% if trigger.entity_id == 'input_select.mark_status_dropdown' %}
+                      ":squirrel: Mark, I miss you... you've been gone so long."
+                    {% else %}
+                      ":dancer: Sandra, I miss you... you've been gone so long."
+                    {% endif %}
 
 ###########################################################
 # Set Away state if device not present at reboot
