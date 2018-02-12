@@ -2,6 +2,7 @@
 #
 # Home Assistant Sensors: Harmony Activity
 # Active icon color: #F9C536
+# Alert  icon color: #E45E65
 ############################################################
 
   #Uptime to help out HASS uptime
@@ -45,4 +46,43 @@
         {% else %}
           mdi:weather-night
         {% endif %}
-    # Garage Door Template
+    # Adv Presence
+    mark_status:
+      value_template: '{{ states.input_select.mark_status_dropdown.state }}'
+      friendly_name: 'Mark'
+#      entity_id: input_select.mark_status_dropdown
+    sandra_status:
+      value_template: '{{ states.input_select.sandra_status_dropdown.state }}'
+      friendly_name: 'Sandra'
+#      entity_id: input_select.sandra_status_dropdown
+    # Home Status
+    home_status:
+      value_template: '{{ states.input_select.home_status_dropdown.state }}'
+      friendly_name: 'Home Status'
+      entity_picture_template: >
+        {% if is_state('input_select.home_status_dropdown', 'Home') %}
+          /local/icon-homestatus-home.png
+        {%-elif is_state('input_select.home_status_dropdown', 'Away') %}
+          /local/icon-security-home.png
+        {%-elif is_state('input_select.home_status_dropdown', 'Extended Away') %}
+          /local/icon-home-automation.png
+        {%-elif is_state('input_select.home_status_dropdown', 'Vacation') %}
+          /local/icon-beach.png
+        {% else %}
+          /local/icon-home-alert.png
+        {% endif %}
+    # Noise Templates
+    noise_level:
+      friendly_name: "Noise Level"
+      value_template: >-
+        {% if states('sensor.netatmo_indoor_noise') | float < 38 %}
+          Quiet
+        {%-elif states('sensor.netatmo_indoor_noise') | float > 39 %}
+          Lively
+        {% endif %}
+      entity_picture_template: >
+        {% if states('sensor.netatmo_indoor_noise') | float < 38 %}
+          /local/icon-volume-low.png
+        {%-elif states('sensor.netatmo_indoor_noise') | float > 39 %}
+          /local/icon-volume-high.png
+        {% endif %}

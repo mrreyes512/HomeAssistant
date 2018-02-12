@@ -21,6 +21,11 @@
   api_key:  !secret slack_api_key
   default_channel: '#homeautomations'
 
+- name:     slack_dev
+  platform: slack
+  api_key:  !secret slack_dev_key
+  default_channel: '#dev_space'
+
 # Spark Notifications in My Home Space via HomeAssistant Bot
 - name: spark
   platform: ciscospark

@@ -9,26 +9,28 @@ device_view:
   view: true
   icon: mdi:radar
   entities:
-    - group.mark_trackers
-    - group.sandra_trackers
+    - group.mark_presence
+    - group.sandra_presence
     - group.network_info
     - group.system_info
 
 ############################################################
-# Unifi Devices
+# Unifi Devices. imported from known_devices
 ############################################################
 
-mark_trackers:
+mark_presence:
   name: Mark Presence
   entities:
+    - sensor.mark_status
     - device_tracker.phone__motox4_mark
     - device_tracker.laptop__workbookpro_mark
     - sensor.tracker_steps
 
 
-sandra_trackers:
+sandra_presence:
   name: Sandra Presence
   entities:
+    - sensor.sandra_status
     - device_tracker.phone__iphone6_sandra
     - device_tracker.laptop__dell_sandra
     - device_tracker.laptop__frescadesign_sandra
@@ -52,3 +54,20 @@ system_info:
     - sensor.disk_use_percent
     - sensor.ram_available
     - sensor.ram_used
+
+###########################################################
+# Device tracking groups used for advanced presence
+############################################################
+
+mark_trackers:
+  entities:
+    - device_tracker.phone__motox4_mark
+
+sandra_trackers:
+  entities:
+    - device_tracker.phone__iphone6_sandra
+
+house_trackers:
+  entities:
+    - group.mark_trackers
+    - group.sandra_trackers

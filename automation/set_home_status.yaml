@@ -1,0 +1,214 @@
+###########################################################
+#
+# Home Assistant Automation: Home Status
+#
+############################################################
+
+###########################################################
+# Timed State Transitions
+############################################################
+
+
+- alias: Set Home Status to Home
+  trigger:
+    - platform: state
+      entity_id: group.house_trackers
+      from: 'not_home'
+      to: 'home'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.home_status_dropdown
+        option: Home
+  # Notify Slack about action taken
+    - service: notify.slack
+      data_template:
+        target: ["#homeautomations"]
+        message: ""
+        data:
+          attachments:
+            - color:  "#00C853"
+              pretext: House Automation
+              thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/feature/adv_notify/www/icon-home-account-active_lg.png?raw=true"
+              fields:
+                - title: House Trackers
+                  value: Present
+                  short: true
+                - title: Status
+                  value: "`Home`"
+                  short: true
+                - title: Entities
+                  value: |
+                    Mark Trackers:    `{{ states.group.mark_trackers.state }}`
+                    Sandra Trackers:  `{{ states.group.sandra_trackers.state }}`
+                  short: false
+              footer: ":lock: Home Status Update"
+
+- alias: Set Home Status to Away
+  trigger:
+    - platform: state
+      entity_id: group.house_trackers
+      from: 'home'
+      to: 'not_home'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.home_status_dropdown
+        option: Away
+  # Notify Slack about action taken
+    - service: notify.slack
+      data_template:
+        target: ["#homeautomations"]
+        message: ""
+        data:
+          attachments:
+            - color:  "#FFAB00"
+              pretext: House Automation
+              thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/feature/adv_notify/www/icon-security-home_lg.png?raw=true"
+              fields:
+                - title: House Trackers
+                  value: NOT Present
+                  short: true
+                - title: Status
+                  value: "`Away`"
+                  short: true
+                - title: Entities
+                  value: |
+                    Mark Trackers:    `{{ states.group.mark_trackers.state }}`
+                    Sandra Trackers:  `{{ states.group.sandra_trackers.state }}`
+                  short: false
+              footer: ":lock: Home Status Update"
+
+###########################################################
+# Set Extended Away state if device not present for 24 hours
+############################################################
+
+- alias: Set House as extended away
+  trigger:
+    - platform: state
+      entity_id: input_select.home_status_dropdown
+      to: 'Away'
+      for:
+        hours: 24
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.home_status_dropdown
+        option: Extended Away
+  # Notify Slack about action taken
+    - service: notify.slack
+      data_template:
+        target: ["#homeautomations"]
+        message: ""
+        data:
+          attachments:
+            - color:  "#FFAB00"
+              pretext: House Automation
+              fields:
+                - title: House Trackers
+                  value: NOT Present
+                  short: true
+                - title: Status
+                  value: "`Extended Away`"
+                  short: true
+                - title: Entities
+                  value: |
+                    Mark Trackers:    `{{ states.group.mark_trackers.state }}`
+                    Sandra Trackers:  `{{ states.group.sandra_trackers.state }}`
+                  short: false
+              footer: ":lock: Home Status Update"
+
+###########################################################
+# Set Away state if device not present at reboot
+############################################################
+
+- alias: Place Home Status in away when home assistant starts
+  initial_state: 'on'
+  trigger:
+    - platform: homeassistant
+      event: start
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.house_trackers
+        state: 'not_home'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.home_status_dropdown
+        option: Away
+
+###########################################################
+# Vacation Modes
+############################################################
+
+- alias: Set Vacation mode on
+  trigger:
+    - platform: state
+      entity_id: input_boolean.vacation_mode
+      to: 'on'
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.home_status_dropdown
+        option: Vacation
+    - service: notify.slack
+      data_template:
+        target: ["#homeautomations"]
+        message: ""
+        data:
+          attachments:
+            - color:  "#FFAB00"
+              pretext: House Automation
+              thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/feature/adv_notify/www/icon-beach_lg.png?raw=true"
+              fields:
+                - title: House Trackers
+                  value: "{{ states.group.house_trackers.state }}"
+                  short: true
+                - title: Status
+                  value: "`Vacation`"
+                  short: true
+                - title: Entities
+                  value: |
+                    Mark Trackers:    `{{ states.group.mark_trackers.state }}`
+                    Sandra Trackers:  `{{ states.group.sandra_trackers.state }}`
+                  short: false
+              footer: ":lock: Home Status Update"
+
+- alias: Set Vacation mode off
+  trigger:
+    - platform: state
+      entity_id: input_boolean.vacation_mode
+      to: 'off'
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.home_status_dropdown
+        option: >-
+          {% if is_state('group.house_trackers', 'home') %}
+            Home
+          {% else %}
+            Away
+          {% endif %}
+    - service: notify.slack
+      data_template:
+        target: ["#homeautomations"]
+        message: ""
+        data:
+          attachments:
+            - color:  "#00C853"
+              pretext: House Automation
+              fields:
+                - title: House Trackers
+                  value: "{{ states.group.house_trackers.state }}"
+                  short: true
+                - title: Status
+                  value: "`{{ states.input_select.home_status_dropdown.state }}`"
+                  short: true
+                - title: Entities
+                  value: |
+                    Mark Trackers:    `{{ states.group.mark_trackers.state }}`
+                    Sandra Trackers:  `{{ states.group.sandra_trackers.state }}`
+                  short: false
+              footer: ":lock: Home Status Update"

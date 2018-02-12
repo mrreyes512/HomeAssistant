@@ -3,7 +3,11 @@
 # Home Assistant Sensors: Fitbit
 #
 ############################################################
+#- include: "{{ lookup('env', 'HASS_ENV', allow_undefined=true) }}"
+#{% if HASS_ENV eq 'dev' %}
+#{% endif %}
 
 - platform: fitbit
   monitored_resources:
     - "activities/tracker/steps"
+

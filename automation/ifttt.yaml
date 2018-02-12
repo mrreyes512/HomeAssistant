@@ -1,0 +1,41 @@
+###########################################################
+#
+# Home Assistant Automation - IFTTT Action
+#
+############################################################
+
+############################################################
+# Trigger: When the ifttt webhook is activated
+############################################################
+- alias: 'IFTTT Plugged in'
+  trigger:
+    platform:       event
+    event_type:     call_service
+    event_data:
+      domain:       scene
+      service:      turn_on
+      service_data:
+        entity_id:  scene.ifttt_plugged_in
+
+# Trigger scene.ifttt_plugged_in via webhook from IFTTT with conditions of between 10p - 4a
+  condition:
+    condition: time
+    after: '22:00:00'
+    before: '04:00:00'
+
+  action:
+  # Turn off Lights
+  - service:      light.turn_off
+    entity_id:
+    - group.lights_inside
+    - group.lights_other
+
+  # Notify Slack about action taken
+  - service:        notify.slack
+    data_template:
+      message: |
+        :iphone: *IFTTT BASED AUTOMATION: Phone Plugged in*
+        Mark's phone was plugged in:
+        Turning `OFF` the `ALL INSIDE` lights.
+
+############################################################

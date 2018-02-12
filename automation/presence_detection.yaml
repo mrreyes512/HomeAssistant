@@ -1,0 +1,108 @@
+###########################################################
+#
+# Home Assistant Automation: Advanced Presence
+#
+############################################################
+
+############################################################
+# Detection States
+############################################################
+- alias: Mark presence detected
+  trigger:
+    - platform: state
+      entity_id: group.mark_trackers
+      from: 'not_home'
+      to: 'home'
+  action:
+  # Notify Slack about action taken
+  - service:      notify.slack
+    data_template:
+      message: ""
+      target: ["#notifications"]
+      data:
+        attachments:
+          - color:  "#439FE0"
+            pretext: Presence Notification
+            fields:
+              - title: Entities
+                value: Mark Trackers
+                short: true
+              - title: Action
+                value: "`Detected`"
+                short: true
+            footer: ":squirrel: Welcome Home Mark"
+
+- alias: Mark presence gone
+  trigger:
+    - platform: state
+      entity_id: group.mark_trackers
+      from: 'home'
+      to: 'not_home'
+  action:
+  # Notify Slack about action taken
+  - service:      notify.slack
+    data_template:
+      message: ""
+      target: ["#notifications"]
+      data:
+        attachments:
+          - color:  "#439FE0"
+            pretext: Presence Notification
+            fields:
+              - title: Entities
+                value: Mark Trackers
+                short: true
+              - title: Action
+                value: "`Gone`"
+                short: true
+            footer: ":squirrel: Goodbye Mark"
+
+- alias: Sandra presence detected
+  trigger:
+    - platform: state
+      entity_id: group.sandra_trackers
+      from: 'not_home'
+      to: 'home'
+  action:
+  # Notify Slack about action taken
+  - service:      notify.slack
+    data_template:
+      message: ""
+      target: ["#notifications"]
+      data:
+        attachments:
+          - color:  "#439FE0"
+            pretext: Presence Notification
+            fields:
+              - title: Entities
+                value: Sandra Trackers
+                short: true
+              - title: Action
+                value: "`Detected`"
+                short: true
+            footer: ":dancer: Welcome Home Sandra"
+
+- alias: Sandra presence gone
+  trigger:
+    - platform: state
+      entity_id: group.sandra_trackers
+      from: 'home'
+      to: 'not_home'
+  action:
+  # Notify Slack about action taken
+  - service:      notify.slack
+    data_template:
+      message: ""
+      target: ["#notifications"]
+      data:
+        attachments:
+          - color:  "#439FE0"
+            pretext: Presence Notification
+            fields:
+              - title: Entities
+                value: Sandra Trackers
+                short: true
+              - title: Action
+                value: "`Gone`"
+                short: true
+            footer: ":dancer: Goodbye Sandra"

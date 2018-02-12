@@ -17,6 +17,11 @@
       service_data:
         entity_id:  scene.morning
 
+  condition:
+    condition: time
+    after: '07:00:00'
+    before: '11:00:00'
+
   action:
   # Setting Hue Lamp
   - service:        hue.hue_activate_scene
@@ -28,10 +33,38 @@
       group_name:   "Master"
       scene_name:   "Morning"
 
+  - service: tts.google_say
+    entity_id: media_player.master_bedroom_speaker
+    data:
+      message: >-
+        {{ [
+        "Good Morning Mark. You're the best." ,
+        "Top of the morning to you Mark. Have a great day." ,
+        "Good morning Mark. Hope you have a super day." ,
+        "It looks like you're ready to start your day. Go get em Mark!"
+        ] |random }}
+
+
   # Notify Slack about action taken
-  - service:        notify.slack
+  - service:      notify.slack
     data_template:
-      message: |
-        :robot_face: *SCENE BASED AUTOMATION: Morning*
-        Executing *Morning* Automation:
-        Calling `MORNING` scene from Philips Hue.
+      message: ""
+      target: ["#homeautomations"]
+      data:
+        attachments:
+          - color:  "#439FE0"
+            pretext: House Automation
+            thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/feature/adv_notify/www/icon-weather-sunset-up_lg.png?raw=true"
+            fields:
+              - title: Trigger
+                value: Scene Based
+                short: true
+              - title: Executing
+                value: Morning Automation
+                short: true
+              - title: Entity Changes
+                value: |
+                  Calling `MORNING` scene from Philips Hue.
+                  Saying Goodmorning on Google Home Mini
+                short: false
+            footer: ":robot_face: Scene Based Automation"

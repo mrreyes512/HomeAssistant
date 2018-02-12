@@ -1,0 +1,38 @@
+############################################################
+#
+# Home Assistant Input Selects
+#
+############################################################
+
+############################################################
+# Advanced Presence Detection
+############################################################
+
+mark_status_dropdown:
+  name: Mark
+  options:
+    - Home
+    - Just Arrived
+    - Just Left
+    - Away
+    - Extended Away
+  initial: Home
+
+sandra_status_dropdown:
+  name: Sandra
+  options:
+    - Home
+    - Just Arrived
+    - Just Left
+    - Away
+    - Extended Away
+  initial: Home
+
+home_status_dropdown:
+  name: Home Status
+  options:
+    - Home
+    - Away
+    - Extended Away
+    - Vacation
+  initial: Home

@@ -63,19 +63,36 @@
   - service:      light.turn_on
     entity_id:    group.lights_inside
 
-  # Notify Slack about action taken
-  - service:      notify.slack
-    data_template:
-      message: |
-        :Sunny: *SUN BASED AUTOMATION*
-        -30 min's till SUNSET.
-        Turning *ON* the *INSIDE* lights.
   # Notify SparkRoom about action taken
   - service:  notify.spark
     data_template:
       message: |
         ## -30 min's till **SUNSET**.
         Turning `ON` the `INSIDE` lights.
+
+  # Notify Slack about action taken
+  - service:      notify.slack
+    data_template:
+      message: ""
+      target: ["#homeautomations"]
+      data:
+        attachments:
+          - color:  "#439FE0"
+            pretext: House Automation
+            fields:
+              - title: Trigger
+                value: Sunset -30 min
+                short: true
+              - title: Action
+                value: "`Turn On`"
+                short: true
+              - title: Entities
+                value: |
+                  Hue Living Room
+                  Hue Master
+                  Vera Inside
+                short: false
+            footer: ":sunny: Sun Based Automations"
 
 ############################################################
 # Trigger: Prior to SUNSET
@@ -92,19 +109,34 @@
   - service:    light.turn_on
     entity_id:  group.lights_outside
 
-  # Notify Slack about action taken
-  - service:  notify.slack
-    data_template:
-      message: |
-        :Sunny: *SUN BASED AUTOMATION*
-        +10 min's past SUNSET.
-        Turning *ON* the *OUTSIDE* lights.
   # Notify SparkRoom about action taken
   - service:  notify.spark
     data_template:
       message: |
         ## +10 min's past **SUNSET**.
         Turning `ON` the `OUTSIDE` lights.
+
+  # Notify Slack about action taken
+  - service:      notify.slack
+    data_template:
+      message: ""
+      target: ["#homeautomations"]
+      data:
+        attachments:
+          - color:  "#439FE0"
+            pretext: House Automation
+            fields:
+              - title: Trigger
+                value: Sunset +10 min
+                short: true
+              - title: Action
+                value: "`Turn On`"
+                short: true
+              - title: Entities
+                value: |
+                  Vera Front Lights
+                short: false
+            footer: ":sunny: Sun Based Automations"
 
 ############################################################
 # Trigger: Prior to SUNRISE
@@ -121,15 +153,30 @@
   - service:    light.turn_off
     entity_id:  group.lights_outside
 
-  # Notify Slack about action taken
-  - service:  notify.slack
-    data_template:
-      message: |
-        :Sunny: *SUN BASED AUTOMATION*
-        -15 min's till SUNRISE.
-        Turning *OFF* the *OUTSIDE* lights.
   - service:  notify.spark
     data_template:
       message: |
         ## -15 min's till **SUNRISE**.
         Turning `OFF` the `OUTSIDE` lights.
+
+  # Notify Slack about action taken
+  - service:      notify.slack
+    data_template:
+      message: ""
+      target: ["#homeautomations"]
+      data:
+        attachments:
+          - color:  "#439FE0"
+            pretext: House Automation
+            fields:
+              - title: Trigger
+                value: Sunrise -15 min
+                short: true
+              - title: Action
+                value: "`Turn Off`"
+                short: true
+              - title: Entities
+                value: |
+                  Vera Front Lights
+                short: false
+            footer: ":sunny: Sun Based Automations"

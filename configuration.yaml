@@ -55,24 +55,15 @@ updater:
   reporting: no
   # include_used_components: true
 
+input_boolean:
+  vacation_mode:
+    name: Vacation Mode
+    initial: off
+    icon: mdi:home-circle
+
 frontend:
   themes: !include themes/midnight.yaml
 #  themes: !include_dir_merge_named themes/
-
-#input_select:
-#  theme:
-#    name: HASS Themes
-#    initial: Midnight
-#    icon: mdi:clipboard-text
-#    options:
-#      - default
-#      - Dark Red
-#      - Dark Orange
-#      - Dark Blue
-#      - Dark Green
-#      - Midnight
-#      - Moon Light
-#      - Solarized
 
 discovery:
   ignore:
@@ -140,6 +131,7 @@ notify: !include includes/notify.yaml
 scene: !include includes/scenes.yaml
 device_tracker: !include includes/device_tracker.yaml
 zone: !include includes/zones.yaml
+input_select: !include includes/input_select.yaml
 
 # Group Merge Directory
 
@@ -148,7 +140,6 @@ sensor: !include_dir_merge_list sensors/
 automation: !include_dir_merge_list automation/
 
 # -----
-#input_select: !include includes/input_select.yaml
 #scene: !include includes/scenes.yaml
 #weblink: !include includes/weblink.yaml
 
