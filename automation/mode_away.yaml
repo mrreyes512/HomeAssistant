@@ -18,8 +18,23 @@
     state: 'Away'
   action:
   # Notify Slack about action taken
-  - service:        notify.slack_notify
+  - service:      notify.slack
     data_template:
-      message: |
-        :loud_sound: *NOISE WHILE AWAY:*
-        I herd something!
+      message: ""
+      target: ["#notifications"]
+      data:
+        attachments:
+          - color:  "#D50000"
+            pretext: Security Notification
+            thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/feature/adv_notify/www/icon-volume-high_lg.png?raw=true"
+            fields:
+              - title: Trigger
+                value: Netatmo Sensor
+                short: true
+              - title: Issue
+                value: Noise Herd
+                short: true
+              - title: Current State
+                value: "Noise Level : {{ states.sensor.netatmo_indoor_noise.state }}"
+                short: false
+            footer: ":loud_sound: I herd Something"

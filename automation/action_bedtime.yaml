@@ -45,12 +45,27 @@
     - light.mobile_2_14
 
   # Notify Slack about action taken
-  - service:        notify.slack
+  - service:      notify.slack
     data_template:
-      message: |
-        :robot_face: *SCENE BASED AUTOMATION: Bedtime*
-        Executing *Going to bed* Automation:
-        Turning `ON` the `OUTSIDE` lights.
-        Turning `OFF` the `INSIDE` lights.
-        Turning `OFF` the `LIVING ROOM TV`.
-        Calling `BEDTIME` scene from Philips Hue.
+      message: ""
+      target: ["#homeautomations"]
+      data:
+        attachments:
+          - color:  "#439FE0"
+            pretext: House Automation
+            thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/feature/adv_notify/www/icon-sleep_lg.png?raw=true"
+            fields:
+              - title: Trigger
+                value: Scene Based
+                short: true
+              - title: Executing
+                value: Bedtime Automation
+                short: true
+              - title: Entity Changes
+                value: |
+                  Turning `ON` the `OUTSIDE` lights.
+                  Turning `OFF` the `INSIDE` lights.
+                  Turning `OFF` the `LIVING ROOM TV`.
+                  Calling `BEDTIME` scene from Philips Hue.
+                short: false
+            footer: ":robot_face: Scene Based Automation"
