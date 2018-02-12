@@ -53,7 +53,7 @@
         attachments:
           - color:  "#439FE0"
             pretext: House Automation
-            thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/feature/adv_notify/www/icon-sleep_lg.png?raw=true"
+            thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/develop/www/icon-sleep_lg.png?raw=true"
             fields:
               - title: Trigger
                 value: Scene Based
