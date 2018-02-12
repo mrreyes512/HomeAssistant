@@ -8,6 +8,7 @@
 # Timed State Transitions
 ############################################################
 
+
 - alias: Set Home Status to Home
   trigger:
     - platform: state
@@ -28,6 +29,7 @@
           attachments:
             - color:  "#00C853"
               pretext: House Automation
+              thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/feature/adv_notify/www/icon-home-account-active_lg.png?raw=true"
               fields:
                 - title: House Trackers
                   value: Present
@@ -62,6 +64,7 @@
           attachments:
             - color:  "#FFAB00"
               pretext: House Automation
+              thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/feature/adv_notify/www/icon-security-home_lg.png?raw=true"
               fields:
                 - title: House Trackers
                   value: NOT Present
@@ -150,12 +153,30 @@
       data_template:
         entity_id: input_select.home_status_dropdown
         option: Vacation
-#    - service: notify.slack_notify
-#      data_template:
-#        message: |
-#          :lock: *SETTING HOME STATUS:* `Vacation Mode`
+    - service: notify.slack
+      data_template:
+        target: ["#homeautomations"]
+        message: ""
+        data:
+          attachments:
+            - color:  "#FFAB00"
+              pretext: House Automation
+              thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/feature/adv_notify/www/icon-beach_lg.png?raw=true"
+              fields:
+                - title: House Trackers
+                  value: "{{ states.group.house_trackers.state }}"
+                  short: true
+                - title: Status
+                  value: "`Vacation`"
+                  short: true
+                - title: Entities
+                  value: |
+                    Mark Trackers:    `{{ states.group.mark_trackers.state }}`
+                    Sandra Trackers:  `{{ states.group.sandra_trackers.state }}`
+                  short: false
+              footer: ":lock: Home Status Update"
 
-- alias: Set Vacation mode off - home
+- alias: Set Vacation mode off
   trigger:
     - platform: state
       entity_id: input_boolean.vacation_mode
@@ -170,7 +191,24 @@
           {% else %}
             Away
           {% endif %}
-#    - service: notify.slack_notify
-#      data_template:
-#        message: |
-#          :lock: *SETTING HOME STATUS:* `Vacation Mode`
+    - service: notify.slack
+      data_template:
+        target: ["#homeautomations"]
+        message: ""
+        data:
+          attachments:
+            - color:  "#00C853"
+              pretext: House Automation
+              fields:
+                - title: House Trackers
+                  value: "{{ states.group.house_trackers.state }}"
+                  short: true
+                - title: Status
+                  value: "`{{ states.input_select.home_status_dropdown.state }}`"
+                  short: true
+                - title: Entities
+                  value: |
+                    Mark Trackers:    `{{ states.group.mark_trackers.state }}`
+                    Sandra Trackers:  `{{ states.group.sandra_trackers.state }}`
+                  short: false
+              footer: ":lock: Home Status Update"

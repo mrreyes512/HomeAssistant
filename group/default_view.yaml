@@ -27,7 +27,9 @@ house_mode:
   name: House Mode
   entities:
     - sensor.home_status
+    - sensor.noise_level
     - input_boolean.vacation_mode
+#    - input_select.home_status_dropdown
 
 house_presence:
   name: House Presence
@@ -41,7 +43,7 @@ house_presence:
 home_status:
   name: Home Status
   entities:
-    - sensor.noise_level
+    - sensor.netatmo_indoor_noise
 #    - sensor.netatmo_indoor_noise
     - sensor.netatmo_indoor_temperature
     - sensor.netatmo_outdoor_module_temperature

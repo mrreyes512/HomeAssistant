@@ -26,6 +26,7 @@
         attachments:
           - color:  "#D50000"
             pretext: Security Notification
+            thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/feature/adv_notify/www/icon-volume-high_lg.png?raw=true"
             fields:
               - title: Trigger
                 value: Netatmo Sensor
@@ -37,8 +38,3 @@
                 value: "Noise Level : {{ states.sensor.netatmo_indoor_noise.state }}"
                 short: false
             footer: ":loud_sound: I herd Something"
-#  - service:        notify.slack_notify
-#    data_template:
-#      message: |
-#        :loud_sound: *NOISE WHILE AWAY:*
-#        I herd something!
