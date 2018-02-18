@@ -13,7 +13,7 @@
   hide_entity: False
   trigger:
     - platform: state
-      entity_id: input_slider.strip_animation_speed
+      entity_id: input_number.strip_animation_speed
   action:
     - service: mqtt.publish
       data_template:
