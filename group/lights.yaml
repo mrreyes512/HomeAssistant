@@ -24,7 +24,6 @@ lights_view:
 lights_inside:
   name: Inside Lights
   entities:
-    - light.light_strip
     - light.master
     - light.living_room_lamp
     - light.master_lamp
@@ -74,6 +73,21 @@ light_strip:
   entities:
     - light.light_strip
     - input_number.strip_animation_speed
+
+ifttt_lights:
+  name: Inside Lights
+  entities:
+    - light.light_strip
+    - light.master
+    - light.living_room_lamp
+    - light.master_lamp
+    - light.living_room_tree_7
+    - light.master_5
+    - light.mail_table_4
+    - light.kitchen_6
+    - light.play_room_3
+    - light.office_11
+    - light.mobile_2_14
 
 #lights_holiday:
 #  name: Holiday Lights
