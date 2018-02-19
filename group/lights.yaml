@@ -24,6 +24,7 @@ lights_view:
 lights_inside:
   name: Inside Lights
   entities:
+    - light.light_strip
     - light.master
     - light.living_room_lamp
     - light.master_lamp

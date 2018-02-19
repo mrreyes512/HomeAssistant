@@ -18,6 +18,14 @@
         entity_id:  scene.bed_magic
 
   action:
+  # Set Bed strip to Noise
+  - service: light.turn_on
+    entity_id:
+      - light.light_strip
+    data:
+      effect: fire
+      brightness: 59
+
   # Setting Hue Lamp
   - service:        hue.hue_activate_scene
     data:
