@@ -12,7 +12,6 @@ default_view:
   view: yes
   icon: mdi:home
   entities:
-    - group.light_strip
     - group.house_mode
     - group.house_presence
     - group.home_status
@@ -73,10 +72,3 @@ light_groups:
     - group.outside_lights_sum
     - remote.lroomharmony
     - remote.fresca_apple_tv
-
-light_strip:
-  name: Light Strip
-  control: hidden
-  entities:
-    - light.light_strip
-    - input_number.strip_animation_speed
