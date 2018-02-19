@@ -1,0 +1,37 @@
+###########################################################
+#
+# Home Assistant Automation - Action
+#
+############################################################
+
+############################################################
+# Trigger: When the scene.bedtime is activated
+############################################################
+- alias: 'Bed Magic'
+  trigger:
+    platform:       event
+    event_type:     call_service
+    event_data:
+      domain:       scene
+      service:      turn_on
+      service_data:
+        entity_id:  scene.bed_magic
+
+  action:
+  # Setting Hue Lamp
+  - service:        hue.hue_activate_scene
+    data:
+      group_name:   "Master"
+      scene_name:   "Bedtime"
+
+  # Lights to turn off
+  - service:        light.turn_off
+    entity_id:
+    - light.master_5
+
+  # Trigger the speaker
+  - delay: 0:0:03
+  - service: tts.google_say
+    entity_id: media_player.master_bedroom_speaker
+    data:
+      message: "Lets start up some magic."

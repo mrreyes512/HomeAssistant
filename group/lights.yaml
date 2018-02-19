@@ -103,6 +103,7 @@ scenes_lights:
   control: hidden
   entities:
     - scene.bedtime
+    - scene.bed_magic
     - scene.morning
     - scene.overcast
     - scene.all_lights_on
