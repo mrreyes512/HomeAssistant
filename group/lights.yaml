@@ -11,6 +11,7 @@ lights_view:
   entities:
     - group.lights_inside
     - group.lights_outside
+    - group.light_strip
     - group.lights_other
     - group.lights_hue
     - group.scenes_lights
@@ -65,6 +66,13 @@ lights_other:
     - light.mobile_1_33
     - light.chandelier_12
     - light.outside_back_10
+
+light_strip:
+  name: Bed Strip
+  control: hidden
+  entities:
+    - light.light_strip
+    - input_number.strip_animation_speed
 
 #lights_holiday:
 #  name: Holiday Lights
