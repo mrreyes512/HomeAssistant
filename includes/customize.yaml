@@ -288,6 +288,10 @@ scene.bedtime:
   icon: mdi:sleep
   google_assistant: true
 
+scene.bed_magic:
+  icon: mdi:auto-fix
+  google_assistant: true
+
 scene.morning:
   icon: mdi:weather-sunset-up
   google_assistant: true
