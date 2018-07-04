@@ -7,7 +7,7 @@
 homeassistant:
   name: Home
   latitude: !secret latitude
-  longitude: !secret longitude 
+  longitude: !secret longitude
   elevation: !secret elevation
   unit_system: imperial
   time_zone: America/Chicago
@@ -86,6 +86,8 @@ map:
 mqtt:
   embedded:
 
+# Entry to enable the cloud component
+cloud:
 
 ############################################################
 #
