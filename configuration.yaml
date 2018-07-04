@@ -89,6 +89,10 @@ mqtt:
 # Entry to enable the cloud component
 cloud:
 
+# Entry to enable configuration panel
+config:
+
+
 ############################################################
 #
 # Components
