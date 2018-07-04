@@ -24,6 +24,10 @@
   entities:
     light.null: on
 
+- name: Bed Magic
+  entities:
+    light.null: on
+
 - name: Morning
   entities:
     light.null: on

@@ -61,6 +61,7 @@ action_scenes:
     - scene.watch_tv
     - scene.netflix_and_chill
     - scene.bedtime
+    - scene.bed_magic
     - scene.wifey_going_to_bed
     - scene.party_mode
 

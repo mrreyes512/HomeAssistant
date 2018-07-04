@@ -7,7 +7,7 @@
 homeassistant:
   name: Home
   latitude: !secret latitude
-  longitude: !secret longitude 
+  longitude: !secret longitude
   elevation: !secret elevation
   unit_system: imperial
   time_zone: America/Chicago
@@ -82,6 +82,13 @@ conversation:
 # Enables a map showing the location of tracked devices
 map:
 
+# Enable the embedded mqtt service in hassio
+mqtt:
+  embedded:
+
+# Entry to enable the cloud component
+cloud:
+
 ############################################################
 #
 # Components
@@ -132,6 +139,9 @@ scene: !include includes/scenes.yaml
 device_tracker: !include includes/device_tracker.yaml
 zone: !include includes/zones.yaml
 input_select: !include includes/input_select.yaml
+input_number: !include includes/input_number.yaml
+light: !include includes/light_strip.yaml
+
 
 # Group Merge Directory
 
