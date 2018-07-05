@@ -88,10 +88,10 @@ mqtt:
 
 # Entry to enable the cloud component
 cloud:
+  google_actions: !include includes/google_actions.yaml
 
 # Entry to enable configuration panel
 config:
-  google_actions:
 
 
 ############################################################
@@ -137,7 +137,7 @@ camera: !include includes/cameras.yaml
 vera:   !include includes/vera.yaml
 switch: !include includes/switch.yaml #includes Rachio config
 media_player: !include includes/media_players.yaml
-google_assistant: !include includes/google_assistant.yaml
+#google_assistant: !include includes/google_assistant.yaml
 hue: !include includes/philips_hue.yaml
 notify: !include includes/notify.yaml
 scene: !include includes/scenes.yaml

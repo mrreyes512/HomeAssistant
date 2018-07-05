@@ -1,0 +1,20 @@
+############################################################
+#
+# Home Assistant Google Actions configuration
+#
+############################################################
+
+filter:
+  include_domains:
+    - light
+    - switch
+    - climate
+  exclude_entities:
+    - switch.outside
+entity_config:
+  switch.kitchen:
+    name: Custom Name for Google Assistant
+    aliases:
+     - bright lights
+     - entry lights
+    room: living room
