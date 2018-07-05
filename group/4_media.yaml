@@ -11,6 +11,7 @@ media_view:
   entities:
     - group.chromecasts
     - group.speakers
+    - group.speaker_groups
     - media_player.fresca_apple_tv
     - group.remotes
 
