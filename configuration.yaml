@@ -91,6 +91,7 @@ cloud:
 
 # Entry to enable configuration panel
 config:
+  google_actions:
 
 
 ############################################################
