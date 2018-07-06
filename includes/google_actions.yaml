@@ -8,10 +8,11 @@ filter:
   include_entities:
     - group.lights_inside
     - group.lights_outside
+    - scene.bedtime
+    - scene.going_to_bed
+    - scene.morning
   include_domains:
     - light
-    - switch
-    - scene
     - climate
   exclude_entities:
     # Philips Hue Rooms appear as groups
@@ -21,9 +22,9 @@ filter:
     - light.office
     - light.kids_room
 entity_config:
-  switch.kitchen:
-    name: Custom Name for Google Assistant
+  switch.mobile_3_11:
+    name: Water Kettle
     aliases:
-     - bright lights
-     - entry lights
-    room: living room
+     - tea pot
+     - coffee
+    room: kitchen

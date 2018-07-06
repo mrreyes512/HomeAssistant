@@ -70,7 +70,7 @@ lights_other:
   name: Extra Lights
   control: hidden
   entities:
-    - light.mobile_3_11
+    - switch.mobile_3_11
     - light.mobile_1_33
     - light.chandelier_12
     - light.outside_back_10
