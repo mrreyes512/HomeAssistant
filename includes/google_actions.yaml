@@ -14,7 +14,12 @@ filter:
     - scene
     - climate
   exclude_entities:
-    - switch.outside
+    # Philips Hue Rooms appear as groups
+    - light.entertainment_area_1
+    - light.master
+    - light.living_room
+    - light.office
+    - light.kids_room
 entity_config:
   switch.kitchen:
     name: Custom Name for Google Assistant
