@@ -24,9 +24,9 @@ lights_view:
 lights_inside:
   name: Inside Lights
   entities:
-    - light.master_color_lamp
+    - light.lamp
     - light.master_5
-    - light.lr_table
+    - light.table
     - light.living_room_tree_7
     - light.mail_table_4
     - light.kitchen_6
@@ -46,8 +46,8 @@ lights_outside:
 lights_hue:
   name: Philips Hue Lights
   entities:
-    - light.lr_table
-    - light.master_color_lamp
+    - light.table
+    - light.lamp
     - light.fireplace
     - light.sink
     - light.aidan
@@ -62,15 +62,17 @@ autgrp_bedtime:
     - light.play_room_3
     - light.office_lamp
     - light.mobile_2_14
+    - light.fireplace
+    - light.sink
 
 lights_other:
   name: Extra Lights
   control: hidden
   entities:
+    - light.mobile_3_11
     - light.mobile_1_33
     - light.chandelier_12
     - light.outside_back_10
-    - light.mobile_3_11
 
 light_strip:
   name: Bed Strip
@@ -84,8 +86,8 @@ ifttt_lights:
   entities:
     - light.light_strip
     - light.master
-    - light.lr_table
-    - light.master_color_lamp
+    - light.table
+    - light.lamp
     - light.living_room_tree_7
     - light.master_5
     - light.mail_table_4
