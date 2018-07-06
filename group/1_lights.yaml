@@ -48,6 +48,7 @@ lights_hue:
   entities:
     - light.table
     - light.lamp
+    - light.office_lamp
     - light.fireplace
     - light.sink
     - light.aidan
