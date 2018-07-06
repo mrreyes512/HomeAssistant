@@ -60,7 +60,7 @@ light.outside_back_10:
   google_assistant: true
   google_assistant_type: light
 
-light.mobile_3_11:
+switch.mobile_3_11:
   icon: mdi:coffee
   friendly_name: Water Kettle
   google_assistant: true
