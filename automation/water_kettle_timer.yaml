@@ -16,13 +16,14 @@
 
   action:
   # Trigger the speaker
-  - delay: 0:0:10
+  - delay: 00:05:00
   - service: tts.google_say
-    entity_id: media_player.office_speaker
+    entity_id: media_player.home_group
     data:
-      message: "Your water has boiled master."
+      message: "Your water has boiled master Mark."
 
   # Lights to turn off
+  - delay: 00:05:00
   - service:        switch.turn_off
     entity_id:
     - switch.mobile_3_11
