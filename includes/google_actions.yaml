@@ -6,6 +6,7 @@
 
 filter:
   include_entities:
+    - switch.mobile_3_11
     - group.lights_inside
     - group.lights_outside
     - scene.bedtime
