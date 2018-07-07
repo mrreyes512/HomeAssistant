@@ -24,16 +24,17 @@ lights_view:
 lights_inside:
   name: Inside Lights
   entities:
-    - light.master
-    - light.living_room_lamp
-    - light.master_lamp
-    - light.living_room_tree_7
+    - light.lamp
     - light.master_5
+    - light.table
+    - light.living_room_tree_7
     - light.mail_table_4
     - light.kitchen_6
     - light.play_room_3
-    - light.office_11
+    - light.office_lamp
     - light.mobile_2_14
+    - light.fireplace
+    - light.sink
 #    - light.mobile_1_33
 
 lights_outside:
@@ -45,8 +46,12 @@ lights_outside:
 lights_hue:
   name: Philips Hue Lights
   entities:
-    - light.living_room_lamp
-    - light.master_lamp
+    - light.table
+    - light.lamp
+    - light.office_lamp
+    - light.fireplace
+    - light.sink
+    - light.aidan
 
 # Automation group to clean up going_to_bed automation
 autgrp_bedtime:
@@ -56,13 +61,16 @@ autgrp_bedtime:
     - light.mail_table_4
     - light.kitchen_6
     - light.play_room_3
-    - light.office_11
+    - light.office_lamp
     - light.mobile_2_14
+    - light.fireplace
+    - light.sink
 
 lights_other:
   name: Extra Lights
   control: hidden
   entities:
+    - switch.mobile_3_11
     - light.mobile_1_33
     - light.chandelier_12
     - light.outside_back_10
@@ -79,14 +87,14 @@ ifttt_lights:
   entities:
     - light.light_strip
     - light.master
-    - light.living_room_lamp
-    - light.master_lamp
+    - light.table
+    - light.lamp
     - light.living_room_tree_7
     - light.master_5
     - light.mail_table_4
     - light.kitchen_6
     - light.play_room_3
-    - light.office_11
+    - light.office_lamp
     - light.mobile_2_14
 
 #lights_holiday:

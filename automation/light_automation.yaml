@@ -15,10 +15,6 @@
     from:        "off"
     to:          "on"
 
-  condition:
-    condition: sun
-    after: sunset
-
   action:
   # Lights to turn on
   - service:      light.turn_on

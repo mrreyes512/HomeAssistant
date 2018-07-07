@@ -1,0 +1,29 @@
+###########################################################
+#
+# Home Assistant Automation - State
+#
+############################################################
+
+############################################################
+# Trigger: When the Water Kettle is turned on
+############################################################
+- alias: 'Water Kettle Timer'
+  trigger:
+    platform:     state
+    entity_id:    switch.mobile_3_11
+    from:        "off"
+    to:          "on"
+
+  action:
+  # Trigger the speaker
+  - delay: 00:05:00
+  - service: tts.google_say
+    entity_id:  media_player.living_room_speaker
+    data:
+      message: "Your water has boiled master Mark."
+
+  # Lights to turn off
+  - delay: 00:05:00
+  - service:        switch.turn_off
+    entity_id:
+    - switch.mobile_3_11

@@ -1,0 +1,31 @@
+############################################################
+#
+# Home Assistant Google Actions configuration
+#
+############################################################
+
+filter:
+  include_entities:
+    - switch.mobile_3_11
+    - group.lights_inside
+    # - group.lights_outside
+    - scene.bedtime
+    - scene.going_to_bed
+    - scene.morning
+  include_domains:
+    - light
+    - climate
+  exclude_entities:
+    # Philips Hue Rooms appear as groups
+    - light.entertainment_area_1
+    - light.master
+    - light.living_room
+    - light.office
+    - light.kids_room
+entity_config:
+  switch.mobile_3_11:
+    name: Water Kettle
+    aliases:
+     - tea pot
+     - coffee
+    room: kitchen

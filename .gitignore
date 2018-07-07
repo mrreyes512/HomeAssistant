@@ -37,3 +37,7 @@ __pycache__
 
 # new pi script
 new_pi.sh
+
+# Config files
+.config_entries.json
+entity_registry.yaml
