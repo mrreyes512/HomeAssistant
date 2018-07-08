@@ -55,8 +55,8 @@ Scenes can be thought of as a static snapshot to set a mood. You can use them at
 |---|---|
 | Morning Scene | Set morning lights |
 | Goodnight Scene | Turn off all **INSIDE LIGHTS** except MASTER |
-| Inside Lights Off | -30m Sunrise | Turn off **OUTSIDE LIGHTS** |
-| Inside Lights On | -30m Sunrise | Turn off **OUTSIDE LIGHTS** |
+| Inside Lights On  | Turn on **OUTSIDE LIGHTS** |
+| Inside Lights Off | Turn off **OUTSIDE LIGHTS** |
 | Fresca Scene | Turn off all **INSIDE LIGHTS** except FRESCA Lamp |
 
 ## Automations and Triggers
