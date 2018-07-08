@@ -55,7 +55,7 @@ Scenes can be thought of as a static snapshot to set a mood. You can use them at
 | Goodnight Scene | Turn off all **INSIDE LIGHTS** except MASTER |
 | Inside Lights Off | -30m Sunrise | Turn off **OUTSIDE LIGHTS** |
 | Inside Lights On | -30m Sunrise | Turn off **OUTSIDE LIGHTS** |
-| Fresca Scene | Turn off all **INSIDE LIGHTS** FRESCA Lamp |
+| Fresca Scene | Turn off all **INSIDE LIGHTS** except FRESCA Lamp |
 
 ## Automations and Triggers
 Automations are a blend of a Routine and a static Scene. A morning Routine could trigger the _Morning Lights Scene_ **PLUS** make you coffee **AND** wake the kids! Or, a trigger could be considered to turn on the _Inside Lights Scene_ 30 minutes prior to sunset, and turn off 30 minutes before sunrise.
