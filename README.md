@@ -37,6 +37,7 @@ Examples could be thought of as: I'm out of bed and need to:
 * Make Coffee
 * Wake the kids
 * Listen to the news
+
 For my configuration, I'm using a conversation with Google Home to execute the below:
 
 | TITLE | HOW TO EXECUTE | DESCRIPTION |
