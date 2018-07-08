@@ -1,6 +1,7 @@
 # Home Assistant Configuration
 
-Home Assistant is an open-source home automation platform running on Python 3. Track and control all devices at home and automate control. I have mine running on with HASSIO on a Raspberry Pi 3, but will be integrating it into a Docker Service across a Swarm of 6 Pi's for redundancy in future iterations. This repository represents my configureation files to make my Home Automation magic happen. I run a CICD pipeline w/ Travis CI successes being pushed to my 'production Pi'.
+Home Assistant is an open-source home automation platform running on Python 3. Track and control all devices at home and automate control.  
+I have mine running on with HASSIO on a Raspberry Pi 3, but will be integrating it into a Docker Service across a Swarm of 6 Pi's for redundancy in future iterations. This repository represents my configuration files to make my Home Automation magic happen. I run a CICD pipeline w/ Travis CI successes being pushed to my 'production Pi'.
 
 [![Master Build Status](https://travis-ci.org/mrreyes512/HomeAssistant.svg?branch=master)](https://travis-ci.org/mrreyes512/HomeAssistant)
 
@@ -36,7 +37,7 @@ Home Assistant is an open-source home automation platform running on Python 3. T
 | Going to bed | I'm going to bed | Execute Goodnight Automation |
 | In Bed | I'm in bed / Goodnight | Execute **INSIDE LIGHTS OFF** Scene
 | Fresca Hours | Sandra's still working | Execute **FRESCA SCENE** |
-| Leaving | I'm leaving | Turn all lights off, set Upstairs and Downstairs to 85 | 
+| Leaving | I'm leaving | Turn all lights off, set Upstairs and Downstairs to 85 |
 
 ## Scenes
 | TITLE | DESCRIPTION |
