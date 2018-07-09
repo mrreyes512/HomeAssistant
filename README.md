@@ -11,13 +11,16 @@ I have mine running on with HASSIO on a Raspberry Pi 3, but will be integrating 
 
 | **CONTROLLED COMPONENTS** | **INPUT COMPONENTS** | **NOTIFICATION COMPONENTS** | **MEDIA COMPONENTS** |
 |---|----|---|---|
-| ![Philips Hue][philips_hue] | Google Home | Slack | Google Chromecast |
-| Vera | IFTTT | Pushbullet | Apple TV |
-| Rachio | Netamo | Cisco Webex Teams | |
+| ![Philips Hue][philips_hue] | ![Google Home][google_home] | Slack | Google Chromecast |
+| ![Vera][vera] | IFTTT | Pushbullet | Apple TV |
+| ![Rachio][rachio] | Netamo | Cisco Webex Teams | |
 | Arduino | | | |
 
 [philips_hue]: www/logo-Hue.png
+[vera]: www/logo-Vera.png
+[rachio]: www/logo-Rachio.png
 
+[google_home]: www/logo-Google_Assistant.png
 
 ## Routines
 Routines are designed to move with your life flow. They are made to meet the day to day needs to interact with your house.
