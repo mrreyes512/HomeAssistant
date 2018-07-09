@@ -9,11 +9,12 @@ I have mine running on with HASSIO on a Raspberry Pi 3, but will be integrating 
 
 ## Home Assistant Components Used
 
-**CONTROLLED COMPONENTS**
-- Philips Hue
-- Vera
-- Rachio
-- Arduino
+| **CONTROLLED COMPONENTS** | **INPUT COMPONENTS** | **NOTIFICATION COMPONENTS** | **MEDIA COMPONENTS** |
+|---|----|---|---|
+| ![Philips Hue][philips_hue] | Google Home | Slack | Google Chromecast |
+| Vera | IFTTT | Pushbullet | Apple TV |
+| Rachio | Netamo | Cisco Webex Teams | |
+| Arduino | | | |
 
 **INPUT COMPONENTS**
 - Google Home
@@ -81,3 +82,6 @@ Automations are a blend of a Routine and a static Scene. A morning Routine could
 Thanks to all the people in the [gitter](https://gitter.im/home-assistant/home-assistant) community for listening and help
 
 And thanks to *all* the devs that create the Home Assistant magic
+
+
+[philips_hue]: wwww/logo-Hue.png
