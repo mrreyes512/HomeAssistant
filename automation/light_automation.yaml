@@ -8,7 +8,8 @@
 # Trigger: Monitor TV remote
 # Action: Turn *on* TV Light
 ############################################################
-- alias: 'Turn ON the TV Light'
+- id: turn_on_tv_light
+  alias: 'Turn ON the TV Light'
   trigger:
     platform:     state
     entity_id:    remote.lroomharmony
@@ -38,7 +39,8 @@
 # Trigger: Prior to sunset
 # Action: Turn *on* INSIDE Lights
 ############################################################
-- alias: 'Turn ON the INSIDE Lights'
+- id: turn_on_inside_lights
+  alias: 'Turn ON the INSIDE Lights'
   trigger:
     platform:     sun
     event:        sunset
@@ -94,7 +96,8 @@
 # Trigger: Prior to SUNSET
 # Action: Turn *on* OUTSIDE Lights
 ############################################################
-- alias: 'Turn ON the OUTSIDE Lights'
+- id: turn_on_outside_lights
+  alias: 'Turn ON the OUTSIDE Lights'
   trigger:
     platform:   sun
     event:      sunset
@@ -138,7 +141,8 @@
 # Trigger: Prior to SUNRISE
 # Action: Turn *off* OUTSIDE Lights
 ############################################################
-- alias: 'Turn OFF the OUTSIDE Lights'
+- id: turn_off_outside_lights
+  alias: 'Turn OFF the OUTSIDE Lights'
   trigger:
     platform:   sun
     event:      sunrise
