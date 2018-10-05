@@ -217,6 +217,12 @@ light.kids_room:
   google_assistant: false
   hidden: true
 
+light.hue_color_downlight_1:
+  friendly_name: Stairs Lamp
+  icon: mdi:stairs
+
+
+
 ############################################################
 #
 # Irrigation Zones

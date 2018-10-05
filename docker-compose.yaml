@@ -21,7 +21,7 @@ services:
       - ./ssl:/ssl
     ports:
       - "8123:8123"
-    restart: unless-stopped
+    #restart: always
     #network_mode: host
     environment:
       - 'TZ=America/Chicago'
