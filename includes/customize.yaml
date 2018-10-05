@@ -221,6 +221,17 @@ light.hue_color_downlight_1:
   friendly_name: Stairs Lamp
   icon: mdi:stairs
 
+light.office_lamp:
+  icon: mdi:briefcase
+
+light.sink:
+  icon: mdi:water-pump
+
+light.fireplace:
+  icon: mdi:fire
+
+light.aidan:
+  icon: mdi:fire
 
 
 ############################################################
