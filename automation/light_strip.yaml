@@ -8,7 +8,8 @@
 # Light Strip Automation
 ############################################################
 
-- alias: "Light Strip Animation Speed"
+- id: light_strip_animation_speed
+  alias: "Light Strip Animation Speed"
   initial_state: True
   hide_entity: False
   trigger:

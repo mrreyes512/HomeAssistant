@@ -8,13 +8,15 @@
 # Speedtest icon based on results
 ############################################################
 
-- alias: 'Internet Speed Glow Connect Great'
+- id: internet_speed_great
+  alias: 'Internet Speed Glow Connect Great'
   trigger:
     platform: template
     value_template: '{{ states.sensor.speedtest_download.state|float > 10}}'
   action:
     service: shell_command.green
-- alias: 'Internet Speed Glow Connect Poor'
+- id: internet_speed_poor
+  alias: 'Internet Speed Glow Connect Poor'
   trigger:
     platform: template
     value_template: '{{ states.sensor.speedtest_download.state| float < 10 }}'
@@ -25,7 +27,8 @@
 # Home Assistant Notify on Upgrades
 ############################################################
 
-- alias: Update notifications
+- id: updates
+  alias: Update notifications
   trigger:
     - platform: state
       entity_id: updater.updater
@@ -45,7 +48,8 @@
 # Home Assistant Theme
 ############################################################
 
-- alias: 'Set Initial Theme'
+- id: set_initial_theme
+  alias: 'Set Initial Theme'
   initial_state: on
   trigger:
     - platform: homeassistant

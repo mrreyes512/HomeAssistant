@@ -7,7 +7,8 @@
 ############################################################
 # Detection States
 ############################################################
-- alias: Mark presence detected
+- id: mark_detected
+  alias: Mark presence detected
   trigger:
     - platform: state
       entity_id: group.mark_trackers
@@ -32,7 +33,8 @@
                 short: true
             footer: ":squirrel: Welcome Home Mark"
 
-- alias: Mark presence gone
+- id: mark_gone
+  alias: Mark presence gone
   trigger:
     - platform: state
       entity_id: group.mark_trackers
@@ -57,7 +59,8 @@
                 short: true
             footer: ":squirrel: Goodbye Mark"
 
-- alias: Sandra presence detected
+- id: sandra_detected
+  alias: Sandra presence detected
   trigger:
     - platform: state
       entity_id: group.sandra_trackers
@@ -82,7 +85,8 @@
                 short: true
             footer: ":dancer: Welcome Home Sandra"
 
-- alias: Sandra presence gone
+- id: sandra_gone
+  alias: Sandra presence gone
   trigger:
     - platform: state
       entity_id: group.sandra_trackers

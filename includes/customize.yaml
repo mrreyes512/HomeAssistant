@@ -190,6 +190,33 @@ light.lamp:
   google_assistant: true
   google_assistant_type: light
 
+light.hue_color_downlight_1:
+  friendly_name: Stairs Lamp
+  icon: mdi:stairs
+  google_assistant: true
+  google_assistant_type: light
+
+light.office_lamp:
+  icon: mdi:briefcase
+  google_assistant: true
+  google_assistant_type: light
+
+light.sink:
+  icon: mdi:water-pump
+  google_assistant: true
+  google_assistant_type: light
+
+light.fireplace:
+  icon: mdi:fire
+  google_assistant: true
+  google_assistant_type: light
+
+light.aidan:
+  friendly_name: Aidans Lamp
+  icon: mdi:human-male-boy
+  google_assistant: true
+  google_assistant_type: light
+
 # Philips Hue Light Groups disabled to allow grouping in Home Assistant
 # In dev-state: **is_hue_group: true**
 light.entertainment_area_1:
@@ -216,6 +243,7 @@ light.kids_room:
   friendly_name: Kid's Room
   google_assistant: false
   hidden: true
+
 
 ############################################################
 #

@@ -1,0 +1,25 @@
+- id: '1533318250766'
+  alias: Lights off when Vacation
+  trigger:
+  - at: 00:00
+    platform: time
+  condition:
+  - condition: state
+    entity_id: input_boolean.vacation_mode
+    state: 'on'
+  action:
+  - alias: ''
+    data:
+      entity_id: group.lights_inside
+    service: light.turn_off
+- id: '1536235545661'
+  alias: Boil Water
+  trigger:
+  - at: 06:30
+    platform: time
+  condition: []
+  action:
+  - alias: ''
+    data:
+      'entity_id ': switch.mobile_3_11
+    service: switch.turn_on

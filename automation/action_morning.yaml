@@ -7,7 +7,8 @@
 ############################################################
 # Trigger: When the scene.morning is activated
 ############################################################
-- alias: 'Morning'
+- id: morning
+  alias: 'Morning'
   trigger:
     platform:       event
     event_type:     call_service

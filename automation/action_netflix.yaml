@@ -7,7 +7,8 @@
 ############################################################
 # Trigger: When the scene.netflix_and_chill is activated
 ############################################################
-- alias: 'Netflix and Chill'
+- id: netflix
+  alias: 'Netflix and Chill'
   trigger:
     platform:       event
     event_type:     call_service
