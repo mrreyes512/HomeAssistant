@@ -1,0 +1,37 @@
+###########################################################
+#
+# Home Assistant Automation - Action
+#
+############################################################
+
+############################################################
+# Trigger: When the scene.halloween is activated
+############################################################
+- id: halloween
+  alias: 'Halloween Mode'
+  trigger:
+    platform:       event
+    event_type:     call_service
+    event_data:
+      domain:       scene
+      service:      turn_on
+      service_data:
+        entity_id:  scene.halloween
+
+  action:
+  # Setting Hue Lamp
+  - service:        hue.hue_activate_scene
+    data:
+      group_name:   "Living Room"
+      scene_name:   "Halloween"
+  
+  - service:        light.turn_on
+    data:
+      entity_id:  light.chandelier_12
+      brightness: 40
+
+
+  - service: tts.google_say
+    entity_id: media_player.living_room_speaker
+    data:
+      message: "Hope you don't get too scared"

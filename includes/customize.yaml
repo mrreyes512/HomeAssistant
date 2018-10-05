@@ -350,6 +350,10 @@ scene.netflix_and_chill:
   icon: mdi:netflix
   google_assistant: true
 
+scene.halloween_mode:
+  icon: mdi:halloween
+  google_assistant: true
+
 #All Lights
 scene.all_lights_on:
   icon: mdi:lightbulb-on

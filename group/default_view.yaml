@@ -64,6 +64,7 @@ action_scenes:
     - scene.bed_magic
     - scene.wifey_going_to_bed
     - scene.party_mode
+    - scene.halloween_mode
 
 light_groups:
   name: Clickers
