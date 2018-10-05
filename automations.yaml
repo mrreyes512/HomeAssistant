@@ -1,19 +1,25 @@
-#- id: '1531800747691'
-#  alias: Lights on before sunset
-#  trigger:
-#  - event: sunrise
-#    offset: -00:30:00
-#    platform: sun
-#  condition: []
-#  action:
-#  - data:
-#      entity_id: group.lights_inside
-#    service: light.turn_on
-#  - data:
-#      group_name: Living Room
-#      scene_name: Normal
-#    service: hue.hue_activate_scene
-#  - data:
-#      group_name: Master
-#      scene_name: Normal
-#    service: hue.hue_activate_scene
+- id: '1533318250766'
+  alias: Lights off when Vacation
+  trigger:
+  - at: 00:00
+    platform: time
+  condition:
+  - condition: state
+    entity_id: input_boolean.vacation_mode
+    state: 'on'
+  action:
+  - alias: ''
+    data:
+      entity_id: group.lights_inside
+    service: light.turn_off
+- id: '1536235545661'
+  alias: Boil Water
+  trigger:
+  - at: 06:30
+    platform: time
+  condition: []
+  action:
+  - alias: ''
+    data:
+      'entity_id ': switch.mobile_3_11
+    service: switch.turn_on
