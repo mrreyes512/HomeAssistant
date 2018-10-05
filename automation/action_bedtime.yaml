@@ -44,7 +44,8 @@
     - light.play_room_3
     - light.office_lamp
     - light.mobile_2_14
-
+    - light.chandelier_12
+    
   # Notify Slack about action taken
   - service:      notify.slack
     data_template:

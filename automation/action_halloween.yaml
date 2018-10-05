@@ -16,7 +16,7 @@
       domain:       scene
       service:      turn_on
       service_data:
-        entity_id:  scene.halloween
+        entity_id:  scene.halloween_mode
 
   action:
   # Setting Hue Lamp
