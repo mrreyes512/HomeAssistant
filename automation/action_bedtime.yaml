@@ -7,7 +7,8 @@
 ############################################################
 # Trigger: When the scene.bedtime is activated
 ############################################################
-- alias: 'Bedtime'
+- id: bedtime
+  alias: 'Bedtime'
   trigger:
     platform:       event
     event_type:     call_service
@@ -23,10 +24,10 @@
     data:
       group_name:   "Living Room"
       scene_name:   "Bedtime"
-  - service:        hue.hue_activate_scene
-    data:
-      group_name:   "Master"
-      scene_name:   "Bedtime"
+#  - service:        hue.hue_activate_scene
+#    data:
+#      group_name:   "Master"
+#      scene_name:   "Bedtime"
 
   # Remote to turn off
   - service:        remote.turn_off
@@ -36,12 +37,12 @@
   # Lights to turn off
   - service:        light.turn_off
     entity_id:
-    - light.master_5
+#    - light.master_5
     - light.living_room_tree_7
     - light.mail_table_4
     - light.kitchen_6
     - light.play_room_3
-    - light.office_11
+    - light.office_lamp
     - light.mobile_2_14
 
   # Notify Slack about action taken
@@ -53,7 +54,7 @@
         attachments:
           - color:  "#439FE0"
             pretext: House Automation
-            thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/feature/adv_notify/www/icon-sleep_lg.png?raw=true"
+            thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/develop/www/icon-sleep_lg.png?raw=true"
             fields:
               - title: Trigger
                 value: Scene Based

@@ -9,7 +9,8 @@
 ############################################################
 
 
-- alias: Set Home Status to Home
+- id: set_home_status_to_home
+  alias: Set Home Status to Home
   trigger:
     - platform: state
       entity_id: group.house_trackers
@@ -29,7 +30,7 @@
           attachments:
             - color:  "#00C853"
               pretext: House Automation
-              thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/feature/adv_notify/www/icon-home-account-active_lg.png?raw=true"
+              thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/develop/www/icon-home-account-active_lg.png?raw=true"
               fields:
                 - title: House Trackers
                   value: Present
@@ -44,7 +45,8 @@
                   short: false
               footer: ":lock: Home Status Update"
 
-- alias: Set Home Status to Away
+- id: set_home_status_to_away
+  alias: Set Home Status to Away
   trigger:
     - platform: state
       entity_id: group.house_trackers
@@ -64,7 +66,7 @@
           attachments:
             - color:  "#FFAB00"
               pretext: House Automation
-              thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/feature/adv_notify/www/icon-security-home_lg.png?raw=true"
+              thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/develop/www/icon-security-home_lg.png?raw=true"
               fields:
                 - title: House Trackers
                   value: NOT Present
@@ -83,7 +85,8 @@
 # Set Extended Away state if device not present for 24 hours
 ############################################################
 
-- alias: Set House as extended away
+- id: set_home_status_to_extended_away
+  alias: Set House as extended away
   trigger:
     - platform: state
       entity_id: input_select.home_status_dropdown
@@ -122,7 +125,8 @@
 # Set Away state if device not present at reboot
 ############################################################
 
-- alias: Place Home Status in away when home assistant starts
+- id: start_home_status_in_away
+  alias: Place Home Status in away when home assistant starts
   initial_state: 'on'
   trigger:
     - platform: homeassistant
@@ -143,7 +147,8 @@
 # Vacation Modes
 ############################################################
 
-- alias: Set Vacation mode on
+- id: set_vacation_mode
+  alias: Set Vacation mode on
   trigger:
     - platform: state
       entity_id: input_boolean.vacation_mode
@@ -161,7 +166,7 @@
           attachments:
             - color:  "#FFAB00"
               pretext: House Automation
-              thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/feature/adv_notify/www/icon-beach_lg.png?raw=true"
+              thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/develop/www/icon-beach_lg.png?raw=true"
               fields:
                 - title: House Trackers
                   value: "{{ states.group.house_trackers.state }}"
@@ -176,7 +181,8 @@
                   short: false
               footer: ":lock: Home Status Update"
 
-- alias: Set Vacation mode off
+- id: set_vacation_mode_off
+  alias: Set Vacation mode off
   trigger:
     - platform: state
       entity_id: input_boolean.vacation_mode

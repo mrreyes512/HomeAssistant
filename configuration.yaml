@@ -7,7 +7,7 @@
 homeassistant:
   name: Home
   latitude: !secret latitude
-  longitude: !secret longitude 
+  longitude: !secret longitude
   elevation: !secret elevation
   unit_system: imperial
   time_zone: America/Chicago
@@ -24,7 +24,7 @@ http:
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
   ip_ban_enabled: True
-  login_attempts_threshold: 5
+  login_attempts_threshold: 3
   trusted_networks:
     - 127.0.0.1
     - ::1
@@ -82,6 +82,18 @@ conversation:
 # Enables a map showing the location of tracked devices
 map:
 
+# Enable the embedded mqtt service in hassio
+mqtt:
+  embedded:
+
+# Entry to enable the cloud component
+cloud:
+  google_actions: !include includes/google_actions.yaml
+
+# Entry to enable configuration panel
+config:
+
+
 ############################################################
 #
 # Components
@@ -125,19 +137,23 @@ camera: !include includes/cameras.yaml
 vera:   !include includes/vera.yaml
 switch: !include includes/switch.yaml #includes Rachio config
 media_player: !include includes/media_players.yaml
-google_assistant: !include includes/google_assistant.yaml
+#google_assistant: !include includes/google_assistant.yaml
 hue: !include includes/philips_hue.yaml
 notify: !include includes/notify.yaml
 scene: !include includes/scenes.yaml
 device_tracker: !include includes/device_tracker.yaml
 zone: !include includes/zones.yaml
 input_select: !include includes/input_select.yaml
+input_number: !include includes/input_number.yaml
+light: !include includes/light_strip.yaml
+
 
 # Group Merge Directory
 
 group: !include_dir_merge_named group/
 sensor: !include_dir_merge_list sensors/
-automation: !include_dir_merge_list automation/
+automation: !include automations.yaml
+automation old: !include_dir_merge_list automation
 
 # -----
 #scene: !include includes/scenes.yaml

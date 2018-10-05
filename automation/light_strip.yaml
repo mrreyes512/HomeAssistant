@@ -1,0 +1,22 @@
+############################################################
+#
+# Home Assistant Automation
+#
+############################################################
+
+############################################################
+# Light Strip Automation
+############################################################
+
+- id: light_strip_animation_speed
+  alias: "Light Strip Animation Speed"
+  initial_state: True
+  hide_entity: False
+  trigger:
+    - platform: state
+      entity_id: input_number.strip_animation_speed
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "reyes/mystrip/set"
+        payload: '{"transition":{{ trigger.to_state.state | int }}}'

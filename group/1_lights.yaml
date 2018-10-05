@@ -11,6 +11,7 @@ lights_view:
   entities:
     - group.lights_inside
     - group.lights_outside
+    - group.light_strip
     - group.lights_other
     - group.lights_hue
     - group.scenes_lights
@@ -23,16 +24,18 @@ lights_view:
 lights_inside:
   name: Inside Lights
   entities:
-    - light.master
-    - light.living_room_lamp
-    - light.master_lamp
-    - light.living_room_tree_7
+    - light.lamp
     - light.master_5
+    - light.table
+    - light.living_room_tree_7
     - light.mail_table_4
     - light.kitchen_6
     - light.play_room_3
-    - light.office_11
+    - light.office_lamp
     - light.mobile_2_14
+    - light.fireplace
+    - light.sink
+    - light.hue_color_downlight_1
 #    - light.mobile_1_33
 
 lights_outside:
@@ -44,8 +47,13 @@ lights_outside:
 lights_hue:
   name: Philips Hue Lights
   entities:
-    - light.living_room_lamp
-    - light.master_lamp
+    - light.table
+    - light.lamp
+    - light.office_lamp
+    - light.fireplace
+    - light.sink
+    - light.aidan
+    - light.hue_color_downlight_1
 
 # Automation group to clean up going_to_bed automation
 autgrp_bedtime:
@@ -55,16 +63,41 @@ autgrp_bedtime:
     - light.mail_table_4
     - light.kitchen_6
     - light.play_room_3
-    - light.office_11
+    - light.office_lamp
     - light.mobile_2_14
+    - light.fireplace
+    - light.sink
 
 lights_other:
   name: Extra Lights
   control: hidden
   entities:
+    - switch.mobile_3_11
     - light.mobile_1_33
     - light.chandelier_12
     - light.outside_back_10
+
+light_strip:
+  name: Bed Strip
+  control: hidden
+  entities:
+    - light.light_strip
+    - input_number.strip_animation_speed
+
+ifttt_lights:
+  name: Inside Lights
+  entities:
+    - light.light_strip
+    - light.master
+    - light.table
+    - light.lamp
+    - light.living_room_tree_7
+    - light.master_5
+    - light.mail_table_4
+    - light.kitchen_6
+    - light.play_room_3
+    - light.office_lamp
+    - light.mobile_2_14
 
 #lights_holiday:
 #  name: Holiday Lights
@@ -95,6 +128,7 @@ scenes_lights:
   control: hidden
   entities:
     - scene.bedtime
+    - scene.bed_magic
     - scene.morning
     - scene.overcast
     - scene.all_lights_on

@@ -7,7 +7,8 @@
 ############################################################
 # Trigger: When the scene.morning is activated
 ############################################################
-- alias: 'Morning'
+- id: morning
+  alias: 'Morning'
   trigger:
     platform:       event
     event_type:     call_service
@@ -54,7 +55,7 @@
         attachments:
           - color:  "#439FE0"
             pretext: House Automation
-            thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/feature/adv_notify/www/icon-weather-sunset-up_lg.png?raw=true"
+            thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/develop/www/icon-home-account-active_lg.png?raw=true"
             fields:
               - title: Trigger
                 value: Scene Based

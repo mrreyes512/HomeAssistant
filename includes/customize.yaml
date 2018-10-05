@@ -60,11 +60,11 @@ light.outside_back_10:
   google_assistant: true
   google_assistant_type: light
 
-light.office_11:
-  icon: mdi:briefcase
-  friendly_name: Office
+switch.mobile_3_11:
+  icon: mdi:coffee
+  friendly_name: Water Kettle
   google_assistant: true
-  google_assistant_type: light
+  google_assistant_type: switch
 
 light.chandelier_12:
   icon: mdi:ceiling-light
@@ -178,31 +178,72 @@ remote.fresca_apple_tv:
 #
 ############################################################
 
-light.living_room:
-# This is the living room group in Hue
-# In dev-state: **is_hue_group: true**
-  friendly_name: Hue Living Room Group
-  google_assistant: false
-  hidden: true
-
-light.living_room_lamp:
+light.table:
   friendly_name: Living Room Lamp
   icon: mdi:lamp
   google_assistant: true
   google_assistant_type: light
 
-light.master:
-# This is the living room group in Hue
-# In dev-state: **is_hue_group: true**
-  friendly_name: Hue Master Group
-  google_assistant: false
-  hidden: true
-
-light.master_lamp:
+light.lamp:
   friendly_name: Master Lamp
   icon: mdi:lamp
   google_assistant: true
   google_assistant_type: light
+
+light.hue_color_downlight_1:
+  friendly_name: Stairs Lamp
+  icon: mdi:stairs
+  google_assistant: true
+  google_assistant_type: light
+
+light.office_lamp:
+  icon: mdi:briefcase
+  google_assistant: true
+  google_assistant_type: light
+
+light.sink:
+  icon: mdi:water-pump
+  google_assistant: true
+  google_assistant_type: light
+
+light.fireplace:
+  icon: mdi:fire
+  google_assistant: true
+  google_assistant_type: light
+
+light.aidan:
+  friendly_name: Aidans Lamp
+  icon: mdi:human-male-boy
+  google_assistant: true
+  google_assistant_type: light
+
+# Philips Hue Light Groups disabled to allow grouping in Home Assistant
+# In dev-state: **is_hue_group: true**
+light.entertainment_area_1:
+  friendly_name: Entertainment area 1
+  google_assistant: false
+  hidden: true
+
+light.master:
+  friendly_name: Hue Master Group
+  google_assistant: false
+  hidden: true
+
+light.living_room:
+  friendly_name: Hue Living Room Group
+  google_assistant: false
+  hidden: true
+
+light.office:
+  friendly_name: Office
+  google_assistant: false
+  hidden: true
+
+light.kids_room:
+  friendly_name: Kid's Room
+  google_assistant: false
+  hidden: true
+
 
 ############################################################
 #
@@ -288,6 +329,10 @@ scene.bedtime:
   icon: mdi:sleep
   google_assistant: true
 
+scene.bed_magic:
+  icon: mdi:auto-fix
+  google_assistant: true
+
 scene.morning:
   icon: mdi:weather-sunset-up
   google_assistant: true
@@ -370,4 +415,3 @@ sensor.sandra_status:
 #device_dracker.laptop__dell_sandra:
 #  friendly_name: Laptop - WorkDell
 #  icon: mdi:laptop-windows
-

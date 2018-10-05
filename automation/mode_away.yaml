@@ -7,7 +7,8 @@
 ############################################################
 # Audible triggers
 ############################################################
-- alias: Audible detected
+- id: audible_detected
+  alias: Audible detected
   trigger:
     - platform: state
       entity_id: sensor.noise_level
@@ -26,7 +27,7 @@
         attachments:
           - color:  "#D50000"
             pretext: Security Notification
-            thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/feature/adv_notify/www/icon-volume-high_lg.png?raw=true"
+            thumb_url: "https://github.com/mrreyes512/HomeAssistant/blob/develop/www/icon-volume-high_lg.png?raw=true"
             fields:
               - title: Trigger
                 value: Netatmo Sensor
