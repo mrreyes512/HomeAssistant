@@ -26,8 +26,8 @@
       scene_name:   "Halloween"
   
   - service:        light.turn_on
+    entity_id:  light.chandelier_12
     data:
-      entity_id:  light.chandelier_12
       brightness: 40
 
 
