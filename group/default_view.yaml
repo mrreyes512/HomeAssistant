@@ -25,10 +25,12 @@ default_view:
 
 house_mode:
   name: House Mode
+  control: hidden
   entities:
     - sensor.home_status
     - sensor.noise_level
     - input_boolean.vacation_mode
+    - input_boolean.halloween_mode
 #    - input_select.home_status_dropdown
 
 house_presence:

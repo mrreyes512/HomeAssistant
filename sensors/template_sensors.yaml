@@ -68,6 +68,8 @@
           /local/icon-home-automation.png
         {%-elif is_state('input_select.home_status_dropdown', 'Vacation') %}
           /local/icon-beach.png
+        {%-elif is_state('input_select.home_status_dropdown', 'Halloween') %}
+          /local/icon-halloween.png
         {% else %}
           /local/icon-home-alert.png
         {% endif %}

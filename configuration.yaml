@@ -60,6 +60,10 @@ input_boolean:
     name: Vacation Mode
     initial: off
     icon: mdi:home-circle
+  halloween_mode:
+    name: Halloween Mode
+    initial: off
+    icon: mdi:pumpkin
 
 frontend:
   themes: !include themes/midnight.yaml

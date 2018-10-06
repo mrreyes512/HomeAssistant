@@ -7,16 +7,12 @@
 ############################################################
 # Trigger: When the scene.halloween is activated
 ############################################################
-- id: halloween
-  alias: 'Halloween Mode'
+- id: halloween_on
+  alias: 'Halloween Mode ON'
   trigger:
-    platform:       event
-    event_type:     call_service
-    event_data:
-      domain:       scene
-      service:      turn_on
-      service_data:
-        entity_id:  scene.halloween_mode
+    - platform: state
+      entity_id: input_boolean.halloween_mode
+      to: 'on'
 
   action:
   # Setting Hue Lamp
@@ -30,8 +26,25 @@
     data:
       brightness: 40
 
-
   - service: tts.google_say
     entity_id: media_player.living_room_speaker
     data:
       message: "Hope you don't get too scared"
+
+
+- id: halloween_on
+  alias: 'Halloween Mode OFF'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.halloween_mode
+      to: 'off'
+
+  action:
+  # Setting Hue Lamp
+  - service:        hue.hue_activate_scene
+    data:
+      group_name:   "Living Room"
+      scene_name:   "Normal"
+  
+  - service:        light.turn_off
+    entity_id:  light.chandelier_12
