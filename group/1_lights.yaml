@@ -24,19 +24,19 @@ lights_view:
 lights_inside:
   name: Inside Lights
   entities:
-    - light.lamp
     - light.master_5
+    - light.lamp
     - light.table
+    - light.mail_table
     - light.mail_table_4
     - light.kitchen_6
     - light.play_room_3
     - light.office_lamp
+    - light.fresca_lamp
     - light.mobile_2_14
     - light.fireplace
     - light.sink
     - light.stairs
-    - light.mail_table
-    - light.fresca_lamp
 #    - light.mobile_1_33
 
 lights_outside:
@@ -50,13 +50,14 @@ lights_hue:
   entities:
     - light.table
     - light.lamp
-    - light.office_lamp
-    - light.fireplace
-    - light.sink
-    - light.aidan
-    - light.stairs
     - light.mail_table
+    - light.office_lamp
     - light.fresca_lamp
+    - light.fireplace
+    - light.aidan
+    - light.olivia
+    - light.sink
+    - light.stairs
 
 # Automation group to clean up going_to_bed automation
 autgrp_bedtime:
