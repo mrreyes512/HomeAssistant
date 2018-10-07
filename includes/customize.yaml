@@ -20,8 +20,8 @@ light.play_room_3:
 #    - game room
 
 light.mail_table_4:
-  icon: mdi:email
-  friendly_name: Mail Table
+  icon: mdi:weather-night
+  friendly_name: Mail Socket
   google_assistant: true
   google_assistant_type: light
 
@@ -78,8 +78,8 @@ light.chandelier_12:
 light.mobile_2_14:
 #  icon: mdi:pine-tree
 #  friendly_name: Holiday Lights 2
-  icon: mdi:camera-iris
-  friendly_name: Fresca Lamp
+  icon: mdi:texture
+  friendly_name: Office Entry
   google_assistant: true
   google_assistant_type: light
 
@@ -190,7 +190,7 @@ light.lamp:
   google_assistant: true
   google_assistant_type: light
 
-light.hue_color_downlight_1:
+light.stairs:
   friendly_name: Stairs Lamp
   icon: mdi:stairs
   google_assistant: true
@@ -213,36 +213,48 @@ light.fireplace:
 
 light.aidan:
   friendly_name: Aidans Lamp
-  icon: mdi:human-male-boy
+  icon: mdi:account-child-circle
+  google_assistant: true
+  google_assistant_type: light
+
+light.olivia:
+  friendly_name: Olivias Lamp
+  icon: mdi:account-child-circle
+  google_assistant: true
+  google_assistant_type: light
+
+light.mail_table:
+  icon: mdi:email
+  friendly_name: Mail Table
   google_assistant: true
   google_assistant_type: light
 
 # Philips Hue Light Groups disabled to allow grouping in Home Assistant
 # In dev-state: **is_hue_group: true**
-light.entertainment_area_1:
-  friendly_name: Entertainment area 1
-  google_assistant: false
-  hidden: true
+# light.entertainment_area_1:
+#   friendly_name: Entertainment area 1
+#   google_assistant: false
+#   hidden: true
 
-light.master:
-  friendly_name: Hue Master Group
-  google_assistant: false
-  hidden: true
+# light.master:
+#   friendly_name: Hue Master Group
+#   google_assistant: false
+#   hidden: true
 
-light.living_room:
-  friendly_name: Hue Living Room Group
-  google_assistant: false
-  hidden: true
+# light.living_room:
+#   friendly_name: Hue Living Room Group
+#   google_assistant: false
+#   hidden: true
 
-light.office:
-  friendly_name: Office
-  google_assistant: false
-  hidden: true
+# light.office:
+#   friendly_name: Office
+#   google_assistant: false
+#   hidden: true
 
-light.kids_room:
-  friendly_name: Kid's Room
-  google_assistant: false
-  hidden: true
+# light.kids_room:
+#   friendly_name: Kid's Room
+#   google_assistant: false
+#   hidden: true
 
 
 ############################################################

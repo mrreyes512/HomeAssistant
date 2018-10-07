@@ -25,6 +25,8 @@
     entity_id:      
       - light.chandelier_12
       - light.living_room_tree_7
+      - light.mail_table_4
+      - light.mobile_2_14   #Above the office entry
     data:
       brightness:   40
 
@@ -39,7 +41,7 @@
       message:      "Trick or Treat"
 
 
-- id:               halloween_on
+- id:               halloween_off
   alias:            'Halloween Mode OFF'
   trigger:
     - platform:     state
@@ -57,6 +59,8 @@
     entity_id:      
       - light.chandelier_12
       - light.living_room_tree_7
+      - light.mail_table_4
+      - light.mobile_2_14   #Above the office entry
 
   - service:        light.turn_off
     entity_id:      light.light_strip

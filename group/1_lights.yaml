@@ -34,7 +34,9 @@ lights_inside:
     - light.mobile_2_14
     - light.fireplace
     - light.sink
-    - light.hue_color_downlight_1
+    - light.stairs
+    - light.mail_table
+    - light.fresca_lamp
 #    - light.mobile_1_33
 
 lights_outside:
@@ -52,21 +54,25 @@ lights_hue:
     - light.fireplace
     - light.sink
     - light.aidan
-    - light.hue_color_downlight_1
+    - light.stairs
+    - light.mail_table
+    - light.fresca_lamp
 
 # Automation group to clean up going_to_bed automation
 autgrp_bedtime:
   name: Inside Except Master
   entities:
-    - light.living_room_tree_7
-    - light.mail_table_4
     - light.kitchen_6
     - light.play_room_3
     - light.office_lamp
-    - light.mobile_2_14
     - light.fireplace
     - light.sink
-    - light.hue_color_downlight_1
+    - light.stairs
+    - light.fresca_lamp
+    - light.mail_table
+    - light.mobile_2_14
+    - light.mail_table_4
+    - light.living_room_tree_7
 
 lights_other:
   name: Extra Lights
@@ -98,6 +104,15 @@ ifttt_lights:
     - light.play_room_3
     - light.office_lamp
     - light.mobile_2_14
+
+lights_halloween:
+  name: Halloween Lights Group
+  entities:
+    - light.mail_table
+    - light.mail_table_4
+    - light.mobile_2_14
+    - light.living_room_tree_7
+    - light.chandelier_12
 
 #lights_holiday:
 #  name: Holiday Lights
