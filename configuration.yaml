@@ -59,11 +59,11 @@ input_boolean:
   vacation_mode:
     name: Vacation Mode
     initial: off
-    icon: mdi:home-circle
+    icon: mdi:beach
   halloween_mode:
     name: Halloween Mode
     initial: off
-    icon: mdi:pumpkin
+    # icon: /local/icon-halloween-org.png
 
 frontend:
   themes: !include themes/midnight.yaml

@@ -60,11 +60,11 @@ light.outside_back_10:
   google_assistant: true
   google_assistant_type: light
 
-switch.mobile_3_11:
-  icon: mdi:coffee
-  friendly_name: Water Kettle
+light.mobile_3_11:
+  icon: mdi:stairs
+  friendly_name: Stair Railing
   google_assistant: true
-  google_assistant_type: switch
+  google_assistant_type: light
 
 light.chandelier_12:
   icon: mdi:ceiling-light
@@ -213,13 +213,13 @@ light.fireplace:
 
 light.aidan:
   friendly_name: Aidans Lamp
-  icon: mdi:account-child-circle
+  icon: /local/account-child-circle.png
   google_assistant: true
   google_assistant_type: light
 
 light.olivia:
   friendly_name: Olivias Lamp
-  icon: mdi:account-child-circle
+  icon: /local/account-child-circle.png
   google_assistant: true
   google_assistant_type: light
 
@@ -228,33 +228,6 @@ light.mail_table:
   friendly_name: Mail Table
   google_assistant: true
   google_assistant_type: light
-
-# Philips Hue Light Groups disabled to allow grouping in Home Assistant
-# In dev-state: **is_hue_group: true**
-# light.entertainment_area_1:
-#   friendly_name: Entertainment area 1
-#   google_assistant: false
-#   hidden: true
-
-# light.master:
-#   friendly_name: Hue Master Group
-#   google_assistant: false
-#   hidden: true
-
-# light.living_room:
-#   friendly_name: Hue Living Room Group
-#   google_assistant: false
-#   hidden: true
-
-# light.office:
-#   friendly_name: Office
-#   google_assistant: false
-#   hidden: true
-
-# light.kids_room:
-#   friendly_name: Kid's Room
-#   google_assistant: false
-#   hidden: true
 
 
 ############################################################
@@ -405,6 +378,14 @@ sensor.mark_status:
 
 sensor.sandra_status:
   entity_picture: /local/pic-sandra.png
+
+
+############################################################
+# Custom Icons
+############################################################
+input_boolean.halloween_mode:
+  icon: /local/icon-halloween-org.png
+
 
 ############################################################
 # Device Trackers

@@ -27,6 +27,7 @@
       - light.living_room_tree_7
       - light.mail_table_4
       - light.mobile_2_14   #Above the office entry
+      - light.mobile_3_11   #Stairs lights
     data:
       brightness:   40
 
@@ -61,6 +62,7 @@
       - light.living_room_tree_7
       - light.mail_table_4
       - light.mobile_2_14   #Above the office entry
+      - light.mobile_3_11   #Stairs lights
 
   - service:        light.turn_off
     entity_id:      light.light_strip

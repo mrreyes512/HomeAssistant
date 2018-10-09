@@ -12,10 +12,10 @@ lights_view:
     - group.lights_inside
     - group.lights_outside
     - group.light_strip
+    - group.lights_halloween
     - group.lights_other
     - group.lights_hue
     - group.scenes_lights
-#    - group.lights_holiday
 
 ############################################################
 # Light Groups
@@ -33,7 +33,7 @@ lights_inside:
     - light.play_room_3
     - light.office_lamp
     - light.fresca_lamp
-    - light.mobile_2_14
+    # - light.mobile_2_14
     - light.fireplace
     - light.sink
     - light.stairs
@@ -72,6 +72,7 @@ autgrp_bedtime:
     - light.fresca_lamp
     - light.mail_table
     - light.mobile_2_14
+    - light.mobile_3_11
     - light.mail_table_4
     - light.living_room_tree_7
 
@@ -79,7 +80,6 @@ lights_other:
   name: Extra Lights
   control: hidden
   entities:
-    - switch.mobile_3_11
     - light.mobile_1_33
     - light.chandelier_12
     - light.outside_back_10
@@ -111,7 +111,8 @@ lights_halloween:
   entities:
     - light.mail_table
     - light.mail_table_4
-    - light.mobile_2_14
+    - light.mobile_2_14   # Above Office
+    - light.mobile_3_11   # Stair Rails
     - light.living_room_tree_7
     - light.chandelier_12
 

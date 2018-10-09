@@ -40,10 +40,6 @@
   entities:
     light.null: on
 
-- name: Halloween Mode
-  entities:
-    light.null: on
-
 - name: ifttt plugged in
   entities:
     light.null: on
