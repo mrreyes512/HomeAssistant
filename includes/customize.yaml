@@ -213,13 +213,13 @@ light.fireplace:
 
 light.aidan:
   friendly_name: Aidans Lamp
-  icon: /local/account-child-circle.png
+  entity_picture: /local/account-child-circle.png
   google_assistant: true
   google_assistant_type: light
 
 light.olivia:
   friendly_name: Olivias Lamp
-  icon: /local/account-child-circle.png
+  entity_picture: /local/account-child-circle.png
   google_assistant: true
   google_assistant_type: light
 
@@ -384,7 +384,7 @@ sensor.sandra_status:
 # Custom Icons
 ############################################################
 input_boolean.halloween_mode:
-  icon: /local/icon-halloween-org.png
+  entity_picture: /local/icon-halloween-org.png
 
 
 ############################################################

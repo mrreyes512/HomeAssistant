@@ -28,7 +28,7 @@ lights_inside:
     - light.lamp
     - light.table
     - light.mail_table
-    - light.mail_table_4
+    # - light.mail_table_4
     - light.kitchen_6
     - light.play_room_3
     - light.office_lamp
@@ -116,11 +116,6 @@ lights_halloween:
     - light.living_room_tree_7
     - light.chandelier_12
 
-#lights_holiday:
-#  name: Holiday Lights
-#  entities:
-#    - light.mobile_2_14
-#    - light.mobile_1_33
 
 ############################################################
 # Light Summaries
