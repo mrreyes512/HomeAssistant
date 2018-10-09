@@ -111,6 +111,7 @@ lights_halloween:
   entities:
     - light.mail_table
     - light.mail_table_4
+    - light.mobile_1_33   # TV Light
     - light.mobile_2_14   # Above Office
     - light.mobile_3_11   # Stair Rails
     - light.living_room_tree_7
