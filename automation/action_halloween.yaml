@@ -15,12 +15,25 @@
       to:           'on'
 
   action:
-  # Setting Hue Lamp
+  # Setting Hue Lights
   - service:        hue.hue_activate_scene
     data:
       group_name:   "Living Room"
       scene_name:   "Halloween"
-  
+  - service:        hue.hue_activate_scene
+    data:
+      group_name:   "Master"
+      scene_name:   "Halloween"
+  - service:        hue.hue_activate_scene
+    data:
+      group_name:   "Office"
+      scene_name:   "Halloween"
+
+  # Setting Vera Lights
+  - service:        light.turn_off
+    entity_id:      
+      - light.master_5
+
   - service:        light.turn_on
     entity_id:      
       - light.chandelier_12
@@ -42,6 +55,9 @@
       message:      "Trick or Treat"
 
 
+############################################################
+# Trigger: When the scene.halloween is deactivated
+############################################################
 - id:               halloween_off
   alias:            'Halloween Mode OFF'
   trigger:
@@ -50,12 +66,25 @@
       to:           'off'
 
   action:
-  # Setting Hue Lamp
+  # Setting Hue Lights
   - service:        hue.hue_activate_scene
     data:
       group_name:   "Living Room"
       scene_name:   "Normal"
+  - service:        hue.hue_activate_scene
+    data:
+      group_name:   "Master"
+      scene_name:   "Normal"
+  - service:        hue.hue_activate_scene
+    data:
+      group_name:   "Office"
+      scene_name:   "Normal"
   
+# Setting Vera Lights
+  - service:        light.turn_on
+    entity_id:      
+      - light.master_5
+
   - service:        light.turn_off
     entity_id:      
       - light.chandelier_12
