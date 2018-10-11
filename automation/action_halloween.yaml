@@ -24,10 +24,12 @@
     data:
       group_name:   "Master"
       scene_name:   "Halloween"
-  - service:        hue.hue_activate_scene
+  #Hue wouldn't activate Halloween scene in Office. This is a workaround
+  - service:        light.turn_on 
+    entity_id:      
+      - light.office_lamp
     data:
-      group_name:   "Office"
-      scene_name:   "Halloween"
+      brightness:   127
 
   # Setting Vera Lights
   - service:        light.turn_off
@@ -75,15 +77,14 @@
     data:
       group_name:   "Master"
       scene_name:   "Normal"
-  - service:        hue.hue_activate_scene
-    data:
-      group_name:   "Office"
-      scene_name:   "Normal"
   
 # Setting Vera Lights
   - service:        light.turn_on
     entity_id:      
       - light.master_5
+      - light.office_lamp
+    data:
+      brightness:   254
 
   - service:        light.turn_off
     entity_id:      
