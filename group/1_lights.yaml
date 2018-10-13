@@ -35,7 +35,7 @@ lights_inside:
     - light.lamp
     - light.table
     - light.mail_table
-    # - light.mail_table_4
+    # - light.living_room_tree_4
     - light.kitchen_6
     - light.play_room_3
     - light.office_lamp
@@ -80,8 +80,8 @@ autgrp_bedtime:
     - light.mail_table
     - light.mobile_2_14
     - light.mobile_3_11
-    - light.mail_table_4
-    - light.living_room_tree_7
+    - light.living_room_tree_4
+    - light.mobile_4_7
 
 lights_other:
   name: Extra Lights
@@ -105,9 +105,9 @@ ifttt_lights:
     - light.master
     - light.table
     - light.lamp
-    - light.living_room_tree_7
+    - light.mobile_4_7
     - light.master_5
-    - light.mail_table_4
+    - light.living_room_tree_4
     - light.kitchen_6
     - light.play_room_3
     - light.office_lamp
@@ -117,11 +117,11 @@ lights_halloween:
   name: Halloween Lights Group
   entities:
     - light.mail_table
-    - light.mail_table_4
+    - light.living_room_tree_4
     - light.mobile_1_33   # TV Light
     - light.mobile_2_14   # Above Office
     - light.mobile_3_11   # Stair Rails
-    - light.living_room_tree_7
+    - light.mobile_4_7    # Outside lights
     - light.chandelier_12
 
 

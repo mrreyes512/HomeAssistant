@@ -38,8 +38,8 @@
   - service:        light.turn_off
     entity_id:
 #    - light.master_5
-    - light.living_room_tree_7
-    - light.mail_table_4
+    - light.mobile_4_7
+    - light.living_room_tree_4
     - light.kitchen_6
     - light.play_room_3
     - light.office_lamp

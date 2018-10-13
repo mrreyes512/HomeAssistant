@@ -19,7 +19,7 @@ light.play_room_3:
 #  aliases:
 #    - game room
 
-light.mail_table_4:
+light.living_room_tree_4:
   icon: mdi:weather-night
   friendly_name: Mail Socket
   google_assistant: true
@@ -37,7 +37,13 @@ light.kitchen_6:
   google_assistant: true
   google_assistant_type: light
 
-light.living_room_tree_7:
+light.mobile_4_7:
+  icon: /local/icon-bat.png
+  friendly_name: Outside Halloween
+  google_assistant: true
+  google_assistant_type: light
+
+light.mail_table_4:
   icon: mdi:tree
   friendly_name: Living Room Tree
   google_assistant: true
