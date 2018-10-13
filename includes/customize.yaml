@@ -81,6 +81,13 @@ light.chandelier_12:
 #  aliases:
 #    - chandelier
 
+light.dinner_table_46:
+  icon: mdi:silverware-fork-knife
+  friendly_name: Dinner Table
+  google_assistant: true
+  google_assistant_type: light
+
+
 light.mobile_2_14:
 #  icon: mdi:pine-tree
 #  friendly_name: Holiday Lights 2

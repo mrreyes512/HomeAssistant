@@ -51,6 +51,7 @@ lights_outside:
   entities:
     - light.outside_side_8
     - light.outside_main_9
+    - light.mobile_4_7    # Outside halloween lights
 
 lights_hue:
   name: Philips Hue Lights
@@ -89,6 +90,7 @@ lights_other:
   entities:
     - light.mobile_1_33
     - light.chandelier_12
+    - light.dinner_table_46
     - light.outside_back_10
 
 light_strip:
@@ -121,7 +123,6 @@ lights_halloween:
     - light.mobile_1_33   # TV Light
     - light.mobile_2_14   # Above Office
     - light.mobile_3_11   # Stair Rails
-    - light.mobile_4_7    # Outside lights
     - light.chandelier_12
 
 
