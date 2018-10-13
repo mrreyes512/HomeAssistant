@@ -20,8 +20,8 @@ light.play_room_3:
 #    - game room
 
 light.living_room_tree_4:
-  icon: mdi:weather-night
-  friendly_name: Mail Socket
+  icon: mdi:tree
+  friendly_name: Livingroom Tree
   google_assistant: true
   google_assistant_type: light
 
@@ -43,11 +43,11 @@ light.mobile_4_7:
   google_assistant: true
   google_assistant_type: light
 
-light.mail_table_4:
-  icon: mdi:tree
-  friendly_name: Living Room Tree
-  google_assistant: true
-  google_assistant_type: light
+# light.mail_table_4:
+#   icon: mdi:tree
+#   friendly_name: Living Room Tree
+#   google_assistant: true
+#   google_assistant_type: light
 #  aliases:
 #    - tree
 

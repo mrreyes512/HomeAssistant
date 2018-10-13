@@ -124,6 +124,7 @@ lights_halloween:
     - light.mobile_2_14   # Above Office
     - light.mobile_3_11   # Stair Rails
     - light.chandelier_12
+    - light.dinner_table_46
 
 
 ############################################################

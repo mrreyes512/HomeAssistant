@@ -31,6 +31,9 @@ house_mode:
     - sensor.noise_level
     - input_boolean.vacation_mode
     - input_boolean.halloween_mode
+    - light.mobile_4_7    # Outside halloween lights
+
+
 #    - input_select.home_status_dropdown
 
 house_presence:

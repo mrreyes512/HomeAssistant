@@ -39,6 +39,7 @@
   - service:        light.turn_on
     entity_id:      
       - light.chandelier_12
+      - light.dinner_table_46
       - light.mobile_4_7
       - light.living_room_tree_4
       - light.mobile_2_14   #Above the office entry
@@ -50,11 +51,6 @@
     entity_id:      light.light_strip
     data:
       effect:       lightning
-
-  - service:        tts.google_say
-    entity_id:      media_player.living_room_speaker
-    data:
-      message:      "Trick or Treat"
 
 
 ############################################################
@@ -89,6 +85,7 @@
   - service:        light.turn_off
     entity_id:      
       - light.chandelier_12
+      - light.dinner_table_46
       - light.mobile_4_7
       - light.living_room_tree_4
       - light.mobile_2_14   #Above the office entry
