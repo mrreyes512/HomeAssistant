@@ -20,6 +20,11 @@ exposed_domains:
 # Configuration for devices exposed to Google Home
 entity_config:
 
+  scene.going_to_bed:
+    name: Going to bed
+    aliases:
+      - Bedtime    
+
   group.lights_inside:
     name: Inside Lights
   group.lights_outside:
