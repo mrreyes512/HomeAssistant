@@ -309,9 +309,15 @@ climate.upastairs_13:
 
 group.inside_lights_sum:
   icon: mdi:lightbulb
+  friendly_name: Inside Lights
+  google_assistant: true
+  google_assistant_type: light
 
 group.outside_lights_sum:
   icon: mdi:lightbulb
+  friendly_name: Outside Lights
+  google_assistant: true
+  google_assistant_type: light
 
 ############################################################
 # Scenes
