@@ -9,72 +9,90 @@ lights_view:
   view: yes
   icon: mdi:lightbulb
   entities:
+    - group.light_modes
     - group.lights_inside
     - group.lights_outside
     - group.light_strip
+    - group.lights_halloween
     - group.lights_other
     - group.lights_hue
     - group.scenes_lights
-#    - group.lights_holiday
 
 ############################################################
 # Light Groups
 ############################################################
 
+light_modes:
+  name: Light Scenes
+  control: hidden
+  entities:
+  - input_boolean.halloween_mode
+
 lights_inside:
   name: Inside Lights
   entities:
-    - light.lamp
     - light.master_5
+    - light.lamp
     - light.table
-    - light.living_room_tree_7
-    - light.mail_table_4
+    - light.mail_table
+    - light.living_room_tree_4
     - light.kitchen_6
     - light.play_room_3
     - light.office_lamp
-    - light.mobile_2_14
+    - light.fresca_lamp
     - light.fireplace
     - light.sink
-    - light.hue_color_downlight_1
-#    - light.mobile_1_33
+    - light.stairs
+    # - light.mobile_1_33   # TV Light
+    # - light.mobile_2_14   # Above Office
+    # - light.mobile_3_11   # Stair Rails
+    # - light.mobile_4_7    # Outside halloween lights
 
 lights_outside:
   name: Front Yard Lights
   entities:
     - light.outside_side_8
     - light.outside_main_9
+    - light.mobile_4_7    # Outside halloween lights
 
 lights_hue:
   name: Philips Hue Lights
   entities:
     - light.table
     - light.lamp
+    - light.mail_table
     - light.office_lamp
+    - light.fresca_lamp
     - light.fireplace
-    - light.sink
     - light.aidan
-    - light.hue_color_downlight_1
+    - light.olivia
+    - light.sink
+    - light.stairs
 
 # Automation group to clean up going_to_bed automation
 autgrp_bedtime:
   name: Inside Except Master
   entities:
-    - light.living_room_tree_7
-    - light.mail_table_4
     - light.kitchen_6
     - light.play_room_3
     - light.office_lamp
-    - light.mobile_2_14
     - light.fireplace
     - light.sink
+    - light.stairs
+    - light.fresca_lamp
+    - light.mail_table
+    - light.mobile_2_14
+    - light.mobile_3_11
+    - light.living_room_tree_4
+    - light.mobile_4_7
 
 lights_other:
   name: Extra Lights
   control: hidden
   entities:
-    - switch.mobile_3_11
     - light.mobile_1_33
     - light.chandelier_12
+    - light.dinner_table_46
     - light.outside_back_10
 
 light_strip:
@@ -91,19 +109,25 @@ ifttt_lights:
     - light.master
     - light.table
     - light.lamp
-    - light.living_room_tree_7
+    - light.mobile_4_7
     - light.master_5
-    - light.mail_table_4
+    - light.living_room_tree_4
     - light.kitchen_6
     - light.play_room_3
     - light.office_lamp
     - light.mobile_2_14
 
-#lights_holiday:
-#  name: Holiday Lights
-#  entities:
-#    - light.mobile_2_14
-#    - light.mobile_1_33
+lights_halloween:
+  name: Halloween Lights Group
+  entities:
+    - light.mail_table
+    - light.living_room_tree_4
+    - light.mobile_1_33   # TV Light
+    - light.mobile_2_14   # Above Office
+    - light.mobile_3_11   # Stair Rails
+    - light.chandelier_12
+    - light.dinner_table_46
+
 
 ############################################################
 # Light Summaries

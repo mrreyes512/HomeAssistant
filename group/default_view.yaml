@@ -25,10 +25,15 @@ default_view:
 
 house_mode:
   name: House Mode
+  control: hidden
   entities:
     - sensor.home_status
     - sensor.noise_level
     - input_boolean.vacation_mode
+    - input_boolean.halloween_mode
+    - light.mobile_4_7    # Outside halloween lights
+
+
 #    - input_select.home_status_dropdown
 
 house_presence:
@@ -64,6 +69,7 @@ action_scenes:
     - scene.bed_magic
     - scene.wifey_going_to_bed
     - scene.party_mode
+    - scene.halloween_mode
 
 light_groups:
   name: Clickers

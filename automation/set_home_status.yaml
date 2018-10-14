@@ -218,3 +218,33 @@
                     Sandra Trackers:  `{{ states.group.sandra_trackers.state }}`
                   short: false
               footer: ":lock: Home Status Update"
+
+
+- id: set_halloween_mode
+  alias: Set Halloween mode on
+  trigger:
+    - platform: state
+      entity_id: input_boolean.halloween_mode
+      to: 'on'
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.home_status_dropdown
+        option: Halloween
+
+- id: set_halloween_mode_off
+  alias: Set Halloween mode off
+  trigger:
+    - platform: state
+      entity_id: input_boolean.halloween_mode
+      to: 'off'
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.home_status_dropdown
+        option: >-
+          {% if is_state('group.house_trackers', 'home') %}
+            Home
+          {% else %}
+            Away
+          {% endif %}

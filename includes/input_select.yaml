@@ -34,5 +34,6 @@ home_status_dropdown:
     - Home
     - Away
     - Extended Away
+    - Halloween
     - Vacation
   initial: Home

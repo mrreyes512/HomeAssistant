@@ -19,9 +19,9 @@ light.play_room_3:
 #  aliases:
 #    - game room
 
-light.mail_table_4:
-  icon: mdi:email
-  friendly_name: Mail Table
+light.living_room_tree_4:
+  icon: mdi:tree
+  friendly_name: Livingroom Tree
   google_assistant: true
   google_assistant_type: light
 
@@ -37,11 +37,17 @@ light.kitchen_6:
   google_assistant: true
   google_assistant_type: light
 
-light.living_room_tree_7:
-  icon: mdi:tree
-  friendly_name: Living Room Tree
+light.mobile_4_7:
+  icon: /local/icon-bat.png
+  friendly_name: Outside Halloween
   google_assistant: true
   google_assistant_type: light
+
+# light.mail_table_4:
+#   icon: mdi:tree
+#   friendly_name: Living Room Tree
+#   google_assistant: true
+#   google_assistant_type: light
 #  aliases:
 #    - tree
 
@@ -60,11 +66,11 @@ light.outside_back_10:
   google_assistant: true
   google_assistant_type: light
 
-switch.mobile_3_11:
-  icon: mdi:coffee
-  friendly_name: Water Kettle
+light.mobile_3_11:
+  icon: mdi:stairs
+  friendly_name: Stair Railing
   google_assistant: true
-  google_assistant_type: switch
+  google_assistant_type: light
 
 light.chandelier_12:
   icon: mdi:ceiling-light
@@ -75,11 +81,18 @@ light.chandelier_12:
 #  aliases:
 #    - chandelier
 
+light.dinner_table_46:
+  icon: mdi:silverware-fork-knife
+  friendly_name: Dinner Table
+  google_assistant: true
+  google_assistant_type: light
+
+
 light.mobile_2_14:
 #  icon: mdi:pine-tree
 #  friendly_name: Holiday Lights 2
-  icon: mdi:camera-iris
-  friendly_name: Fresca Lamp
+  icon: mdi:texture
+  friendly_name: Office Entry
   google_assistant: true
   google_assistant_type: light
 
@@ -190,7 +203,7 @@ light.lamp:
   google_assistant: true
   google_assistant_type: light
 
-light.hue_color_downlight_1:
+light.stairs:
   friendly_name: Stairs Lamp
   icon: mdi:stairs
   google_assistant: true
@@ -213,36 +226,21 @@ light.fireplace:
 
 light.aidan:
   friendly_name: Aidans Lamp
-  icon: mdi:human-male-boy
+  entity_picture: /local/account-child-circle.png
   google_assistant: true
   google_assistant_type: light
 
-# Philips Hue Light Groups disabled to allow grouping in Home Assistant
-# In dev-state: **is_hue_group: true**
-light.entertainment_area_1:
-  friendly_name: Entertainment area 1
-  google_assistant: false
-  hidden: true
+light.olivia:
+  friendly_name: Olivias Lamp
+  entity_picture: /local/account-child-circle.png
+  google_assistant: true
+  google_assistant_type: light
 
-light.master:
-  friendly_name: Hue Master Group
-  google_assistant: false
-  hidden: true
-
-light.living_room:
-  friendly_name: Hue Living Room Group
-  google_assistant: false
-  hidden: true
-
-light.office:
-  friendly_name: Office
-  google_assistant: false
-  hidden: true
-
-light.kids_room:
-  friendly_name: Kid's Room
-  google_assistant: false
-  hidden: true
+light.mail_table:
+  icon: mdi:email
+  friendly_name: Mail Table
+  google_assistant: true
+  google_assistant_type: light
 
 
 ############################################################
@@ -311,9 +309,15 @@ climate.upastairs_13:
 
 group.inside_lights_sum:
   icon: mdi:lightbulb
+  friendly_name: Inside Lights
+  google_assistant: true
+  google_assistant_type: light
 
 group.outside_lights_sum:
   icon: mdi:lightbulb
+  friendly_name: Outside Lights
+  google_assistant: true
+  google_assistant_type: light
 
 ############################################################
 # Scenes
@@ -348,6 +352,10 @@ scene.watch_tv:
 
 scene.netflix_and_chill:
   icon: mdi:netflix
+  google_assistant: true
+
+scene.halloween_mode:
+  icon: mdi:halloween
   google_assistant: true
 
 #All Lights
@@ -389,6 +397,14 @@ sensor.mark_status:
 
 sensor.sandra_status:
   entity_picture: /local/pic-sandra.png
+
+
+############################################################
+# Custom Icons
+############################################################
+input_boolean.halloween_mode:
+  entity_picture: /local/icon-halloween-org.png
+
 
 ############################################################
 # Device Trackers

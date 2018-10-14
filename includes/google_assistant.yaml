@@ -16,3 +16,156 @@ exposed_domains:
   - climate
 #  - media_player
 #  - group
+
+# Configuration for devices exposed to Google Home
+entity_config:
+
+  scene.going_to_bed:
+    name: Going to bed
+    aliases:
+      - Bedtime    
+
+  group.lights_inside:
+    name: Inside Lights
+  group.lights_outside:
+    name: Outside Lights
+  
+  climate.downstairs_16:
+    name: Downstairs
+    room: Downstairs
+    aliases:
+      - Downstairs
+
+  climate.upastairs_13: 
+    name: Upstairs
+    room: Upstairs
+    aliases:
+      - Upstairs
+  
+  light.play_room_3:
+    name: Play Room
+    room: Upstairs
+
+############### Kids Rooms ###############
+  light.aidan:
+    name: Aidan's Lamp
+    room: Kid's Room
+    aliases:
+      - Aidan
+      - Aidans Light
+      - Aidans Room
+
+  light.olivia:
+    name: Olivia's Lamp
+    room: Kid's Room
+    aliases:
+      - Olivia
+      - Olivias Light
+      - Olivias Room
+
+############### Living Room ###############
+  light.table:
+    name: Living Room Lamp
+    room: Living Room
+
+  light.stairs:
+    name: Stairs Lamp
+    room: Living Room
+  
+  light.fireplace:
+    room: Living Room
+
+  light.mail_table:
+    room: Living Room
+  
+  light.living_room_tree_4:
+    name: Living Room Tree
+    room: Living Room
+    aliases:
+      - Tree Light
+      - Tree
+
+  light.chandelier_12:
+    name: Chandelier
+    room: Living Room
+
+############### Kitchen ###############
+  light.sink:
+    name: Kitchen Sink
+    room: Kitchen
+    aliases:
+      - Sink 
+      - Sink Light
+      - Dish Light
+
+  light.kitchen_6:
+    name: Kitchen
+    room: Kitchen
+
+  light.dinner_table_46:
+    name: Dinner Table
+    room: Kitchen
+
+############### Office ###############
+  light.office_lamp:
+    name: Mark's Office
+    room: Office
+    aliases:
+      - Mark's Office
+  
+  light.fresca_lamp:
+    name: Sandra's Office
+    room: Office
+    aliases:
+      - Fresca Light
+      - Fresca Lamp
+      
+############### Master Bedroom ###############
+  light.lamp:
+    name: Master Lamp
+    room: Master Bedroom
+
+  light.master_5:
+    name: Master Bedside
+    room: Master Bedroom
+    aliases:
+      - Bedside Lights
+      - Bedside Lamps
+
+############### Outside Lights ###############
+  light.outside_side_8:
+    name: Front Side
+    room: Outside
+
+  light.outside_main_9:
+    name: Front Main
+    room: Outside
+
+  light.outside_back_10:
+    name: Backyard Patio
+    room: Outside
+    aliases:
+      - Patio
+
+############### Mobile Lights ###############
+  light.mobile_1_33:
+    name: TV Light
+    room: Living Room
+    aliases:
+      - Backlight
+
+  light.mobile_2_14:
+    name: Office Entry
+    room: Office
+
+  light.mobile_3_11:
+    name: Stair Railing
+    room: Living Room
+
+  light.mobile_4_7:
+    name: Outside Halloween
+    room: Outside
+    aliases:
+      - Outside Holiday
+      - Holiday
+      - Halloween
