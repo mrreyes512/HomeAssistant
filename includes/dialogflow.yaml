@@ -1,0 +1,51 @@
+############################################################
+#
+# Home Assistant Dialogflow configuration
+#
+############################################################
+
+intent_script:
+
+  Temperature:
+    speech:
+      text: The temperature at home is {{ states('sensor.home_temp') }} degrees
+
+  LocateIntent:
+    speech:
+      text: >
+        {%- for state in states.device_tracker -%}
+          {%- if state.name.lower() == User.lower() -%}
+            {{ state.name }} is at {{ state.state }}
+          {%- elif loop.last -%}
+            I am sorry, I do not know where {{ User }} is.
+          {%- endif -%}
+        {%- else -%}
+          Sorry, I don't have any trackers registered.
+        {%- endfor -%}
+
+  WhereAreWeIntent:
+    speech:
+      text: >
+        {%- if is_state('device_tracker.adri', 'home') and
+               is_state('device_tracker.bea', 'home') -%}
+          You are both home, you silly
+        {%- else -%}
+          Bea is at {{ states("device_tracker.bea") }}
+          and Adri is at {{ states("device_tracker.adri") }}
+        {% endif %}
+
+  TurnLights:
+    speech:
+      text: Turning {{ Room }} lights {{ OnOff }}
+    action:
+      - service: notify.pushbullet
+        data_template:
+          message: Someone asked via apiai to turn {{ Room }} lights {{ OnOff }}
+      - service_template: >
+          {%- if OnOff == "on" -%}
+            light.turn_on
+          {%- else -%}
+            light.turn_off
+          {%- endif -%}
+        data_template:
+          entity_id: "light.{{ Room | replace(' ', '_') }}"
