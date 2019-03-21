@@ -1,0 +1,111 @@
+- title: Lights
+  icon: mdi:home-assistant
+  # Unique path for direct access /lovelace/${path}
+  path: lights
+  # Optional background (overwrites the global background).
+  # background: radial-gradient(crimson, skyblue)
+  # Each view can have a different theme applied. Theme should be defined in the frontend.
+  # theme: dark-mode
+  # The cards to show on this view.
+  cards: 
+
+    - type: entities
+      title: Inside Group
+      show_header_toggle: true
+      entities:
+
+        # Master Bedroom group
+        - name: Master Bedroom 
+          entity: light.master_color_lamp
+          secondary_info: last-changed
+        - name: Bedside Tables
+          entity: light.master_5
+          secondary_info: last-changed
+
+        - type: divider
+
+        # Livingroom group
+        - name: Livingroom Table
+          entity: light.lr_table
+          secondary_info: last-changed
+        - name: Livingroom Tree
+          entity: light.living_room_tree_4
+          secondary_info: last-changed
+        - name: Fireplace
+          entity: light.fireplace
+          secondary_info: last-changed
+        - name: Stairs
+          entity: light.stairs
+          secondary_info: last-changed
+        - name: Mail Table
+          entity: light.mail_table
+          secondary_info: last-changed
+
+        - type: divider
+
+        - name: Sink
+          entity: light.sink
+          secondary_info: last-changed
+        - name: Kitchen
+          entity: light.kitchen_6
+          secondary_info: last-changed
+
+        - type: divider
+
+        - name: Office - Mark 
+          entity: light.office_lamp
+          secondary_info: last-changed
+        - name: Office - Sandra
+          entity: light.sandra_office
+          secondary_info: last-changed
+        - name: Playroom
+          entity: light.play_room_3
+          secondary_info: last-changed
+
+    - type: entities
+      title: Outside Group
+      show_header_toggle: true
+      entities: 
+
+        # Outside group
+        - name: Outside Main 
+          entity: light.outside_main_9
+          secondary_info: last-changed
+        - name: Outside Side
+          entity: light.outside_side_8
+          secondary_info: last-changed
+
+        - type: divider
+
+        - name: Porch 
+          entity: light.porch
+          secondary_info: last-changed
+        - name: Porch2
+          entity: light.porch_2
+          secondary_info: last-changed
+
+        - type: divider
+
+        - name: Backyard Patio
+          entity: light.outside_back_10
+          secondary_info: last-changed
+
+    - type: entities
+      title: Lights
+      show_header_toggle: false
+      entities: 
+
+        # Other Lights
+        - name: Olivia
+          entity: light.olivia
+          secondary_info: last-changed
+        - name: Aidan
+          entity: light.aidan
+          secondary_info: last-changed
+        - name: Livingroom Chandelier
+          entity: light.chandelier_12
+          secondary_info: last-changed
+        - name: Dinner Table
+          entity: light.dinner_table_46
+          secondary_info: last-changed
+

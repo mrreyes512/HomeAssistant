@@ -11,62 +11,48 @@ homeassistant:
   elevation: !secret elevation
   unit_system: imperial
   time_zone: America/Chicago
-  customize: !include includes/customize.yaml
-  # Customize entities matching a pattern
-  customize_glob:
-    "switch.zone_*":
-      icon: mdi:water-pump
+  # customize: !include includes/customize.yaml
+  auth_providers:
+    - type: homeassistant
+    - type: legacy_api_password
+    - type: trusted_networks
+      trusted_networks:
+        - 127.0.0.1
+        - ::1
+        - 172.20.0.0/24
+        - 192.168.100.0/24
+        - 192.168.200.0/24
+        - 2001:DB8:ABCD::/48
 
 http:
   base_url: !secret base_url
   api_password: !secret http_password
-#  server_host: !secret server_host
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
   ip_ban_enabled: True
   login_attempts_threshold: 3
-  trusted_networks:
-    - 127.0.0.1
-    - ::1
-    - 172.20.0.0/24
-    - 192.168.100.0/24
-    - 192.168.200.0/24
-    - 2001:DB8:ABCD::/48
-
-# Fing Pannel
-panel_iframe:
-  fing_app: #need to change url in secret.yaml to /login to allow device to log in, then add agent_id at url
-    title: Fing Scan
-    icon: mdi:image-filter-tilt-shift
-    url: !secret fing_url
-  rachio:
-    title: Rachio
-    url: "https://app.rach.io"
-    icon: mdi:water-pump
-#  unifi_app:
-#    title: UniFi Configuration
-#    icon: mdi:adjust
-#    url: !secret unifi_url
 
 history:
+
+system_health:
 
 # Optional, allows Home Assistant developers to focus on popular components.
 updater:
   reporting: no
   # include_used_components: true
 
-input_boolean:
-  vacation_mode:
-    name: Vacation Mode
-    initial: off
-    icon: mdi:beach
-  halloween_mode:
-    name: Halloween Mode
-    initial: off
+# input_boolean:
+#   vacation_mode:
+#     name: Vacation Mode
+#     initial: off
+#     icon: mdi:beach
+  # halloween_mode:
+  #   name: Halloween Mode
+  #   initial: off
     # icon: /local/icon-halloween-org.png
 
 frontend:
-  themes: !include themes/midnight.yaml
+ themes: !include themes/midnight.yaml
 #  themes: !include_dir_merge_named themes/
 
 discovery:
@@ -81,21 +67,21 @@ sun:
 logbook:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
+# conversation:
 
 # Enables a map showing the location of tracked devices
-map:
+# map:
 
 # Enable the embedded mqtt service in hassio
-mqtt:
-  embedded:
-
-# Entry to enable the cloud component
-cloud:
-  google_actions: !include includes/google_actions.yaml
+# mqtt:
+#   embedded:
 
 # Entry to enable configuration panel
 config:
+
+# Enable Lovelace YAML Mode
+lovelace:
+  mode: yaml
 
 
 ############################################################
@@ -104,27 +90,31 @@ config:
 #
 ############################################################
 
+# Entry to enable the cloud component
+# cloud:
+#   google_actions: !include includes/google_actions.yaml
+
 #google:
 #  client_id: !secret google_calendar_client_id
 #  client_secret: !secret google_calendar_client_secret
 
-netatmo:
-  api_key: !secret netatmo_api_key
-  secret_key: !secret netatmo_secret_key
-  username: !secret netatmo_username
-  password: !secret netatmo_password
-#  discovery: false
+# netatmo:
+#   api_key: !secret netatmo_api_key
+#   secret_key: !secret netatmo_secret_key
+#   username: !secret netatmo_username
+#   password: !secret netatmo_password
+# #  discovery: false
 
-remote:
-  - platform: harmony
-    name: !secret harmony_name
-    host: !secret harmony_host
+# remote:
+#   - platform: harmony
+#     name: !secret harmony_name
+#     host: !secret harmony_host
 
-tts:
-  - platform: google
-    cache: true
-    cache_dir: /tmp/tts
-    time_memory: 300
+# tts:
+#   - platform: google
+#     cache: true
+#     cache_dir: /tmp/tts
+#     time_memory: 300
 #    service: tts.google_say
 #    data:
 #      message: 'May the Force be with you.'
@@ -137,41 +127,24 @@ tts:
 
 # Single Files
 
-camera: !include includes/cameras.yaml
-vera:   !include includes/vera.yaml
-switch: !include includes/switch.yaml #includes Rachio config
-media_player: !include includes/media_players.yaml
-google_assistant: !include includes/google_assistant.yaml
 hue: !include includes/philips_hue.yaml
-notify: !include includes/notify.yaml
-scene: !include includes/scenes.yaml
-device_tracker: !include includes/device_tracker.yaml
-zone: !include includes/zones.yaml
-input_select: !include includes/input_select.yaml
-input_number: !include includes/input_number.yaml
-light: !include includes/light_strip.yaml
-dialogflow: !include includes/dialogflow.yaml
-
+vera:   !include includes/vera.yaml
+# camera: !include includes/cameras.yaml
+# switch: !include includes/switch.yaml #includes Rachio config
+# google_assistant: !include includes/google_assistant.yaml
+# notify: !include includes/notify.yaml
+# scene: !include includes/scenes.yaml
+# media_player: !include includes/media_players.yaml
+# device_tracker: !include includes/device_tracker.yaml
+# zone: !include includes/zones.yaml
+# input_select: !include includes/input_select.yaml
+# input_number: !include includes/input_number.yaml
+# light: !include includes/light_strip.yaml
+# dialogflow: !include includes/dialogflow.yaml
 
 # Group Merge Directory
 
-group: !include_dir_merge_named group/
-sensor: !include_dir_merge_list sensors/
-automation: !include automations.yaml
-automation old: !include_dir_merge_list automation
-
-# -----
-#scene: !include includes/scenes.yaml
-#weblink: !include includes/weblink.yaml
-
-# Merge List
-#automation: !include_dir_merge_list includes/automation
-#sensor: !include_dir_merge_list includes/sensors
-#shell_command: !include_dir_merge_named includes/shell_command
-#zone: !include_dir_merge_list includes/zone
-
-# Merge Named
-#group: !include group/irrigation.yaml
-#group: !include group/lights.yaml
-
-#script: !include_dir_merge_named includes/scripts
+# group: !include_dir_merge_named layout/
+# sensor: !include_dir_merge_list sensors/
+# automation: !include automations.yaml
+# automation old: !include_dir_merge_list automation
