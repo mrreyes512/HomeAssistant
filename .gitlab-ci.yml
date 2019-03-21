@@ -1,0 +1,46 @@
+stages:
+  - test
+  - deploy
+  # - notify
+
+test:
+  stage: test
+  image: homeassistant/amd64-homeassistant
+  before_script:
+    - sed 's/ssl_certificate:/# ssl_certificate:/g;s/ssl_key:/# ssl_key:/g' configuration.yaml > .travis_configuration.yaml
+    - mv .travis_configuration.yaml configuration.yaml
+    - mv .travis_secrets.yaml secrets.yaml
+  script:
+    - hass --script check_config -c .
+
+deploy:
+  stage: deploy
+  only:
+    - master
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - ssh $DEPLOY_USER@$DEPLOY_HOST "cd '$DEPLOY_PATH'; git pull; docker restart home-assistant"
+
+# notify_success:
+#   stage: notify
+#   allow_failure: true
+#   only:
+#     - master
+#   script:
+#     - curl -s --form-string "token=$PUSHOVER_API_TOKEN" --form-string "user=$PUSHOVER_USER_TOKEN" --form-string "message=New Hass config deployed successfully!" https://api.pushover.net/1/messages.json
+
+# notify_fail:
+#   stage: notify
+#   allow_failure: true
+#   only:
+#     - master
+#   when: on_failure
+#   script:
+#     - curl -s --form-string "token=$PUSHOVER_API_TOKEN" --form-string "user=$PUSHOVER_USER_TOKEN" --form-string "message=New Hass config failed. Please check for errors" https://api.pushover.net/1/messages.json
