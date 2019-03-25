@@ -1,13 +1,13 @@
-dark:
+clear_dark:
   # Background image
-  background-image: 'center / cover no-repeat url("/local/night.jpg") fixed'
+  background-image: 'center / cover no-repeat url("https://tinyurl.com/y2wfpjf5") fixed'
 
   # Colors
   text-color: '#DADADB'                                                           # Grey text
   text-medium-light-color: '#A0A2A8'                                              # Medium-light grey text
   text-medium-color: '#80828A'                                                    # Medium grey text
   text-dark-color: '#6A6B74'                                                      # Dark grey text
-  accent-color: '#008bef'                                                         # Blue
+  accent-color: '#FFD700'                                                         # Gold
   accent-medium-color: '#2686c1'                                                  # Decent blue
   background-color: '#3b4049'                                                     # Dark grey background
   background-color-2: '#484E59'                                                   # Light grey background
@@ -39,6 +39,7 @@ dark:
   disabled-text-color: 'var(--text-dark-color)'
   paper-dialog-button-color: 'var(--text-color)'
   secondary-background-color: 'var(--background-color-2)'                         # Background more info title
+  ha-card-border-radius: 5px
 
   # Icons
   paper-item-icon-color: 'var(--text-dark-color)'                                 # Off

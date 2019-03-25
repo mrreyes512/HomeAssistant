@@ -3,9 +3,9 @@
   # Unique path for direct access /lovelace/${path}
   path: lights
   # Optional background (overwrites the global background).
-  # background: radial-gradient(crimson, skyblue)
+  background: radial-gradient(dark, skyblue)
   # Each view can have a different theme applied. Theme should be defined in the frontend.
-  # theme: dark-mode
+  theme: clear_dark
   # The cards to show on this view.
   cards: 
 
