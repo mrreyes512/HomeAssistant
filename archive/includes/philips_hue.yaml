@@ -1,0 +1,10 @@
+############################################################
+#
+# Home Assistant Camera Configuration
+#
+############################################################
+
+bridges:
+  - host: !secret philips_hue_ip
+    allow_hue_groups: false
+    allow_unreachable: true

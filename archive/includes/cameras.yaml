@@ -1,0 +1,22 @@
+############################################################
+#
+# Home Assistant Camera Configuration
+#
+############################################################
+
+#Front Door
+- platform: generic
+  name:     Front Door
+  still_image_url: !secret cam_front_door
+#Back Door
+- platform: generic
+  name:     Back Door
+  still_image_url: !secret cam_back_door
+#Living Room
+- platform: generic
+  name:     Living Room
+  still_image_url: !secret cam_living_room
+#Front Yard
+- platform: generic
+  name:     Front Yard
+  still_image_url: !secret cam_front_yard

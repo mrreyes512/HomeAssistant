@@ -1,0 +1,58 @@
+stages:
+  - test
+  - notify
+  - production
+
+test:
+  stage: test
+  image: homeassistant/amd64-homeassistant
+  before_script:
+    - sed 's/ssl_certificate:/# ssl_certificate:/g;s/ssl_key:/# ssl_key:/g' configuration.yaml > .cicd_configuration.yaml
+    - mv .cicd_configuration.yaml configuration.yaml
+    - mv .cicd_secrets.yaml secrets.yaml
+  script:
+    - hass --script check_config -c .
+
+deploy:
+  stage: production
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - echo -e "Host *\n   StrictHostKeyChecking no\n   UserKnownHostsFile=/dev/null" >> /etc/ssh/ssh_config
+    - echo -e "cd $DEPLOY_PATH \n git checkout $CI_COMMIT_REF_NAME \n git status -sb \n git pull origin $CI_COMMIT_REF_NAME" > deploy_script.sh
+    - echo -e "source ~/.bash_profile; hassio homeassistant check && hassio homeassistant restart --log-level info" >> deploy_script.sh
+  script: 
+    - cat deploy_script.sh
+    # execute the composed script on the remote host; Set variable DEPLOYED on success; and modify exit code on failure so the CICD continues
+    - ssh -p $SSH_PORT $DEPLOY_USER@$DEPLOY_HOST "bash -s" < deploy_script.sh && DEPLOYED=true || true
+    # if $DEPLOYED is set, notify pass, else notify failure
+    - if [ -v DEPLOYED ]; 
+        then ./bin/deployment_success.sh "$NOTIFY_URL" "$GITLAB_USER_NAME" "$CI_PIPELINE_URL" "$CI_PIPELINE_ID" "$PRODUCTION_URL"; 
+        else ./bin/deployment_failure.sh "$NOTIFY_URL" "$GITLAB_USER_NAME" "$CI_PIPELINE_URL" "$CI_PIPELINE_ID" "$PRODUCTION_URL"; exit 1;
+      fi
+  environment:
+    name: production
+    url: $PRODUCTION_URL
+  when: manual
+
+notify_success:
+  stage: notify
+  allow_failure: true
+  dependencies:
+    - test
+  script: 
+    # ARGUEMENT ORDER MATTERS!! Check the script before adjusting 
+    - ./bin/notify_success.sh "$NOTIFY_URL" "$GITLAB_USER_NAME" "$CI_PIPELINE_URL" "$CI_PIPELINE_ID"
+      "$CI_PROJECT_URL" "$CI_COMMIT_REF_NAME" "$CI_BUILD_REF_NAME" "$CI_COMMIT_SHA" "$CI_COMMIT_TITLE"
+
+notify_fail:
+  stage: notify
+  allow_failure: true
+  dependencies:
+    - test
+  when: on_failure
+  script:
+    # ARGUEMENT ORDER MATTERS!! Check the script before adjusting 
+    - ./bin/notify_failure.sh "$NOTIFY_URL" "$GITLAB_USER_NAME" "$CI_PIPELINE_URL" "$CI_PIPELINE_ID"
+      "$CI_PROJECT_URL" "$CI_COMMIT_REF_NAME" "$CI_BUILD_REF_NAME" "$CI_COMMIT_SHA" "$CI_COMMIT_TITLE"
