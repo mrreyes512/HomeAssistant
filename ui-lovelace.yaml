@@ -1,0 +1,8 @@
+############################################################
+#
+# Lovelace UI Configuration File
+#
+############################################################
+
+title: Reyes Manor
+views: !include_dir_merge_list ui-views/

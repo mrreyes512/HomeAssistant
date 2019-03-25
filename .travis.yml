@@ -2,13 +2,13 @@ language: python
 python:
   - "3.5.3"
 install:
-  - pip3 install homeassistant==0.72.1
+  - pip3 install homeassistant
 script:
   - hass -c . --script check_config
 before_install:
-  - sed 's/ssl_certificate:/# ssl_certificate:/g;s/ssl_key:/# ssl_key:/g' configuration.yaml > .travis_configuration.yaml
-  - mv .travis_configuration.yaml configuration.yaml
-  - mv .travis_secrets.yaml secrets.yaml
+  - sed 's/ssl_certificate:/# ssl_certificate:/g;s/ssl_key:/# ssl_key:/g' configuration.yaml > .cicd_configuration.yaml
+  - mv .cicd_configuration.yaml configuration.yaml
+  - mv .cicd_secrets.yaml secrets.yaml
 notifications:
   slack:
     secure: ahTPwnIWKtyzUWYr4RdvuiM0VdK6P/mcMPoOhW/dAtIjI/buHNtVmPS+kz2fDWOC1ibScBye0QlslJ+tBu+jX0p6UZ37rhodTNBGtyaAJyz9fo7jRz5hRXQgFb7qy2XlANDViJqKtnrmYNWRs5DcSqHJsE6GUiYvl3dBK/tAcs98rKC8VeTXrTLs0+TgKeUz1I/vAoO0DmYv4oeIOOtotmE3EnnTxIrIX/HPh+oKtRCxcIt/ZTMJRNiiuKowu4qQtic+ZQ8CYX9K+vmfuoiQBlvtevRXIMf5DjbmYJ26oOpvUM9blCsGdFuJGMpB5YH7HVBzQFVewFmS0In/vcDlkmfFCYNR9TdPCrwAknNFqI6bOrLC0zGzMoeoBVfIDQEB5cmoNUgH90AL4JHpD5NHEzhd+NAJ898+YmAGnlKfSh6K4XPJxwYw4hF1M5ei2hiFLlSt2v3VBhX5ZPxK1IVAu1OwGKnPMe9TZr9UR8BRglI7koodEi7549AJrbiS+7OVftCRmf4W/I/f0ITqDm+J/1a55j5zQ49F56/JOZKhLdXC6onu4HrFiYe25KkoV6IOgQZoWyXvMjQKk/T99QtcBpFC0rxVX2tlcIoIoaR++OsT1bSumZ3xPT1K/4CAPkKRcgKNvZ3eeHnA7HgBpPKvjZNRyCWI1XHff8ArN8w0IzA=
