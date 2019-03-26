@@ -1,0 +1,33 @@
+############################################################
+#
+# Home Assistant Light Groups
+#
+############################################################
+
+- platform: group
+  name: Front Yard
+  entities:
+    - light.outside_side_8
+    - light.outside_main_9
+
+- platform: group
+  name: Front Porch
+  entities:
+    - light.porch
+    - light.porch_2
+
+- platform: group
+  name: Inside Lights
+  entities:
+    - light.master_color_lamp
+    - light.lr_table
+    - light.mail_table
+    - light.office_lamp
+    - light.sandra_office
+    - light.fireplace
+    - light.sink
+    - light.stairs
+    - light.kitchen_6
+    - light.living_room_tree_4
+    - light.master_5
+    - light.play_room_3

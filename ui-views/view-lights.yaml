@@ -14,9 +14,9 @@
       show_header_toggle: false
       entities:
         - name: Inside Lights
-          entity: group.lights_inside
+          entity: light.inside_lights
         - name: Front Yard
-          entity: group.front_yard
+          entity: light.front_yard
 
     - type: entities
       title: Master Bedroom
@@ -85,15 +85,13 @@
 
         # Outside group
         - name: Front Yard
-          entity: group.front_yard
-          icon: mdi:lightbulb
+          entity: light.front_yard
           secondary_info: last-changed
 
         - type: divider
 
         - name: Porch 
-          entity: group.porch
-          icon: mdi:lightbulb
+          entity: light.front_porch
           secondary_info: last-changed
 
         - type: divider

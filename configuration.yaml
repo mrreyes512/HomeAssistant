@@ -137,7 +137,7 @@ vera:   !include includes/vera.yaml
 # zone: !include includes/zones.yaml
 # input_select: !include includes/input_select.yaml
 # input_number: !include includes/input_number.yaml
-# light: !include includes/light_strip.yaml
+light: !include includes/light_groups.yaml
 # dialogflow: !include includes/dialogflow.yaml
 
 # Group Merge Directory
