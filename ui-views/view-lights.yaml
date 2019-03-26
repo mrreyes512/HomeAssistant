@@ -10,10 +10,17 @@
   cards: 
 
     - type: entities
-      title: Inside Group
+      title: Groups
+      # show_header_toggle: true
+      entities:
+        - name: Inside Lights
+          entity: group.lights_inside
+          # secondary_info: last-changed
+
+    - type: entities
+      title: Master Bedroom
       show_header_toggle: true
       entities:
-
         # Master Bedroom group
         - name: Master Bedroom 
           entity: light.master_color_lamp
@@ -22,8 +29,10 @@
           entity: light.master_5
           secondary_info: last-changed
 
-        - type: divider
-
+    - type: entities
+      title: Living Room
+      show_header_toggle: true
+      entities:
         # Livingroom group
         - name: Livingroom Table
           entity: light.lr_table
@@ -41,7 +50,10 @@
           entity: light.mail_table
           secondary_info: last-changed
 
-        - type: divider
+    - type: entities
+      title: Kitchen
+      show_header_toggle: true
+      entities:
 
         - name: Sink
           entity: light.sink
@@ -50,7 +62,10 @@
           entity: light.kitchen_6
           secondary_info: last-changed
 
-        - type: divider
+    - type: entities
+      title: Offices
+      show_header_toggle: true
+      entities:
 
         - name: Office - Mark 
           entity: light.office_lamp
@@ -78,10 +93,8 @@
         - type: divider
 
         - name: Porch 
-          entity: light.porch
-          secondary_info: last-changed
-        - name: Porch2
-          entity: light.porch_2
+          entity: group.porch
+          icon: mdi:lightbulb
           secondary_info: last-changed
 
         - type: divider
@@ -91,21 +104,25 @@
           secondary_info: last-changed
 
     - type: entities
-      title: Lights
+      title: Kid Rooms
       show_header_toggle: false
       entities: 
 
-        # Other Lights
         - name: Olivia
           entity: light.olivia
           secondary_info: last-changed
         - name: Aidan
           entity: light.aidan
           secondary_info: last-changed
-        - name: Livingroom Chandelier
+
+    - type: horizontal-stack
+      cards:
+        - type: light
+          name: Chandelier
           entity: light.chandelier_12
-          secondary_info: last-changed
-        - name: Dinner Table
+
+        - type: light
+          name: Dinner Table
           entity: light.dinner_table_46
           secondary_info: last-changed
 

@@ -1,0 +1,48 @@
+- title: Beta-Tester's Paradise
+  icon: mdi:test-tube
+  # Unique path for direct access /lovelace/${path}
+  path: develop
+  # Optional background (overwrites the global background).
+  theme: clear_dark
+  # The cards to show on this view.
+  cards: 
+        
+    - type: glance
+      title: Inside Lights
+      entities:
+        - entity: light.master_color_lamp
+          tap_action:
+            action: toggle
+        - entity: light.lr_table
+          tap_action:
+            action: toggle
+        - entity: light.mail_table
+          tap_action:
+            action: toggle
+        - entity: light.office_lamp
+          tap_action:
+            action: toggle
+        - entity: light.sandra_office
+          tap_action:
+            action: toggle
+        - entity: light.fireplace
+          tap_action:
+            action: toggle
+        - entity: light.sink
+          tap_action:
+            action: toggle
+        - entity: light.stairs
+          tap_action:
+            action: toggle
+        - entity: light.kitchen_6
+          tap_action:
+            action: toggle
+        - entity: light.living_room_tree_4
+          tap_action:
+            action: toggle
+        - entity: light.master_5
+          tap_action:
+            action: toggle
+        - entity: light.play_room_3
+          tap_action:
+            action: toggle

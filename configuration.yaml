@@ -142,7 +142,7 @@ vera:   !include includes/vera.yaml
 
 # Group Merge Directory
 
-# group: !include_dir_merge_named layout/
+group: !include_dir_merge_named group/
 # sensor: !include_dir_merge_list sensors/
-# automation: !include automations.yaml
+automation: !include automations.yaml
 # automation old: !include_dir_merge_list automation

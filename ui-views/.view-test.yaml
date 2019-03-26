@@ -1,8 +1,0 @@
-- title:  Test
-  icon: mdi:lightbulb
-  cards: 
-  - type: picture
-    image: /local/www/pic-mark.png
-    tap_action:
-      action: navigate
-      navigation_path: /lovelace/lights
