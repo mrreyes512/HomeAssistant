@@ -11,11 +11,11 @@
 
     - type: entities
       title: Groups
-      # show_header_toggle: true
+      show_header_toggle: false
       entities:
         - name: Inside Lights
           entity: group.lights_inside
-          # secondary_info: last-changed
+          entity: group.front_yard
 
     - type: entities
       title: Master Bedroom

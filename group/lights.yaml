@@ -4,29 +4,6 @@
 #
 ############################################################
 
-lights_view:
-  name: Lights
-  view: yes
-  icon: mdi:lightbulb
-  entities:
-    - group.light_modes
-    - group.lights_inside
-    - group.lights_outside
-    - group.light_strip
-    - group.lights_halloween
-    - group.lights_other
-    - group.lights_hue
-    - group.scenes_lights
-
-############################################################
-# Light Groups
-############################################################
-
-light_modes:
-  name: Light Scenes
-  control: hidden
-  entities:
-  - input_boolean.halloween_mode
 
 lights_inside:
   name: Inside Lights
@@ -48,12 +25,11 @@ lights_inside:
     # - light.mobile_3_11   # Stair Rails
     # - light.mobile_4_7    # Outside halloween lights
 
-lights_outside:
+front_yard:
   name: Front Yard Lights
   entities:
     - light.outside_side_8
     - light.outside_main_9
-    - light.outside_back_10
 
 porch:
   name: Porch Lights
