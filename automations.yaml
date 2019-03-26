@@ -23,3 +23,12 @@
     data:
       'entity_id ': switch.mobile_3_11
     service: switch.turn_on
+- id: 'set_theme_at_startup'
+  alias: 'Set theme at startup'
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    service: frontend.set_theme
+    data:
+      name: dark_blue

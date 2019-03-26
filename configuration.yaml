@@ -52,7 +52,6 @@ updater:
     # icon: /local/icon-halloween-org.png
 
 frontend:
-#  themes: !include themes/midnight.yaml
  themes: !include_dir_merge_named themes/
 
 discovery:
