@@ -15,6 +15,7 @@
       entities:
         - name: Inside Lights
           entity: group.lights_inside
+        - name: Front Yard
           entity: group.front_yard
 
     - type: entities
@@ -83,11 +84,9 @@
       entities: 
 
         # Outside group
-        - name: Outside Main 
-          entity: light.outside_main_9
-          secondary_info: last-changed
-        - name: Outside Side
-          entity: light.outside_side_8
+        - name: Front Yard
+          entity: group.front_yard
+          icon: mdi:lightbulb
           secondary_info: last-changed
 
         - type: divider
