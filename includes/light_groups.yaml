@@ -4,6 +4,9 @@
 #
 ############################################################
 
+# Light Groups
+############################################################
+
 - platform: group
   name: Front Yard
   entities:
@@ -31,3 +34,97 @@
     - light.living_room_tree_4
     - light.master_5
     - light.play_room_3
+
+# Room Groups
+############################################################
+
+- platform: group
+  name: Master Bedroom
+  entities:
+    - light.master_color_lamp
+    - light.master_5
+
+- platform: group
+  name: Living Room
+  entities:
+    - light.lr_table
+    - light.mail_table
+    - light.fireplace
+    - light.stairs
+    - light.living_room_tree_4
+
+
+- platform: group
+  name: Kitchen
+  entities:
+    - light.kitchen_6
+    - light.sink
+
+- platform: group
+  name: Kids Room
+  entities:
+    - light.aidan
+    - light.olivia
+
+- platform: group
+  name: Offices
+  entities:
+    - light.office_lamp
+    - light.sandra_office
+    - light.play_room_3
+
+- platform: group
+  name: Outside Group
+  entities:
+    - light.outside_side_8
+    - light.outside_main_9
+    - light.porch
+    - light.porch_2
+    - light.outside_back_10
+
+
+# Groups for scenes
+############################################################
+
+- platform: group
+  name: Bedtime Off
+  # Lights to turn off for bedtime scene
+  entities:
+    # - light.lr_table
+    # - light.mail_table
+    - light.fireplace
+    - light.stairs
+    - light.living_room_tree_4
+    - light.kitchen_6
+    # - light.sink
+    - light.office_lamp
+    - light.sandra_office
+    - light.play_room_3
+
+- platform: group
+  name: Normal On
+  # Lights to turn on for normal scene
+  entities:
+    - light.master_color_lamp
+    - light.master_5    
+    - light.lr_table
+    - light.mail_table
+    - light.fireplace
+    - light.stairs
+    - light.living_room_tree_4
+    - light.kitchen_6
+    - light.sink
+    - light.office_lamp
+    - light.sandra_office
+    - light.play_room_3
+
+- platform: group
+  name: Color Group
+  # Lights which are able to adjust color
+  entities:
+    - light.master_color_lamp
+    - light.lr_table
+    - light.mail_table
+    - light.fireplace
+    - light.stairs
+    - light.sink

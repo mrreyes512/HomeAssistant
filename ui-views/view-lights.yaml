@@ -2,8 +2,6 @@
   icon: mdi:home-assistant
   # Unique path for direct access /lovelace/${path}
   path: lights
-  # Optional background (overwrites the global background).
-  background: radial-gradient(dark, skyblue)
   # Each view can have a different theme applied. Theme should be defined in the frontend.
   theme: clear_dark
   # The cards to show on this view.
