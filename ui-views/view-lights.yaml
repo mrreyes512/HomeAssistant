@@ -1,5 +1,5 @@
 - title: Lights
-  icon: mdi:home-assistant
+  icon: mdi:lightbulb
   # Unique path for direct access /lovelace/${path}
   path: lights
   # Each view can have a different theme applied. Theme should be defined in the frontend.

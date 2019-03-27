@@ -1,0 +1,34 @@
+- title: Automations
+  icon: mdi:home-assistant
+  # Unique path for direct access /lovelace/${path}
+  path: automation
+  # Each view can have a different theme applied. Theme should be defined in the frontend.
+  theme: clear_dark
+  # The cards to show on this view.
+  cards: 
+
+    # - type: entities
+    #   title: Groups
+    #   show_header_toggle: false
+    #   entities:
+    #     - name: Inside Lights
+    #       entity: light.inside_lights
+    #     - name: Front Yard
+    #       entity: light.front_yard
+
+    - type: horizontal-stack
+      cards:
+        - type: entity-button
+          name: Bedtime
+          icon: mdi:sleep
+          entity: scene.bedtime
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.bedtime
+    #     - type: light
+    #       name: Dinner Table
+    #       entity: light.dinner_table_46
+    #       secondary_info: last-changed
+

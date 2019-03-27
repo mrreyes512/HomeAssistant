@@ -96,10 +96,13 @@
     - light.stairs
     - light.living_room_tree_4
     - light.kitchen_6
-    # - light.sink
+    - light.sink
     - light.office_lamp
     - light.sandra_office
     - light.play_room_3
+    - light.chandelier_12
+    - light.dinner_table_46
+    - light.outside_back_10
 
 - platform: group
   name: Normal On

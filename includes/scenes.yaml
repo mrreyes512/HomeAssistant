@@ -1,0 +1,17 @@
+###########################################################
+#
+# Home Assistant Scenes
+#
+############################################################
+
+- name: Bedtime
+  entities:
+    light.bedtime_off: false
+    light.lr_table:
+      state: true
+      xy_color: [0.641,0.286]
+      brightness: 57
+    light.mail_table:
+      state: true
+      xy_color: [0.641,0.286]
+      brightness: 57      
