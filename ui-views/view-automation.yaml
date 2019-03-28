@@ -19,6 +19,15 @@
     - type: horizontal-stack
       cards:
         - type: entity-button
+          name: Normal
+          icon: mdi:weather-sunset
+          entity: scene.normal
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.normal
+        - type: entity-button
           name: Bedtime
           icon: mdi:sleep
           entity: scene.bedtime

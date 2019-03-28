@@ -4,6 +4,28 @@
 #
 ############################################################
 
+- name: Normal
+  entities:
+    light.normal_on: true
+    light.lr_table:
+      state: true
+      xy_color: [0.491,0.415]
+      brightness: 173
+    light.mail_table:
+      state: true
+      xy_color: [0.422,0.393]
+      brightness: 173
+    light.stairs:
+      state: true
+      xy_color: [0.491,0.415]
+      brightness: 173
+    light.fireplace:
+      state: true
+      xy_color: [0.491,0.415]
+      brightness: 173
+    light.offices:
+      state: true
+      brightness: 254
 - name: Bedtime
   entities:
     light.bedtime_off: false
@@ -14,4 +36,4 @@
     light.mail_table:
       state: true
       xy_color: [0.641,0.286]
-      brightness: 57      
+      brightness: 57            
