@@ -122,6 +122,19 @@
     - light.play_room_3
 
 - platform: group
+  name: Morning Off
+  # Lights to turn on for normal scene
+  entities:
+    - light.master_5    
+    - light.mail_table
+    - light.fireplace
+    - light.stairs
+    - light.living_room_tree_4
+    - light.kitchen_6
+    - light.sandra_office
+    - light.play_room_3
+
+- platform: group
   name: Color Group
   # Lights which are able to adjust color
   entities:

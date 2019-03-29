@@ -117,6 +117,10 @@ lovelace:
 #    data:
 #      message: 'May the Force be with you.'
 
+weather:
+  - platform: darksky
+    api_key: !secret darksky_secret
+
 ###########################################################
 #
 # Includes

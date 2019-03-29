@@ -37,6 +37,24 @@
             service: scene.turn_on
             service_data:
               entity_id: scene.bedtime
+        - type: entity-button
+          name: Morning
+          icon: mdi:coffee
+          entity: scene.morning
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.morning
+        - type: entity-button
+          name: Movie
+          icon: mdi:theater
+          entity: scene.movie
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.movie
 
     # Thermostats
     - type: horizontal-stack
@@ -47,3 +65,13 @@
         - type: thermostat
           name: Upstairs
           entity: climate.upastairs_13
+
+    # - type: history-graph
+    #   title: 'House Climate'
+    #   entities:
+    #     - climate.upastairs_13
+    #     - climate.downstairs_16
+
+    # Weather
+    - type: weather-forecast
+      entity: weather.dark_sky

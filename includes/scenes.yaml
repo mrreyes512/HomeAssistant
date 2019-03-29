@@ -7,6 +7,10 @@
 - name: Normal
   entities:
     light.normal_on: true
+    light.master_color_lamp:
+      state: true
+      xy_color: [0.491,0.415]
+      brightness: 173
     light.lr_table:
       state: true
       xy_color: [0.491,0.415]
@@ -26,6 +30,7 @@
     light.offices:
       state: true
       brightness: 254
+
 - name: Bedtime
   entities:
     light.bedtime_off: false
@@ -36,4 +41,49 @@
     light.mail_table:
       state: true
       xy_color: [0.641,0.286]
-      brightness: 57            
+      brightness: 57
+
+- name: Morning
+  entities:
+    light.morning_off: false
+    light.lr_table:
+      state: true
+      xy_color: [0.502,0.414]
+      brightness: 100
+    light.master_color_lamp:
+      state: true
+      xy_color: [0.502,0.414]
+      brightness: 100
+    light.sink:
+      state: true
+      xy_color: [0.502,0.414]
+      brightness: 100
+    light.office_lamp:
+      state: true
+      brightness: 70
+
+- name: Movie
+  entities:
+    light.living_room_tree_4: false
+    light.chandelier_12: false
+    light.kitchen_6: false
+    light.lr_table:
+      state: true
+      xy_color: [0.516,0.299]
+      brightness: 112
+    light.mail_table:
+      state: true
+      xy_color: [0.518,0.299]
+      brightness: 166
+    light.stairs:
+      state: true
+      xy_color: [0.162,0.259]
+      brightness: 166
+    light.sink:
+      state: true
+      xy_color: [0.198,0.283]
+      brightness: 167
+    light.fireplace:
+      state: true
+      xy_color: [0.198,0.283]
+      brightness: 68
