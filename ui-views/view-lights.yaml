@@ -1,4 +1,4 @@
-- title: Lights
+- title: 1-Lights
   icon: mdi:lightbulb
   # Unique path for direct access /lovelace/${path}
   path: lights

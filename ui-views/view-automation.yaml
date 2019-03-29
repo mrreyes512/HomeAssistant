@@ -1,4 +1,4 @@
-- title: Automations
+- title: 2-Automations
   icon: mdi:home-assistant
   # Unique path for direct access /lovelace/${path}
   path: automation
@@ -16,6 +16,7 @@
     #     - name: Front Yard
     #       entity: light.front_yard
 
+    # Scenes
     - type: horizontal-stack
       cards:
         - type: entity-button
@@ -36,8 +37,13 @@
             service: scene.turn_on
             service_data:
               entity_id: scene.bedtime
-    #     - type: light
-    #       name: Dinner Table
-    #       entity: light.dinner_table_46
-    #       secondary_info: last-changed
 
+    # Thermostats
+    - type: horizontal-stack
+      cards:
+        - type: thermostat
+          name: Downstairs
+          entity: climate.downstairs_16
+        - type: thermostat
+          name: Upstairs
+          entity: climate.upastairs_13
