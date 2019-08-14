@@ -22,7 +22,9 @@
 - platform: group
   name: Inside Lights
   entities:
-    - light.master_color_lamp
+    - light.master_bedroom
+    - light.mark
+    - light.sandra
     - light.lr_table
     - light.mail_table
     - light.office_lamp
@@ -32,7 +34,6 @@
     - light.stairs
     - light.kitchen_6
     - light.living_room_tree_4
-    - light.master_5
     - light.play_room_3
 
 # Room Groups
@@ -41,8 +42,9 @@
 - platform: group
   name: Master Bedroom
   entities:
-    - light.master_color_lamp
-    - light.master_5
+    - light.master_bedroom
+    - light.mark
+    - light.sandra
 
 - platform: group
   name: Living Room
@@ -52,6 +54,7 @@
     - light.fireplace
     - light.stairs
     - light.living_room_tree_4
+    - light.mobile_4_7
 
 
 - platform: group
@@ -103,13 +106,15 @@
     - light.chandelier_12
     - light.dinner_table_46
     - light.outside_back_10
+    - light.mobile_4_7
 
 - platform: group
   name: Normal On
   # Lights to turn on for normal scene
   entities:
-    - light.master_color_lamp
-    - light.master_5    
+    - light.master_bedroom
+    - light.mark
+    - light.sandra
     - light.lr_table
     - light.mail_table
     - light.fireplace
@@ -125,7 +130,6 @@
   name: Morning Off
   # Lights to turn on for normal scene
   entities:
-    - light.master_5    
     - light.mail_table
     - light.fireplace
     - light.stairs
@@ -138,7 +142,7 @@
   name: Color Group
   # Lights which are able to adjust color
   entities:
-    - light.master_color_lamp
+    - light.master_bedroom
     - light.lr_table
     - light.mail_table
     - light.fireplace
