@@ -1,0 +1,77 @@
+- title: 2-Automations
+  icon: mdi:home-assistant
+  # Unique path for direct access /lovelace/${path}
+  path: automation
+  # Each view can have a different theme applied. Theme should be defined in the frontend.
+  theme: clear_dark
+  # The cards to show on this view.
+  cards: 
+
+    # - type: entities
+    #   title: Groups
+    #   show_header_toggle: false
+    #   entities:
+    #     - name: Inside Lights
+    #       entity: light.inside_lights
+    #     - name: Front Yard
+    #       entity: light.front_yard
+
+    # Scenes
+    - type: horizontal-stack
+      cards:
+        - type: entity-button
+          name: Normal
+          icon: mdi:weather-sunset
+          entity: scene.normal
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.normal
+        - type: entity-button
+          name: Bedtime
+          icon: mdi:sleep
+          entity: scene.bedtime
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.bedtime
+        - type: entity-button
+          name: Morning
+          icon: mdi:coffee
+          entity: scene.morning
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.morning
+        - type: entity-button
+          name: Movie
+          icon: mdi:theater
+          entity: scene.movie
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.movie
+
+    # Thermostats
+    - type: horizontal-stack
+      cards:
+        - type: thermostat
+          name: Downstairs
+          entity: climate.downstairs_16
+        - type: thermostat
+          name: Upstairs
+          entity: climate.upastairs_13
+
+    # - type: history-graph
+    #   title: 'House Climate'
+    #   entities:
+    #     - climate.upastairs_13
+    #     - climate.downstairs_16
+
+    # Weather
+    - type: weather-forecast
+      entity: weather.dark_sky

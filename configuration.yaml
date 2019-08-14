@@ -27,7 +27,7 @@ homeassistant:
 http:
   base_url: !secret base_url
   api_password: !secret http_password
-  ssl_certificate: /ssl/fullchain.pem
+  ssl_certificate: /ssl/certificate.pem
   ssl_key: /ssl/privkey.pem
   ip_ban_enabled: True
   login_attempts_threshold: 3
@@ -52,8 +52,7 @@ updater:
     # icon: /local/icon-halloween-org.png
 
 frontend:
- themes: !include themes/midnight.yaml
-#  themes: !include_dir_merge_named themes/
+ themes: !include_dir_merge_named themes/
 
 discovery:
   ignore:
@@ -82,7 +81,6 @@ config:
 # Enable Lovelace YAML Mode
 lovelace:
   mode: yaml
-
 
 ############################################################
 #
@@ -119,6 +117,10 @@ lovelace:
 #    data:
 #      message: 'May the Force be with you.'
 
+weather:
+  - platform: darksky
+    api_key: !secret darksky_secret
+
 ###########################################################
 #
 # Includes
@@ -133,18 +135,18 @@ vera:   !include includes/vera.yaml
 # switch: !include includes/switch.yaml #includes Rachio config
 # google_assistant: !include includes/google_assistant.yaml
 # notify: !include includes/notify.yaml
-# scene: !include includes/scenes.yaml
+scene: !include includes/scenes.yaml
 # media_player: !include includes/media_players.yaml
 # device_tracker: !include includes/device_tracker.yaml
 # zone: !include includes/zones.yaml
 # input_select: !include includes/input_select.yaml
 # input_number: !include includes/input_number.yaml
-# light: !include includes/light_strip.yaml
+light: !include includes/light_groups.yaml
 # dialogflow: !include includes/dialogflow.yaml
 
 # Group Merge Directory
 
-# group: !include_dir_merge_named layout/
+group: !include_dir_merge_named group/
 # sensor: !include_dir_merge_list sensors/
-# automation: !include automations.yaml
+automation: !include automations.yaml
 # automation old: !include_dir_merge_list automation

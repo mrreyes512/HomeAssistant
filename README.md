@@ -69,6 +69,7 @@ Automations are a blend of a Routine and a static Scene. A morning Routine could
 - [Teagan42](https://github.com/Teagan42/HomeAssistantConfig)
 - [CBulock](https://github.com/cbulock/home-assistant-configs)
 - [chrom3](https://github.com/chrom3)
+- [Hassio Themes](https://www.juanmtech.com/themes-in-home-assistant)
 
 Thanks to all the people in the [gitter](https://gitter.im/home-assistant/home-assistant) community for listening and help
 

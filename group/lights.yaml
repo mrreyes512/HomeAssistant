@@ -1,0 +1,164 @@
+############################################################
+#
+# Home Assistant Light Groups
+#
+############################################################
+
+
+lights_inside:
+  name: Inside Lights
+  entities:
+    - light.master_color_lamp
+    - light.lr_table
+    - light.mail_table
+    - light.office_lamp
+    - light.sandra_office
+    - light.fireplace
+    - light.sink
+    - light.stairs
+    - light.kitchen_6
+    - light.living_room_tree_4
+    - light.master_5
+    - light.play_room_3
+    # - light.mobile_1_33   # TV Light
+    # - light.mobile_2_14   # Above Office
+    # - light.mobile_3_11   # Stair Rails
+    # - light.mobile_4_7    # Outside halloween lights
+
+front_yard:
+  name: Front Yard Lights
+  entities:
+    - light.outside_side_8
+    - light.outside_main_9
+
+porch:
+  name: Porch Lights
+  entities:
+    - light.porch
+    - light.porch_2
+
+lights_hue:
+  name: Philips Hue Lights
+  entities:
+    - light.master_color_lamp
+    - light.lr_table
+    - light.mail_table
+    - light.office_lamp
+    - light.sandra_office
+    - light.fireplace
+    - light.aidan
+    - light.olivia
+    - light.sink
+    - light.stairs
+    - light.porch
+    - light.porch2
+
+lights_vera:
+  name: Vera Lights
+  entities:
+    - light.dinner_table_46
+    - light.chandelier_12
+    - light.kitchen_6
+    - light.living_room_tree_4
+    - light.master_5
+    - light.play_room_3
+    - light.outside_back_10
+    - light.outside_main_9
+    - light.outside_side_8
+    - light.mobile_1_33
+    - light.mobile_2_14
+    - light.mobile_3_11
+    - light.mobile_4_7
+
+# Automation group to clean up going_to_bed automation
+autgrp_bedtime:
+  name: Inside Except Master
+  entities:
+    - light.lr_table
+    - light.mail_table
+    - light.office_lamp
+    - light.sandra_office
+    - light.fireplace
+    - light.sink
+    - light.stairs
+    - light.kitchen_6
+    - light.living_room_tree_4
+    - light.master_5
+    - light.play_room_3
+
+lights_other:
+  name: Extra Lights
+  control: hidden
+  entities:
+    - light.aidan
+    - light.olivia
+    - light.dinner_table_46
+    - light.chandelier_12
+    - light.outside_back_10
+    - light.porch
+    - light.porch2
+
+light_strip:
+  name: Bed Strip
+  control: hidden
+  entities:
+    - light.light_strip
+    - input_number.strip_animation_speed
+
+ifttt_lights:
+  name: Inside Lights
+  entities:
+    - light.light_strip
+    - light.master
+    - light.table
+    - light.lamp
+    - light.mobile_4_7
+    - light.master_5
+    - light.living_room_tree_4
+    - light.kitchen_6
+    - light.play_room_3
+    - light.office_lamp
+    - light.mobile_2_14
+
+lights_halloween:
+  name: Halloween Lights Group
+  entities:
+    - light.mail_table
+    - light.living_room_tree_4
+    - light.mobile_1_33   # TV Light
+    - light.mobile_2_14   # Above Office
+    - light.mobile_3_11   # Stair Rails
+    - light.chandelier_12
+    - light.dinner_table_46
+
+
+############################################################
+# Light Summaries
+############################################################
+
+inside_lights_sum:
+  name: Inside Lights
+  entities:
+    - group.lights_inside
+
+outside_lights_sum:
+  name: Outside Lights
+  entities:
+    - group.lights_outside
+
+############################################################
+# Light Scenes
+############################################################
+
+scenes_lights:
+  name: Scenes
+  control: hidden
+  entities:
+    - scene.bedtime
+    - scene.bed_magic
+    - scene.morning
+    - scene.overcast
+    - scene.all_lights_on
+    - scene.all_lights_off
+#    - scene.holiday_lights_on
+#    - scene.holiday_lights_off

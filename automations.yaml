@@ -1,5 +1,5 @@
 - id: '1533318250766'
-  alias: Lights off when Vacation
+  alias: Timer - Lights off when Vacation
   trigger:
   - at: 00:00
     platform: time
@@ -10,16 +10,60 @@
   action:
   - alias: ''
     data:
-      entity_id: group.lights_inside
+      entity_id: light.inside_lights
     service: light.turn_off
-- id: '1536235545661'
-  alias: Boil Water
+- id: set_theme_at_startup
+  alias: Set theme at startup
   trigger:
-  - at: 06:30
-    platform: time
+    platform: homeassistant
+    event: start
+  action:
+    service: frontend.set_theme
+    data:
+      name: dark_blue
+- id: '1553624093506'
+  alias: Timer - Front Porch
+  trigger:
+  - entity_id: light.front_porch
+    for: '300'
+    from: 'off'
+    platform: state
+    to: 'on'
   condition: []
   action:
-  - alias: ''
-    data:
-      'entity_id ': switch.mobile_3_11
-    service: switch.turn_on
+  - data:
+      entity_id: light.front_porch
+    service: light.turn_off
+- id: '1553624404892'
+  alias: Sunset - Inside Lights
+  trigger:
+  - event: sunset
+    offset: '-1800'
+    platform: sun
+  condition: []
+  action:
+  - data:
+      entity_id: scene.normal
+    service: scene.turn_on
+- id: '1553624607733'
+  alias: Sunset - Front Yard Lights
+  trigger:
+  - event: sunset
+    offset: '600'
+    platform: sun
+  condition: []
+  action:
+  - data:
+      entity_id: light.front_yard
+    service: light.turn_on
+- id: '1553624732991'
+  alias: Sunrise - Front Yard Lights
+  trigger:
+  - event: sunrise
+    offset: '-600'
+    platform: sun
+  condition: []
+  action:
+  - data:
+      entity_id: light.front_yard
+    service: light.turn_off

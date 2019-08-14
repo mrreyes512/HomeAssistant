@@ -5,4 +5,11 @@
 ############################################################
 
 title: Reyes Manor
+
+# resources:
+#   - url: /local/custom-lovelace/group-card/group-card.js
+#     type: js
+  # - url: /local/custom-lovelace/monster-card.js?v=1
+  #   type: js
+
 views: !include_dir_merge_list ui-views/
