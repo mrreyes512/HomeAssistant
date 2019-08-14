@@ -1,0 +1,3 @@
+---
+# Hassbian **Stage** configuration differance
+ansible_port: 2272

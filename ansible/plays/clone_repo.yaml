@@ -1,0 +1,53 @@
+---
+# This play will configure the homeassistant user 
+
+- hosts: "{{ target | default('stage') }}" 
+  gather_facts: False
+  become: true
+  vars:
+    deploy_user: homeassistant
+    ha_config_branch: develop
+
+  tasks:
+
+  - name: Set git config - Email
+    git_config:
+      name: user.email
+      scope: system
+      value: 'mrreyes512@gmail.com'
+
+  - name: Set git config - Name
+    git_config:
+      name: user.name
+      scope: system
+      value: 'Mark Reyes'
+
+  - name: Copy ssh key - public
+    copy: 
+      src: "{{ playbook_dir }}/../vault/id_rsa_HomeAssistant.pub"
+      # dest: "/home/{{ deploy_user }}/.ssh/id_rsa.pub" 
+      dest: "~/.ssh/id_rsa.pub" 
+      mode: 0600
+      # owner: "{{ deploy_user }}"
+      # group: "{{ deploy_user }}"
+
+  - name: Copy ssh key - private
+    copy: 
+      src: "{{ playbook_dir }}/../vault/id_rsa_HomeAssistant"
+      # dest: "/home/{{ deploy_user }}/.ssh/id_rsa" 
+      dest: "~/.ssh/id_rsa" 
+      mode: 0600
+      # owner: "{{ deploy_user }}"
+      # group: "{{ deploy_user }}"
+
+  - name: Clone Git Repo
+    git:
+      repo: "git@gitlab.com:mrreyes512/HomeAssistant.git"
+      dest: "/home/{{ deploy_user }}/ha-config"
+      version: "{{ ha_config_branch }}"
+      accept_hostkey: yes
+
+  - name: Copy secrets file
+    copy: 
+      src: "{{ playbook_dir }}/../vault/secrets.yaml"
+      dest: "/home/{{ deploy_user }}/ha-config/"

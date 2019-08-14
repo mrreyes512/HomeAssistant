@@ -1,0 +1,19 @@
+---
+# This play will configure the homeassistant user 
+
+- hosts: "{{ target | default('stage') }}" 
+  gather_facts: False
+  become: true
+
+  tasks:
+
+  # - name: Set homeassistant password
+  #   user: 
+  #     name: homeassistant
+  #     password: "@utomAT3!"
+
+  - name: Set SSH authorized keys
+    authorized_key:
+      user: homeassistant
+      state: present
+      key: "{{ lookup('file', lookup('env','PWD') + '/vault/id_rsa_HomeAssistant.pub') }}"

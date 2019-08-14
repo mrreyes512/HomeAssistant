@@ -1,0 +1,20 @@
+# Inventory File : hosts
+# Description of hosts: This inventory file will contain devices in HomeAssistant lab.
+# Credentials will be stored in ./group_vars/credential-[NAME].yaml
+
+##################################
+# HomeAssistant Servers
+##################################
+
+[production]
+hassio-prod
+
+[stage]
+hassbian-prod
+hassbian-stage
+
+##################################
+# access details
+##################################
+#[credential-root:children]
+#production

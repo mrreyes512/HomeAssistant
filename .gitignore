@@ -45,3 +45,6 @@ entity_registry.yaml
 # HASS Cloud stuff
 .cloud/
 .storage/
+custom-lovelace
+ansible/super_secret.vault_pass
+ansible/logs
