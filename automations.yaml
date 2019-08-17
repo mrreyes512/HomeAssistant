@@ -25,13 +25,14 @@
   alias: Timer - Front Porch
   trigger:
   - entity_id: light.front_porch
-    for: '300'
+    for:
+      seconds: 30
     from: 'off'
     platform: state
     to: 'on'
   condition: []
   action:
-  - data:
+  - data: 
       entity_id: light.front_porch
     service: light.turn_off
 - id: '1553624404892'
