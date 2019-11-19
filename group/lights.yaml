@@ -8,7 +8,7 @@
 lights_inside:
   name: Inside Lights
   entities:
-    - light.master_color_lamp
+    - light.master_bedroom
     - light.lr_table
     - light.mail_table
     - light.office_lamp
@@ -40,7 +40,7 @@ porch:
 lights_hue:
   name: Philips Hue Lights
   entities:
-    - light.master_color_lamp
+    - light.master_bedroom
     - light.lr_table
     - light.mail_table
     - light.office_lamp
