@@ -123,6 +123,35 @@ weather:
 
 ###########################################################
 #
+# Configuration for Xmas
+#
+############################################################
+
+shell_command:
+  stop_now: curl -X GET "http://192.168.200.120/fppxml.php?command=stopNow"
+  exec_thanks_2019: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=Thanksgiving_2019"
+
+binary_sensor:
+  - platform: ping
+    host: 192.168.200.120
+    name: fpp-prod
+    scan_interval: 30
+    count: 2
+
+  - platform: ping
+    host: 192.168.200.130
+    name: fpp-stage
+    scan_interval: 30
+    count: 2
+
+  - platform: ping
+    host: 192.168.201.15
+    name: falcon-f48
+    scan_interval: 30
+    count: 2
+
+###########################################################
+#
 # Includes
 #
 ############################################################

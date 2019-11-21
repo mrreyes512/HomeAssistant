@@ -45,3 +45,4 @@ entity_registry.yaml
 # HASS Cloud stuff
 .cloud/
 .storage/
+venv
