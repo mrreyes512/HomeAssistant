@@ -69,7 +69,7 @@
           entity: scene.normal
           tap_action:
             action: call-service
-            service: shell_command._aidan
+            service: shell_command.effect_aidan
 
       - type: horizontal-stack
         cards:
@@ -79,27 +79,27 @@
           entity: scene.normal
           tap_action:
             action: call-service
-            service: shell_command._blinky
+            service: shell_command.effect_blinky
         - type: entity-button
           name: Butterfly
           icon: mdi:looks
           entity: scene.normal
           tap_action:
             action: call-service
-            service: shell_command._butterfly
+            service: shell_command.effect_butterfly
         - type: entity-button
           name: Garlands
           icon: mdi:ornament
           entity: scene.normal
           tap_action:
             action: call-service
-            service: shell_command._garlands
+            service: shell_command.effect_garlands
         - type: entity-button
           name: Morph
           icon: mdi:snowman
           entity: scene.normal
           tap_action:
             action: call-service
-            service: shell_command._morph
+            service: shell_command.effect_morph
 
 

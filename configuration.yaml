@@ -129,13 +129,13 @@ weather:
 
 shell_command:
   stop_now: curl -X GET "http://192.168.200.120/fppxml.php?command=stopNow"
-  exec_thanks_2019: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=Thanksgiving_2019"
-  exec_christ_2019: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=Christmas_2019"
-  _aidan: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_aidan"
-  _blinky: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_blinky"
-  _butterfly: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_butterfly"
-  _garlands: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_garlands"
-  _morph: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_morph"
+  exec_thanks_2019: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=Thanksgiving_2019&repeat=checked"
+  exec_christ_2019: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=Christmas_2019&repeat=checked"
+  effect_aidan: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_aidan"
+  effect_blinky: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_blinky"
+  effect_butterfly: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_butterfly"
+  effect_garlands: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_garlands"
+  effect_morph: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_morph"
 
 
 binary_sensor:
