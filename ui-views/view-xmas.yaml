@@ -3,7 +3,7 @@
   # Unique path for direct access /lovelace/${path}
   path: xmas
   # Each view can have a different theme applied. Theme should be defined in the frontend.
-  theme: christmas
+  theme: dark_christmas
   # The cards to show on this view.
   cards: 
 
