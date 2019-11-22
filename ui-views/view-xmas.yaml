@@ -3,7 +3,7 @@
   # Unique path for direct access /lovelace/${path}
   path: xmas
   # Each view can have a different theme applied. Theme should be defined in the frontend.
-  theme: clear_dark
+  theme: christmas
   # The cards to show on this view.
   cards: 
 
@@ -24,23 +24,82 @@
           entity: binary_sensor.fpp_stage
           icon: mdi:raspberry-pi
 
+    - type: entities
+      title: What's Playing?
+      show_header_toggle: False
+      entities:
+        - name: Current Playlist
+          entity: sensor.current_playlist
+          icon: mdi:playlist-play
+        - name: Current Sequence
+          entity: sensor.current_sequence
+          icon: mdi:play-outline
+          
 
-    - type: horizontal-stack
+    - type: vertical-stack
+      title: Playlists
       cards:
-      - type: entity-button
-        name: Thanksgiving
-        icon: mdi:alpha-t-box
-        entity: scene.normal
-        tap_action:
-          action: call-service
-          service: shell_command.exec_thanks_2019
-      - type: entity-button
-        name: Stop All
-        icon: mdi:stop-circle
-        entity: scene.normal
-        tap_action:
-          action: call-service
-          service: shell_command.stop_now
 
+      - type: horizontal-stack
+        cards:
+        - type: entity-button
+          name: Stop All
+          icon: mdi:stop-circle
+          entity: scene.normal
+          tap_action:
+            action: call-service
+            service: shell_command.stop_now
+        - type: entity-button
+          name: Thanksgiving
+          icon: mdi:alpha-t-box
+          entity: scene.normal
+          tap_action:
+            action: call-service
+            service: shell_command.exec_thanks_2019
+        - type: entity-button
+          name: Christmas
+          icon: mdi:pine-tree-box
+          entity: scene.normal
+          tap_action:
+            action: call-service
+            service: shell_command.exec_christ_2019
+        - type: entity-button
+          name: Aidan
+          icon: mdi:space-invaders
+          entity: scene.normal
+          tap_action:
+            action: call-service
+            service: shell_command._aidan
+
+      - type: horizontal-stack
+        cards:
+        - type: entity-button
+          name: Blinky
+          icon: mdi:emoticon-wink
+          entity: scene.normal
+          tap_action:
+            action: call-service
+            service: shell_command._blinky
+        - type: entity-button
+          name: Butterfly
+          icon: mdi:looks
+          entity: scene.normal
+          tap_action:
+            action: call-service
+            service: shell_command._butterfly
+        - type: entity-button
+          name: Garlands
+          icon: mdi:ornament
+          entity: scene.normal
+          tap_action:
+            action: call-service
+            service: shell_command._garlands
+        - type: entity-button
+          name: Morph
+          icon: mdi:snowman
+          entity: scene.normal
+          tap_action:
+            action: call-service
+            service: shell_command._morph
 
 

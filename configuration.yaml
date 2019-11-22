@@ -27,8 +27,8 @@ homeassistant:
 http:
   base_url: !secret base_url
   # api_password: !secret http_password
-  ssl_certificate: /home/homeassistant/.homeassistant/ssl/certificate.pem
-  ssl_key: /home/homeassistant/.homeassistant/ssl/privkey.pem
+  # ssl_certificate: /home/homeassistant/.homeassistant/ssl/certificate.pem
+  # ssl_key: /home/homeassistant/.homeassistant/ssl/privkey.pem
   ip_ban_enabled: True
   login_attempts_threshold: 3
 
@@ -130,6 +130,13 @@ weather:
 shell_command:
   stop_now: curl -X GET "http://192.168.200.120/fppxml.php?command=stopNow"
   exec_thanks_2019: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=Thanksgiving_2019"
+  exec_christ_2019: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=Christmas_2019"
+  _aidan: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_aidan"
+  _blinky: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_blinky"
+  _butterfly: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_butterfly"
+  _garlands: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_garlands"
+  _morph: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_morph"
+
 
 binary_sensor:
   - platform: ping
@@ -149,6 +156,16 @@ binary_sensor:
     name: falcon-f48
     scan_interval: 30
     count: 2
+
+sensor:
+  - platform: command_line
+    name: Current Playlist
+    command: curl -sS -X GET 'http://192.168.200.120/fppxml.php?command=getFPPstatus' | awk -F 'CurrentPlaylist' '{print $2}' | tr -d '<>/' | head -n 1
+    scan_interval: 5
+  - platform: command_line
+    name: Current Sequence
+    command: curl -sS -X GET 'http://192.168.200.120/fppxml.php?command=getFPPstatus' | awk -F 'CurrentSeqName' '{print $2}' | tr -d '<>/' | head -n 1
+    scan_interval: 5
 
 ###########################################################
 #
