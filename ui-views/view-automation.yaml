@@ -7,10 +7,12 @@
   # The cards to show on this view.
   cards: 
 
-    # - type: entities
-    #   title: Groups
-    #   show_header_toggle: false
-    #   entities:
+    - type: entities
+      show_header_toggle: false
+      entities:
+        - name: Vacation Mode
+          entity: input_boolean.vacation_mode
+          icon: mdi:beach
     #     - name: Inside Lights
     #       entity: light.inside_lights
     #     - name: Front Yard
