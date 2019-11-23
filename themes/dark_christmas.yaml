@@ -5,7 +5,7 @@ dark_christmas:
   text-primary-color: "#ffffff"
   primary-background-color: "#4f3737"
   sidebar-text_-_background: "#3c4348"
-  paper-card-background-color: "#2a3726"
+  paper-card-background-color: "#296616"
   paper-card-header-color: "var(--text-primary-color)"
   secondary-background-color: "var(--primary-background-color)"
   primary-text-color: "var(--text-primary-color)"
