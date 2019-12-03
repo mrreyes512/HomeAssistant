@@ -1,0 +1,5 @@
+# Person details
+person.mark:
+  entity_picture: '/local/pic-mark.png'
+person.sandra:
+  entity_picture: '/local/pic-sandra.png'

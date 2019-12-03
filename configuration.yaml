@@ -11,7 +11,7 @@ homeassistant:
   elevation: !secret elevation
   unit_system: imperial
   time_zone: America/Chicago
-  # customize: !include includes/customize.yaml
+  customize: !include includes/customize.yaml
   auth_providers:
     - type: homeassistant
     - type: trusted_networks
@@ -79,11 +79,6 @@ person:
     device_trackers: 
       - device_tracker.sandras_iphone
 
-customize:
-  person.mark:
-    entity_picture: '/local/pic-mark.png'
-  person.sandra:
-    entity_picture: '/local/pic-sandra.png'
 
 ############################################################
 # Components
