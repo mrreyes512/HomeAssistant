@@ -46,3 +46,8 @@ entity_registry.yaml
 .cloud/
 .storage/
 venv
+
+# Save for later
+ansible/
+automations.yaml-bak
+custom-lovelace/

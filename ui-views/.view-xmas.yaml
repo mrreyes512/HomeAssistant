@@ -102,4 +102,3 @@
             action: call-service
             service: shell_command.effect_morph
 
-
