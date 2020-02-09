@@ -7,17 +7,19 @@
   # The cards to show on this view.
   cards: 
 
-    # - type: entities
-    #   title: Groups
-    #   show_header_toggle: false
-    #   entities:
-    #     - name: Inside Lights
-    #       entity: light.inside_lights
-    #     - name: Front Yard
-    #       entity: light.front_yard
+    - type: horizontal-stack
+      title: Peeps
+      cards:
+        - type: entities
+          entities:
+            - entity: person.mark
+        - type: entities
+          entities:
+            - entity: person.sandra
 
     # Scenes
     - type: horizontal-stack
+      title: House Modes
       cards:
         - type: entity-button
           name: Normal
@@ -55,6 +57,13 @@
             service: scene.turn_on
             service_data:
               entity_id: scene.movie
+
+    - type: entities
+      show_header_toggle: false
+      entities:
+        - name: Vacation Mode
+          entity: input_boolean.vacation_mode
+          icon: mdi:beach
 
     # Thermostats
     - type: horizontal-stack

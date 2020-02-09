@@ -11,10 +11,9 @@ homeassistant:
   elevation: !secret elevation
   unit_system: imperial
   time_zone: America/Chicago
-  # customize: !include includes/customize.yaml
+  customize: !include includes/customize.yaml
   auth_providers:
     - type: homeassistant
-    # - type: legacy_api_password
     - type: trusted_networks
       trusted_networks:
         - 127.0.0.1
@@ -26,9 +25,8 @@ homeassistant:
 
 http:
   base_url: !secret base_url
-  # api_password: !secret http_password
-  ssl_certificate: /home/homeassistant/.homeassistant/ssl/certificate.pem
-  ssl_key: /home/homeassistant/.homeassistant/ssl/privkey.pem
+  ssl_certificate: /ssl/certificate.pem
+  ssl_key: /ssl/privkey.pem
   ip_ban_enabled: True
   login_attempts_threshold: 3
 
@@ -41,15 +39,10 @@ updater:
   reporting: no
   # include_used_components: true
 
-# input_boolean:
-#   vacation_mode:
-#     name: Vacation Mode
-#     initial: off
-#     icon: mdi:beach
-  # halloween_mode:
-  #   name: Halloween Mode
-  #   initial: off
-    # icon: /local/icon-halloween-org.png
+input_boolean:
+  vacation_mode:
+    name: Vacation Mode
+    initial: off
 
 frontend:
  themes: !include_dir_merge_named themes/
@@ -65,12 +58,6 @@ sun:
 # View all events in a logbook
 logbook:
 
-# Allows you to issue voice commands from the frontend in enabled browsers
-# conversation:
-
-# Enables a map showing the location of tracked devices
-# map:
-
 # Enable the embedded mqtt service in hassio
 # mqtt:
 #   embedded:
@@ -82,11 +69,31 @@ config:
 lovelace:
   mode: yaml
 
+person:
+  - name: Mark
+    id: !secret mark_hass_id
+    device_trackers: 
+      - device_tracker.galaxy_s9
+  - name: Sandra
+    id: !secret sandra_hass_id
+    device_trackers: 
+      - device_tracker.sandras_iphone
+
+
 ############################################################
-#
 # Components
-#
 ############################################################
+
+# Show devices on WLAN Network through the Unifi Controller
+unifi:
+  controllers:
+    - host: !secret unifi_host
+      site: !secret unifi_site
+
+# abode:
+  #  username: !secret abode_user
+  #  password: !secret abode_pass
+
 
 # Entry to enable the cloud component
 # cloud:
@@ -108,41 +115,66 @@ lovelace:
 #     name: !secret harmony_name
 #     host: !secret harmony_host
 
-# tts:
-#   - platform: google
-#     cache: true
-#     cache_dir: /tmp/tts
-#     time_memory: 300
-#    service: tts.google_say
-#    data:
-#      message: 'May the Force be with you.'
-
 weather:
   - platform: darksky
     api_key: !secret darksky_secret
 
 ###########################################################
-#
+# Configuration for Xmas
+############################################################
+
+# shell_command:
+#  stop_now: curl -X GET "http://192.168.200.120/fppxml.php?command=stopNow"
+#  exec_thanks_2019: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=Thanksgiving_2019&repeat=checked"
+#  exec_christ_2019: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=Christmas_2019&repeat=checked"
+#  effect_aidan: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_aidan"
+#  effect_blinky: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_blinky"
+#  effect_butterfly: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_butterfly"
+#  effect_garlands: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_garlands"
+#  effect_morph: curl -X GET "http://192.168.200.120/fppxml.php?command=startPlaylist&playList=_morph"
+
+
+#binary_sensor:
+#  - platform: ping
+#    host: 192.168.200.120
+#    name: fpp-prod
+#    scan_interval: 30
+#    count: 2
+
+#  - platform: ping
+#    host: 192.168.200.130
+#    name: fpp-stage
+#    scan_interval: 30
+#    count: 2
+
+#  - platform: ping
+#    host: 192.168.201.15
+#    name: falcon-f48
+#    scan_interval: 30
+#    count: 2
+
+#sensor:
+#  - platform: command_line
+#    name: Current Playlist
+#    command: curl -sS -X GET 'http://192.168.200.120/fppxml.php?command=getFPPstatus' | awk -F 'CurrentPlaylist' '{print $2}' | tr -d '<>/' | head -n 1
+#    scan_interval: 5
+#  - platform: command_line
+#    name: Current Sequence
+#    command: curl -sS -X GET 'http://192.168.200.120/fppxml.php?command=getFPPstatus' | awk -F 'CurrentSeqName' '{print $2}' | tr -d '<>/' | head -n 1
+#    scan_interval: 5
+
+###########################################################
 # Includes
-#
 ############################################################
 
 # Single Files
 
 hue: !include includes/philips_hue.yaml
 vera:   !include includes/vera.yaml
-# camera: !include includes/cameras.yaml
-# switch: !include includes/switch.yaml #includes Rachio config
 # google_assistant: !include includes/google_assistant.yaml
 # notify: !include includes/notify.yaml
 scene: !include includes/scenes.yaml
-# media_player: !include includes/media_players.yaml
-# device_tracker: !include includes/device_tracker.yaml
-# zone: !include includes/zones.yaml
-# input_select: !include includes/input_select.yaml
-# input_number: !include includes/input_number.yaml
 light: !include includes/light_groups.yaml
-# dialogflow: !include includes/dialogflow.yaml
 
 # Group Merge Directory
 
@@ -150,3 +182,4 @@ group: !include_dir_merge_named group/
 # sensor: !include_dir_merge_list sensors/
 automation: !include automations.yaml
 # automation old: !include_dir_merge_list automation
+

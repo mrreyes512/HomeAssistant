@@ -25,14 +25,13 @@
   alias: Timer - Front Porch
   trigger:
   - entity_id: light.front_porch
-    for:
-      seconds: 30
+    for: 0:05:30
     from: 'off'
     platform: state
     to: 'on'
   condition: []
   action:
-  - data: 
+  - data:
       entity_id: light.front_porch
     service: light.turn_off
 - id: '1553624404892'
@@ -67,4 +66,26 @@
   action:
   - data:
       entity_id: light.front_yard
+    service: light.turn_off
+- id: '1576100901049'
+  alias: Holiday Lights - ON
+  description: Turn on Holiday Lights after sunset
+  trigger:
+  - at: '17:30:00'
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity: light.holiday_group
+    service: light.turn_on
+- id: '1576100996058'
+  alias: Holiday Lights - Off
+  description: Turn off at Midnight
+  trigger:
+  - at: 00:00
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity: light.holiday_group
     service: light.turn_off

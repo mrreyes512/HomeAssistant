@@ -45,3 +45,9 @@ entity_registry.yaml
 # HASS Cloud stuff
 .cloud/
 .storage/
+venv
+
+# Save for later
+ansible/
+automations.yaml-bak
+custom-lovelace/

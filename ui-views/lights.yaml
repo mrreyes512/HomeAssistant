@@ -55,6 +55,8 @@
           entity: light.inside_lights
         - name: Front Yard
           entity: light.front_yard
+        - name: Holiday Lights
+          entity: light.holiday_group
 
     - type: entities
       title: Master Bedroom
@@ -62,13 +64,13 @@
       entities:
         # Master Bedroom group
         - name: Standing Lamp
-          entity: light.master_bedroom
+          entity: light.master_color_lamp
           secondary_info: last-changed
         - name: Mark Lamp
-          entity: light.mark
+          entity: light.hue_white_lamp_2
           secondary_info: last-changed
         - name: Sandra Lamp
-          entity: light.sandra
+          entity: light.hue_white_lamp_1
           secondary_info: last-changed
 
     - type: entities

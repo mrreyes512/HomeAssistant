@@ -1,0 +1,21 @@
+christmas:
+  primary-color: "#7d0b0b"
+  disabled-text-color: "#123812"
+  divider-color: "#123812"
+  paper-card-background-color: "#7d0b0b"
+  paper-grey-200: "#d3d3d3"
+  paper-item-icon-color: "#d3d3d3"
+  paper-listbox-background-color: "#6b0d0d"
+  paper-listbox-color: "#d3d3d3"
+  primary-background-color: "#123812" # For dialogs and popups...etc
+  primary-text-color: "#FFFFFF"      
+  secondary-background-color: "#123812"
+  secondary-text-color: "#000000"
+  text-primary-color: "#FFFFFF"
+  dark-primary-color: "#000000"
+  light-primary-color: "#7d0b0b"
+  paper-toggle-button-checked-button-color: "#dcd736"
+  paper-toggle-button-checked-bar-color: "#DCD736"
+  paper-slider-knob-color: "#DCD736"
+  paper-slider-active-color: "#DCD736"
+

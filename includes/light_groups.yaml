@@ -10,7 +10,7 @@
 - platform: group
   name: Front Yard
   entities:
-    - light.outside_side_8
+    - light.outside_side_47
     - light.outside_main_9
 
 - platform: group
@@ -22,9 +22,9 @@
 - platform: group
   name: Inside Lights
   entities:
-    - light.master_bedroom
-    - light.mark
-    - light.sandra
+    - light.master_color_lamp
+    - light.hue_white_lamp_2
+    - light.hue_white_lamp_1
     - light.lr_table
     - light.mail_table
     - light.office_lamp
@@ -42,9 +42,9 @@
 - platform: group
   name: Master Bedroom
   entities:
-    - light.master_bedroom
-    - light.mark
-    - light.sandra
+    - light.master_color_lamp
+    - light.hue_white_lamp_2
+    - light.hue_white_lamp_1
 
 - platform: group
   name: Living Room
@@ -64,6 +64,12 @@
     - light.sink
 
 - platform: group
+  name: Holiday Group
+  entities:
+    - light.mobile_2_14
+    - light.mobile_3_11
+
+- platform: group
   name: Kids Room
   entities:
     - light.aidan
@@ -79,7 +85,7 @@
 - platform: group
   name: Outside Group
   entities:
-    - light.outside_side_8
+    - light.outside_side_47
     - light.outside_main_9
     - light.porch
     - light.porch_2
@@ -107,14 +113,16 @@
     - light.dinner_table_46
     - light.outside_back_10
     - light.mobile_4_7
+    - light.porch
+    - light.porch_2
 
 - platform: group
   name: Normal On
   # Lights to turn on for normal scene
   entities:
-    - light.master_bedroom
-    - light.mark
-    - light.sandra
+    - light.master_color_lamp
+    - light.hue_white_lamp_2
+    - light.hue_white_lamp_1
     - light.lr_table
     - light.mail_table
     - light.fireplace
@@ -142,7 +150,7 @@
   name: Color Group
   # Lights which are able to adjust color
   entities:
-    - light.master_bedroom
+    - light.master_color_lamp
     - light.lr_table
     - light.mail_table
     - light.fireplace
